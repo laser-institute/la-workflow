@@ -1,0 +1,503 @@
+---
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERlogo_large.png
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    code-overflow: scroll
+    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+resources:
+  - demo.pdf
+---
+
+<h1> <br> Characteristics of Data in LA </h1>
+
+<h2> Foundations Code along - Module 1 </h2>
+
+<hr>
+
+<h3> Jeanne McClure </h3>
+
+<h3> 2024-01-01 </h3>
+<br>
+
+[github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
+ 
+ ![](img/LASERLogoB.png){.absolute top=425 left=1000 width="800"}
+ 
+ 
+## Welcome to Foundations code along for `Module 1`
+
+> `Foundations of Learning Analytics` are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research. The following code along is aimed at preparing you for the first section of the case study.
+
+<br/>
+
+
+![](img/prepare_wflow.png)
+<br/>
+
+:::{.notes}
+
+**Prepare** for a data-intensive analysis with clear and refined research questions with an understanding of where the data came from. 
+For example, Krumm et al uses the example surrounding an activity system for which the technology was used. 
+
+You may ask yourself - Is it for instructional, reward or even a social collaborative context? Having that understanding will allow for more refined understanding when formulating guiding research questions for the analysis. Identify what gets collected and stored by technology is important for the development of the research question.
+
+Here you may even refine your research question after having a better idea of where the data came from. The question may also be refined and redeveloped after you have started the data intensive analysis.
+
+The Learning Analysis Cycle is not a linear process but rather a process of phases that can be moved around.
+
+In this code-along session, we will concentrate on the "Prepare" phase of the Learning Analytics (LA) cycle. Before we delve into that, it's essential to gain some context regarding the study that will inform our discussions today and over next three modules.
+
+:::
+
+
+## Module Objectives
+
+. . .
+
+By the end of this module:
+
+* Know how to read in the data:
+  - Learners will be able to identify and describe different types of learning environments, explaining their unique features and applications in educational research.
+
+. . .
+
+* Characteristics of `Data`:
+  - Learners will gain proficiency in recognizing and categorizing various data formats commonly used in educational research by the end of this section.
+
+. . .
+
+:::{.notes}
+
+
+
+:::
+
+## Context of the Problem
+
+::: {.fragment .fade-in-then-semi-out style="font-size: 50px" }
+Macfadyen, L. P., & Dawson, S. (2010). [Mining LMS data to develop an "early warning system" for educators: A proof of concept.](https://www.sciencedirect.com/science/article/pii/S0360131509002486?via%3Dihub) *Computers & education*, *54*(2), 588-599.
+:::
+
+::: {.fragment .fade-in-then-semi-out style="font-size: 30px" }
+- Explores specific online activities of students indicating their academic success.
+- Focused on "early warning systems" in higher education.
+- Research was extracted from course-based instructor tracking logs and the BB Vista production server.
+- Data Sources
+- A **self-report survey** assessing three aspects of students’ motivation
+- **Log-trace data,** such as data output from the learning management system (LMS)
+- **Academic achievement data**
+- Discussion board data
+:::
+
+::: {.fragment .fade-in-then-semi-out style="font-size: 30px" }
+Research Questions:
+
+- Which LMS tracking data variables correlate significantly with
+    student achievement?
+    
+- How accurately can measures of student online activity in an online 
+course site predict student achievement in the course under study?
+:::
+
+
+:::{.notes}
+
+kn'obh'o
+:::
+
+# Loading and Installing packages {background="#143156"}
+
+## Load Pacakges
+:::: {.columns}
+
+::: {.column width="45%"}
+
+- First time using a package
+- Do this ONLY ONCE in the "console"
+
+:::{style="font-size: 50px"}
+```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+#| code-line-numbers: "|2"
+# Install Packages
+install.packages("tidyverse")
+
+```
+:::
+:::
+
+
+::: {.column width="45%"}
+
+:::
+
+::::
+
+:::{.notes}
+**PACKAGES-TAB**
+
+In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. 
+Although there are read-in capabilities with the `utils package` in base r, we are going to use a more modern approach.
+One of the packages in Tidyverse allows for reading in Comma delimiter files, or CSV. 
+
+
+*Reminder if needed - this was discussed in foundation 1*
+R comes with several packages in base r when you start a session. Packages are a collection of objects, data sets around a theme or purpose. You may find a package whose objects are for the purpose of correlation, like in the cor package. Or you may find a package that has objects to produce better tables, like in the *kable extra* package. Or you may find a package that will help wrangling the data (processing it) easier than in Base R package. That is the package we are going to install here Tidyverse.
+
+Tidyverse is a suite of packages that share a common philosophy and are designed to work together. Think Google products or Microsoft products. data importing, data wrangling and plotting.
+:::
+
+
+## Load Pacakges
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+- First time using a package
+- Do this ONLY ONCE in the "console"
+
+:::{style="font-size: 50px"}
+```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+
+# Install Packages
+install.packages("tidyverse")
+
+
+```
+:::
+:::
+
+
+::: {.column width="45%"}
+Your turn **👉 Your Turn** **⤵**
+
+::: {style="font-size: 50px"}
+```{r echo=TRUE}
+# Load tidyverse package 
+#
+#
+
+```
+:::
+
+What is the function to load the tidyverse library?
+:::
+
+::::
+
+
+## **👉 Your Turn** **⤵** -> Answer
+
+. . .
+
+::: {style="font-size: 50px"}
+```{r echo=TRUE}
+#| code-line-numbers: "|2"
+# Load tidyverse package 
+library(tidyverse)
+
+```
+:::
+
+If you see <span style="color:red;">red</span> it does not always mean error. 
+
+
+# Reading in data {background="#143156"}
+
+
+
+## Function
+
+::: panel-tabset
+
+## Readr functions
+
+::: {style="font-size: 80px"}
+Common {[readr](https://readr.tidyverse.org)} functions to read in different types of data
+:::
+
+![](img/readr_function.png){width="1300"}
+
+## Delimeter
+
+![](img/delimiter.png){fig-align="center" width="1500"}
+
+:::
+
+:::{.notes}
+**FUNCTIONS-TAB**
+
+Common functions that are included when you read in data are 
+1. the file, we need to give a path to get the data. It should be in the working directory.
+
+2. column names corresponds to variables on the first row. The first row of the input will be used as the column names, and will not be included in the data frame. If FALSE, column names will be generated automatically: X1, X2, X3 etc.
+
+3. NA corresponds to missing values. commonly you will see capital NA but you may also see quotations or only a period depending on the original database (excel, SAS, STATA etc).
+
+4. Skip functions allows you to skill to when your data starts. 
+
+5. col_types is not typically needed but good to know. R guesses what type of column types you have when it reads in the file using the default guess_max.
+This is convenient (and fast), but not robust. If the imputation fails, you'll need to increase the guess_max or supply the correct types yourself.
+
+6. guess_max if the imputation fails increase the number beyond the 1000 default to guess col_types correctly.
+
+:::
+
+## Using the readr function
+:::: {.columns}
+
+::: {.column width="45%"}
+
+- Use `read_csv()` function to read in CSV.
+
+:::{style="font-size: 50px"}
+```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+#| code-line-numbers: "|2|5"
+#use read_csv function to read in sci-online-classes.csv rename object to online_classes
+online_classes <- read_csv("data/sci-online-classes.csv")
+
+#use head() function
+knitr::kable(head(online_classes, n=5), format = 'html')
+
+```
+:::
+:::
+
+
+::: {.column width="45%"}
+
+:::
+
+::::
+
+:::{.notes}
+readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)
+
+- We read in from the path. My data is stored in a folder called data. I then use the assignment operator to save it as a new object called online-classes. 
+- (instructor is showing how to import from file) a quick way to see where your data file is stored is by clicking on the file under files and then import. 
+- PLease note that we do NOT need to set working directory because we opened the projects fiolder. If we just click on the dataframe to open it it will not be connectd to the project.
+
+Having a best practices way to set up your directory will help eleviate any confusion on data organization and location.
+:::
+
+
+
+## Using the readr function
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+- Use `read_csv()` function to read in CSV.
+
+:::{style="font-size: 50px"}
+```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+
+#use read_csv function to read in sci-online-classes.csv rename object to online_classes
+online_classes <- read_csv("data/sci-online-classes.csv")
+
+#use head() function
+knitr::kable(head(online_classes, n=5), format = 'html')
+
+
+```
+:::
+:::
+
+
+::: {.column width="45%"}
+Your turn **👉 Your Turn** **⤵** 
+
+In the corresponding script do the following:
+
+- load in the `readxl` package, 
+- load in `"data/csss_tweets.xlsx"` file save to a new object csss_tweets
+- inspect the data by `head()` function
+
+
+::: {style="font-size: 50px"}
+```{r echo=TRUE, eval=FALSE}
+
+# 1. Install and read in the readxl Package 
+
+# 2. use read_excel() function to read in data.
+csss_tweets <- 
+  
+# 3. use head() function to read 
+head()
+```
+:::
+:::
+
+::::
+
+::: {.notes}
+To read in an excel file we will need to install the readxl package and then read in with the read_excel function. We can see that it is an excel file with the .xlsx extension.
+:::
+
+
+## **👉 Your Turn** **⤵** -> Answer
+
+. . .
+
+::: {style="font-size: 50px"}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+#| code-line-numbers: "|2|5|8"
+
+#Install and read in the readxl Package 
+library(readxl)
+
+#use read_excel() function to read in data/csss_tweets.xlsx
+csss_tweets <- read_excel("data/csss_tweets.xlsx")#<<
+
+#use head() function to read 
+head(csss_tweets, n = 5)
+
+```
+:::
+
+. . .
+
+::: {style="font-size: 70px"}
+**What did you notice in the printed output?**
+:::
+
+## import Excel Sheet
+
+```{r echo = TRUE, message = FALSE, warning=FALSE}
+#| code-line-numbers: "|1|4|"
+excel_sheets("data/csss_tweets.xlsx") 
+
+
+csss_tweets <- read_excel("data/csss_tweets.xlsx", sheet = "Sheet1")
+
+#use head() function to read 
+head(csss_tweets, n = 5)
+```
+
+::: {style="font-size: 50px"}
+Hint: To learn more about functions for this package type:  
+**?read_excel in the script.**
+:::
+
+:::{.notes}
+You can check what sheets are included in your excel file by calling it with the excel_sheets function. 
+Then you can call only that sheet. Our data only includes one sheet so we do not really need to use this function, but it's good to know.
+
+Don't forget to use the ? in front of a function if you want to know more. Do you remember where this information shows up? {ANSWER: Help tab}
+:::
+
+## **👉 Your Turn** **⤵** 
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+- Do the following:
+- load in the `haven` package, 
+- load in "data/GPA3.dta" file save to a  new object called gpa_dt
+- inspect the data with function of your choice
+- explain what you see
+
+:::{style="font-size: 50px"}
+```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+#| code-line-numbers: "|1|3|6"
+# 1. Install and read in the haven function 
+
+# 2. use read_excel() function to read in data/GPA3.dta
+gpa_dt <- 
+  
+# 3. Inspect the data
+head()
+```
+:::
+:::
+
+
+::: {.column width="45%"}
+
+:::
+
+::::
+
+
+## **👉 Your Turn** **⤵** 
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+- Do the following:
+- load in the `haven` package, 
+- load in "data/GPA3.dta" file save to a  new object called gpa_dt
+- inspect the data with function of your choice
+- explain what you see
+
+:::{style="font-size: 50px"}
+```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+
+# 1. Install and read in the haven function 
+
+# 2. use read_excel() function to read in data/GPA3.dta
+gpa_dt <- 
+  
+# 3. Inspect the data
+head()
+
+```
+:::
+:::
+
+
+::: {.column width="45%"}
+
+**👉 Your Turn** **⤵** -> Answer
+
+::: {style="font-size: 50px"}
+```{r echo=TRUE}
+#| code-line-numbers: "|2|5|8"
+# 1. Install and read in the haven function 
+library(haven)
+
+# 2. use read_excel() function to read in data/GPA3.dta
+gpa_dt <- read_dta("data/GPA3.dta")
+  
+# 3. Inspect the data
+head(gpa_dt, n=3)
+```
+:::
+
+:::
+
+::::
+
+
+## {background="#143156"}
+
+::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
+
+**What's next?**
+
+:::
+
+<br/><br/><br/><br/>
+
+
+::: {style="text-align: left; font-size: 50px"}
+
+- Complete the `Prepare part of the Case Study`
+- Complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2)
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Do pre-readings for the next Foundations Module.
+
+:::
+

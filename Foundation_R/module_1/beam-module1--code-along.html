@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="The LASER Team">
+<meta name="dcterms.date" content="2023-04-12">
+
+<title>Getting Started Code-Along</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="aera-workflow-code-along_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aera-workflow-code-along_files/libs/quarto-html/quarto.js"></script>
+<script src="aera-workflow-code-along_files/libs/quarto-html/popper.min.js"></script>
+<script src="aera-workflow-code-along_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="aera-workflow-code-along_files/libs/quarto-html/anchor.min.js"></script>
+<link href="aera-workflow-code-along_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aera-workflow-code-along_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="aera-workflow-code-along_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="aera-workflow-code-along_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="aera-workflow-code-along_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#quarto-markdown" id="toc-quarto-markdown" class="nav-link active" data-scroll-target="#quarto-markdown">Quarto Markdown</a>
+  <ul class="collapse">
+  <li><a href="#yaml-heading" id="toc-yaml-heading" class="nav-link" data-scroll-target="#yaml-heading">YAML Heading</a></li>
+  <li><a href="#quarto-markdown-1" id="toc-quarto-markdown-1" class="nav-link" data-scroll-target="#quarto-markdown-1">Quarto Markdown</a></li>
+  <li><a href="#markdown-syntax" id="toc-markdown-syntax" class="nav-link" data-scroll-target="#markdown-syntax">Markdown Syntax</a></li>
+  <li><a href="#add-a-code-chunk" id="toc-add-a-code-chunk" class="nav-link" data-scroll-target="#add-a-code-chunk">Add a Code Chunk</a></li>
+  </ul></li>
+  <li><a href="#programming-basics" id="toc-programming-basics" class="nav-link" data-scroll-target="#programming-basics">Programming Basics</a>
+  <ul class="collapse">
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments">Arguments</a></li>
+  <li><a href="#objects" id="toc-objects" class="nav-link" data-scroll-target="#objects">Objects</a></li>
+  <li><a href="#assignment-operator--" id="toc-assignment-operator--" class="nav-link" data-scroll-target="#assignment-operator--">Assignment Operator: <code>&lt;-</code></a></li>
+  </ul></li>
+  <li><a href="#pipe-operator" id="toc-pipe-operator" class="nav-link" data-scroll-target="#pipe-operator">Pipe operator</a>
+  <ul class="collapse">
+  <li><a href="#the-native-r-pipe" id="toc-the-native-r-pipe" class="nav-link" data-scroll-target="#the-native-r-pipe">The Native R Pipe</a></li>
+  <li><a href="#the-magrittr-package-pipe" id="toc-the-magrittr-package-pipe" class="nav-link" data-scroll-target="#the-magrittr-package-pipe">The {magrittr} package Pipe</a></li>
+  <li><a href="#the-ggplot2-pipe" id="toc-the-ggplot2-pipe" class="nav-link" data-scroll-target="#the-ggplot2-pipe">The {ggplot2} Pipe</a></li>
+  </ul></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
+  <ul class="collapse">
+  <li><a href="#installing" id="toc-installing" class="nav-link" data-scroll-target="#installing">Installing</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Getting Started Code-Along</h1>
+<p class="subtitle lead">AERA 23 Short Course</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>The LASER Team </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 12, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="quarto-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-markdown">Quarto Markdown</h2>
+<p>Let’s get familiar with the Quarto Markdown layout and syntax.</p>
+<section id="yaml-heading" class="level3">
+<h3 class="anchored" data-anchor-id="yaml-heading">YAML Heading</h3>
+<p>Yaml is a data serialization language. It contains things like title, author, dates, type of document etc. YAML is picky about its syntax and spacing!</p>
+<p>Check out this site on<a href="https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html">YAML headings</a> by <span class="citation" data-cites="Smith">@Smith</span>.</p>
+</section>
+<section id="quarto-markdown-1" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-markdown-1">Quarto Markdown</h3>
+<p>This is a Quarto Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, webpage and MS Word documents. For more details on using Quarto Markdown see <a href="https://quarto.org/" class="uri">https://quarto.org/</a>.</p>
+<p>When you click the <strong>Render</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can also press <code>ctrl</code>+<code>shift</code>+<code>k</code></p>
+</section>
+<section id="markdown-syntax" class="level3">
+<h3 class="anchored" data-anchor-id="markdown-syntax">Markdown Syntax</h3>
+<p>Quarto Markdowns syntax is based off of <a href="https://pandoc.org/MANUAL.html">Pandoc’s Markdown</a>.</p>
+<section id="headers" class="level5">
+<h5 class="anchored" data-anchor-id="headers">Headers</h5>
+<pre><code>  # Level One (largest)
+  ## Level Two
+  ### Level Three
+  #### Level Four
+  ##### Level Five (smallest)</code></pre>
+</section>
+<section id="bullet-points" class="level5">
+<h5 class="anchored" data-anchor-id="bullet-points">Bullet points</h5>
+<p>Bullet points can be used with a <code>single dash</code> or a <code>plus sign</code></p>
+<blockquote class="blockquote">
+<p>Outcomes:</p>
+</blockquote>
+<ul>
+<li>Learn R Markdown.
+<ul>
+<li>Learn about YAML heading.</li>
+<li>Learn Quarto Markdown Syntax.</li>
+</ul></li>
+<li>Learn programming basics in R</li>
+</ul>
+</section>
+</section>
+<section id="add-a-code-chunk" class="level3">
+<h3 class="anchored" data-anchor-id="add-a-code-chunk">Add a Code Chunk</h3>
+<p>You can add code chunks in two ways:</p>
+<ol type="1">
+<li><p>Menu Bar &gt; ‘Code’ &gt; ‘insert chunk’</p></li>
+<li><p>Add a code chunk by holding down <code>Ctrl</code> + <code>Alt</code> + <code>I</code></p></li>
+</ol>
+</section>
+</section>
+<section id="programming-basics" class="level2">
+<h2 class="anchored" data-anchor-id="programming-basics">Programming Basics</h2>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' In the space below, use the round() function to </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#' round 3.14 to the nearest whole number.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Run your code to see the result. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="arguments" class="level3">
+<h3 class="anchored" data-anchor-id="arguments">Arguments</h3>
+<p><code>args()</code> function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>starting httpd help server ... done</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">class</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Take a look at the arguments for the round() function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">round</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the code chunk below:</p>
+<ol type="1">
+<li>Add an argument to the round() function</li>
+<li>Round pi to 1 decimal place.</li>
+<li>Remember to add a comma between arguments</li>
+</ol>
+<div class="cell">
+
+</div>
+</section>
+<section id="objects" class="level3">
+<h3 class="anchored" data-anchor-id="objects">Objects</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>twenty <span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>twenty</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>thirty <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>thirty</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>forty <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>forty</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>new_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+</div>
+<p>Try to run the following in a code chunk…</p>
+<p>13 &lt;- 20 * 4</p>
+<div class="cell">
+
+</div>
+<p><strong>What happens?</strong></p>
+<p>Now run the following in a code chunk…</p>
+<p>x &lt;- 20 * 4</p>
+<div class="cell">
+
+</div>
+<p><strong>What happens?</strong></p>
+<p>Don’t ever have names like TRUE/FALSE or NaN, inf, NA</p>
+</section>
+<section id="assignment-operator--" class="level3">
+<h3 class="anchored" data-anchor-id="assignment-operator--">Assignment Operator: <code>&lt;-</code></h3>
+<p>In the chunk below</p>
+<ol type="1">
+<li>Assign a number between 1 and 10 to a new object called my_number.</li>
+<li>Multiply my_number by 2 and save as my_product.</li>
+<li>Type my_product and run to examine the contents.</li>
+</ol>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="pipe-operator" class="level2">
+<h2 class="anchored" data-anchor-id="pipe-operator">Pipe operator</h2>
+<p>There are several pipe operators available in R. Pipes are a powerful tool for combining a sequence of functions or processes.</p>
+<p>Remember how you rounded pi earlier? We can use piping to do something similar:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pi_sixdigits <span class="ot">&lt;-</span> pi <span class="sc">|&gt;</span>  </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">6</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>pi_sixdigits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.141593</code></pre>
+</div>
+</div>
+<section id="the-native-r-pipe" class="level3">
+<h3 class="anchored" data-anchor-id="the-native-r-pipe">The Native R Pipe</h3>
+<p>R has a native pipe operator, shown below</p>
+<p><code>|&gt;</code></p>
+</section>
+<section id="the-magrittr-package-pipe" class="level3">
+<h3 class="anchored" data-anchor-id="the-magrittr-package-pipe">The {magrittr} package Pipe</h3>
+<p>The pipe from the {magrittr} package is written as “percent greater than percent”, as below</p>
+<p><code>%&gt;%</code></p>
+<p>The original pipe operator, <code>%&gt;%</code>, comes from the {magrittr} package which is part of the tidyverse. All packages in the tidyverse load <code>%&gt;%</code> for you automatically, so you don’t usually load the {magrittr} package explicitly.</p>
+</section>
+<section id="the-ggplot2-pipe" class="level3">
+<h3 class="anchored" data-anchor-id="the-ggplot2-pipe">The {ggplot2} Pipe</h3>
+<p>The {ggplot2} package uses the plus sign as a pipe. We’ll learn more about this later, but you can see an example below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(class) <span class="sc">|&gt;</span>  </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_cty =</span> <span class="fu">mean</span>(cty), <span class="at">mean_hwy =</span> <span class="fu">mean</span>(hwy)) <span class="sc">|&gt;</span>  </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> mean_cty, <span class="at">y =</span> mean_hwy)) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> mean_cty, <span class="at">y =</span> mean_hwy), <span class="at">method =</span> lm) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="aera-workflow-code-along_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<section id="installing" class="level3">
+<h3 class="anchored" data-anchor-id="installing">Installing</h3>
+<p>You should do this in the console…no worries we will show you how! :)</p>
+<p><code>install.packages("tidyverse")</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>?tidyverse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Run the following code to install the {readr} package.</p>
+<p><strong>Did it work?</strong></p>
+<p>If not, maybe you need to install first. You can also check if your package is loaded in the package pane.</p>
+<p>Now use the <code>library()</code> function to load the {readr} package into R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="getting-help" class="level3">
+<h3 class="anchored" data-anchor-id="getting-help">Getting Help</h3>
+<p>Use <code>?</code> to check the help document for the {readr} package.</p>
+<div class="cell">
+
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

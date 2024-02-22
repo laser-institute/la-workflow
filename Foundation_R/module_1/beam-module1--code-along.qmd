@@ -1,0 +1,266 @@
+---
+title: "Getting Started Code-Along" 
+subtitle: "AERA 23 Short Course"
+author: "The LASER Team"
+date: last-modified
+format:
+  html:
+    toc: true
+    toc-title: Contents
+    toc-location: left
+    theme: 
+      - united
+      - "css/quarto-laser-html.scss"
+resources:
+  - demo.pdf
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(datasets)
+library(tidyverse)
+library(ggplot2)
+```
+## Quarto Markdown
+
+Let's get familiar with the Quarto Markdown layout and syntax.
+
+### YAML Heading
+
+Yaml is a data serialization language. It contains things like title, author,
+dates, type of document etc. YAML is picky about its syntax and spacing!
+
+Check out this site on[YAML
+headings](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html)
+by @Smith.
+
+### Quarto Markdown
+
+This is a Quarto Markdown document. Markdown is a simple formatting syntax
+for authoring HTML, PDF, webpage and MS Word documents. For more details
+on using Quarto Markdown see <https://quarto.org/>.
+
+When you click the **Render** button a document will be generated that
+includes both content as well as the output of any embedded R code
+chunks within the document. You can also press `ctrl`+`shift`+`k`
+
+### Markdown Syntax
+
+Quarto Markdowns syntax is based off of [Pandoc's
+Markdown](https://pandoc.org/MANUAL.html).
+
+##### Headers
+
+      # Level One (largest)
+      ## Level Two
+      ### Level Three
+      #### Level Four
+      ##### Level Five (smallest)
+
+##### Bullet points
+
+Bullet points can be used with a `single dash` or a `plus sign`
+
+> Outcomes:
+
+-   Learn R Markdown.
+    -   Learn about YAML heading.
+    -   Learn Quarto Markdown Syntax.
+-   Learn programming basics in R
+
+### Add a Code Chunk
+
+You can add code chunks in two ways:
+
+1.  Menu Bar \> 'Code' \> 'insert chunk'
+
+2.  Add a code chunk by holding down `Ctrl` + `Alt` + `I`
+
+
+## Programming Basics
+
+
+### Functions 
+```{r, eval=FALSE}
+mean()
+max()
+filter()
+class()
+```
+
+
+```{r}
+round(3.14)
+#' In the space below, use the round() function to 
+#' round 3.14 to the nearest whole number.
+#' Run your code to see the result. 
+
+```
+
+### Arguments 
+
+`args()` function 
+
+```{r}
+?mean()
+?class()
+
+```
+
+Take a look at the arguments for the round() function. 
+
+```{r}
+?round()
+```
+
+
+In the code chunk below:
+
+1. Add an argument to the round() function 
+2. Round pi to 1 decimal place. 
+3. Remember to add a comma between arguments
+
+
+```{r}
+
+```
+
+### Objects 
+
+
+```{r}
+twenty <-20
+twenty
+thirty <- 20
+thirty
+forty <- 20
+forty
+new_data <- 20
+new_data
+
+
+```
+
+Try to run the following in a code chunk...
+
+13 <- 20 * 4
+
+```{r}
+
+```
+
+**What happens?**
+
+Now run the following in a code chunk...
+
+x <- 20 * 4
+
+```{r}
+
+```
+
+
+**What happens?**
+
+Don't ever have names like TRUE/FALSE or NaN, inf, NA
+
+###  Assignment Operator: `<-`
+
+In the chunk below
+
+1. Assign a number between 1 and 10 to a new object called my_number.
+2. Multiply my_number by 2 and save as my_product. 
+3. Type my_product and run to examine the contents. 
+
+```{r}
+
+```
+
+
+## Pipe operator
+
+There are several pipe operators available in R. Pipes are a powerful tool for combining a sequence of functions or processes. 
+
+Remember how you rounded pi earlier? We can use piping to do something similar:
+
+```{r}
+pi_sixdigits <- pi |>  
+  round(6)
+pi_sixdigits
+```
+
+
+### The Native R Pipe
+
+ R has a native pipe operator, shown below
+ 
+ `|>`
+
+### The {magrittr} package Pipe
+
+The pipe from the {magrittr} package is written as "percent greater than percent", as below
+
+ `%>%`
+
+The original pipe operator, `%>%`, comes from the {magrittr} package which is part of the tidyverse. All packages in the tidyverse load `%>%` for you automatically, so you don’t usually load the {magrittr} package explicitly.
+
+
+### The {ggplot2} Pipe
+
+The {ggplot2} package uses the plus sign as a pipe. We'll learn more about this later, but you can 
+see an example below:
+
+```{r}
+
+mpg %>% 
+  group_by(class) |>  
+  summarise(mean_cty = mean(cty), mean_hwy = mean(hwy)) |>  
+  ggplot() +
+    geom_point(mapping = aes(x = mean_cty, y = mean_hwy)) +
+    geom_smooth(mapping = aes(x = mean_cty, y = mean_hwy), method = lm) 
+
+```
+
+
+## Packages 
+
+### Installing
+
+You should do this in the console...no worries we will show you how! :)
+
+
+`install.packages("tidyverse")`
+
+
+```{r}
+library(tidyverse)
+?tidyverse
+
+```
+
+Run the following code to install the {readr} package. 
+
+
+**Did it work?**
+
+If not, maybe you need to install first. You can also check if your package is loaded in the package pane.
+
+Now use the `library()` function to load the {readr} package into R.
+
+```{r}
+library(readr)
+
+```
+
+### Getting Help
+
+Use `?` to check the help document for the {readr} package.
+
+```{r}
+
+```
+
+
+
+
