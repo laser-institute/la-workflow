@@ -27,8 +27,6 @@ Over the next labs we will dive into the Learning Analytics Workflow as follows:
 4.  **Model:** After identifying variables that may be related to student performance through exploratory analysis, we'll look at correlations and create some simple models of our data using linear regression.
 5.  **Communicate:** To wrap up our case study, we'll develop our first "data product" and share our analyses and findings by creating our first web page using R Markdown.
 
-------------------------------------------------------------------------
-
 ## 1. PREPARE (Module 1)
 
 This case study is guided by a well-cited publication from two authors that have made numerous contributions to the field of Learning Analytics over the years. This article is focused on "early warning systems" in higher education, and where adoption of learning management systems (LMS) like Moodle and Canvas gained a quicker foothold.
