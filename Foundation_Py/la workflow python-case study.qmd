@@ -1,0 +1,1227 @@
+---
+title: "Narrated: Foundations Case Study" 
+subtitle: "Independent/Group work"
+author: "The LASER Team"
+jupyter: python3
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: right
+theme:
+  light: simplex
+  dark: cyborg
+editor: visual
+---
+
+## 0. INTRODUCTION
+
+We will focus on online science classes provided through a state-wide online virtual school and conduct an analysis that help product students' performance in these online courses. This case study is guided by a foundational study in Learning Analytics that illustrates how analyses like these can be used develop an early warning system for educators to identify students at risk of failing and intervene before that happens.
+
+Over the next labs we will dive into the Learning Analytics Workflow as follows:
+
+![](img/workflow.png){width="78%"}
+
+Figure 1. Steps of Data-Intensive Research Workflow
+
+1.  **Prepare**: Prior to analysis, it's critical to understand the context and data sources you're working with so you can formulate useful and answerable questions. You'll also need to become familiar with and load essential packages for analysis, and learn to load and view the data for analysis.
+2.  **Wrangle**: Wrangling data entails the work of manipulating, cleaning, transforming, and merging data. In Part 2 we focus on importing CSV files, tidying and joining our data.
+3.  **Explore**: In Part 3, we use basic data visualization and calculate some summary statistics to explore our data and see what insight it provides in response to our questions.
+4.  **Model:** After identifying variables that may be related to student performance through exploratory analysis, we'll look at correlations and create some simple models of our data using linear regression.
+5.  **Communicate:** To wrap up our case study, we'll develop our first "data product" and share our analyses and findings by creating our first web page using Markdown.
+6.  **Change Idea:** Having developed a webpage using Markdown, share your findings with the colleagues. The page will include interactive plots and a detailed explanation of the analysis process, serving as a case study for other educators in your school. Present your findings at a staff meeting, advocating for a broader adoption of data-driven strategies across curriculums.
+
+------------------------------------------------------------------------
+
+## Module 1: Prepare and Wrangle
+
+## 1. PREPARE
+
+This case study is guided by a well-cited publication from two authors that have made numerous contributions to the field of Learning Analytics over the years. This article is focused on "early warning systems" in higher education, and where adoption of learning management systems (LMS) like Moodle and Canvas gained a quicker foothold.
+
+Macfadyen, L. P., & Dawson, S. (2010). [Mining LMS data to develop an "early warning system" for educators: A proof of concept.](https://www.sciencedirect.com/science/article/pii/S0360131509002486?via%3Dihub) *Computers & education*, *54*(2), 588-599.
+
+#### ABOUT the study
+
+Previous research has indicated that universities and colleges could utilize Learning Management System (LMS) data to create reporting tools that identify students who are at risk and enable prompt pedagogical interventions. The present study validates and expands upon this idea by presenting data from an international research project that explores the specific online activities of students that reliably indicate their academic success. This paper confirms and extends this proposition by providing data from an international research project investigating **which student online activities accurately predict academic achievement.**
+
+The **data analyzed** in this exploratory research was extracted from the **course-based instructor tracking logs** and the **BB Vista production server**.
+
+Data collected on each student included 'whole term' counts for frequency of usage of course materials and tools supporting content delivery, engagement and discussion, assessment and administration/management. In addition, tracking data indicating total time spent on certain tool-based activities (assessments, assignments, total time online) offered a total measure of individual student time on task.
+
+The authors used scatter plots for identifying potential relationships between variables under investigation, followed by a a simple correlation analysis of each variable to further interrogate the significance of selected variables as indicators of student achievement. Finally, a linear multiple regression analysis was conducted in order to develop a predictive model in which a student final grade was the continuous dependent variable.
+
++--------------------------------------------------------------------------------------------------+
+| **Introduction to the [Stakeholder]{.underline}**                                                |
++==================================================================================================+
+| **Name:** Alex Johnson                                                                           |
+|                                                                                                  |
+| **Role:** University Science Professor                                                           |
+|                                                                                                  |
+| **Experience:** 5 years teaching, enthusiastic about integrating technology in education         |
+|                                                                                                  |
+| **Goal:** Alex aims to improve student engagement and performance in her online science classes. |
++--------------------------------------------------------------------------------------------------+
+
+```{=html}
+<style>
+    .wrap-img {
+        float: left;
+        margin-right: 10px;
+        width: 10%;
+    }
+</style>
+```
+<img src="img/teacher%20persona.png" alt="Teacher Persona" class="wrap-img"/> ***Alex begins by understanding the importance of data analysis in identifying students who might need extra support. The cited foundational study motivates her to explore similar analyses to develop her own early warning system.***
+
+### 1a. Load Packages 📦
+
+Packages - sometimes referred to as libraries, are shareable collections of code that can contain functions, data, and/or documentation and extend the functionality of the coding language.
+
+We will work with a dataset that was obtained from a learning management system (LMS). We will use libraries pandas (https://pandas.pydata.org/docs/) to read and analyze the data. We will also be using matptlotlib (https://matplotlib.org/stable/users/index.html) package to visualize data distribution, and finally we will use scikit-learn (https://scikit-learn.org/stable/) and numpy (https://numpy.org/devdocs/) to run our regression model.
+
+If you are in a fresh Python 3 environment, installing the packages in teh `Terminal` will provide everything required to execute with Quarto:
+
+::: callout-note
+**everything after the `$` in the Terminal** \$ python3 -m pip install pandas \$ python3 -m pip install numpy \$ python3 -m pip install scikit-learn \$ python3 -m pip install matplotlib
+:::
+
+Click the arrow to execute your code in a cell below.
+
+```{python}
+#Load Libraries below needed for analysis
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+import numpy as np
+```
+
+### Data Sources
+
+#### Data Source #1: Log Data
+
+Log-trace data is data generated from our interactions with digital technologies, such as archived data from social media postings. In education, an increasingly common source of log-trace data is that generated from interactions with LMS and other digital tools.
+
+The data we will use has already been "wrangled" quite a bit and is a summary type of log-trace data: the number of minutes students spent on the course. While this data type is fairly straightforward, there are even more complex sources of log-trace data out there (e.g., time stamps associated with when students started and stopped accessing the course).
+
+**Variable Description:**
+
++----------------------+----------------------------------------------------+
+| Variable             | Description                                        |
++======================+====================================================+
+| `student_id`         | students id at institution                         |
++----------------------+----------------------------------------------------+
+| `course_id`          | abbreviation for \`course, course number, semester |
++----------------------+----------------------------------------------------+
+| `gender`             | male/female/NA                                     |
++----------------------+----------------------------------------------------+
+| `enrol lment_reason` | reason student decided to take the course          |
++----------------------+----------------------------------------------------+
+| `enrol lment_status` | ap prove/enrolled, dropped, withdrawn              |
++----------------------+----------------------------------------------------+
+| `time_spent`         | Time spent in hours for entire course              |
++----------------------+----------------------------------------------------+
+
+: Course Acronym description
+
+-   "AnPhA" = "Anatomy",
+-   "BioA" = "Biology",
+-   "FrScA" = "Forensics",
+-   "OcnA" = "Oceanography",
+-   "PhysA" = "Physics"
+
+### Data Source #2: Academic Achievement Data
+
+**Variable Description:**
+
++--------------------------+---------------------------------------------+
+| Variable                 | Description                                 |
++==========================+=============================================+
+| `total_p oints_possible` | available points for the course             |
++--------------------------+---------------------------------------------+
+| `total _points_earned`   | stud \| ent earned for the entire course \| |
++--------------------------+---------------------------------------------+
+
+#### Data Source #3: Self-Report Survey
+
+The third data source is a self-report survey. This was data collected before the start of the course. The survey included ten items, each corresponding to one of three motivation measures: interest, utility value, and perceived competence. These were chosen for their alignment with one way to think about students' motivation, to what extent they expect to do well (corresponding to their perceived competence) and their value for what they are learning (corresponding to their interest and utility value).
+
+**Variable Description:**
+
++--------------+--------------------------+
+| Var iable    | Description              |
++==============+==========================+
+| `int`        | student science interest |
++--------------+--------------------------+
+| `tv`         | `tv`                     |
++--------------+--------------------------+
+| `Q1 -Q10`    | survey questions         |
++--------------+--------------------------+
+
+1.  I think this course is an interesting subject. (Interest)
+2.  What I am learning in this class is relevant to my life. (Utility value)
+3.  I consider this topic to be one of my best subjects. (Perceived competence)
+4.  I am not interested in this course. (Interest---reverse coded)
+5.  I think I will like learning about this topic. (Interest)
+6.  I think what we are studying in this course is useful for me to know. (Utility value)
+7.  I don't feel comfortable when it comes to answering questions in this area. (Perceived competence--reverse coded)
+8.  I think this subject is interesting. (Interest)
+9.  I find the content of this course to be personally meaningful. (Utility value)
+10. I've always wanted to learn more about this subject. (Interest)
+
+## 2. WRANGLE
+
+### Import data
+
+We will need to load in and inspect each of the dataframes that we will use for this lab. You will first read about the dataframe and then learn how to load (or read in) the dataframe into the quarto document.
+
+#### **Time spent**
+
+Let's use the `pd.read_csv()` function from to import our `log-data.csv` file directly from our data folder and name this data set `time_spent`, to help us to quickly recollect what function it serves in this analysis:
+
+Load the file `log-data.csv` from data folder and save object as `time_spent`.
+
+#### Creating new variable
+
+To do that, we need to create a new variable `time_spent` which is done by naming the variable and assigning its value using `=` operator.
+
+Press the green arrow head to run the code below:
+
+```{python}
+# load log file from data folder
+time_spent = pd.read_csv("data/log-data.csv")
+
+
+#inspect data
+#(add code below)
+time_spent.head()
+
+or 
+
+print(time_spent.head())
+
+```
+
+#### **Grades**
+
+Load the file `gradebook-summary.csv` from data folder and save object as `gradebook`
+
+❗️In R, everything is an **object**. An object can be a simple value (like a number or a string), a complex structure (like a data frame or a list), or even a function or a model. For example, when you load a CSV file into R and store it in a variable, that variable is an object that contains your dataset.
+
+A **dataset** typically refers to a collection of data, often stored in a tabular format with rows and columns.
+
+##### **👉 Your Turn** **⤵**
+
+You need to:
+
+1.  First, use the correct function to read in the .csv file and load the `gradebook-summary.csv` file.
+2.  Second, add a function to the code (to inspect the data (your choice).
+3.  Third, press the green arrow head to run the code.
+
+```{python}
+# load grade book data from data folder
+#(add code below)
+gradebook = pd.read_csv("data/gradebook-summary.csv")
+
+#inspect data
+#(add code below)
+print(gradebook)
+
+```
+
+#### Attitude survey
+
+Load the file `survey.csv` from data folder.
+
+##### **👉 Your Turn** **⤵**
+
+You need to:
+
+1.  First, use the correct function to read in the .csv file and load the `survey.csv` file.
+2.  Second, add a function to the code (to inspect the data (your choice).
+3.  Third, press the green arrow head to run the code.
+
+#### **👉 Your Turn** **⤵**
+
+You need to:
+
+1.  First, use the correct function to read in the .csv file and load the `survey.csv` file.
+2.  Second, add a function to the code (to inspect the data (your choice).
+3.  Third, press the green arrow head to run the code.
+
+```{python}
+# load survey data from data folder
+#(add code below)
+survey = pd.read_csv("data/survey.csv")
+
+#inspect data
+#(add code below)
+print(survey.tail())
+
+```
+
+#### Using `info()` and `describe()`function.
+
+Using these methods together to get a detailed overview of your DataFrame will give you a glmpse of your data.
+
+```{python}
+print(gradebook.info())
+print(gradebook.describe())
+```
+
+#### Using Global Environment
+
+![](img/global%20environment.png){width="34%"}
+
+![](img/gradebook.png){width="50%"}
+
+#### Inspecting first and last few rows
+
+```{python}
+#first few rows
+# First few rows
+print(survey.head())
+```
+
+```{python}
+# Last few rows
+print(survey.tail())
+```
+
+#### Using `sample()` function.
+
+To randomly sample rows from a DataFrame in Python, you use the sample() method. The following example shows how to randomly select a single row. You can specify the number of rows you want by passing an integer to sample().
+
+```{python}
+# Random sample from 'survey' DataFrame
+print(survey.sample(n=10))
+```
+
+#### **👉 Your Turn** **⤵**
+
+Inspect three datasets we loaded and answer the question:
+
+❓ What do you notice? What do you wonder about? Did you note the number of observations, the different variables names? Finally what about the classes the variables are such as numeric, integer, character, or logical.
+
+\*YOUR RESPONSE HERE
+
+### Tidy data
+
+#### 1. Time Spent
+
+##### Use `str.split` method in `pandas` package
+
+We will separate course_id variable in the time-spent.
+
+Split the String: The str.split('-', expand=True) method splits the course_id string at each hyphen (-). The expand=True argument tells pandas to split the strings into separate columns.
+
+Assign to New Columns: The result of the split (which is a DataFrame because expand=True was used) is directly assigned to new columns in time_spent named subject, semester, and section.
+
+For example we want to separate `course_id` variables from
+
+```{python}
+#separate variable to individual subject, semester and section
+time_spent[['subject', 'semester', 'section']] = time_spent['course_id'].str.split('-', expand=True)
+
+# Inspect the DataFrame to see the changes
+print(time_spent)
+
+```
+
+#### Use simple column assignments in `pandas`
+
+As you can see from the dataset, `time_spent` variable is *not* set as hour.
+
+Let's change that. For this, the new column `time_spent_hours` is created by dividing the existing `time_spent` column by 60. This conversion assumes that time_spent is measured in minutes and the goal is to convert these minutes into hours.
+
+```{r}
+# mutate minutes to hours on time spent and save as new variable.
+time_spent['time_spent_hours'] = time_spent['time_spent'] / 60
+
+# Inspect the updated DataFrame
+print(time_spent)
+```
+
+In pandas, you can directly assign a new column by specifying the column name in \[square brackets\] and assigning the calculated values. This modifies the DataFrame in-place unless the operation requires a copy.
+
+#### 2. Gradebook
+
+##### Use `separate()` function from `tidyr`
+
+Now, we will work on the `gradebook` dataset. Like the previous dataset, we will separate course_id variable again.
+
+##### **👉 Your Turn** **⤵**
+
+You need to:
+
+1.  First, use the str.split() method on the course_id column to separate it into the subject, semester, and section columns.
+2.  Second, press the green arrow head to run the code.
+
+```{python}
+# separate the course_id variable and save to 'gradebook' object
+#YOUR CODE HERE
+gradebook[['subject', 'semester', 'section']] = gradebook['course_id'].str.split('-', expand=True)
+
+# Inspect the updated DataFrame
+#YOUR CODE HERE
+print(gradebook)
+```
+
+#### Use simple column assignments in `pandas`
+
+As you can see in the gradebook dataframe the `total points earned` is in points and it is hard to know the proportion. Therefore, we want it to mutate that to a proportion.
+
+```{python}
+# Calculate the proportion of total points earned and convert it to percentage, then add as a new column
+#(add code below)
+gradebook['proportion_earned'] = (gradebook['total_points_earned'] / gradebook['total_points_possible']) * 100
+
+# Inspect the updated DataFrame
+#(add code below)
+print(gradebook)
+```
+
+Now you can assign labels to students at by assigning **pass** if `proportion_earned` is greater or equal than 50 or **fail** if it is lower.
+
+```{python}
+# Assign 'Pass' if 'proportion_earned' is greater than or equal to 50, otherwise 'Fail'
+gradebook['pass_fail'] = np.where(gradebook['proportion_earned'] >= 50, 'Pass', 'Fail')
+
+# Display the updated DataFrame
+print(gradebook)
+```
+
+❗️In this example, **`gradebook`** is the data frame, **`pass_fail`** is the new variable, and **`np.where()`** is a function from {numpy} that assigns "Pass" if the grade is greater than or equal to 50, and "Fail" otherwise.
+
+#### 3. Survey
+
+Let's process our data. First though, take a quick look again by typing `survey` into the console or using a preferred viewing method to take a look at the data.
+
+❓ Does it appear to be the correct file? What do the variables seem to be about? What wrangling steps do we need to take? Taking a quick peak at the data helps us to begin to formulate answers to these and is an important step in any data analysis, especially as we *prepare* for what we are going to do.
+
+```{python}
+#inspect data to view the column names
+print(survey)
+
+```
+
+💡 Look at the variable names.
+
+#### **👉 Answer below** **⤵**
+
+Add one or more of the things you notice or wonder about the data here:
+
+-   
+
+-   
+
+#### Use the custom function with {pandas} package
+
+Creating a custom function in Python is a way to bundle several steps or operations into a single, reusable piece of code. This means you can define a set of actions once and then easily repeat them whenever needed by calling the function with just a simple command. It's like creating a small personal tool or shortcut that performs specific tasks for you.
+
+1.  **Define the Function:** You start with the def keyword, followed by the name you want to give your function. This is followed by parentheses () which can include parameters --- these are variables that you can pass into the function to customize its behavior each time you call it.
+
+2.  **Write the Body of the Function:** Inside the function, you write Python code that performs the tasks you want. This code will run every time you call the function.
+
+3.  **Return a Result:** Optionally, you can have your function send back a result using the return keyword. This could be a value, a modified data set, or anything else your function calculates.
+
+```{python}
+# Function to clean column names
+def clean_names(df):
+    df.columns = df.columns.str.lower().str.replace(' ', '_', regex=True)
+    return df
+```
+
+Now you have a function named `clean_names`
+
+-   **Function Definition**: The `def clean_names(df):` line starts the definition of a custom function named `clean_names`. It takes one parameter, `df`, which is expected to be a DataFrame. This is the data set whose column names you want to clean.
+
+-   **Body of the Function**: Inside the function:
+
+    -   `df.columns` refers to the column names of the DataFrame.
+
+    -   `.str.lower()` converts all column names to lowercase. This is useful for consistency, as it makes all column names uniform in casing.
+
+    -   `.str.replace(' ', '_', regex=True)` changes any spaces (' ') in the column names to underscores ('\_'). This is done because spaces in variable names can be problematic in many programming scenarios, while underscores are generally more acceptable and easier to handle.
+
+**Return the Modified DataFrame**: After the column names are modified, the updated DataFrame `df` is returned with `return df`.
+
+#### **👉 Your Turn** **⤵**
+
+You need to:
+
+1.  Inspect survey DataFrame
+2.  Second, use the new \`clean_names\` function
+3.  Third, inspect the data using the function of your choice
+
+```{python}
+#Inspect the survey df
+#YOUR CODE HERE
+print(survey)
+```
+
+```{python}
+# Clean columns of the survey data and save to the survey object
+#YOUR CODE HERE
+survey = clean_names(survey)
+
+# Inspect data
+#YOUR CODE HERE
+print(survey)
+
+```
+
+### Data merging and reshaping
+
+#### Merge gradebook data with time spent datasets
+
+We think, a `merge` is best for our dataset as we need all the information from all three datasets.
+
+The full join returns all of the records in a new table, whether it matches on either the left or right tables. If the table rows match, then a join will be executed, otherwise it will return NULL in places where a matching row does not exist.
+
+When we are combining `gradebook1` and `time_spent` datasets, we should identify column names. In this case, we will use the following variables for the match:
+
+-   `student_id`
+
+-   `subject`
+
+-   `semester`
+
+-   `section`
+
+```{python}
+# use single join to join data sets by student_id, subject, semester and section.
+joined_data = pd.merge(gradebook, time_spent, on=["student_id", "subject", "semester", "section"], how="outer")
+
+# Inspect the joined DataFrame
+print(joined_data)
+```
+
+As you can see, we have a new dataset, joined_data with 14 variables.Those variables came from the gradebook and time_spent datasets.
+
+#### Join survey dataset with joined dataset
+
+#### Join Tables
+
+As a reminder there are different joins. But we will mainly focus on `full_join` for our dataset.
+
+![](img/joins.png){width="467"}
+
+Source: <https://medium.com/>@imanjokko/data-analysis-in-r-series-vi-joining-data-using-dplyr-fc0a83f0f064
+
+Similar to what we learned in the code-a-long - combine the dataset `joined_data` with `survey` dataset
+
+##### **👉 Your Turn** **⤵**
+
+You need to:
+
+1\. Use `outer` function to join `joined_data` with `survey` dataset with the following variables:
+
+-   `student_id`
+
+-   `subject`
+
+-   `semester`
+
+-   `section`
+
+2\. Save to a new object called `data_to_explore`.
+
+3\. Inspect the data by clicking the green arrow head.
+
+```{python}
+# Perform an outer join on the specified columns
+#YOUR CODE HERE
+#data_to_explore = pd.merge(joined_data, survey, on=["student_id", "subject", "section"], how="outer")
+
+# Inspect the joined DataFrame
+#YOUR CODE HERE
+#print(data_to_explore)
+```
+
+::: callout-note
+**DON'T PANIC if you are getting an error - read below!!**
+:::
+
+Datasets cannot be joined because the class (type) of "student_id" is int64
+
+To fix this we need the same types of variables to join the datasets - we will turn a numerical variable into a character variable using object class.
+
+❓ Check out what class student_id is in `jection compared to`survey\` data. What class are they?
+
+```{python}
+print(joined_data.dtypes)
+print(survey.dtypes)
+```
+
+#### **👉 Answer below** **⤵**
+
+-   
+
+##### Use `.astype()` function
+
+We will need to make sure that both `student_id` and `section` are not int64
+
+```{python}
+#make sure survey_data is integer
+survey['student_id'] = survey['student_id'].astype(object)
+survey['section'] = survey['section'].astype(object)
+
+#inspect class
+print(survey.dtypes)
+```
+
+##### **👉 Your Turn** **⤵**
+
+In the `joined_data` you may notice student_id is numerical so we also need to rename have the unanimity in naming before we could join the data.
+
+You need to:
+
+1.  First, use the `.astype()` function to change `student_id` variable from numeric to character class.
+
+2.  Save the new value to `student_id` variable.
+
+3.  Finally, press the green arrow head to run the code.
+
+```{python}
+#mutate to change variable class from numeric to object
+#YOUR CODE HERE
+joined_data['student_id'] = joined_data['student_id'].astype(object)
+joined_data['section'] = joined_data['section'].astype(object)
+
+#inspect the class
+#YOUR CODE HERE
+print(survey.dtypes)
+```
+
+#### NOW: - full join
+
+#### **👉 Your Turn** **⤵**
+
+Now, that the variables are the same class you need to: 1. Use `full join` function to join `joined_data` with `survey` dataset with the following variables: - `student_id,` - `subject,` - `semester,` - `section` 2. Save to a new object called `data_to_explore`. 3. Inspect the data by clicking the green arrow head
+
+```{python}
+#try again to together the grade_book and log_wrangled
+data_to_explore = pd.merge(joined_data, survey, on=["student_id", "subject","section"], how="outer")
+
+# Inspect the joined DataFrame
+#YOUR CODE HERE
+print(data_to_explore)
+
+```
+
+#### 2b-4 Use `write_csv()` function
+
+Now let's write the file to our **data folder** using the `write_csv()` to save for later or download.
+
+```{python}
+# add the function to write data to file to use later
+data_to_explore.to_csv("data/data_to_explore.csv", index=False)
+
+```
+
+#### Filtering and sorting data
+
+##### Use `filter()` function from {dplyr} package
+
+We can identify students at risk of failing the course using the filter function looking at students below 70:
+
+```{python}
+#Filter students with lower grades
+at_risk_students <- data_to_explore %>%
+  filter(proportion_earned<70)
+
+#Print the at-risk students
+at_risk_students
+```
+
+##### Use `.sort_values()` function from {dplyr} package to sort
+
+```{python}
+#sort in ascending order
+sorted_data = data_to_explore.sort_values(by='proportion_earned')
+
+# Display the sorted DataFrame
+print(sorted_data)
+```
+
+-   **`sort_values()` Method**: This method is used to sort a DataFrame by one or more columns.
+
+-   **`by='proportion_earned'`**: Specifies the column name by which the DataFrame should be sorted. In this case, it's sorting by the `proportion_earned` column.
+
+-   **Implicit `ascending=True`**: By default, `sort_values()` sorts the data in ascending order. If you need to sort in descending order, you can pass `ascending=False` as an argument.
+
+```{python}
+#sort in descending order
+sorted_data = data_to_explore.sort_values(by='proportion_earned', ascending=False)
+
+# Display the sorted DataFrame
+print(sorted_data)
+
+```
+
+##### **👉 Your Turn** **⤵**
+
+Think what other factors are important to identify students at risk. Run your code and analyze the results:
+
+```{python}
+#YOUR CODE HERE:
+
+```
+
+Check the data folder to confirm the location of your new file.
+
+### 🛑 Stop here. Congratulations you finished the first part of the case study.
+
+------------------------------------------------------------------------
+
+## Module 2: Exploratory Analysis 
+
+## 3. EXPLORE 
+
+Exploratory Analysis is Pick up here
+
+We've already wrangled out data - but let's look at the data frame to make sure it is still correct. A quick way to look at the data frame is with the [`skimr` package](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html).
+
+This output is best for internal use.
+
+This is because the output is rich, but not well-suited to exporting to a table that you add, for instance, to a Google Docs or Microsoft Word manuscript.
+
+Of course, these values can be entered manually into a table, but we'll also discuss ways later on to create tables that are ready, or nearly-ready-to be added directly to manuscripts.
+
+First, install and load the package. Normally you would do this above but we want to make sure you know which packages are used with the new functions.
+
+#### **👉 Your Turn** **⤵**
+
+You need to:
+
+1.  First, load `skimr` package with the correct function.
+
+Normally you would do this above but we want to make sure you know which packages are used with the new functions.
+
+```{r message=FALSE, warning=FALSE}
+#load library by adding skimr as the package name
+#(add code below)
+library(skimr)
+
+```
+
+#### **👉 Your Turn** **⤵**
+
+2.  Second, use the `skim()` function to view the `data_to explore`
+
+```{r message=FALSE, warning=FALSE}
+#skim the data by adding the skim function in front of the data
+skim(data_to_explore)
+```
+
+In the code chunk below: - `group_by` `subject` variable - then `skim()`
+
+#### **👉 Your Turn** **⤵**
+
+```{r message=FALSE, warning=FALSE}
+data_to_explore %>%
+  group_by(subject) %>% 
+  skim() 
+```
+
+### 3b. Use `ggplot2` package
+
+GGplot is designed to work iteratively. You start with a layer that shows the raw data. Then you add layers of annotations and statistical summaries.
+
+You can read more about ggplot in the book ["GGPLOT: Elegant Graphics for Data Analysis"](https://ggplot2-book.org/introduction.html). You can also find lots of inspiration in the [r-graph gallery](https://r-graph-gallery.com/) that includes code. Finally you can use the GGPLOT cheat sheet to help.
+
+![](img/grammar.png){width="600"}
+
+" Elegant Graphics for Data Analysis" states that "every ggplot2 plot has three key components:
+
+-   data,
+
+-   A set of aesthetic mappings between variables in the data and visual properties, and
+
+-   At least one layer which describes how to render each observation. Layers are usually created with a geom function."
+
+### 3b - 1 One Continuous variable
+
+Create a basic visualization that examines a continuous variable of interest.
+
+#### **Barplot**
+
+We will be guided by the following research question.
+
+#### ❓ Which online course had the largest enrollment numbers?
+
+❓ Which variable should we be looking at?
+
+#### **👉 Your Turn** **⤵**
+
+You need to: 1. First, inspect the `data_to_explore` to understand what variables we might need to explore the research question.
+
+```{r message=FALSE, warning=FALSE}
+#inspect at the data frame
+#(add code below)
+data_to_explore
+```
+
+#### Level a. The most basic level for a plot
+
+As a reminder the most basic visualization that you can make with GGPLOT include three things:
+
+-   **data**: data_to_explore.csv
+-   **`aes` function**: one continuous variable:
+    -   subject mapped to x position
+-   **Geom**:`geom_bar()` function - bar graph
+
+```{r warning=FALSE, message=FALSE}
+
+#layer 1: add data 
+# layer 2: add aesthetics mapping
+ggplot(data_to_explore, aes(x = subject)) +
+#layer 3: add geom 
+  geom_bar() 
+
+```
+
+#### Level b. Add another layer with labels
+
+We can add the following to our ggplot visualization as layer 4 - **title**: "Number of Student Enrollments per Subject" - **caption**: "Which online courses have had the largest enrollment numbers?"
+
+```{r message=FALSE, warning=FALSE}
+
+#layer 1: add data 
+# layer 2: add aesthetics mapping
+ggplot(data_to_explore, aes(x = subject)) +
+#layer 3: add geom 
+  geom_bar() +
+#layer 4: add labels
+    labs(title = "Number of Student Enrollments per Subject",
+       caption = "Which online courses have had the largest enrollment numbers?")
+```
+
+#### Level c: Add **Scale** with a different color.
+
+To answer the following research question we can add a scale layer:
+
+#### ❓ What can we notice about gender?
+
+-   
+
+    ```         
+    layer 5: **scale**: fill = gender
+    ```
+
+```{r message=FALSE, warning=FALSE}
+#layer 1: add data 
+# layer 2: add aesthetics mapping and #layer 5 scale
+ggplot(data_to_explore, aes(x = subject, fill = gender)) +
+#layer 3: add geom 
+  geom_bar() +
+
+#layer 4: add labels
+    labs(title = "Gender Distribution of Students Across Subjects",
+       caption = "Which subjects enroll more female students?")
+```
+
+#### **Histogram**
+
+#### ❓ What number is the number of hours students watch TV?
+
+-   **data**: data_to_explore
+-   **`aes()` function** - one continuous variables:
+    -   `tv` variable mapped to x position
+-   **Geom**: geom_histogram() *this code is already there you just need to un-comment it.*
+-   Add a **title** ""Number of Hours Students Watch TV per Day"
+-   Add a **caption** that poses the question "Approximately how many students watch 4+ hours of TV per day?"
+
+**NEED HELP? [TRY STHDA](http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization)**
+
+Yours could look like something below...
+
+#### **👉 Your Turn** **⤵**
+
+```{r message=FALSE, warning=FALSE}
+#(add code below)
+ggplot(data_to_explore, aes(x = tv)) + 
+  #(add code below)
+  geom_histogram(bins = 5) +
+  #(add code below)
+  labs(title = "Number of Hours Students Watch TV per Day", 
+       caption = "Approximately how many students watch 4+ hours of TV per day?")
+```
+
+or maybe you added a `theme()`
+
+```{r}
+data_to_explore%>%
+  ggplot(aes(x= tv))+
+  geom_histogram(bins = 5, fill = "red", colour = "black")+
+  labs(title = "Number of Hours Students Watch TV per Day", 
+       caption = "Approximately how many students watch 4+ hours of TV per day?") +
+  theme_classic()
+```
+
+### Two categorical Variables
+
+Create a basic visualization that examines the relationship between two categorical variables.
+
+#### ❓ What do you wonder about the reasons for enrollment in various courses?
+
+#### **Heatmap**
+
+-   **data**: data_to_explore
+-   use `count()` function for `subject`, `enrollment` then,
+-   `ggplot()` function
+-   **`aes()` function** - one continuous variables
+    -   `subject` variable mapped to x position
+    -   `enrollment reason` variable mapped to x position
+-   **Geom**: `geom_tile()` function
+-   Add a **title** "Reasons for Enrollment by Subject"
+-   Add a **caption**: "Which subjects were the least available at local schools?"
+
+#### **👉 Your Turn** **⤵**
+
+```{r message=FALSE, warning=FALSE}
+data_to_explore %>% 
+  count(subject, enrollment_reason) %>% 
+  ggplot() + 
+  geom_tile(mapping = aes(x = subject, 
+                          y = enrollment_reason, 
+                          fill = n)) + 
+  labs(title = "Reasons for Enrollment by Subject", 
+       caption = "Which subjects were the least available at local schools?")
+```
+
+### Two continuous variables
+
+Create a basic visualization that examines the relationship between two continuous variables.
+
+#### **Scatter plot**
+
+#### ❓ Can we predict the grade on a course from the time spent in the course LMS?
+
+Which variables should we be looking at?
+
+```{r message=FALSE, warning=FALSE}
+#look at the data frame
+ #(add code below)
+data_to_explore
+```
+
+#### **👉 Your answer here** **⤵**
+
+-   
+
+#### Level a. The most basic level for a **scatter** plot
+
+Includes:
+
+-   **data**: data_to_explore.csv
+-   **`aes()` function** - two continuous variables
+    -   time spent in hours mapped to x position
+    -   proportion earned mapped to y position
+-   **Geom**: `geom_point()` function - Scatter plot
+
+#### **👉 Your Turn** **⤵**
+
+```{r message=FALSE, warning=FALSE}
+#layer 1: add data and aesthetics mapping 
+ggplot(data_to_explore,
+       aes(x = time_spent_hours, 
+           y = proportion_earned)) +
+#layer 2: +  geom function type
+  geom_point() 
+```
+
+#### Level b. Add another layer with labels
+
+-   Add a **title**: "How Time Spent on Course LMS is Related to Points Earned in the course"
+-   Add a **x label**: "Time Spent (Hours)"
+-   Add a **y label**: "Proportion of Points Earned"
+
+#### **👉 Your Turn** **⤵**
+
+```{r message=FALSE, warning=FALSE}
+#layer 1: add data and aesthetics mapping 
+#layer 3: add color scale by type
+ggplot(data_to_explore, 
+       aes(x = time_spent_hours, 
+           y = proportion_earned,
+           color = enrollment_status)) +
+#layer 2: +  geom function type
+  geom_point() +
+#layer 4: add labels
+  labs(title="How Time Spent on Course LMS is Related to Points Earned in the course", 
+       x="Time Spent (Hours)", 
+       y = "Proportion of Points Earned")
+```
+
+#### Level c. Add **Scale** with a different color.
+
+#### ❓ Can we notice anything about enrollment status?
+
+-   Add **scale**: color = enrollment_status
+
+#### **👉 Your Turn** **⤵**
+
+```{r message=FALSE, warning=FALSE}
+#layer 1: add data and aesthetics mapping 
+#layer 4: add color scale by type
+ggplot(data_to_explore, 
+       aes(x = time_spent_hours, 
+           y = proportion_earned,
+           color = enrollment_status)) +
+#layer 2: +  geom function type
+  geom_point() +
+#layer 3: add labels
+  labs(title="How Time Spent on Course LMS is Related to Points Earned in the course", 
+       x="Time Spent (Hours)", 
+       y = "Proportion of Points Earned")
+```
+
+#### Level d. Divide up graphs using facet to visualize by subject.
+
+-   Add **facet** with facet_wrap() function: by subject
+
+#### **👉 Your Turn** **⤵**
+
+```{r message=FALSE, warning=FALSE}
+#layer 1: add data and aesthetics mapping 
+#layer 3: add color scale by type
+ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+#layer 2: +  geom function type
+  geom_point() +
+#layer 4: add labels
+  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
+       x="Time Spent (Hours)",
+       y = "Proportion of Points Earned")+
+#layer 5: add facet wrap
+  facet_wrap(~ subject) 
+```
+
+#### Level e. How can we remove NA's from plot? and What will the code look like without the comments?
+
+You can pipe the data with the dataframe and use `drop_na()` function.
+
+-   use **data** then
+-   add `enrollment status` to the `drop_na` function to remove na's
+-   add labels to the `labs()` function like above.
+-   Facet wrap by subject
+
+```{r message=FALSE, warning=FALSE}
+#(add code below where needed - some has been added already)
+data_to_explore %>%
+  drop_na(enrollment_status) %>%
+  ggplot(aes(x = time_spent_hours, 
+             y = proportion_earned, 
+             color = enrollment_status)) +
+  geom_point() +
+  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
+       x="Time Spent (Hours)",
+       y = "Proportion of Points Earned")+
+  facet_wrap(~ subject) 
+```
+
+### 🛑 Stop here. Congratulations you finished the third part of the case study.
+
+## Model (Module 4)
+
+Quantify the insights using mathematical models. As highlighted in.[Chapter 3 of Data Science in Education Using R](https://datascienceineducation.com/c03.html), the.**Model**step of the data science process entails "using statistical models, from simple to complex, to understand trends and patterns in the data."
+
+The authors note that while descriptive statistics and data visualization during the**Explore**step can help us to identify patterns and relationships in our data, statistical models can be used to help us determine if relationships, patterns and trends are actually meaningful.
+
+### A. Correlation Matrix
+
+As highlighted in @macfadyen2010, scatter plots are a useful initial approach for identifying potential correlational trends between variables under investigation, but to further interrogate the significance of selected variables as indicators of student achievement, a simple correlation analysis of each variable with student final grade can be conducted.
+
+There are two efficient ways to create correlation matrices, one that is best for internal use, and one that is best for inclusion in a manuscript. The {corrr} package provides a way to create a correlation matrix in a {tidyverse}-friendly way. Like for the {skimr} package, it can take as little as a line of code to create a correlation matrix. If not familiar, a correlation matrix is a table that presents how *all of the variables* are related to *all of the other variables*.
+
+#### **👉 Your Turn** **⤵**
+
+You need to: 1. Load the `corrr` package using the correct function 💡 (you may need to install.packages() in th econsole if this is your first time using loading the package.)
+
+```{r messages=FALSE, warning=FALSE}
+#install corrr package if this is your first time
+
+# read in library
+#(add code below)
+library(corrr)
+```
+
+### A-1 Simple Correlation
+
+#### **👉 Your Turn** **⤵**
+
+Look and see if there is a simple correlation between by:
+
+-   use `data_to_explore`
+-   `select()`:
+    -   `time-spent-hours`
+    -   `proportion_earned`
+-   use `correlate()` function
+
+```{r messages = FALSE, warning=FALSE}
+#(add code below)
+data_to_explore %>% 
+  select(proportion_earned, time_spent_hours) %>%
+  correlate()
+```
+
+**For printing** purposes,the `fashion()` function can be added for converting a correlation data frame into a matrix with the correlations cleanly formatted (leading zeros removed; spaced for signs) and the diagonal (or any NA) left blank.
+
+```{r messages=FALSE, warning=FALSE}
+#add fashion function
+data_to_explore %>% 
+  select(proportion_earned, time_spent_hours) %>% 
+  correlate() %>% 
+  rearrange() %>%
+  shave() %>%
+  fashion()
+```
+
+❓ What other variables would you like to check out?
+
+#### **👉 Your Turn⤵**
+
+```{r messages=FALSE, warning=FALSE}
+#(add code below)
+
+```
+
+### B. APA Formatted Table
+
+While {corrr} is a nice package to quickly create a correlation matrix, you may wish to create one that is ready to be added directly to a dissertation or journal article. {apaTables} is great for creating more formal forms of output that can be added directly to an APA-formatted manuscript; it also has functionality for regression and other types of model output. It is not as friendly to {tidyverse} functions; first, we need to select only the variables we wish to correlate.
+
+Then, we can use that subset of the variables as the argument to the`apa.cor.table()` function.
+
+Run the following code to create a subset of the larger `data_to_explore` data frame with the variables you wish to correlate, then create a correlation table using `apa.cor.table()`.
+
+#### **👉 Your Turn** **⤵**
+
+```{r messages=FALSE, warning=FALSE}
+# read in apatables library
+library(apaTables)
+
+data_to_explore_subset <- data_to_explore %>% 
+  select(time_spent_hours, proportion_earned, int)
+
+apa.cor.table(data_to_explore_subset)
+```
+
+This may look nice, but how to actually add this into a dissertation or article that you might be interested in publishing?
+
+Read the documentation for `apa.cor.table()` by running `?apa.cor.table()` in the console. Look through the documentation and examples to understand how to output a file with the formatted correlation table, and then run the code to do that with your subset of the `data_to_explore` data frame.
+
+```{r messages=FALSE, warning=FALSE}
+apa.cor.table(data_to_explore_subset, filename = "cor-table.doc")
+```
+
+You should now see a new Word document in your project folder called `survey-cor-table.doc`. Click on that and you'll be prompted to download from your browser.
+
+### C. Predict Academic Achievement
+
+#### Linear Regression
+
+In brief, a linear regression model involves estimating the relationships between one or more *independent variables* with one dependent variable. Mathematically, it can be written like the following.
+
+$$
+\operatorname{dependentvar} = \beta_{0} + \beta_{1}(\operatorname{independentvar}) + \epsilon
+$$
+
+Does time spent predict grade earned?
+
+The following code estimates a model in which `proportion_earned`, the proportion of points students earned, is the dependent variable. It is predicted by one independent variable, `int`, students' self-reported interest in science.
+
+```{r messages=FALSE, warning=FALSE}
+lm(proportion_earned ~ time_spent_hours, 
+   data = data_to_explore)
+```
+
+The following code estimates a model in which `proportion_earned`, the proportion of points students earned, is the dependent variable. It is predicted by one independent variable.
+
+-   Add + `int`, after `time_spent_hours` for students' self-reported interest in science.
+
+#### **👉 Your Turn** **⤵**
+
+```{r messages=FALSE, warning=FALSE}
+# Add predictor variable for science
+#(add code below)
+lm(proportion_earned ~ time_spent_hours + int, 
+   data = data_to_explore)
+```
+
+We can see that the intercept is now estimated at 0.44, which tells us that when students' time spent and interest are equal to zero, they are likely fail the course unsurprisingly. Note that that estimate for interest in science is .046, so for every one-unit increase in `int`, we should expect an 5 percentage point increase in their grade.
+
+We can save the output of the function to an object---let's say `m1`, standing for model 1. We can then use the `summary()` function built into R to view a much more feature-rich summary of the estimated model.
+
+```{r messages=FALSE, warning=FALSE}
+# save the model 1
+m1 <- lm(proportion_earned ~ time_spent_hours + int, data = data_to_explore)
+
+```
+
+Run a summary model for the model you just created called, `m1.` \#### **👉 Your Turn** **⤵**
+
+```{r messages=FALSE, warning=FALSE}
+#run the summary
+summary(m1)
+
+```
+
+### Summarize predictors
+
+The `summarize()` function from the {dplyr} package used to create summary statistics such as the mean, standard deviation, or the minimum or maximum of a value.
+
+At its core, think of `summarize()` as a function that returns a single value (whether it's a mean, median, standard deviation---whichever!) that summarizes a single column.
+
+In the space below find the mean interest of students. `summarize()`
+
+```{r messages=FALSE, warning=FALSE}
+data_to_explore %>% 
+  summarize(mean_interest = mean(int, na.rm = TRUE))
+```
+
+Now let's look at the mean of `time_spent_hours` and remove any NA's. - save it to a new variable called `mean_time`
+
+#### **👉 Your Turn** **⤵**
+
+```{r messages=FALSE, warning=FALSE}
+data_to_explore %>% 
+  summarize(mean_time = mean(time_spent_hours, na.rm = TRUE))
+```
+
+The mean value for interest is quite high. If we multiply the estimate relationship between interest and proportion of points earned---0.046---by this, the mean interest across all of the students---we can determine that students' estimate final grade was 0.046 X 4.3, or **0.197**. For hours spent spent, the average students' estimate final grade was 0.0042 X 30.48, or **0.128**.
+
+If we add both 0.197 and 0.128 to the intercept, 0.449, that equals 0.774, or about 77%. In other words, a student with average interest in science who spent an average amount of time in the course earned a pretty average grade.
+
+Let's save this as a nice APA table for possible publication
+
+```{r messages=FALSE, warning=FALSE}
+apa.reg.table(m1, filename = "lm-table.doc")
+```
+
+-   load `apaTables` library
+
+```{r messages=FALSE, warning=FALSE}
+
+#load packages
+
+# use the {apaTables} package to create a nice regression table that could be used for later publication.
+apa.reg.table(m1, filename = "lm-table.doc")
+
+```
+
+## Communicate
+
+For your final Your Turn, your goal is to distill our analysis into a FLEXBOARD "data product" designed to illustrate key findings. Feel free to use the template in the lab 4 folder.
+
+The final step in the workflow/process is sharing the results of your analysis with wider audience. Krumm et al. @krumm2018 have outlined the following 3-step process for communicating with education stakeholders findings from an analysis:
+
+1.  **Select.** Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e. a "data product."
+
+2.  **Polish**. After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.
+
+3.  **Narrate.** Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a "change idea" for improving student learning.
+
+#### **👉 Your Turn** **⤵**
+
+Create a Data Story with our current data set - Develop a research question - Add ggplot visualizations - Modeling visualizations - add a short write up for the intended stakeholders

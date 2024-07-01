@@ -5,15 +5,17 @@
 $font-family-sans-serif: 'Open Sans','Roboto', sans-serif !default;
 $presentation-font-size-root: 50px;
 
+
 // colors
 $body-bg: #FFFFFF !default;
 $body-color: #000000 !default;
 $linkColor: #427E93 !default;
 $linkColorHover: #d34126 !default;
 $selection-bg: #26351c;
+$code-block-bg: #f4f4f4;
 
 // headings
-$presentation-heading-font: 'Open Sans','Roboto', sans-serif !default;
+$presentation-heading-font: 'Open Sans','Open Sans', sans-serif !default;
 $presentation-heading-color: #427E93 !default;
 
 /*-- scss:rules --*/
@@ -23,7 +25,7 @@ $presentation-heading-color: #427E93 !default;
 
 .reveal a {
   line-height: 1em;
-  color: #990000;
+  color: #8f303b;
 }
 
 .reveal .footer {
@@ -43,6 +45,27 @@ section.has-dark-background code{
   color: #e77225;
 }
 
-/*-- scss:defaults --*/
 
-$code-block-bg: #F5F5F5;
+// code blocks
+
+pre, code, .sourceCode {
+  font-size: 2.5rem;
+  background-color: #d3d3d3;
+}
+
+section.slide h2 {
+  color: white  !important;
+  background-color: #427E93 !important;
+  position: relative;
+  width: 400vw;
+  left: -20vw;
+  padding-left: 20vw;
+  padding-top: 20px;
+  padding-bottom: 20px;}
+
+// graphic wrap
+.wrap-img {
+    float: left;
+    margin-right: 10px;
+    width: 10%;
+}

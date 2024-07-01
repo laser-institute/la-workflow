@@ -6,7 +6,7 @@ format:
     chalkboard: 
       buttons: false
     preview-links: auto
-    logo: img/LASERlogo_large.png
+    logo: img/LASERLogoB.png
     theme: [default, css/laser.scss]
     width: 1920
     height: 1080
@@ -22,9 +22,9 @@ resources:
 
 <hr>
 
-<h3> Jeanne McClure </h3>
+<h3> The LASER Team </h3>
 
-<h3> 2024-01-01 </h3>
+<h3> `r format(Sys.Date(),'%B %e, %Y')` </h3>
 <br>
 
 [github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
@@ -41,8 +41,13 @@ It consists of consists of four modules. Each module of the Foundation of LA inc
 
 . . .
 
+:::{.columns}
+:::{.column width="40%"}
+
+::: {style="font-size: 65%;"}
+
 ::: {.fragment .fade-in-then-semi-out}
-  - Selected readings
+  - Essential readings
 :::
 
 ::: {.fragment .fade-in-then-semi-out}
@@ -52,6 +57,15 @@ It consists of consists of four modules. Each module of the Foundation of LA inc
 ::: {.fragment .fade-in-then-semi-out}
   - Code a-long slidedeck 
 :::
+:::
+:::
+
+:::{.column width="10%"}
+:::
+
+:::{.column width="50%"}
+
+::: {style="font-size: 65%;"}
 
 ::: {.fragment .fade-in-then-semi-out}
   - Case study activity that correlates with the Learning Analytics workflow
@@ -60,53 +74,66 @@ It consists of consists of four modules. Each module of the Foundation of LA inc
 ::: {.fragment .fade-in-then-semi-out}
   - Optional badge activity
 :::
+:::
+:::
+:::
 
-. . .
 
 <br/>
 
-## Module Objectives
-
-. . .
+## Module 1 Objectives
 
 By the end of this module:
 
-* Understanding Types of `Learning Environments`:
+::: {style="font-size: 75%;"}
+::: fragment
+* Types of `Learning Environments`:
   - Learners will be able to identify and describe different types of learning environments, explaining their unique features and applications in educational research.
+:::
 
-. . .
-
+::: fragment
 * Characteristics of `Data`:
   - Learners will gain proficiency in recognizing and categorizing various data formats commonly used in educational research by the end of this section.
+:::
+:::
 
-. . .
+::: {style="font-size: 65%;"}
+::: fragment
+Essential readings:
 
+1. [Learning Analytics Goes to School, (Ch. 2, pp 16 - 21 ) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Learning%20Analytics%20Goes%20to%20School.pdf)
+2. [Learning Analytics Goes to School, (Wrangle Ch. 3, pp. 39 - 43) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://laser-institute.github.io/LASER_Foundations_2023//lab2/Readings/Learning%20Analytics%20Goes%20to%20School.pdf)
+3. [Educational data mining and learning analytics: An updated survey, By Romero & Ventura](https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Educational_data_mining_and_learning_analytics.pdf)
+:::
+:::
 
 
 ## Education Data
 
-In this slide, we will explore the various types of educational data that are crucial for understanding and enhancing the learning experience. These data categories include:
+:::{.columns}
+:::{.column width="40%"}
+::: fragment
 
-. . .
-
-- Interaction between instructors and students
-
-. . .
-
-- Administrative data
-
-. . .
-
-- Demographic data
-
-. . .
+-   Interaction between instructors and students
 
 
-- Student affectivity
+-   Administrative data
 
-. . .
 
- ![](img/granularity.png){.absolute top=425 left=1000 width="800"}
+-   Demographic data
+
+
+-   Student affectivity
+
+:::
+:::
+
+:::{.column width="60%"}
+::: fragment
+ ![](img/granularity.png){.absolute top=425 left=850 width="1000"}
+:::
+:::
+:::
 
 :::{.notes}
 
@@ -121,8 +148,6 @@ Student Affectivity: Focuses on the emotional and motivational aspects of studen
 Each category plays a vital role in shaping educational strategies and outcomes. 
 
 :::
-
-# Learning Analytics Workflow {background="#143156"}
 
 
 ## Types of Learning Environments
@@ -143,7 +168,7 @@ Each category plays a vital role in shaping educational strategies and outcomes.
 :::
 
 :::{.column width="60%"}
-![](img/la_ed_environments.png){.absolute .fragment top="100" right="50" width="1000"}
+![](img/la_ed_environments.png){.absolute .fragment top="150" right="50" width="1000"}
 :::
 :::
 
@@ -181,12 +206,14 @@ Blended (“blended learning,” “hybrid learning,” and “mixed-mode instru
 
 - Learning Management System (LMS) 
 
-- In-Context Learning (ChatGPT/Whisper)
+- AI-driven virtual tutors and chatbots
 
 :::
 
+:::{.column width="10%"}
+:::
 
-::: {.column width="60%"}
+::: {.column width="50%"}
 - Massive Open Online Course (MOOC)
 
 ::: {.fragment .highlight-red}
@@ -209,6 +236,13 @@ ITS - ITSs provide direct customized instruction or feedback to students by mode
 
 Test and quiz system - The main goal of these systems is to measure the students' level of knowledge with respect to one or more concepts or subjects by using a series of questions/items and other prompts for the purpose of gathering information from respondents. They store a great deal of information about students' answers, calculated scores, and statistics.
 :::
+
+## Discussion
+
+-   Choose one category (Interaction, Administrative, Demographic, Student Affectivity).
+-       Share an example of how data in this category can be collected.
+
+-   Discuss the potential impact of this data on educational decision-making.
 
 
 ## Characteristics of Data
@@ -301,23 +335,94 @@ You can read more about the meta data standards on Canada's heritage information
 
 :::
 
-## {background="#143156"}
+## Stakeholders
 
-::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
+::: panel-tabset
 
-**What's next?**
+### Direct Beneficiaries
+
+-   Students
+-   Parents and Guardians
+
+### Educational Practitioners
+
+-   Teachers
+-   School Administrators
+
+### Policy and Decision Makers
+
+-   District and State Education Officials
+-   Policy Makers and Government Agencies
 
 :::
 
-<br/><br/><br/><br/>
+## More stakeholders
+::: panel-tabset
 
+### Data and Technology Providers
+
+-   Educational Technology Providers
+-   Educational Researchers
+
+### Community and Support Organizations
+
+-   Community Members and Organizations
+-   Non-Profit Organizations
+
+### Economic Stakeholders
+
+-   Employers and Industry Representatives
+-   Funding Agencies and Foundations
+:::
+
+
+:::{.notes}
+Direct Beneficiaries
+Students: Primary beneficiaries whose performance and engagement are directly impacted by data.
+Parents and Guardians: Receive data about their child's progress and use it to support their learning.
+
+Educational Practitioners
+Teachers: Use data to inform instruction and personalize learning, and contribute data through assessments.
+School Administrators: Oversee data collection and analysis, and use data to make strategic decisions.
+
+Policy and Decision Makers
+District and State Education Officials: Develop and evaluate policies using aggregated data.
+Policy Makers and Government Agencies: Develop regulations and allocate funding based on data.
+
+Data and Technology Providers
+Educational Technology Providers: Offer tools and platforms for data management and analysis.
+Educational Researchers: Use data for research to improve educational practices.
+
+Community and Support Organizations
+Community Members and Organizations: Advocate for educational improvements using data insights.
+Non-Profit Organizations: Use data to advocate for reforms and support specific populations.
+
+Economic Stakeholders
+Employers and Industry Representatives: Interested in data related to skills and workforce readiness.
+Funding Agencies and Foundations: Evaluate the impact of programs and provide funding based on data.
+
+:::
+
+## Discussion
+
+What challenges arise from the different needs and priorities of these stakeholder groups when it comes to data use and management?
+
+How can these challenges be addressed to ensure that data is used ethically and effectively to improve education for all students?
+
+# {background="#143156"}
+
+::: {style="text-align: left; margin-top: .05em; font-size: 160px"}
+
+**What's next?**
+:::
+
+<br/><br/><br/>
 
 ::: {style="text-align: left; font-size: 50px"}
 
-- Complete the `Prepare part of the Case Study`
-- Complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2)
-- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
-- Do pre-readings for the next Foundations Module.
-
+- Complete the `Prepare and Wrangle` part of the Case Study
+- Complete the `R Programming primer`: [Work with Data](https://rstudio.cloud/learn/primers/2)
+- Complete the `Badge requirement` [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Do `essential readings` for the next Foundations Module.
 :::
 
