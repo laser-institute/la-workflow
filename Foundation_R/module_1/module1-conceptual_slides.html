@@ -338,9 +338,9 @@ Foundations Conceptual Overview - Module 1
 <h3>
 The LASER Team
 </h3>
-<h3>
-June 18, 2024
-</h3>
+<h4>
+<code>July 22, 2024</code>
+</h4>
 <p><br></p>
 <p><a href="https://github.com/laser-institute/Foundations_BEAM_2023">github.com/Foundations 2024</a></p>
 <p><img data-src="img/LASERLogoB.png" class="absolute" style="top: 425px; left: 1000px; width: 800px; "></p>
@@ -417,10 +417,13 @@ June 18, 2024
 <div class="fragment">
 <p>Essential readings:</p>
 <ol type="1">
-<li><a href="https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Learning%20Analytics%20Goes%20to%20School.pdf">Learning Analytics Goes to School, (Ch. 2, pp 16 - 21 ) By Andrew Krumm, Barbara Means, Marie Bienkowski</a></li>
-<li><a href="https://laser-institute.github.io/LASER_Foundations_2023//lab2/Readings/Learning%20Analytics%20Goes%20to%20School.pdf">Learning Analytics Goes to School, (Wrangle Ch. 3, pp.&nbsp;39 - 43) By Andrew Krumm, Barbara Means, Marie Bienkowski</a></li>
+<li><a href="https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Learning%20Analytics%20Goes%20to%20School.pdf">Learning Analytics Goes to School, (Ch. 2, pp 16 - 28 ) By Andrew Krumm, Barbara Means, Marie Bienkowski</a></li>
+<li><a href="https://laser-institute.github.io/LASER_Foundations_2023//lab2/Readings/Learning%20Analytics%20Goes%20to%20School.pdf">Learning Analytics Goes to School, (Wrangle Ch. 3, pp.&nbsp;38 - 43) By Andrew Krumm, Barbara Means, Marie Bienkowski</a></li>
 <li><a href="https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Educational_data_mining_and_learning_analytics.pdf">Educational data mining and learning analytics: An updated survey, By Romero &amp; Ventura</a></li>
 </ol>
+<ul>
+<li>Optional Readings on Stakeholders in folder By Gašević et al., 2022 and Sun et al., 2019</li>
+</ul>
 </div>
 </div>
 </section>
@@ -559,9 +562,9 @@ June 18, 2024
 <section id="discussion" class="slide level2">
 <h2>Discussion</h2>
 <ul>
-<li>Choose one category (Interaction, Administrative, Demographic, Student Affectivity).</li>
+<li><p>Choose one category (Interaction, Administrative, Demographic, Student Affectivity).</p></li>
 <li><pre><code>  Share an example of how data in this category can be collected.</code></pre></li>
-<li>Discuss the potential impact of this data on educational decision-making.</li>
+<li><p>Discuss the potential impact of this data on educational decision-making.</p></li>
 </ul>
 </section>
 <section id="characteristics-of-data" class="slide level2">
@@ -573,240 +576,28 @@ June 18, 2024
 <p><img src="img/data_types.png" height="750px"></p>
 </div>
 <div id="tabset-1-2">
-<div class="cell">
-<div class="cell-output-display">
-<table data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: right;" data-quarto-table-cell-role="th">student_id</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">course_id</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">total_points_possible</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">total_points_earned</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">percentage_earned</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">subject</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">semester</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">section</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Gradebook_Item</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Grade_Category</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">FinalGradeCEMS</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Points_Possible</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Points_Earned</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Gender</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q1</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q2</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q3</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q4</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q5</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q6</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q7</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q8</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q9</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">q10</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">TimeSpent</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">TimeSpent_hours</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">TimeSpent_std</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">int</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">pc</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">uv</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">43146</td>
-<td style="text-align: left;">FrScA-S216-02</td>
-<td style="text-align: right;">3280</td>
-<td style="text-align: right;">2220</td>
-<td style="text-align: right;">0.6768293</td>
-<td style="text-align: left;">FrScA</td>
-<td style="text-align: left;">S216</td>
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">POINTS EARNED &amp; TOTAL COURSE POINTS</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">93.45372</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: left;">M</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">1555.1667</td>
-<td style="text-align: right;">25.9194450</td>
-<td style="text-align: right;">-0.1805150</td>
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">4.333333</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">44638</td>
-<td style="text-align: left;">OcnA-S116-01</td>
-<td style="text-align: right;">3531</td>
-<td style="text-align: right;">2672</td>
-<td style="text-align: right;">0.7567261</td>
-<td style="text-align: left;">OcnA</td>
-<td style="text-align: left;">S116</td>
-<td style="text-align: left;">01</td>
-<td style="text-align: left;">ATTEMPTED</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">81.70184</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1382.7001</td>
-<td style="text-align: right;">23.0450017</td>
-<td style="text-align: right;">-0.3078031</td>
-<td style="text-align: right;">4.2</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">4.000000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">47448</td>
-<td style="text-align: left;">FrScA-S216-01</td>
-<td style="text-align: right;">2870</td>
-<td style="text-align: right;">1897</td>
-<td style="text-align: right;">0.6609756</td>
-<td style="text-align: left;">FrScA</td>
-<td style="text-align: left;">S216</td>
-<td style="text-align: left;">01</td>
-<td style="text-align: left;">POINTS EARNED &amp; TOTAL COURSE POINTS</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">88.48758</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: left;">M</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">860.4335</td>
-<td style="text-align: right;">14.3405583</td>
-<td style="text-align: right;">-0.6932595</td>
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">3.666667</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">47979</td>
-<td style="text-align: left;">OcnA-S216-01</td>
-<td style="text-align: right;">4562</td>
-<td style="text-align: right;">3090</td>
-<td style="text-align: right;">0.6773345</td>
-<td style="text-align: left;">OcnA</td>
-<td style="text-align: left;">S216</td>
-<td style="text-align: left;">01</td>
-<td style="text-align: left;">POINTS EARNED &amp; TOTAL COURSE POINTS</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">81.85260</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">M</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">1598.6166</td>
-<td style="text-align: right;">26.6436100</td>
-<td style="text-align: right;">-0.1484470</td>
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">5.000000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">48797</td>
-<td style="text-align: left;">PhysA-S116-01</td>
-<td style="text-align: right;">2207</td>
-<td style="text-align: right;">1910</td>
-<td style="text-align: right;">0.8654282</td>
-<td style="text-align: left;">PhysA</td>
-<td style="text-align: left;">S116</td>
-<td style="text-align: left;">01</td>
-<td style="text-align: left;">POINTS EARNED &amp; TOTAL COURSE POINTS</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">84.00000</td>
-<td style="text-align: right;">438</td>
-<td style="text-align: right;">399</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1481.8000</td>
-<td style="text-align: right;">24.6966667</td>
-<td style="text-align: right;">-0.2346629</td>
-<td style="text-align: right;">3.8</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">3.500000</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">51943</td>
-<td style="text-align: left;">FrScA-S216-03</td>
-<td style="text-align: right;">4208</td>
-<td style="text-align: right;">3596</td>
-<td style="text-align: right;">0.8545627</td>
-<td style="text-align: left;">FrScA</td>
-<td style="text-align: left;">S216</td>
-<td style="text-align: left;">03</td>
-<td style="text-align: left;">POINTS EARNED &amp; TOTAL COURSE POINTS</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">3.4501</td>
-<td style="text-align: right;">0.0575017</td>
-<td style="text-align: right;">-1.3257521</td>
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">4.000000</td>
-</tr>
-</tbody>
-</table>
-
-
+<div class="cell" data-fig="7">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 603 × 30
+   student_id course_id     total_points_possible total_points_earned
+        &lt;dbl&gt; &lt;chr&gt;                         &lt;dbl&gt;               &lt;dbl&gt;
+ 1      43146 FrScA-S216-02                  3280                2220
+ 2      44638 OcnA-S116-01                   3531                2672
+ 3      47448 FrScA-S216-01                  2870                1897
+ 4      47979 OcnA-S216-01                   4562                3090
+ 5      48797 PhysA-S116-01                  2207                1910
+ 6      51943 FrScA-S216-03                  4208                3596
+ 7      52326 AnPhA-S216-01                  4325                2255
+ 8      52446 PhysA-S116-01                  2086                1719
+ 9      53447 FrScA-S116-01                  4655                3149
+10      53475 FrScA-S116-02                  1710                1402
+# ℹ 593 more rows
+# ℹ 26 more variables: percentage_earned &lt;dbl&gt;, subject &lt;chr&gt;, semester &lt;chr&gt;,
+#   section &lt;chr&gt;, Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;,
+#   FinalGradeCEMS &lt;dbl&gt;, Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;,
+#   Gender &lt;chr&gt;, q1 &lt;dbl&gt;, q2 &lt;dbl&gt;, q3 &lt;dbl&gt;, q4 &lt;dbl&gt;, q5 &lt;dbl&gt;, q6 &lt;dbl&gt;,
+#   q7 &lt;dbl&gt;, q8 &lt;dbl&gt;, q9 &lt;dbl&gt;, q10 &lt;dbl&gt;, TimeSpent &lt;dbl&gt;,
+#   TimeSpent_hours &lt;dbl&gt;, TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -928,6 +719,7 @@ June 18, 2024
 <section id="discussion-1" class="slide level2">
 <h2>Discussion</h2>
 <p>What challenges arise from the different needs and priorities of these stakeholder groups when it comes to data use and management?</p>
+<p><br> <br></p>
 <p>How can these challenges be addressed to ensure that data is used ethically and effectively to improve education for all students?</p>
 </section>
 <section id="section" class="title-slide slide level1 center" data-background="#143156">

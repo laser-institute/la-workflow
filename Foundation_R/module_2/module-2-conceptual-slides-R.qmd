@@ -1,0 +1,259 @@
+---
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERLogoB.png
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+resources:
+  - demo.pdf
+---
+
+<h1> <br> Power of Data Viz in LA </h1>
+
+<h2> Foundations Conceptual Overview - Module 2 </h2>
+
+<hr>
+
+<h3> The LASER Team</h3>
+
+<h4> `July 22, 2024` </h4>
+<br>
+
+[github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
+
+![](img/LASERLogoB.png){.absolute top="425" left="1000" width="800"}
+
+## Welcome to Foundations of Learning Analytics
+
+> `Foundations of Learning Analytics` are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research.
+
+<br/>
+
+It consists of consists of four modules. Each module of the Foundation of LA includes:
+
+. . .
+
+::: columns
+::: {.column width="40%"}
+::: {style="font-size: 65%;"}
+::: {.fragment .fade-in-then-semi-out}
+-   Essential readings
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Conceptual overview slidedeck
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Code a-long slidedeck
+:::
+:::
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 65%;"}
+::: {.fragment .fade-in-then-semi-out}
+-   Case study activity that correlates with the Learning Analytics workflow
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Optional badge activity
+:::
+:::
+:::
+:::
+
+## Module 2 Objectives
+
+By the end of this module:
+
+::: {style="font-size: 75%;"}
+::: fragment
+-   **Fundamentals of Data Visualization**:
+    -   Learners will grasp the basic concepts and significance of data visualization in distilling complex educational data into comprehensible and actionable insights.
+:::
+
+::: fragment
+-   **Variety of Visualization Techniques**:
+    -   Participants will be able to identify and apply different types of visualizations, such as charts, graphs, and heatmaps, to represent educational data effectively.
+:::
+
+::: fragment
+-   **Practical Application and Best Practices**:
+    -   Learners will gain insights into real-world applications of data visualization in education and learn best practices to enhance the clarity and impact of their visual data presentations.
+:::
+:::
+
+::: {style="font-size: 65%;"}
+::: fragment
+Essential readings:
+
+1.  [Learning Analytics Goes to School, (Explore, Ch. 3, pp. 43 - 49) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://laser-institute.github.io/LASER_Foundations_2023/lab3/Readings/Learning%20Analytics%20Goes%20to%20School.pdf)
+2.  [R for Data Science, (Ch. 3 & 7) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/index.html)
+3.  [SKIM: Data Visualization: A practical Introduction (Ch. 1 & 3) by Kieren Healy](https://socviz.co/)
+:::
+:::
+
+## What is Data Visualizations?
+
+<img src="img/animation_comparison.gif" height="850px"/>
+
+::: notes
+Data visualization plays a crucial role in understanding and analyzing complex educational data by presenting information in a visual format that is intuitive, accessible, and easy to comprehend
+
+Simplifies Complex Data: Educational data often comprises vast amounts of information from various sources, such as student performance, demographics, learning activities, and assessments. Data visualization simplifies this complexity by condensing large datasets into visual representations that are easier to grasp and interpret. It enables researchers and educators to identify patterns, trends, and outliers in the data efficiently.
+
+What do you think are some of the benefits of data visualization in Education?
+:::
+
+## Benefits of Visualization
+
+::: {.fragment .fade-in-then-semi-out}
+-   Enhancing Understanding
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Promoting Engagement
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Informing Decision-making
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Strengthening Communication
+:::
+
+::: notes
+**ENHANCING UNDERSTANING** Visuals have a powerful impact on human cognition. By representing data visually, complex relationships and trends become more apparent, allowing individuals to grasp the underlying information quickly. Visualizations enable stakeholders, including researchers, educators, and administrators, to comprehend and communicate data insights effectively, facilitating data-driven decision-making processes.
+
+**PROMOTING ENGAGEMENT and Communication** Visualizations make data more accessible and engaging to a wide range of audiences, including researchers, educators, policymakers, and even learners themselves. By presenting data in visually appealing and interactive formats, it becomes easier to communicate complex information effectively. Visualizations can be shared and discussed across diverse stakeholders, fostering collaboration, facilitating discussions, and promoting a shared understanding of educational data.
+
+**INFORMING DECISION MAKING** Data visualization empowers stakeholders with the ability to make informed decisions based on insights derived from educational data. By presenting data in a visual format, decision-makers can quickly grasp the implications of the information at hand. This facilitates the identification of areas that require attention or improvement, enables the monitoring of progress towards educational goals, and assists in formulating evidence-based strategies for intervention and support.
+
+**STRENGTHENING COMMUNICATION** By transforming complex data into clear, visual formats, stakeholders such as educators, researchers, and policymakers can more easily share insights, facilitating collaborative discussions and enhancing the decision-making process. This approach promotes a unified understanding, helping to align strategies and actions across diverse educational settings.
+
+{optional add -in} **FACILITATES PATTERN RECOGNITION** Visual representations enable the identification of patterns and correlations that may not be readily apparent in raw data. By presenting data visually, learning analytics practitioners can observe trends, outliers, and relationships more easily. These patterns can help uncover factors influencing student performance, instructional effectiveness, or learner engagement, leading to targeted interventions and improved outcomes.
+:::
+
+## COMMON TYPES OF DATA VISUALIZATION
+
+<img src="img/LASER_chart.png" height="900px"/>
+
+::: notes
+Common types of data will include: Bar charts: Suitable for comparing discrete categories or groups. Line graphs: Ideal for showcasing trends and changes over time. Scatter plots: Depict relationships between two variables. Heatmaps: Visualize patterns and relationships in large datasets.A heat map is a two-dimensional representation of information with the help of colors. Heat maps can help the user visualize simple or complex information. Network diagrams: Illustrate connections and relationships between entities. Treemaps: Represent hierarchical data structures in a space-efficient manner. Treemap visualizes the hierarchy of data in nested rectangles. Hierarchy levels are displayed from larger rectangles to smaller ones.
+:::
+
+## Visualization in Practice
+
+::: panel-tabset
+### Showcasing
+
+::: columns
+::: {.column width="30%"}
+Student performance data from an introductory chemistry course. (Deng, et al., 2019)
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%"}
+<img src="img/dengetal_dashboard.jpg" height="600px"/>
+:::
+:::
+
+### Illustrating
+
+::: columns
+::: {.column width="30%"}
+[Learning pathway analysis](https://metals-ids-18fall.github.io/student-pathway/) Yang,K., 2018\]
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%"}
+<img src="img/studentperform_viz.png" height="600px"/>
+:::
+:::
+
+### Engagement tracking
+
+::: columns
+::: {.column width="30%"}
+\[[Inform curricular (re)design](https://isit.arts.ubc.ca/learning-analytics-examples/)\]
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="60%"}
+<img src="img/student_engagement.png" height="600px"/>
+:::
+:::
+:::
+
+::: notes
+We can see some real world examples with
+
+**Showcasing** This study was on various dashboards showcasing analysis the screen shot that you see shows the detailed exam item analysis (DEIA), overall exam & homework analysis (OEHA), and detailed exam grade pathway (DEGP), respectively. The DEIA depicts the relationship between each question within the same exam by drawing their correlation, which was calculated using the Pearson correlation.The OEHA displays the correlations between exam questions and homework questions along with their topics and difficulty indices in a radial tree structure. The DEGP uses a parallel coordinates plot to enable a detailed examination of the student grade data.
+
+**Illustrating** The study for this visualization explored how different factors played a role in student outcomes. There are several analysis for the study but this one is a good one illustrating that student completion rate is strongly positively correlated with their final performance. If you visit the site they also analyze time spent and found that completion rate is more telling than time spent on problems, which was a surprising insight! What do you like or dislike about this visualization?
+
+**Tracking** Visualizations can offer departments insight into their programs, and guide and inform curricular (re)design. using historic student engagement tracking to provide insights into course difficulty, individual course impact on the overall academic performance of learners, curriculum coherence, dropout paths, and the impact of course load on student performance. The techniques were applied and validated for a case study in a Computer Science program using available historical academic performance data.
+:::
+
+## Best Practices
+
+::: {.fragment .fade-in-then-semi-out}
+-   Know your audience
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Simple designs
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Correct visualization
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Provide context
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Use color strategically
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Iterate and refine
+:::
+
+::: notes
+Know your audience: Tailor the visualization to the target audience's background and needs. Keep it simple: Avoid clutter and unnecessary complexity to ensure clarity and ease of interpretation. Use appropriate visuals: Select the most suitable visualization technique based on the data and the insights you want to convey. Provide context: Include clear labels, titles, and annotations to provide context and aid understanding. Ensure accessibility: Ensure that visualizations are accessible to all users, including those with visual impairments. Iterate and refine: Continuously refine and improve visualizations based on feedback and evaluation.
+:::
+
+#  {background="#143156"}
+
+::: {style="text-align: left; margin-top: .05em; font-size: 160px"}
+**What's next?**
+:::
+
+<br/><br/><br/>
+
+::: {style="text-align: left; font-size: 50px"}
+-   Complete the `Explore` section of the Case Study
+-   Complete the `Badge requirement` [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+-   Do `essential readings` for the next Foundations Module.
+:::

@@ -889,6 +889,166 @@ Jeanne McClure
 </div>
 </div>
 </section>
+<section id="joins-overview" class="slide level2">
+<h2>Joins Overview</h2>
+<p>Mock Data Generation</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Create mock data</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
+<span id="cb18-5"><a href="#cb18-5"></a>  <span class="at">major =</span> <span class="fu">c</span>(<span class="st">"Math"</span>, <span class="st">"Physics"</span>, <span class="st">"Biology"</span>, <span class="st">"Computer Science"</span>)</span>
+<span id="cb18-6"><a href="#cb18-6"></a>)</span>
+<span id="cb18-7"><a href="#cb18-7"></a>students</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student_id    name            major
+1          1   Alice             Math
+2          2     Bob          Physics
+3          3 Charlie          Biology
+4          4   David Computer Science</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">80</span>)</span>
+<span id="cb20-4"><a href="#cb20-4"></a>)</span>
+<span id="cb20-5"><a href="#cb20-5"></a>scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student_id score
+1          1    85
+2          2    90
+3          3    75
+4          5    80</code></pre>
+</div>
+</div>
+<aside class="notes">
+<p>We are creating two mock data frames: students and scores. These data frames will help us demonstrate different types of joins in R.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="inner-join" class="slide level2">
+<h2>Inner join</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Inner join: Returns rows that have matching values in both tables</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>inner_join_result <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3"></a>inner_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student_id    name   major score
+1          1   Alice    Math    85
+2          2     Bob Physics    90
+3          3 Charlie Biology    75</code></pre>
+</div>
+</div>
+<aside class="notes">
+<p>An inner join returns rows that have matching values in both tables. Only students present in both data frames are included in the result.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="left-join" class="slide level2">
+<h2>Left join</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>left_join_result <span class="ot">&lt;-</span> <span class="fu">left_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3"></a>left_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student_id    name            major score
+1          1   Alice             Math    85
+2          2     Bob          Physics    90
+3          3 Charlie          Biology    75
+4          4   David Computer Science    NA</code></pre>
+</div>
+</div>
+<aside class="notes">
+<p>A left join returns all rows from the left table (students), and the matched rows from the right table (scores). If there is no match, the result is NA for the missing values.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="right-join" class="slide level2">
+<h2>Right join</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>right_join_result <span class="ot">&lt;-</span> <span class="fu">right_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a>right_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student_id    name   major score
+1          1   Alice    Math    85
+2          2     Bob Physics    90
+3          3 Charlie Biology    75
+4          5    &lt;NA&gt;    &lt;NA&gt;    80</code></pre>
+</div>
+</div>
+<p><br><br> ❓ Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?</p>
+<aside class="notes">
+<p>A right join returns all rows from the right table (scores), and the matched rows from the left table (students). If there is no match, the result is NA for the missing values.</p>
+<p>Question: Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?</p>
+<p>Answer: You might choose to use an inner join instead of a left join when you only want to analyze the data for students who have both student information and corresponding scores. An inner join ensures that you are only working with complete data where there is a match in both tables, which can help avoid issues related to missing values and ensure the integrity of your analysis. This is particularly important when you need to perform calculations or statistical analyses that require complete data sets. By using an inner join, you ensure that the dataset you are working with is fully populated with the necessary information from both sources.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="full-join" class="slide level2">
+<h2>Full join</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Full join: Returns all rows when there is a match in one of the tables. If there is no match, the result is NA for the missing values.</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>full_join_result <span class="ot">&lt;-</span> <span class="fu">full_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb28-3"><a href="#cb28-3"></a>full_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student_id    name            major score
+1          1   Alice             Math    85
+2          2     Bob          Physics    90
+3          3 Charlie          Biology    75
+4          4   David Computer Science    NA
+5          5    &lt;NA&gt;             &lt;NA&gt;    80</code></pre>
+</div>
+</div>
+<aside class="notes">
+<p>A full join returns all rows from both tables, whether there is a match or not. If there is no match, the result is NA for the missing values.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="section" class="slide level2" data-background="#143156">
 <h2></h2>
 <div style="text-align: left; margin-top: 1em; font-size: 160px">
@@ -897,10 +1057,9 @@ Jeanne McClure
 <p><br><br><br><br></p>
 <div style="text-align: left; font-size: 50px">
 <ul>
-<li>Complete the <code>Prepare part of the Case Study</code></li>
-<li>Complete the R Programming primer: <a href="https://rstudio.cloud/learn/primers/2">Work with Data</a></li>
+<li>Complete the <code>Prepare</code> and <code>Wrangle</code> parts of the Case Study.</li>
 <li>Complete the Badge requirement document <a href="https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html">Foundations badge - Data Sources</a></li>
-<li>Do pre-readings for the next Foundations Module.</li>
+<li>Do required readings for the next Foundations Module 2.</li>
 </ul>
 </div>
 

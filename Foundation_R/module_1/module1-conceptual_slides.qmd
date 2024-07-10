@@ -14,70 +14,75 @@ format:
     footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
 resources:
   - demo.pdf
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-<h1> <br> Characteristics of Data in LA </h1>
+<h1><br> Characteristics of Data in LA</h1>
 
-<h2> Foundations Conceptual Overview - Module 1 </h2>
+<h2>Foundations Conceptual Overview - Module 1</h2>
 
 <hr>
 
-<h3> The LASER Team </h3>
+<h3>The LASER Team</h3>
 
-<h3> `r format(Sys.Date(),'%B %e, %Y')` </h3>
+<h4>`July 22, 2024`</h4>
+
 <br>
 
-[github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
- 
- ![](img/LASERLogoB.png){.absolute top=425 left=1000 width="800"}
+[github.com/Foundations
+2024](https://github.com/laser-institute/Foundations_BEAM_2023)
+
+![](img/LASERLogoB.png){.absolute top="425" left="1000" width="800"}
 
 ## Welcome to Foundations of Learning Analytics
 
-> `Foundations of Learning Analytics` are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research.
+> `Foundations of Learning Analytics` are designed for those seeking an
+> introductory understanding of learning analytics and either basic R
+> programming skills or basic Python skills, particularly in the context
+> of STEM education research.
 
 <br/>
 
-It consists of consists of four modules. Each module of the Foundation of LA includes: 
+It consists of consists of four modules. Each module of the Foundation
+of LA includes:
 
 . . .
 
-:::{.columns}
-:::{.column width="40%"}
-
+::: columns
+::: {.column width="40%"}
 ::: {style="font-size: 65%;"}
-
 ::: {.fragment .fade-in-then-semi-out}
-  - Essential readings
-:::
-
-::: {.fragment .fade-in-then-semi-out}
-  - Conceptual overview slidedeck
+-   Essential readings
 :::
 
 ::: {.fragment .fade-in-then-semi-out}
-  - Code a-long slidedeck 
+-   Conceptual overview slidedeck
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+-   Code a-long slidedeck
 :::
 :::
 :::
 
-:::{.column width="10%"}
+::: {.column width="10%"}
 :::
 
-:::{.column width="50%"}
-
+::: {.column width="50%"}
 ::: {style="font-size: 65%;"}
+::: {.fragment .fade-in-then-semi-out}
+-   Case study activity that correlates with the Learning Analytics
+    workflow
+:::
 
 ::: {.fragment .fade-in-then-semi-out}
-  - Case study activity that correlates with the Learning Analytics workflow
-:::
-
-::: {.fragment .fade-in-then-semi-out}
-  - Optional badge activity
+-   Optional badge activity
 :::
 :::
 :::
 :::
-
 
 <br/>
 
@@ -87,13 +92,17 @@ By the end of this module:
 
 ::: {style="font-size: 75%;"}
 ::: fragment
-* Types of `Learning Environments`:
-  - Learners will be able to identify and describe different types of learning environments, explaining their unique features and applications in educational research.
+-   Types of `Learning Environments`:
+    -   Learners will be able to identify and describe different types
+        of learning environments, explaining their unique features and
+        applications in educational research.
 :::
 
 ::: fragment
-* Characteristics of `Data`:
-  - Learners will gain proficiency in recognizing and categorizing various data formats commonly used in educational research by the end of this section.
+-   Characteristics of `Data`:
+    -   Learners will gain proficiency in recognizing and categorizing
+        various data formats commonly used in educational research by
+        the end of this section.
 :::
 :::
 
@@ -101,169 +110,217 @@ By the end of this module:
 ::: fragment
 Essential readings:
 
-1. [Learning Analytics Goes to School, (Ch. 2, pp 16 - 21 ) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Learning%20Analytics%20Goes%20to%20School.pdf)
-2. [Learning Analytics Goes to School, (Wrangle Ch. 3, pp. 39 - 43) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://laser-institute.github.io/LASER_Foundations_2023//lab2/Readings/Learning%20Analytics%20Goes%20to%20School.pdf)
-3. [Educational data mining and learning analytics: An updated survey, By Romero & Ventura](https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Educational_data_mining_and_learning_analytics.pdf)
-:::
-:::
+1.  [Learning Analytics Goes to School, (Ch. 2, pp 16 - 28 ) By Andrew
+    Krumm, Barbara Means, Marie
+    Bienkowski](https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Learning%20Analytics%20Goes%20to%20School.pdf)
+2.  [Learning Analytics Goes to School, (Wrangle Ch. 3, pp. 38 - 43) By
+    Andrew Krumm, Barbara Means, Marie
+    Bienkowski](https://laser-institute.github.io/LASER_Foundations_2023//lab2/Readings/Learning%20Analytics%20Goes%20to%20School.pdf)
+3.  [Educational data mining and learning analytics: An updated survey,
+    By Romero &
+    Ventura](https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Educational_data_mining_and_learning_analytics.pdf)
 
+-   Optional Readings on Stakeholders in folder By Gašević et al., 2022 and Sun et al., 2019
+:::
+:::
 
 ## Education Data
 
-:::{.columns}
-:::{.column width="40%"}
+::: columns
+::: {.column width="40%"}
 ::: fragment
-
 -   Interaction between instructors and students
-
 
 -   Administrative data
 
-
 -   Demographic data
 
-
 -   Student affectivity
-
 :::
 :::
 
-:::{.column width="60%"}
+::: {.column width="60%"}
 ::: fragment
- ![](img/granularity.png){.absolute top=425 left=850 width="1000"}
+![](img/granularity.png){.absolute top="425" left="850" width="1000"}
 :::
 :::
 :::
 
-:::{.notes}
+::: notes
+Interaction between Instructors and Students: Examining how students and
+teachers engage through quizzes, exercises, and communication.
 
-Interaction between Instructors and Students: Examining how students and teachers engage through quizzes, exercises, and communication.
+Administrative Data: Insights into school and teacher-related
+information, providing a structural view of the educational environment.
 
-Administrative Data: Insights into school and teacher-related information, providing a structural view of the educational environment.
+Demographic Data: Analysis of student demographics, such as age and
+gender, demographic data can be used to understand diverse learning
+needs.
 
-Demographic Data: Analysis of student demographics, such as age and gender, demographic data can be used to understand diverse learning needs.
+Student Affectivity: Focuses on the emotional and motivational aspects
+of students, crucial for personalized learning experiences.
 
-Student Affectivity: Focuses on the emotional and motivational aspects of students, crucial for personalized learning experiences.
-
-Each category plays a vital role in shaping educational strategies and outcomes. 
-
+Each category plays a vital role in shaping educational strategies and
+outcomes.
 :::
-
 
 ## Types of Learning Environments
 
-:::{.columns}
-:::{.column width="40%"}
+::: columns
+::: {.column width="40%"}
 <br />
 
 ::: {.fragment .fade-in-then-semi-out}
-- Face to Face
+-   Face to Face
 :::
+
 ::: {.fragment .fade-in-then-semi-out}
-- Blended
+-   Blended
 :::
+
 ::: {.fragment .fade-in-then-semi-out}
-- Digital (computer aided) Learning Systems
+-   Digital (computer aided) Learning Systems
 :::
 :::
 
-:::{.column width="60%"}
-![](img/la_ed_environments.png){.absolute .fragment top="150" right="50" width="1000"}
+::: {.column width="60%"}
+![](img/la_ed_environments.png){.absolute .fragment top="150" right="50"
+width="1000"}
 :::
 :::
 
-:::{.notes}
+::: notes
+Digital learning environments include any set of technology-based
+methods that can be applied to support learning and instruction.
 
-Digital learning environments include any set
-of technology-based methods that can be applied to support learning and instruction.
-
-According to Krumm et al, Digital Learning Environments have fueled data intensive research in education more than any other data.
+According to Krumm et al, Digital Learning Environments have fueled data
+intensive research in education more than any other data.
 
 The ones we are probably most familiar with are....
 
-Face-to-face contact between educators and students organized through lectures, class discussion, small groups, individual seat work, and so on. Traditional education systems are classified in different levels UNESCO. These
-systems gather information on student attendance, marks, curriculum goals, class, schedule information, and so on. Finally, it is important to note that all these traditional systems can also use computer-based educational systems as
-a complementary tool to face-to-face sessions.
+Face-to-face contact between educators and students organized through
+lectures, class discussion, small groups, individual seat work, and so
+on. Traditional education systems are classified in different levels
+UNESCO. These systems gather information on student attendance, marks,
+curriculum goals, class, schedule information, and so on. Finally, it is
+important to note that all these traditional systems can also use
+computer-based educational systems as a complementary tool to
+face-to-face sessions.
 
-Digital Learning Systems or Computer use computers in education to provide direction, to instruct or to manage instructions given to the student. The global use of Internet and the application of artificial intelligence (AI) techniques have led to today's plethora of new web-based intelligent educational systems. Gibson and Frietas (2016) suggest the function of technology as an active participant in data generation is significant, as it is involved in the intricate process of data creation. This process stems from the dynamic interplay between the learner and the digital learning environment, as well as from the collaborative data production by the learner, environment, and social context. Such collaborative situations give rise to a wide range of diverse data sources, which exhibit substantial variation. It becomes necessary to harmonize and integrate these distinct data sources together.
+Digital Learning Systems or Computer use computers in education to
+provide direction, to instruct or to manage instructions given to the
+student. The global use of Internet and the application of artificial
+intelligence (AI) techniques have led to today's plethora of new
+web-based intelligent educational systems. Gibson and Frietas (2016)
+suggest the function of technology as an active participant in data
+generation is significant, as it is involved in the intricate process of
+data creation. This process stems from the dynamic interplay between the
+learner and the digital learning environment, as well as from the
+collaborative data production by the learner, environment, and social
+context. Such collaborative situations give rise to a wide range of
+diverse data sources, which exhibit substantial variation. It becomes
+necessary to harmonize and integrate these distinct data sources
+together.
 
-Blended (“blended learning,” “hybrid learning,” and “mixed-mode instruction”) combine face-to-face instruction with computer-mediated instruction. Before COVID we saw some use but after COVID we saw an increase in the use of Digital Learning Systems and Blended. 
+Blended ("blended learning," "hybrid learning," and "mixed-mode
+instruction") combine face-to-face instruction with computer-mediated
+instruction. Before COVID we saw some use but after COVID we saw an
+increase in the use of Digital Learning Systems and Blended.
 :::
 
 ## Digital Learning Environments (Computer Aided)
-:::: {.columns}
+
+::: columns
 ::: {.column width="40%"}
+::: {.fragment .highlight-red}
+-   Adaptive and Intelligent Hypermedia System (AIHS)
+:::
 
 ::: {.fragment .highlight-red}
-- Adaptive and Intelligent Hypermedia System (AIHS)
+-   Intelligent Tutoring System (ITS)
 :::
 
-::: {.fragment .highlight-red}
-- Intelligent Tutoring System (ITS)
+-   Serious Games and Simulations
+
+-   Learning Management System (LMS)
+
+-   AI-driven virtual tutors and chatbots
 :::
 
-- Serious Games and Simulations 
-
-- Learning Management System (LMS) 
-
-- AI-driven virtual tutors and chatbots
-
-:::
-
-:::{.column width="10%"}
+::: {.column width="10%"}
 :::
 
 ::: {.column width="50%"}
-- Massive Open Online Course (MOOC)
+-   Massive Open Online Course (MOOC)
 
 ::: {.fragment .highlight-red}
-- Test and quiz system
+-   Test and quiz system
 :::
 
-- Sensor  Wearable learning systems and Virtual
+-   Sensor Wearable learning systems and Virtual
 
-- Augmented reality systems
+-   Augmented reality systems
 
-- Multimodal Computer Aided Learning
+-   Multimodal Computer Aided Learning
 :::
 :::
 
+::: notes
+Adaptive and Intelligent Hypermedia System (AIHS) - These systems
+attempt to be more adaptive by building a model of the goals,
+preferences, and knowledge of each individual student and using this
+model throughout interaction with the student in order to adapt to the
+needs of that student. The data recorded by AIHs are similar to ITS
+data.
 
-:::{.notes}
-Adaptive and Intelligent Hypermedia System (AIHS) - These systems attempt to be more adaptive by building a model of the goals, preferences, and knowledge of each individual student and using this model throughout interaction with the student in order to adapt to the needs of that student. The data recorded by AIHs are similar to ITS data.
+ITS - ITSs provide direct customized instruction or feedback to students
+by modeling student behavior and changing its mode of interaction with
+each student based on its individual model. Normally, it consists of a
+domain model, student model, and pedagogical model. ITSs record all
+student-tutor interaction (mouse clicks, typing, and speech).
 
-ITS - ITSs provide direct customized instruction or feedback to students by modeling student behavior and changing its mode of interaction with each student based on its individual model. Normally, it consists of a domain model, student model, and pedagogical model. ITSs record all student-tutor interaction (mouse clicks, typing, and speech).
-
-Test and quiz system - The main goal of these systems is to measure the students' level of knowledge with respect to one or more concepts or subjects by using a series of questions/items and other prompts for the purpose of gathering information from respondents. They store a great deal of information about students' answers, calculated scores, and statistics.
+Test and quiz system - The main goal of these systems is to measure the
+students' level of knowledge with respect to one or more concepts or
+subjects by using a series of questions/items and other prompts for the
+purpose of gathering information from respondents. They store a great
+deal of information about students' answers, calculated scores, and
+statistics.
 :::
 
 ## Discussion
 
--   Choose one category (Interaction, Administrative, Demographic, Student Affectivity).
--       Share an example of how data in this category can be collected.
+-   Choose one category (Interaction, Administrative, Demographic,
+    Student Affectivity).
 
--   Discuss the potential impact of this data on educational decision-making.
+-   
 
+    ```         
+      Share an example of how data in this category can be collected.
+    ```
+
+-   Discuss the potential impact of this data on educational
+    decision-making.
 
 ## Characteristics of Data
 
 ::: panel-tabset
 ### Types
 
-<img src = "img/data_types.png" height= "750px"/>
-
+<img src="img/data_types.png" height="750px"/>
 
 ### Structured
 
-```{r round-block, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, sci1, echo=FALSE, message=FALSE, warning=FALSE, fig = 7}
 #show first 5 rows
 library(tidyverse)
 sci_course <- read_csv("data/sci-online-classes.csv")
 
-knitr::kable(head(sci_course), format = 'html')
+print(sci_course)
+
 ```
 
 ### Unstructured
+
 <img src="img/unstructured.png" height="750px"/>
 
 ### Semi Structured
@@ -273,72 +330,71 @@ knitr::kable(head(sci_course), format = 'html')
 ### Meta
 
 <img src="img/meta_dat.png" height="750px"/>
-
 :::
 
-:::{.notes}
-In data-intensive research we might acquire data from LMS, SIS or another source. Data maybe to big for a typical  database  software  tools  to  capture,  store,  manage,  and  analyze”
+::: notes
+In data-intensive research we might acquire data from LMS, SIS or
+another source. Data maybe to big for a typical database software tools
+to capture, store, manage, and analyze"
 
-Those data are similar but different because 
-1. the tasks that students are engaged in and 
-2. how data from those tasks are collected and stored by the technology. 
+Those data are similar but different because 1. the tasks that students
+are engaged in and 2. how data from those tasks are collected and stored
+by the technology.
 
-We identify four main types of data structures.
-- structured
-- unstructured
-- semi-structured and 
-- meta-data
+We identify four main types of data structures. - structured -
+unstructured - semi-structured and - meta-data
 
 **STRUCTURED - TAB**
 
-Structured data is Quantitative in nature
-Here we see the rows and columns nice and tidy. 
-- data is tidy when each column is a variable, each row is an observation, and each cell is a single value.
+Structured data is Quantitative in nature Here we see the rows and
+columns nice and tidy. - data is tidy when each column is a variable,
+each row is an observation, and each cell is a single value.
 
-We typically have tidy data in Excel files or SQL databases that we can import using the readr function or here function.
+We typically have tidy data in Excel files or SQL databases that we can
+import using the readr function or here function.
 
-- Tabular - relational data. 
-Examples might include:
-- performance data (current and prior)
-- demographic data (student’s ethnic and or group or disability)
+-   Tabular - relational data. Examples might include:
+-   performance data (current and prior)
+-   demographic data (student's ethnic and or group or disability)
 
-Each field (variable) is discrete and can be accessed separately or jointly along with data from other fields (variables).
+Each field (variable) is discrete and can be accessed separately or
+jointly along with data from other fields (variables).
 
 **UNSTRUCTURED TAB**
 
-Unstructured data is Qualitative in nature
-and includes:
-- Non-Relational Data
-- sensor data, web logs, clickstreams, keystroke capture data, emails, images and videos
+Unstructured data is Qualitative in nature and includes: -
+Non-Relational Data - sensor data, web logs, clickstreams, keystroke
+capture data, emails, images and videos
 
-Text Heavy relationships between nodes
-IE: Audio, video, dates SQL database
+Text Heavy relationships between nodes IE: Audio, video, dates SQL
+database
 
-
-**SEMI-*STRUCTURED-TAB**
-Semi-structured data includes Qualitative 
-Triangular Data (uses surveys and interview answers)
-Semi-structured data is a form of structured data that does not conform with the formal structure of data models associated with relational databases or other forms of data tables.
+\*\*SEMI-\*STRUCTURED-TAB\*\* Semi-structured data includes Qualitative
+Triangular Data (uses surveys and interview answers) Semi-structured
+data is a form of structured data that does not conform with the formal
+structure of data models associated with relational databases or other
+forms of data tables.
 
 Semi structured can also include log data.
 
-It is a self-describing structure that contains tags
-examples: Social media, JSON and XML, Social Networkdata
-
+It is a self-describing structure that contains tags examples: Social
+media, JSON and XML, Social Networkdata
 
 **META-DATA - TAB**
 
-Not in the readings but something to think about is Meta-data collection, such as the field dates, times and locations of photos, videos and other structured data about data.
- - contexts and purposes for why the data was collected
- 
-You can read more about the meta data standards on Canada's heritage information network. The link is in the presenters notes. https://www.canada.ca/en/heritage-information-network/services/collections-documentation-standards/chin-guide-museum-standards/metadata-data-structure.html
+Not in the readings but something to think about is Meta-data
+collection, such as the field dates, times and locations of photos,
+videos and other structured data about data. - contexts and purposes for
+why the data was collected
 
+You can read more about the meta data standards on Canada's heritage
+information network. The link is in the presenters notes.
+https://www.canada.ca/en/heritage-information-network/services/collections-documentation-standards/chin-guide-museum-standards/metadata-data-structure.html
 :::
 
 ## Stakeholders
 
 ::: panel-tabset
-
 ### Direct Beneficiaries
 
 -   Students
@@ -353,12 +409,11 @@ You can read more about the meta data standards on Canada's heritage information
 
 -   District and State Education Officials
 -   Policy Makers and Government Agencies
-
 :::
 
 ## More stakeholders
-::: panel-tabset
 
+::: panel-tabset
 ### Data and Technology Providers
 
 -   Educational Technology Providers
@@ -375,54 +430,60 @@ You can read more about the meta data standards on Canada's heritage information
 -   Funding Agencies and Foundations
 :::
 
+::: notes
+Direct Beneficiaries Students: Primary beneficiaries whose performance
+and engagement are directly impacted by data. Parents and Guardians:
+Receive data about their child's progress and use it to support their
+learning.
 
-:::{.notes}
-Direct Beneficiaries
-Students: Primary beneficiaries whose performance and engagement are directly impacted by data.
-Parents and Guardians: Receive data about their child's progress and use it to support their learning.
+Educational Practitioners Teachers: Use data to inform instruction and
+personalize learning, and contribute data through assessments. School
+Administrators: Oversee data collection and analysis, and use data to
+make strategic decisions.
 
-Educational Practitioners
-Teachers: Use data to inform instruction and personalize learning, and contribute data through assessments.
-School Administrators: Oversee data collection and analysis, and use data to make strategic decisions.
+Policy and Decision Makers District and State Education Officials:
+Develop and evaluate policies using aggregated data. Policy Makers and
+Government Agencies: Develop regulations and allocate funding based on
+data.
 
-Policy and Decision Makers
-District and State Education Officials: Develop and evaluate policies using aggregated data.
-Policy Makers and Government Agencies: Develop regulations and allocate funding based on data.
+Data and Technology Providers Educational Technology Providers: Offer
+tools and platforms for data management and analysis. Educational
+Researchers: Use data for research to improve educational practices.
 
-Data and Technology Providers
-Educational Technology Providers: Offer tools and platforms for data management and analysis.
-Educational Researchers: Use data for research to improve educational practices.
+Community and Support Organizations Community Members and Organizations:
+Advocate for educational improvements using data insights. Non-Profit
+Organizations: Use data to advocate for reforms and support specific
+populations.
 
-Community and Support Organizations
-Community Members and Organizations: Advocate for educational improvements using data insights.
-Non-Profit Organizations: Use data to advocate for reforms and support specific populations.
-
-Economic Stakeholders
-Employers and Industry Representatives: Interested in data related to skills and workforce readiness.
-Funding Agencies and Foundations: Evaluate the impact of programs and provide funding based on data.
-
+Economic Stakeholders Employers and Industry Representatives: Interested
+in data related to skills and workforce readiness. Funding Agencies and
+Foundations: Evaluate the impact of programs and provide funding based
+on data.
 :::
 
 ## Discussion
 
-What challenges arise from the different needs and priorities of these stakeholder groups when it comes to data use and management?
+What challenges arise from the different needs and priorities of these
+stakeholder groups when it comes to data use and management?
 
-How can these challenges be addressed to ensure that data is used ethically and effectively to improve education for all students?
+<br/> <br/>
 
-# {background="#143156"}
+How can these challenges be addressed to ensure that data is used
+ethically and effectively to improve education for all students?
+
+#  {background="#143156"}
 
 ::: {style="text-align: left; margin-top: .05em; font-size: 160px"}
-
 **What's next?**
 :::
 
 <br/><br/><br/>
 
 ::: {style="text-align: left; font-size: 50px"}
-
-- Complete the `Prepare and Wrangle` part of the Case Study
-- Complete the `R Programming primer`: [Work with Data](https://rstudio.cloud/learn/primers/2)
-- Complete the `Badge requirement` [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
-- Do `essential readings` for the next Foundations Module.
+-   Complete the `Prepare and Wrangle` part of the Case Study
+-   Complete the `R Programming primer`: [Work with
+    Data](https://rstudio.cloud/learn/primers/2)
+-   Complete the `Badge requirement` [Foundations badge - Data
+    Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+-   Do `essential readings` for the next Foundations Module.
 :::
-

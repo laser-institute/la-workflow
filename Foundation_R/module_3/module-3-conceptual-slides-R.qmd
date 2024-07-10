@@ -1,0 +1,439 @@
+---
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERLogoB.png
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+resources:
+  - demo.pdf
+---
+
+<h1> <br> Methods used in LA </h1>
+
+<h2> Foundations Conceptual Overview - Module 3 </h2>
+
+<hr>
+
+<h3> The LASER Team </h3>
+
+<h3> `r format(Sys.time(), "%B %d, %Y")` </h3>
+<br>
+
+[github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
+ 
+ ![](img/LASERLogoB.png){.absolute top=425 left=1000 width="800"}
+
+## Welcome to Foundations of Learning Analytics
+
+> `Foundations of Learning Analytics` are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research.
+
+<br/>
+
+It consists of consists of four modules. Each module of the Foundation of LA includes: 
+
+. . .
+
+:::{.columns}
+:::{.column width="40%"}
+
+::: {style="font-size: 65%;"}
+
+::: {.fragment .fade-in-then-semi-out}
+  - Essential readings
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+  - Conceptual overview slidedeck
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+  - Code a-long slidedeck 
+:::
+:::
+:::
+
+:::{.column width="10%"}
+:::
+
+:::{.column width="50%"}
+
+::: {style="font-size: 65%;"}
+
+::: {.fragment .fade-in-then-semi-out}
+  - Case study activity that correlates with the Learning Analytics workflow
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+  - Optional badge activity
+:::
+:::
+:::
+:::
+
+
+## Module 3 Objectives
+
+By the end of this module:
+
+::: {style="font-size: 75%;"}
+::: fragment
+* Diverse Learning Analytics Methodologies:
+  - Understand various methodologies like predictive analytics, social network analysis, and more, and their contributions to learning analytics.
+:::
+
+::: fragment
+* Application of Analytical Techniques:
+  - Gain insights into applying different analytical techniques to enhance educational outcomes.
+:::
+
+::: fragment
+* Integration of Analytical Approaches:
+  - Learn to integrate and compare different analytical methods for a comprehensive understanding of learning processes.
+:::
+:::
+
+
+::: {style="font-size: 65%;"}
+::: fragment
+
+Essential readings:
+
+::: {style="font-size: 65%;"}
+::: fragment
+1. [Learning Analytics Goes to School, (Wrangle Ch. 3, pp. 39 - 43) By Andrew Krumm, Barbara Means, Marie Bienkowski](https://laser-institute.github.io/LASER_Foundations_2023/lab2/Readings/Learning%20Analytics%20Goes%20to%20School.pdf)
+2. [The journey of learning analytics. By Joksimović, Kovanović & Dawson](https://laser-institute.github.io/LASER_Foundations_2023/lab2/Readings/The_Journey_of_Learning_Analytics.pdf)
+3. [OPTIONAL: R for Data Science, (Ch. 3) by Hadley Wickham & Garrett Grolemund](https://r4ds.had.co.nz/transform.html)
+:::
+:::
+
+:::
+:::
+
+:::{.notes}
+
+In this module, we'll dive into common methodologies used within the field of learning analytics. Each methodology, including predictive analytics, social network analysis, discourse analysis, text analysis, and multimodal analysis, offers unique perspectives and tools to understand and enhance learning processes. 
+
+We want to not only understand these methodologies in isolation but also learn how to integrate them effectively. This comprehensive approach will allow us to apply these analytical techniques practically, thereby enhancing educational outcomes. Throughout this module, we'll explore how these methods can be used to predict student performance, analyze social interactions, understand textual communications, and gather insights from multiple data sources simultaneously. We'll also discuss case studies and real-world applications to illustrate these concepts. 
+
+Additionally, the essential readings provided will support your learning by offering theoretical backgrounds and practical applications from leading experts in the field. These resources are carefully selected to enrich your understanding and provide a solid foundation in both the practical and theoretical aspects of learning analytics.
+
+:::
+
+## Discussion
+
+What types of analysis are you familiar with?
+
+<br/> <br/>
+
+How have you used it in your work?
+
+
+## Predictive Analytics
+
+::: panel-tabset
+
+### Highlights
+
+-   Forecast future outcomes and behaviors
+-   Identify students
+-   Early identification
+-   Improving student retention
+-   Personalizing learning experiences
+-   Optimizing resource allocation
+
+### Methods
+
+-   Regression Analysis
+-   Decision Trees
+-   Random Forest
+-   Neural Networks
+-   Support Vector Machines (SVM)
+-   Time Series Analysis
+-   Ensemble Methods
+
+### Research Scholars
+
+<img src="img/pred_SCHOLA.png" height="750px"/>
+
+:::
+
+
+:::{.notes}
+
+**Predictive Analytics**
+- Predictive analysis in learning analytics involves leveraging data to forecast future outcomes and behaviors.
+- It enables educators to identify students who may require additional support, interventions, or targeted resources.
+- By analyzing various data points such as demographics, engagement patterns, and academic history, predictive analysis helps in early identification and proactive decision-making.
+- Benefits of predictive analysis include improving student retention, personalizing learning experiences, and optimizing resource allocation.
+
+**Predictive Analysis** supports student learning by predicting future
+
+- Learning analytics aims to comprehend and enhance the learning process (Macfadyen & Dawson, 2010). Consequently, it is not unexpected that initial investigations predominantly concentrated on establishing predictive frameworks for student retention and academic achievement (Gašević et al., 2015; Siemens, 2013). This emphasis on identifying or foreseeing students who may be at risk of academic failure during the early stages of their academic journey is driven by the economic advantages associated with student retention.
+
+- Course Signals first predictive dashboard by Arnold and Pistilli, 2012
+consisted of a predictive model for detecting students’ at-risk of course
+failure, and a dashboard which uses a traffic light analogy to visualise
+individual students’ risk of failure (i.e., green–no risk, yellow–moderate risk,
+red–high risk). The predictive model underpinning the Course Signals
+software is based on a wide range of variables including, LMS engagement
+activity, demographics, and past academic performance
+
+EXAMPLE METHODS: 
+Regression Analysis: Regression analysis is a statistical technique that examines the relationship between a dependent variable and one or more independent variables. It helps identify and quantify the influence of different variables on the outcome of interest. Linear regression, logistic regression, and polynomial regression are some examples of regression analysis used in predictive analytics.
+
+Decision Trees: Decision trees are a popular machine learning method used in predictive analytics. They create a flowchart-like structure to represent decisions and their possible consequences. By splitting the data based on different features, decision trees can predict outcomes by following a path of decisions and conditions.
+
+Random Forest: Random forest is an ensemble learning method that combines multiple decision trees to make predictions. It generates a large number of decision trees and aggregates their predictions to reach a final outcome. Random forest helps reduce overfitting and improves the accuracy and stability of predictions.
+
+Neural Networks: Neural networks are a class of machine learning algorithms inspired by the structure and functioning of the human brain. They consist of interconnected nodes or "neurons" that process and transmit information. Neural networks can learn patterns and relationships in complex datasets, making them suitable for predictive analysis tasks.
+
+Support Vector Machines (SVM): SVM is a supervised machine learning algorithm used for classification and regression analysis. It maps data points into a high-dimensional space and separates them into different classes or predicts numerical values based on their position relative to decision boundaries. SVM is effective in handling both linear and non-linear relationships in the data.
+
+Time Series Analysis: Time series analysis is used when dealing with data that is ordered chronologically, such as stock prices, weather data, or student performance over time. This method captures patterns and trends in the data and makes predictions based on historical patterns, seasonality, and other time-related factors.
+
+Ensemble Methods: Ensemble methods combine multiple predictive models to improve accuracy and robustness. These methods include techniques like bagging, boosting, and stacking, where predictions from multiple models are combined or weighted to produce a final prediction. Ensemble methods help overcome biases and increase the overall performance of predictive models.
+
+
+:::
+
+
+## Social Network Analysis
+
+::: panel-tabset
+
+### Highlights
+
+- Social interactions and collaborations
+- How learners learn together
+  (Interaction and Knowledge sharing)
+- Social dynamics
+- Identifying influential learners
+  promoting peer support
+
+### Methods
+
+- Ego network Analysis
+- Complete Network Analysis
+  + Centrality Measures
+  + Network Density
+  + Clustering Coefficient
+  + Network Visualization
+  + Community Detection
+
+### Research Scholars
+
+<img src="img/SNA_SCHOLAR.png" height="750px"/>
+
+:::
+
+
+:::{.notes}
+
+**SOCIAL Network ANALYTICS**
+
+- Social Network analytics involves understanding student interactions through social network analysis. 
+Social network analysis (SNA) has emerged as a fundamental approach in learning analytics research. SNA in learning analytics involves extracting peer interactions from online forums to assess students' sense of community, examining creative capacity, exploring the relationship between learners' social centrality and learning outcomes, and visualizing and analyzing patterns in interactions from social learning activities between students and teachers, among other research objectives.
+
+- Social learning analytics examines social interactions and collaborations among learners in educational settings.
+- It focuses on analyzing data from discussion forums, collaborative platforms, and social networks to gain insights into how learners learn together.
+- By understanding patterns of interaction, knowledge sharing, and social dynamics, social learning analytics can enhance collaborative learning environments.
+- Benefits of social learning analytics include identifying influential learners, promoting peer support, and facilitating effective knowledge construction.
+
+EXAMPLE METHODS:
+Ego Network Analysis: analysis of individual noses. individual behavior and its variation is mined and described. Egos can be persons, community or  whole societies.
+
+Complete Network Analysis: analysis of relationships of all nodes. Can include sub analysis that may include:
+
+Centrality Measures: Centrality measures help identify influential individuals or entities within a social network. These measures quantify the importance or prominence of a node based on its position in the network. Examples of centrality measures include degree centrality (number of connections), betweenness centrality (ability to control information flow), and closeness centrality (proximity to other nodes).
+
+Network Density: Network density measures the extent of connections within a social network. It calculates the proportion of all possible connections that actually exist in the network. High network density indicates a more interconnected and cohesive network, while low density suggests more fragmented or disconnected relationships.
+
+Clustering Coefficient: The clustering coefficient measures the extent to which nodes in a network tend to cluster or form tightly-knit groups. It assesses the presence of cohesive subgroups within the network. Higher clustering coefficients indicate stronger local cohesion and community structure.
+
+Network Visualization: Network visualization techniques are used to represent and visualize social networks graphically. These visualizations help in understanding the structure, patterns, and relationships within a social network. Nodes and edges are typically depicted, with different colors or sizes indicating various attributes or centrality measures.
+
+Community Detection: Community detection methods identify groups or communities of closely interconnected nodes within a social network. These methods use algorithms to group nodes with similar connections or patterns of interaction. Community detection helps uncover hidden structures, subgroups, or clusters within the network.
+:::
+
+## Discourse Analysis
+
+::: panel-tabset
+
+### Highlights
+
+- Language and communication
+- Structure, content, and 
+  dynamics of conversations, discussions, 
+  and debates.
+- Learners engage in critical thinking
+- Learning processes, and knowledge co-construction
+
+### Methods
+
+- Counting average sentence length
+- Number of long words
+- Length of essay
+- Latent semantic analysis
+  + Identification of Features
+- CohMetrix and Cross Recurrence Quantification Analysis
+  + Cognitive Complexity
+
+### Research Scholars
+
+<img src="img/discourse_SCHOLAR.png" height="750px"/>
+
+:::
+
+
+:::{.notes}
+
+**DISCOURSE ANALYSIS**
+- Discourse Analysis is a type of learning analytics that focuses on using textual discourse data for supporting student learning. It focuses on studying language in use, specifically the analysis of spoken or written communication in its broader context. Its primary application lies in analyzing students' online communications, including transcripts of their online discussions, chat room interactions, and communications across various social media platforms such as Twitter, Facebook, and blogs. Analysis of student communication transcripts and linguistically modelling student dialogue provides ways of capturing social aspects of student learning.
+
+- Discourse analysis involves analyzing language and communication in educational contexts.
+- It examines the structure, content, and dynamics of conversations, discussions, and debates.
+- Discourse analysis helps understand how learners engage in critical thinking, construct arguments, and develop shared understanding.
+- It provides insights into learning processes, knowledge co-construction, and the development of reasoning and communication skills.
+
+EXAMPLE METHODS: 
+Discourse analysis is a qualitative research method
+Critical Discourse Analysis (CDA): CDA examines how power, ideology, and social structures influence language use. It aims to uncover hidden meanings, dominant ideologies, and social inequalities embedded in discourse. CDA often explores the relationship between language, power, and social change.
+
+Conversation Analysis (CA): CA studies the organization and structure of talk-in-interaction. It focuses on the sequential and turn-taking aspects of conversation, analyzing the patterns, rules, and practices that govern how people speak, respond, and interpret each other's utterances. CA is commonly used to analyze naturally occurring conversations.
+
+Discursive Psychology: Discursive psychology explores how language is used to construct social realities, identities, and psychological phenomena. It investigates the discursive practices through which individuals interpret and make sense of their experiences. Discursive psychology often employs conversation analysis and discourse analysis methods.
+
+::::
+
+## Text Analysis
+
+::: panel-tabset
+
+### Highlights
+
+- Analyzing written language
+- Extract meaningful insights
+- Assess factors
+- Benefits of text analysis
+
+### Methods
+
+- Sentiment Analysis
+- Topic Modeling
+- Text Classification
+- Text Mining
+- Natural Language Processing
+- Text Based Social Network Analysis
+
+### Research Scholars
+
+<img src="img/textmin_SCHOLAR.png" height="750px"/>
+
+:::
+
+
+:::{.notes}
+
+**Text Analysis**
+
+- On the other hand, text analysis, examines written or spoken texts to identify patterns, themes, and structures within the text itself. Text analysis typically involves quantitative techniques to analyze large sets of texts, using coding and categorization schemes to extract relevant information and gain insights into the content.
+
+
+- Text analysis techniques involve analyzing written language in educational contexts.
+- Natural language processing (NLP) algorithms are used to extract meaningful insights from text data, such as essays, assignments, and online discussions.
+- Text analysis can assess factors like coherence, vocabulary, and argumentation, enabling automated essay scoring and feedback generation.
+- Benefits of text analysis include scalable assessment, consistent feedback, and improved writing instruction.
+
+Sentiment Analysis: Sentiment analysis, also known as opinion mining, aims to determine the sentiment expressed in text data. It involves classifying text as positive, negative, or neutral, providing insights into learners' attitudes, emotions, and perceptions. Sentiment analysis can be applied to analyze feedback, forum posts, or written reflections to gauge students' sentiment towards the learning experience or course materials.
+
+Topic Modeling: Topic modeling is a statistical technique used to identify underlying themes or topics within a large collection of text documents. It helps uncover the main ideas, concepts, and recurring patterns in textual data. Topic modeling can be applied to analyze student essays, discussion forum posts, or open-ended survey responses to understand the themes and knowledge domains relevant to learning.
+
+Text Classification: Text classification involves categorizing text documents into predefined categories or classes based on their content. It can be used to automatically classify student assignments, essays, or written responses into different categories or levels of proficiency. Text classification allows for scalable assessment and provides insights into students' mastery of specific concepts or skills.
+
+Text Mining: Text mining refers to the process of extracting valuable information or patterns from text data. It involves techniques such as information retrieval, text summarization, and keyword extraction. Text mining can be used to analyze large collections of educational texts, such as textbooks, research papers, or online resources, to identify relevant concepts, key terms, or trends.
+
+Natural Language Processing (NLP): Natural Language Processing encompasses a range of techniques that enable computers to understand and process human language. NLP techniques, such as named entity recognition, part-of-speech tagging, and syntactic parsing, can be applied in learning analytics to analyze and understand the grammatical structure, relationships, and semantic meaning of text data.
+
+Text-based Social Network Analysis: Text-based social network analysis involves analyzing text-based communication, such as emails, discussion forum posts, or chat logs, to identify social networks and communication patterns within educational communities. It helps understand the structure of social interactions, information flow, and the emergence of influential individuals or communities within learning environments.
+
+**Comparing Discourse vs Textual Analysis**
+
+- While both discourse analysis and text analysis involve analyzing language, discourse analysis emphasizes the social and contextual aspects of communication, whereas text analysis focuses more on examining the content and structure of the text itself. They can be complementary approaches, with discourse analysis providing a deeper understanding of the meaning-making processes within social contexts, while text analysis provides systematic and quantitative insights into textual data.
+
+:::
+
+
+## Multimodal Analysis
+
+
+::: panel-tabset
+
+### Highlights
+
+- Multiple modalities
+- Learners' experiences
+- Enhances understanding
+- Benefits of multimodal analysis
+
+### Methods
+
+- Multimodal Fusion
+- Gesture and Movement Analysis
+- Speech and Audio Analysis
+- Visual Analysis
+- Physiological and Sensor Data Analysis
+- Multimodal Visualization
+
+### Research Scholars
+
+<img src="img/multimodal_SCHOLAR.png" height="750px"/>
+
+:::
+
+
+:::{.notes}
+
+**MultiModal Analysis**
+- an approach able to provide more specific learning models to account for alternate learning designs and teaching practices. Multimodal learning analytics employs diverse data sources to enhance the understanding of learning across different environments, encompassing both in-person and online educational settings. Multimodal learning analytics aims to gather complementary forms of learning-related data, enabling a comprehensive intricacies involved in the learning processes. This analysis tend to go beyond more traditional trace and survey data to incorporate various sensor data streams that capture gestures, gaze, or speech.
+
+- Multimodal analysis integrates and analyzes data from multiple modalities (e.g., text, audio, video, sensor data) to understand learning processes holistically.
+- It provides a comprehensive view of learners' experiences, incorporating their verbal, non-verbal, and physiological cues.
+- Multimodal analysis enhances understanding of engagement, comprehension, and problem-solving skills in various educational contexts.
+- Benefits of multimodal analysis include personalized interventions, adaptive learning, and deeper insights into learners' cognitive and affective states.
+:::
+
+## Discussion
+
+Based on your experience or aspirations, how could these methodologies enhance educational outcomes in various learning environments?
+
+<br/><br/>
+
+What challenges might arise in implementing these methodologies in educational research?
+
+AND ...
+
+Can you propose solutions or share experiences on how to overcome these challenges effectively?
+
+# {background="#143156"}
+
+::: {style="text-align: left; margin-top: .05em; font-size: 160px"}
+
+**What's next?**
+:::
+
+<br/><br/><br/>
+
+::: {style="text-align: left; font-size: 50px"}
+
+- Complete the `Explore` part of the Case Study
+- Complete the `Badge requirement` [Foundations badge - Data Sources]
+- Do `essential readings` for the next Foundations Module.
+:::

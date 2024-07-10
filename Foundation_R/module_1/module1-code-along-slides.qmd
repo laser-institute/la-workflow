@@ -480,6 +480,90 @@ head(gpa_dt, n=3)
 
 ::::
 
+## Joins Overview
+
+ Mock Data Generation
+
+```{r echo=TRUE}
+# Create mock data
+students <- data.frame(
+  student_id = c(1, 2, 3, 4),
+  name = c("Alice", "Bob", "Charlie", "David"),
+  major = c("Math", "Physics", "Biology", "Computer Science")
+)
+students
+
+scores <- data.frame(
+  student_id = c(1, 2, 3, 5),
+  score = c(85, 90, 75, 80)
+)
+scores
+```
+
+:::{.notes}
+We are creating two mock data frames: students and scores. These data frames will help us demonstrate different types of joins in R.
+:::
+
+## Inner join
+
+```{r echo=TRUE}
+# Inner join: Returns rows that have matching values in both tables
+inner_join_result <- inner_join(students, scores, by = "student_id")
+inner_join_result
+```
+
+:::{.notes}
+An inner join returns rows that have matching values in both tables. Only students present in both data frames are included in the result.
+:::
+
+## Left join
+
+```{r echo=TRUE}
+# Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.
+left_join_result <- left_join(students, scores, by = "student_id")
+left_join_result
+```
+
+:::{.notes}
+A left join returns all rows from the left table (students), and the matched rows from the right table (scores). If there is no match, the result is NA for the missing values.
+:::
+
+## Right join
+
+
+```{r echo=TRUE}
+# Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.
+right_join_result <- right_join(students, scores, by = "student_id")
+right_join_result
+```
+
+<br/><br/>
+❓  Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?
+
+
+:::{.notes}
+A right join returns all rows from the right table (scores), and the matched rows from the left table (students). If there is no match, the result is NA for the missing values.
+
+Question: Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?
+
+Answer:
+You might choose to use an inner join instead of a left join when you only want to analyze the data for students who have both student information and corresponding scores. An inner join ensures that you are only working with complete data where there is a match in both tables, which can help avoid issues related to missing values and ensure the integrity of your analysis. This is particularly important when you need to perform calculations or statistical analyses that require complete data sets. By using an inner join, you ensure that the dataset you are working with is fully populated with the necessary information from both sources.
+
+:::
+
+
+## Full join
+
+```{r echo = TRUE}
+# Full join: Returns all rows when there is a match in one of the tables. If there is no match, the result is NA for the missing values.
+full_join_result <- full_join(students, scores, by = "student_id")
+full_join_result
+
+```
+
+:::{.notes}
+A full join returns all rows from both tables, whether there is a match or not. If there is no match, the result is NA for the missing values.
+:::
 
 ## {background="#143156"}
 
@@ -494,10 +578,10 @@ head(gpa_dt, n=3)
 
 ::: {style="text-align: left; font-size: 50px"}
 
-- Complete the `Prepare part of the Case Study`
-- Complete the R Programming primer: [Work with Data](https://rstudio.cloud/learn/primers/2)
+- Complete the `Prepare` and `Wrangle` parts of the Case Study.
 - Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
-- Do pre-readings for the next Foundations Module.
+- Do required readings for the next Foundations Module 2.
+
 
 :::
 

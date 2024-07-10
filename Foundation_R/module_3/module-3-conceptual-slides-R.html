@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="module-2-conceptual-slides-R_files/libs/clipboard/clipboard.min.js"></script>
+<script src="module-2-conceptual-slides-R_files/libs/quarto-html/tabby.min.js"></script>
+<script src="module-2-conceptual-slides-R_files/libs/quarto-html/popper.min.js"></script>
+<script src="module-2-conceptual-slides-R_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="module-2-conceptual-slides-R_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="module-2-conceptual-slides-R_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="module-2-conceptual-slides-R_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="module-2-conceptual-slides-R_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.353">
+
+  <title>module-2-conceptual-slides-r</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="module-2-conceptual-slides-R_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="module-2-conceptual-slides-R_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="module-2-conceptual-slides-R_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="module-2-conceptual-slides-R_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="module-2-conceptual-slides-R_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="module-2-conceptual-slides-R_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="module-2-conceptual-slides-R_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="module-2-conceptual-slides-R_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="module-2-conceptual-slides-R_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<h1>
+<br> Methods used in LA
+</h1>
+<h2>
+Foundations Conceptual Overview - Module 3
+</h2>
+<hr>
+<h3>
+The LASER Team
+</h3>
+<h3>
+<code>r format(Sys.time(), "%B %d, %Y")</code>
+</h3>
+<p><br></p>
+<p><a href="https://github.com/laser-institute/Foundations_BEAM_2023">github.com/Foundations 2024</a></p>
+<p><img data-src="img/LASERLogoB.png" class="absolute" style="top: 425px; left: 1000px; width: 800px; "></p>
+</section>
+<section id="welcome-to-foundations-of-learning-analytics" class="slide level2">
+<h2>Welcome to Foundations of Learning Analytics</h2>
+<blockquote>
+<p><code>Foundations of Learning Analytics</code> are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research.</p>
+</blockquote>
+<p><br></p>
+<p>It consists of consists of four modules. Each module of the Foundation of LA includes:</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="font-size: 65%;">
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Essential readings</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Conceptual overview slidedeck</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Code a-long slidedeck</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:50%;">
+<div style="font-size: 65%;">
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Case study activity that correlates with the Learning Analytics workflow</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Optional badge activity</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="module-3-objectives" class="slide level2">
+<h2>Module 3 Objectives</h2>
+<p>By the end of this module:</p>
+<div style="font-size: 75%;">
+<div class="fragment">
+<ul>
+<li>Diverse Learning Analytics Methodologies:
+<ul>
+<li>Understand various methodologies like predictive analytics, social network analysis, and more, and their contributions to learning analytics.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Application of Analytical Techniques:
+<ul>
+<li>Gain insights into applying different analytical techniques to enhance educational outcomes.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Integration of Analytical Approaches:
+<ul>
+<li>Learn to integrate and compare different analytical methods for a comprehensive understanding of learning processes.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div style="font-size: 65%;">
+<div class="fragment">
+<p>Essential readings:</p>
+<div style="font-size: 65%;">
+<div class="fragment">
+<ol type="1">
+<li><a href="https://laser-institute.github.io/LASER_Foundations_2023/lab2/Readings/Learning%20Analytics%20Goes%20to%20School.pdf">Learning Analytics Goes to School, (Wrangle Ch. 3, pp.&nbsp;39 - 43) By Andrew Krumm, Barbara Means, Marie Bienkowski</a></li>
+<li><a href="https://laser-institute.github.io/LASER_Foundations_2023/lab2/Readings/The_Journey_of_Learning_Analytics.pdf">The journey of learning analytics. By Joksimović, Kovanović &amp; Dawson</a></li>
+<li><a href="https://r4ds.had.co.nz/transform.html">OPTIONAL: R for Data Science, (Ch. 3) by Hadley Wickham &amp; Garrett Grolemund</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>In this module, we’ll dive into common methodologies used within the field of learning analytics. Each methodology, including predictive analytics, social network analysis, discourse analysis, text analysis, and multimodal analysis, offers unique perspectives and tools to understand and enhance learning processes.</p>
+<p>We want to not only understand these methodologies in isolation but also learn how to integrate them effectively. This comprehensive approach will allow us to apply these analytical techniques practically, thereby enhancing educational outcomes. Throughout this module, we’ll explore how these methods can be used to predict student performance, analyze social interactions, understand textual communications, and gather insights from multiple data sources simultaneously. We’ll also discuss case studies and real-world applications to illustrate these concepts.</p>
+<p>Additionally, the essential readings provided will support your learning by offering theoretical backgrounds and practical applications from leading experts in the field. These resources are carefully selected to enrich your understanding and provide a solid foundation in both the practical and theoretical aspects of learning analytics.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<p>What types of analysis are you familiar with?</p>
+<p><br> <br></p>
+<p>How have you used it in your work?</p>
+</section>
+<section id="predictive-analytics" class="slide level2">
+<h2>Predictive Analytics</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Highlights</a></li><li><a href="#tabset-1-2">Methods</a></li><li><a href="#tabset-1-3">Research Scholars</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>Forecast future outcomes and behaviors</li>
+<li>Identify students</li>
+<li>Early identification</li>
+<li>Improving student retention</li>
+<li>Personalizing learning experiences</li>
+<li>Optimizing resource allocation</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>Regression Analysis</li>
+<li>Decision Trees</li>
+<li>Random Forest</li>
+<li>Neural Networks</li>
+<li>Support Vector Machines (SVM)</li>
+<li>Time Series Analysis</li>
+<li>Ensemble Methods</li>
+</ul>
+</div>
+<div id="tabset-1-3">
+<p><img src="img/pred_SCHOLA.png" height="750px"></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Predictive Analytics</strong> - Predictive analysis in learning analytics involves leveraging data to forecast future outcomes and behaviors. - It enables educators to identify students who may require additional support, interventions, or targeted resources. - By analyzing various data points such as demographics, engagement patterns, and academic history, predictive analysis helps in early identification and proactive decision-making. - Benefits of predictive analysis include improving student retention, personalizing learning experiences, and optimizing resource allocation.</p>
+<p><strong>Predictive Analysis</strong> supports student learning by predicting future</p>
+<ul>
+<li><p>Learning analytics aims to comprehend and enhance the learning process (Macfadyen &amp; Dawson, 2010). Consequently, it is not unexpected that initial investigations predominantly concentrated on establishing predictive frameworks for student retention and academic achievement (Gašević et al., 2015; Siemens, 2013). This emphasis on identifying or foreseeing students who may be at risk of academic failure during the early stages of their academic journey is driven by the economic advantages associated with student retention.</p></li>
+<li><p>Course Signals first predictive dashboard by Arnold and Pistilli, 2012 consisted of a predictive model for detecting students’ at-risk of course failure, and a dashboard which uses a traffic light analogy to visualise individual students’ risk of failure (i.e., green–no risk, yellow–moderate risk, red–high risk). The predictive model underpinning the Course Signals software is based on a wide range of variables including, LMS engagement activity, demographics, and past academic performance</p></li>
+</ul>
+<p>EXAMPLE METHODS: Regression Analysis: Regression analysis is a statistical technique that examines the relationship between a dependent variable and one or more independent variables. It helps identify and quantify the influence of different variables on the outcome of interest. Linear regression, logistic regression, and polynomial regression are some examples of regression analysis used in predictive analytics.</p>
+<p>Decision Trees: Decision trees are a popular machine learning method used in predictive analytics. They create a flowchart-like structure to represent decisions and their possible consequences. By splitting the data based on different features, decision trees can predict outcomes by following a path of decisions and conditions.</p>
+<p>Random Forest: Random forest is an ensemble learning method that combines multiple decision trees to make predictions. It generates a large number of decision trees and aggregates their predictions to reach a final outcome. Random forest helps reduce overfitting and improves the accuracy and stability of predictions.</p>
+<p>Neural Networks: Neural networks are a class of machine learning algorithms inspired by the structure and functioning of the human brain. They consist of interconnected nodes or “neurons” that process and transmit information. Neural networks can learn patterns and relationships in complex datasets, making them suitable for predictive analysis tasks.</p>
+<p>Support Vector Machines (SVM): SVM is a supervised machine learning algorithm used for classification and regression analysis. It maps data points into a high-dimensional space and separates them into different classes or predicts numerical values based on their position relative to decision boundaries. SVM is effective in handling both linear and non-linear relationships in the data.</p>
+<p>Time Series Analysis: Time series analysis is used when dealing with data that is ordered chronologically, such as stock prices, weather data, or student performance over time. This method captures patterns and trends in the data and makes predictions based on historical patterns, seasonality, and other time-related factors.</p>
+<p>Ensemble Methods: Ensemble methods combine multiple predictive models to improve accuracy and robustness. These methods include techniques like bagging, boosting, and stacking, where predictions from multiple models are combined or weighted to produce a final prediction. Ensemble methods help overcome biases and increase the overall performance of predictive models.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="social-network-analysis" class="slide level2">
+<h2>Social Network Analysis</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Highlights</a></li><li><a href="#tabset-2-2">Methods</a></li><li><a href="#tabset-2-3">Research Scholars</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>Social interactions and collaborations</li>
+<li>How learners learn together (Interaction and Knowledge sharing)</li>
+<li>Social dynamics</li>
+<li>Identifying influential learners promoting peer support</li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li>Ego network Analysis</li>
+<li>Complete Network Analysis
+<ul>
+<li>Centrality Measures</li>
+<li>Network Density</li>
+<li>Clustering Coefficient</li>
+<li>Network Visualization</li>
+<li>Community Detection</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-2-3">
+<p><img src="img/SNA_SCHOLAR.png" height="750px"></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>SOCIAL Network ANALYTICS</strong></p>
+<ul>
+<li><p>Social Network analytics involves understanding student interactions through social network analysis. Social network analysis (SNA) has emerged as a fundamental approach in learning analytics research. SNA in learning analytics involves extracting peer interactions from online forums to assess students’ sense of community, examining creative capacity, exploring the relationship between learners’ social centrality and learning outcomes, and visualizing and analyzing patterns in interactions from social learning activities between students and teachers, among other research objectives.</p></li>
+<li><p>Social learning analytics examines social interactions and collaborations among learners in educational settings.</p></li>
+<li><p>It focuses on analyzing data from discussion forums, collaborative platforms, and social networks to gain insights into how learners learn together.</p></li>
+<li><p>By understanding patterns of interaction, knowledge sharing, and social dynamics, social learning analytics can enhance collaborative learning environments.</p></li>
+<li><p>Benefits of social learning analytics include identifying influential learners, promoting peer support, and facilitating effective knowledge construction.</p></li>
+</ul>
+<p>EXAMPLE METHODS: Ego Network Analysis: analysis of individual noses. individual behavior and its variation is mined and described. Egos can be persons, community or whole societies.</p>
+<p>Complete Network Analysis: analysis of relationships of all nodes. Can include sub analysis that may include:</p>
+<p>Centrality Measures: Centrality measures help identify influential individuals or entities within a social network. These measures quantify the importance or prominence of a node based on its position in the network. Examples of centrality measures include degree centrality (number of connections), betweenness centrality (ability to control information flow), and closeness centrality (proximity to other nodes).</p>
+<p>Network Density: Network density measures the extent of connections within a social network. It calculates the proportion of all possible connections that actually exist in the network. High network density indicates a more interconnected and cohesive network, while low density suggests more fragmented or disconnected relationships.</p>
+<p>Clustering Coefficient: The clustering coefficient measures the extent to which nodes in a network tend to cluster or form tightly-knit groups. It assesses the presence of cohesive subgroups within the network. Higher clustering coefficients indicate stronger local cohesion and community structure.</p>
+<p>Network Visualization: Network visualization techniques are used to represent and visualize social networks graphically. These visualizations help in understanding the structure, patterns, and relationships within a social network. Nodes and edges are typically depicted, with different colors or sizes indicating various attributes or centrality measures.</p>
+<p>Community Detection: Community detection methods identify groups or communities of closely interconnected nodes within a social network. These methods use algorithms to group nodes with similar connections or patterns of interaction. Community detection helps uncover hidden structures, subgroups, or clusters within the network.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="discourse-analysis" class="slide level2">
+<h2>Discourse Analysis</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Highlights</a></li><li><a href="#tabset-3-2">Methods</a></li><li><a href="#tabset-3-3">Research Scholars</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li>Language and communication</li>
+<li>Structure, content, and dynamics of conversations, discussions, and debates.</li>
+<li>Learners engage in critical thinking</li>
+<li>Learning processes, and knowledge co-construction</li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<ul>
+<li>Counting average sentence length</li>
+<li>Number of long words</li>
+<li>Length of essay</li>
+<li>Latent semantic analysis
+<ul>
+<li>Identification of Features</li>
+</ul></li>
+<li>CohMetrix and Cross Recurrence Quantification Analysis
+<ul>
+<li>Cognitive Complexity</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-3-3">
+<p><img src="img/discourse_SCHOLAR.png" height="750px"></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>DISCOURSE ANALYSIS</strong> - Discourse Analysis is a type of learning analytics that focuses on using textual discourse data for supporting student learning. It focuses on studying language in use, specifically the analysis of spoken or written communication in its broader context. Its primary application lies in analyzing students’ online communications, including transcripts of their online discussions, chat room interactions, and communications across various social media platforms such as Twitter, Facebook, and blogs. Analysis of student communication transcripts and linguistically modelling student dialogue provides ways of capturing social aspects of student learning.</p>
+<ul>
+<li>Discourse analysis involves analyzing language and communication in educational contexts.</li>
+<li>It examines the structure, content, and dynamics of conversations, discussions, and debates.</li>
+<li>Discourse analysis helps understand how learners engage in critical thinking, construct arguments, and develop shared understanding.</li>
+<li>It provides insights into learning processes, knowledge co-construction, and the development of reasoning and communication skills.</li>
+</ul>
+<p>EXAMPLE METHODS: Discourse analysis is a qualitative research method Critical Discourse Analysis (CDA): CDA examines how power, ideology, and social structures influence language use. It aims to uncover hidden meanings, dominant ideologies, and social inequalities embedded in discourse. CDA often explores the relationship between language, power, and social change.</p>
+<p>Conversation Analysis (CA): CA studies the organization and structure of talk-in-interaction. It focuses on the sequential and turn-taking aspects of conversation, analyzing the patterns, rules, and practices that govern how people speak, respond, and interpret each other’s utterances. CA is commonly used to analyze naturally occurring conversations.</p>
+<p>Discursive Psychology: Discursive psychology explores how language is used to construct social realities, identities, and psychological phenomena. It investigates the discursive practices through which individuals interpret and make sense of their experiences. Discursive psychology often employs conversation analysis and discourse analysis methods.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="text-analysis" class="slide level2">
+<h2>Text Analysis</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Highlights</a></li><li><a href="#tabset-4-2">Methods</a></li><li><a href="#tabset-4-3">Research Scholars</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>Analyzing written language</li>
+<li>Extract meaningful insights</li>
+<li>Assess factors</li>
+<li>Benefits of text analysis</li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>Sentiment Analysis</li>
+<li>Topic Modeling</li>
+<li>Text Classification</li>
+<li>Text Mining</li>
+<li>Natural Language Processing</li>
+<li>Text Based Social Network Analysis</li>
+</ul>
+</div>
+<div id="tabset-4-3">
+<p><img src="img/textmin_SCHOLAR.png" height="750px"></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Text Analysis</strong></p>
+<ul>
+<li><p>On the other hand, text analysis, examines written or spoken texts to identify patterns, themes, and structures within the text itself. Text analysis typically involves quantitative techniques to analyze large sets of texts, using coding and categorization schemes to extract relevant information and gain insights into the content.</p></li>
+<li><p>Text analysis techniques involve analyzing written language in educational contexts.</p></li>
+<li><p>Natural language processing (NLP) algorithms are used to extract meaningful insights from text data, such as essays, assignments, and online discussions.</p></li>
+<li><p>Text analysis can assess factors like coherence, vocabulary, and argumentation, enabling automated essay scoring and feedback generation.</p></li>
+<li><p>Benefits of text analysis include scalable assessment, consistent feedback, and improved writing instruction.</p></li>
+</ul>
+<p>Sentiment Analysis: Sentiment analysis, also known as opinion mining, aims to determine the sentiment expressed in text data. It involves classifying text as positive, negative, or neutral, providing insights into learners’ attitudes, emotions, and perceptions. Sentiment analysis can be applied to analyze feedback, forum posts, or written reflections to gauge students’ sentiment towards the learning experience or course materials.</p>
+<p>Topic Modeling: Topic modeling is a statistical technique used to identify underlying themes or topics within a large collection of text documents. It helps uncover the main ideas, concepts, and recurring patterns in textual data. Topic modeling can be applied to analyze student essays, discussion forum posts, or open-ended survey responses to understand the themes and knowledge domains relevant to learning.</p>
+<p>Text Classification: Text classification involves categorizing text documents into predefined categories or classes based on their content. It can be used to automatically classify student assignments, essays, or written responses into different categories or levels of proficiency. Text classification allows for scalable assessment and provides insights into students’ mastery of specific concepts or skills.</p>
+<p>Text Mining: Text mining refers to the process of extracting valuable information or patterns from text data. It involves techniques such as information retrieval, text summarization, and keyword extraction. Text mining can be used to analyze large collections of educational texts, such as textbooks, research papers, or online resources, to identify relevant concepts, key terms, or trends.</p>
+<p>Natural Language Processing (NLP): Natural Language Processing encompasses a range of techniques that enable computers to understand and process human language. NLP techniques, such as named entity recognition, part-of-speech tagging, and syntactic parsing, can be applied in learning analytics to analyze and understand the grammatical structure, relationships, and semantic meaning of text data.</p>
+<p>Text-based Social Network Analysis: Text-based social network analysis involves analyzing text-based communication, such as emails, discussion forum posts, or chat logs, to identify social networks and communication patterns within educational communities. It helps understand the structure of social interactions, information flow, and the emergence of influential individuals or communities within learning environments.</p>
+<p><strong>Comparing Discourse vs Textual Analysis</strong></p>
+<ul>
+<li>While both discourse analysis and text analysis involve analyzing language, discourse analysis emphasizes the social and contextual aspects of communication, whereas text analysis focuses more on examining the content and structure of the text itself. They can be complementary approaches, with discourse analysis providing a deeper understanding of the meaning-making processes within social contexts, while text analysis provides systematic and quantitative insights into textual data.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="multimodal-analysis" class="slide level2">
+<h2>Multimodal Analysis</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Highlights</a></li><li><a href="#tabset-5-2">Methods</a></li><li><a href="#tabset-5-3">Research Scholars</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<ul>
+<li>Multiple modalities</li>
+<li>Learners’ experiences</li>
+<li>Enhances understanding</li>
+<li>Benefits of multimodal analysis</li>
+</ul>
+</div>
+<div id="tabset-5-2">
+<ul>
+<li>Multimodal Fusion</li>
+<li>Gesture and Movement Analysis</li>
+<li>Speech and Audio Analysis</li>
+<li>Visual Analysis</li>
+<li>Physiological and Sensor Data Analysis</li>
+<li>Multimodal Visualization</li>
+</ul>
+</div>
+<div id="tabset-5-3">
+<p><img src="img/multimodal_SCHOLAR.png" height="750px"></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>MultiModal Analysis</strong> - an approach able to provide more specific learning models to account for alternate learning designs and teaching practices. Multimodal learning analytics employs diverse data sources to enhance the understanding of learning across different environments, encompassing both in-person and online educational settings. Multimodal learning analytics aims to gather complementary forms of learning-related data, enabling a comprehensive intricacies involved in the learning processes. This analysis tend to go beyond more traditional trace and survey data to incorporate various sensor data streams that capture gestures, gaze, or speech.</p>
+<ul>
+<li>Multimodal analysis integrates and analyzes data from multiple modalities (e.g., text, audio, video, sensor data) to understand learning processes holistically.</li>
+<li>It provides a comprehensive view of learners’ experiences, incorporating their verbal, non-verbal, and physiological cues.</li>
+<li>Multimodal analysis enhances understanding of engagement, comprehension, and problem-solving skills in various educational contexts.</li>
+<li>Benefits of multimodal analysis include personalized interventions, adaptive learning, and deeper insights into learners’ cognitive and affective states.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="discussion-1" class="slide level2">
+<h2>Discussion</h2>
+<p>Based on your experience or aspirations, how could these methodologies enhance educational outcomes in various learning environments?</p>
+<p><br><br></p>
+<p>What challenges might arise in implementing these methodologies in educational research?</p>
+<p>AND …</p>
+<p>Can you propose solutions or share experiences on how to overcome these challenges effectively?</p>
+</section>
+<section id="section" class="title-slide slide level1 center" data-background="#143156">
+<h1></h1>
+<div style="text-align: left; margin-top: .05em; font-size: 160px">
+<p><strong>What’s next?</strong></p>
+</div>
+<p><br><br><br></p>
+<div style="text-align: left; font-size: 50px">
+<ul>
+<li>Complete the <code>Explore</code> part of the Case Study</li>
+<li>Complete the <code>Badge requirement</code> [Foundations badge - Data Sources]</li>
+<li>Do <code>essential readings</code> for the next Foundations Module.</li>
+</ul>
+</div>
+
+<img src="img/LASERLogoB.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><a href="https://www.fi.ncsu.edu/projects/laser-institute">LASER Institute</a></p><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+</a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+</a></section><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+    </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+  </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="module-2-conceptual-slides-R_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</a></body></html>
