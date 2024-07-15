@@ -394,24 +394,24 @@
 <section class="slide level2">
 
 <h1>
-<br> Characteristics of Data in LA
+<br> Prepare and Wrangle
 </h1>
 <h2>
 Foundations Code along - Module 1
 </h2>
 <hr>
 <h3>
-Jeanne McClure
+The Laser Team
 </h3>
 <h3>
-2024-01-01
+July 22, 2024
 </h3>
 <p><br></p>
 <p><a href="https://github.com/laser-institute/Foundations_BEAM_2023">github.com/Foundations 2024</a></p>
 <p><img data-src="img/LASERLogoB.png" class="absolute" style="top: 425px; left: 1000px; width: 800px; "></p>
 </section>
 <section id="welcome-to-foundations-code-along-for-module-1" class="slide level2">
-<h2>Welcome to Foundations code along for <code>Module 1</code></h2>
+<h2>Welcome to Foundations code along for Module 1</h2>
 <blockquote>
 <p><code>Foundations of Learning Analytics</code> are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research. The following code along is aimed at preparing you for the first section of the case study.</p>
 </blockquote>
@@ -637,7 +637,7 @@ Jeanne McClure
 <section id="using-the-readr-function" class="slide level2">
 <h2>Using the readr function</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column" style="font-size: 50px">
 <ul>
 <li>Use <code>read_csv()</code> function to read in CSV.</li>
 </ul>
@@ -677,7 +677,7 @@ Jeanne McClure
 <section id="using-the-readr-function-1" class="slide level2">
 <h2>Using the readr function</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column" style="font-size: 45px">
 <ul>
 <li>Use <code>read_csv()</code> function to read in CSV.</li>
 </ul>
@@ -690,7 +690,7 @@ Jeanne McClure
 <span id="cb6-5"><a href="#cb6-5"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(online_classes, <span class="at">n=</span><span class="dv">5</span>), <span class="at">format =</span> <span class="st">'html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="font-size: 45px">
 <p>Your turn <strong>👉 Your Turn</strong> <strong>⤵</strong></p>
 <p>In the corresponding script do the following:</p>
 <ul>
@@ -891,7 +891,13 @@ Jeanne McClure
 </section>
 <section id="joins-overview" class="slide level2">
 <h2>Joins Overview</h2>
-<p>Mock Data Generation</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Mock Data</a></li><li><a href="#tabset-2-2">Inner join</a></li><li><a href="#tabset-2-3">Left join</a></li><li><a href="#tabset-2-4">Right join</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Let’s create Mock Data Generation</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Create mock data</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -907,6 +913,10 @@ Jeanne McClure
 3          3 Charlie          Biology
 4          4   David Computer Science</code></pre>
 </div>
+</div>
+</div><div class="column" style="width:45%;">
+<p><br> <br></p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
 <span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">80</span>)</span>
@@ -918,6 +928,8 @@ Jeanne McClure
 2          2    90
 3          3    75
 4          5    80</code></pre>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
@@ -933,9 +945,8 @@ Jeanne McClure
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="inner-join" class="slide level2">
-<h2>Inner join</h2>
+</div>
+<div id="tabset-2-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Inner join: Returns rows that have matching values in both tables</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>inner_join_result <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
@@ -960,9 +971,8 @@ Jeanne McClure
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="left-join" class="slide level2">
-<h2>Left join</h2>
+</div>
+<div id="tabset-2-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>left_join_result <span class="ot">&lt;-</span> <span class="fu">left_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
@@ -988,9 +998,8 @@ Jeanne McClure
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="right-join" class="slide level2">
-<h2>Right join</h2>
+</div>
+<div id="tabset-2-4">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>right_join_result <span class="ot">&lt;-</span> <span class="fu">right_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
@@ -1004,6 +1013,9 @@ Jeanne McClure
 </div>
 </div>
 <p><br><br> ❓ Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?</p>
+</div>
+</div>
+</div>
 <aside class="notes">
 <p>A right join returns all rows from the right table (scores), and the matched rows from the left table (students). If there is no match, the result is NA for the missing values.</p>
 <p>Question: Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?</p>

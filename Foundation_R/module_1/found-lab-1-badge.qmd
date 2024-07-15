@@ -1,8 +1,8 @@
 ---
-title: 'Data Sources badge'
-subtitle: "LASER Institute Foundation Learning Lab 1"
-author: "Jeanne McClure"
-date: "`r format(Sys.Date(),'%B %e, %Y')`"
+title: "LA Workflow - Badge"
+subtitle: "LASER Institute Foundation Learning Lab 2"
+author: ""
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
@@ -10,122 +10,144 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-![](img/datasource_badge.png){width="30%"}
+![](img/wrkflo_badge.png){width="30%"}
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
-To earn a badge for each lab, you are required to respond to a set of prompts for two parts:
+To earn a badge for each lab, you are required to respond to a set of prompts for two parts: 
 
 -   In Part I, you will reflect on your understanding of key concepts and begin to think about potential next steps for your own study.
 
--   In Part II, you will create a simple data product in R that demonstrates your ability to apply a data analysis technique introduced in this learning lab.
+-   In Part II, you will complete a few R exercises that demonstrates your ability to apply the first phases of the LA workflow and data wrangling techniques introduced in this learning lab.
 
 ### Part I: Reflect and Plan
 
-Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#articles)), [Google Scholar](https://scholar.google.com/) or search engine to locate a research article, presentation, or resource that applies learning analytics analysis to an educational context or topic of interest. More specifically, **locate a study that makes use of one of the data structures we learned today.** You are also welcome to select one of your research papers.
+Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#articles)), [Google Scholar](https://scholar.google.com/) or search engine to locate a research article, presentation, or resource that applies learning analytics analysis to an educational context or topic of interest. More specifically, **locate a study that makes use of the Learning Analytics Workflow we learned today.** You are also welcome to select one of your research papers.
 
 1.  Provide an APA citation for your selected study.
 
     -   
 
-2.  What types of data are associated with LA ?
+2.  What educational issue, “problem of practice,” and/or questions were addressed?
 
     -   
 
-3.  What type of data structures are analyzed in the educational context?
+
+3.  Briefly describe any steps of the data-intensive research workflow that detailed in your article or presentation. 
+
+
 
     -   
 
-4.  How might this article be used to better understand a dataset or educational context of personal or professional interest to you?
+4.  What were the key findings or conclusions? What value, if any, might education practitioners find in these results?
 
     -   
 
-5.  Finally, how do these processes compare with what teachers and educational organizations already do to support and assess student learning?
+5. Finally, how, if at at, were educators in your self-selected article involved prior to wrangling and analysis?
 
     -   
 
-Draft a research question of guided by techniques and data sources that you are potentially interested in exploring in more depth.
+Draft a new research question of guided by the the phases of the Learning Analytics Workflow. Or use one of your current research questions.
 
-1.  What data source(s) should be analyzed or discussed?
-
-    -   
-
-2.  What is the purpose of your article?
+1.  What educational issue, “problem of practice,” and/or questions is  addressed??
 
     -   
 
-3.  Explain the analytical level at which these data would need to be collected and analyzed.
+2.  Briefly describe any steps of the data-intensive research workflow that can be detailed in your article or presentation.
+ 
 
-    -   
 
-4.  How, if at all, will your article touch upon the application(s) of LA to "understand and improve learning and the contexts in which learning occurs?"
+3.  How, if at all, will your article touch upon the application(s) of LA to “understand and improve learning and the contexts in which learning occurs?”
 
     -   
 
 ### Part II: Data Product
 
-After you finish the script file for [lab1_badge](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge) add it to the community board.
+In our Learning Analytics code-along, we scratched the surface on the number of ways that we can wrangle the data.
 
-### Problem 1:
+Using one of the data sets provided in the data folder, your goal for this lab is to extend the Learning Analytics Workflow from our code-along by preparing and wrangling different data.
 
-Create a data frame that includes two columns, one named "students" and the other named "foods." The first column should be this vector (note the intentional repeated values): Thor, Rogue, Electra, Electra, Wolverine
+*Or alternatively, you may use your own data set to use in the workflow. If you do decide to use your own data set you must include:* 
 
-The second column should be this vector: Bread, Orange, Chocolate, Carrots, Milk
+- *Show two different ways using `select` function with your data, inspect and save as a new object.*
 
-```{r, problem_1}
-# YOUR FINAL CODE BELOW
+- *Show one way to use `filter` function with your data, inspect and save as a new object.*
+
+- *Show one way using `arrange` function with your data, inspect and save as a new object.*
+
+- *Use the pipe operator to bring it all together.*
+
+Feel free to create a new script in your lab 2 to work through the following problems. Then when satisfied add the code in the code chunks below. Don;t forget to run the code to make sure it works.
+
+**Instructions:**
+
+1. _Add_ your name to the document in author.
+
+2. Set up the first (or, two if using an Introduction) phases of the LA workflow below. I've added the wrangle section for you. You will need to `Prepare` the libraries necessary to wrangle the data.
 
 
+## Wrangle
+
+3. In the chunk called `read-data`: _Import_ the `sci-online-classes.csv` from the `data` folder and _save_ as a new `object` called `sci_classes`. Then _inspect_ your data using a `function` of your choice.
+
+
+```{r, read-data}
+# Type your code here
 ```
 
-### Problem 2
 
-Using the data frame created in Problem 2, use the table() command to create a frequency table for the column called "students"
 
-```{r, problem_2}
-# YOUR FINAL CODE BELOW
+4. In the select-1 code chunk: Use the 'select' function to  _select_  `student_id`, `subject`, `semester`, `FinalGradeCEMS`. _Assign_ to a new object with a different name (you choose the name).
+```{r, select-1}
+# Type your code here
+```
+*
 
+What do you notice about FinalGradeCEMS?(*Hint: NAs?)
+
+- Answer here
+
+5. In code chunk named `select-2` _select_ all columns except `subject` and `section`. _Assign_ to a new object with a different name. _Examine_ your data frame with a different `function`.
+
+```{r, select-2}
+# Type your code here
 ```
 
-### Problem 3
-
-Create a vector of five numbers of your choice between 0 and 10, save that vector to an object, and use the sum() function to calculate the sum of the numbers.
-
-```{r, problem_3}
-# YOUR FINAL CODE BELOW
-
+6. In the code chunk named `filter-1`, _Filter_ the **sci_classes data** frame for students in OcnA courses. _Assign_ to a new object with a different name. _Use_ the head() function to examine your data frame. 
+ 
+```{r, filter-1}
+#Type your code here
 ```
 
-### Problem 4
+Q: How many rows does the head() function display?
+*Hint: Check the dimensions of your tibble in the console.*
 
-a. Create code to read the data/sci-online-classes.csv file into R using function(s) from the tidyverse package. **(Note: this requires the package tidyverse)**. Save the data as an object called **sci_classes**.
+- Answer here
 
-b. Examine the contents of sci_classes in your console. **Is your object a tibble? How do you know?** (Hint: Check the output in the console.)
 
-```{r, problem_4}
-# YOUR FINAL CODE BELOW
+7. In code chunk named `filter-2`, _filter_ the **sci_classes data** frame so rows with NA for points earned are removed. _Assign_ to a new object with a different name. _Use_ glimpse() to examine all columns of your data frame.
 
+```{r, filter 2}
+# Type your code here
 ```
 
-### Problem 5
+8. In the code chunk called `arrange-1`, _Arrange_ **sci_classes data** by `subject` then `percentage_earned` in descending order. _Assign_ to a new object. _Use_ the str() function to examine the data type of each column in your data frame.
 
-Using the sci_classes data frame:
-
-a.  Select all columns except subject and section.
-
-b.  Assign to a new object with a different name.
-
-c.  Examine your data frame.
-
-```{r, problem_5}
-# YOUR FINAL CODE BELOW
-
-
+9. In the code chunk name `final-wrangle`, _use_ **sci_classes data** data and the %>% `pipe` operator: 
+  + Select `student_id`, `subject`, `semester`, `FinalGradeCEMS`. 
+  + Filter for students in OcnA courses.
+  + Arrange grades by section in descending order. 
+  + Assign to a new object. 
+  + Examine the contents using a method of your choosing. 
+  
+```{r}
+#Type your code here
 ```
+
 
 ### Knit & Submit
 
-Congratulations, you've completed your Data Sources Badge!
+Congratulations, you've completed Foundations Badge 2!
 
 *Complete the following steps to submit your work for review by:*
 
@@ -151,9 +173,9 @@ Complete the following steps to knit and publish your work:
 
 ![](img/knit-publish.png){width="80%"}
 
-### Foundations Learning Badge 1
+### Foundations Learning Badge 2
 
-Congratulations, you've completed Foundations Learning Badge 1! To receive
+Congratulations, you've completed Foundations Learning Badge 2! To receive
 credit for this assignment and earn the an official Foundations LASER Badge,
 share the link to published webpage under an empty **Badge Artifact**
 column on the 2023 LASER Scholar Information and Documents spreadsheet:
@@ -165,4 +187,3 @@ your progress.
 
 Once your instructor has checked your link, you will be provided a
 physical version of the badge below!
-

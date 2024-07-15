@@ -1,0 +1,422 @@
+---
+title: "Explore"
+subtitle: "Foundations Python Module 2: Code-Along"
+format: 
+  revealjs:
+    # include-in-header: preview.html
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    # embed-resources: true
+    logo: img/LASERlogo_large.png
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+    slide-number: c/t
+    theme: [default, css/laser.scss]
+jupyter: python3
+execute: 
+  freeze: true
+resources:
+  - demo.pdf
+---
+
+## Welcome to Foundations code along for Module 2
+
+:::: {.columns}
+
+::: {.column width="45%" style="font-size: 45px" }
+
+> Exploratory Data Analysis (EDA) for educational researchers involves **investigating and summarizing** data sets to **uncover patterns**, **spot anomalies**, and **test hypotheses**, using statistical graphics and other data visualization methods. 
+
+*This process helps researchers understand underlying trends in educational data before applying more complex analytical techniques.*
+
+:::
+
+::: {.column width="5%" }
+:::
+
+::: {.column width="45%" }
+
+
+<img src="img/eda_graph_1.svg" height="750px"/>
+
+:::
+:::
+
+:::{.notes}
+
+**Speaker notes**
+
+**EDA** 
+
+
+
+:::
+
+
+## Module Objectives
+
+. . .
+
+By the end of this module:
+
+* Data Visualization with ggplot2:
+-   Learners will understand how to use ggplot2 to create various types of plots and graphs, enabling them to visualize data effectively and identify patterns and trends.
+
+. . .
+
+* Data Transformation and Preprocessing:
+
+-   Learners will gain proficiency in transforming and preprocessing raw data using R, ensuring the data is clean, structured correctly, and ready for analysis.
+
+. . .
+
+
+:::{.notes}
+
+
+
+:::
+
+
+## Explore setup
+
+:::{.columns}
+:::{.column width="40%"}
+
+
+::: incremental
+-   Data Visualization
+
+-   Data Transformation
+
+-   Data Preprocessing (DP)
+
+-   Feature Engineering (FE)
+:::
+:::
+
+:::{.column width="60%"}
+
+![](img/explore_phase.svg){width="2000px"}
+
+
+:::
+:::
+
+:::{.notes}
+EXPLORE PHASE
+This is essentially exploratory data analysis and this phase allows us to gain an understanding of the data such that we can figure out the course of actions and areas that we can to explore in the modeling phase. This entails the use of descriptive statistics and data visualizations. It is in an unstructured way to uncover initial patterns, characteristics, and points of interest. Data exploration is the art of looking at your data, rapidly generating hypotheses, quickly testing them, then repeating again and again and again. The goal of data exploration is to generate many promising leads that you can later explore in more depth
+
+VISUALIZATION
+One goal in this phase is explore questions that drive the original analysis
+and develop new questions and hypotheses to test in later stages. ggplot2, one of the core members of the tidyverse consists of a grammar of graphics to organize and make sense of  different elements (Wilkinson, 2005). 
+
+TRANSFORMATION
+DATA PREPROCESSING in the wrangling phase is usually about getting large volumes of data from the sources — databases, object stores, data lakes, etc — and performing basic data cleaning and data wrangling preparing them for the later part. TO explore the data here you may need to wrangle or preprocess the data further to get descriptive data
+
+FEATURE ENGINEERING is known as the process of transforming raw data (that has already been processed) into features that better represent the underlying problem to predictive models, resulting in improved model accuracy on unseen data.
+
+:::
+
+
+## Missing Values 
+
+::: panel-tabset
+
+### Identify
+
+```{python}
+
+#| echo: true
+
+import pandas as pd
+import numpy as np
+
+# read and load `sci-online-classes.csv` from data folder
+time_spent = pd.read_csv("data/sci-online-classes.csv")
+
+# Find cells with missing values
+null_data = time_spent.isnull()
+
+# Calculate the number of missing values
+missing_count = null_data.sum()
+
+print(missing_count)
+```
+
+
+### Counting 
+
+```{python}
+#| echo: true
+# Calculate the number of missing values
+missing_count = null_data.sum()
+print(missing_count)
+```
+
+
+### Percentage
+
+```{python}
+#| echo: true
+
+# Find the number of rows in the DataFrame
+total_entries = len(time_spent)
+
+# Calculate the missing counts
+missing_percentage = (missing_count / total_entries) * 100
+print(missing_percentage)
+```
+
+
+### Method Chaining
+
+
+
+```{python}
+#| echo: true
+#| 
+# Calculate the percentage of missing data in each column
+missing_percentage = (time_spent.isnull().sum() / len(time_spent)) * 100
+print("Percentage of missing data in each column:")
+print(missing_percentage[missing_percentage > 0])  # Only display columns with missing percentages
+```
+
+:::
+
+::: {.notes}
+
+**Method chaining** is a powerful technique that allows us to perform multiple operations in a concise and readable manner by linking method calls together in a single line of code.
+
+First, we use the isnull() method on the time_spent DataFrame to identify missing values. This method creates a DataFrame of the same shape but with Boolean values—True for missing values and False for non-missing values. Next, we call the sum() method on the result of isnull(), which sums up the True values (treated as 1) for each column, giving us the total number of missing values in each column.
+
+We then use the len() function to find the total number of rows in the time_spent DataFrame. This value serves as the denominator for calculating the percentage of missing values. By dividing the total number of missing values by the total number of entries and multiplying by 100, we convert the ratio into a percentage. This operation is done using the expression (.sum() / len(time_spent)) * 100.
+
+:::
+
+## Handling Missing Data
+::: panel-tabset
+
+### Mock generation code
+
+```{python}
+
+#| echo: true
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    'A': [1, 2, None, 4, 5],
+    'B': [None, 2, 3, 4, None],
+    'C': [1, None, None, 4, 5]
+}
+df = pd.DataFrame(data)
+
+```
+
+
+### Identify 
+```{python}
+#| echo: true
+missing_data = df.isnull().sum()
+print("Missing values in each column:\n", missing_data)
+
+```
+
+
+### Drop rows or columns 
+
+-   Use dropna() to remove rows or columns with missing values.
+
+```{python}
+#| echo: true
+# Drop rows with any missing values
+df_cleaned = df.dropna()
+
+# Drop columns with any missing values
+df_cleaned_cols = df.dropna(axis=1)
+
+# Drop rows with missing values in a specific column
+df_cleaned_specific = df.dropna(subset=['A'])
+
+```
+
+
+
+### Filling 
+
+-   Use fillna() to fill missing values with a specific value or method.
+
+```{python}
+#| echo: true
+# Fill missing values with a specific value
+df_filled = df.fillna(999)
+
+# Fill missing values with the mean of the column
+df_filled_mean = df.fillna(df.mean())
+
+# Forward fill (propagate last valid observation forward)
+df_filled_ffill = df.fillna(method='ffill')
+
+# Backward fill (propagate next valid observation backward)
+df_filled_bfill = df.fillna(method='bfill')
+
+
+```
+
+:::
+
+## Visualization
+
+::: panel-tabset
+
+### Matplot Package
+
+[MatPlot](https://matplotlib.org/) is a comprehensive library for creating static, animated, and interactive visualizations in Python. It is used for various types of data visualization, allowing users to generate plots, histograms, power spectra, bar charts, error charts, scatterplots, and more. Matplotlib is particularly useful for creating high-quality graphs and figures for data analysis and publication.
+
+<img src="img/matplot_viz.svg" height="750px"/>
+
+### Seaborn Package
+
+[Seaborn](https://seaborn.pydata.org/) is a Python visualization library built on top of Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. 
+
+<img src="img/seaborn.svg" height="750px"/>
+
+### Functions 101
+
+![](img/viz_functions.svg){fig-align="center" width="800"}
+
+
+:::
+
+
+:::{.notes}
+
+Seaborn is particularly useful for creating complex visualizations, such as heatmaps, time series plots, and categorical plots, with just a few lines of code. It is designed to work well with Pandas data structures and makes it easy to visualize data trends and relationships.
+:::
+
+## Vizualize
+
+::: panel-tabset
+
+### Basic plot
+
+```{python}
+
+#| echo: true
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a bar plot
+sns.countplot(data=time_spent, x='subject')
+plt.show()
+
+```
+
+
+### Add labels
+
+```{python}
+
+#| echo: true
+
+sns.countplot(data=time_spent, x='subject')
+plt.title("Number of Student Enrollments per Subject")
+plt.xlabel("Subject")
+plt.ylabel("Count")
+plt.show()
+```
+
+
+### Stacked Bar plot
+
+```{python}
+#| echo: true
+
+# read and load `sci-online-classes.csv` from data folder
+data_to_explore = pd.read_csv("data/data_to_explore.csv")
+
+# Ensure gender NaNs are replaced
+data_to_explore['gender'] = data_to_explore['gender'].fillna('Not Provided')
+
+# Create a stacked bar plot
+sns.histplot(data=data_to_explore, x='subject', hue='gender', multiple='stack', shrink=0.8)
+plt.title("Stacked Gender Distribution Across Subjects")
+plt.xlabel("Subject")
+plt.ylabel("Count")
+plt.show()
+```
+
+
+
+### Basic Scatter Plot
+
+```{python}
+#| echo: true
+
+# Create a scatter plot with color based on enrollment_status
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=data_to_explore, x='time_spent_hours', y='proportion_earned', hue='enrollment_status')
+plt.show()
+```
+
+
+### **👉 Your Turn** **⤵**
+
+Use your Python script to add labels to the visualization. 
+
+```{python}
+
+#| echo: true
+
+# (YOUR CODE HERE)
+#
+#
+
+```
+
+### ANSWER
+
+**👉 Your Turn** **⤵** -\> Answer
+
+```{python}
+
+#| echo: true
+
+# (YOUR CODE HERE)
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=data_to_explore, x='time_spent_hours', y='proportion_earned', hue='enrollment_status')
+plt.title("How Time Spent on Course LMS is Related to Points Earned in the Course by Enrollment Status")
+plt.xlabel("Time Spent (Hours)")
+plt.ylabel("Proportion of Points Earned")
+plt.show()
+
+```
+
+:::
+
+## {background="#143156"}
+
+::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
+
+**What's next?**
+
+:::
+
+<br/><br/><br/><br/>
+
+
+::: {style="text-align: left; font-size: 50px"}
+
+- Complete the `Explore` parts of the Case Study.
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Do required readings for the next Foundations Module 3.
+
+
+:::
+

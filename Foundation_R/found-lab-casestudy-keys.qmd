@@ -106,19 +106,19 @@ Finally, a linear multiple regression analysis was conducted in order to
 develop a predictive model in which a student final grade was the
 continuous dependent variable.
 
-+----------------------------------------------------------------------+
-| **Introduction to the [Stakeholder]{.underline}**                    |
-+======================================================================+
-| **Name:** Alex Johnson                                               |
-|                                                                      |
-| **Role:** University Science Professor                               |
-|                                                                      |
-| **Experience:** 5 years teaching, enthusiastic about integrating     |
-| technology in education                                              |
-|                                                                      |
-| **Goal:** Alex aims to improve student engagement and performance in |
-| her online science classes.                                          |
-+----------------------------------------------------------------------+
++---------------------------------------------------------------------+
+| **Introduction to the [Stakeholder]{.underline}**                   |
++=====================================================================+
+| **Name:** Alex Johnson                                              |
+|                                                                     |
+| **Role:** University Science Professor                              |
+|                                                                     |
+| **Experience:** 5 years teaching, enthusiastic about integrating    |
+| technology in education                                             |
+|                                                                     |
+| **Goal:** Alex aims to improve student engagement and performance   |
+| in her online science classes.                                      |
++---------------------------------------------------------------------+
 
 ```{=html}
 <style>
@@ -166,14 +166,24 @@ associated with when students started and stopped accessing the course).
 
 **Variable Description:**
 
-| Variable             | Description                                        |
-|----------------------|----------------------------------------------------|
-| `student_id`         | students id at institution                         |
-| `course_id`          | abbreviation for \`course, course number, semester |
-| `gender`             | m ale/female/NA                                    |
-| `enrol lment_reason` | reason student decided to take the course          |
-| `enrol lment_status` | ap pr ove/enrolled, dropped, withdrawn             |
-| `time_spent`         | Time spent in hours for entire course              |
++--------------------+-------------------------------------------------+
+| Variable           | Description                                     |
++====================+=================================================+
+| `student_id`       | students id at institution                      |
++--------------------+-------------------------------------------------+
+| `course_id`        | abbreviation for \`course, course number,       |
+|                    | semester                                        |
++--------------------+-------------------------------------------------+
+| `gender`           | m ale/female/NA                                 |
++--------------------+-------------------------------------------------+
+| `e                 | reason student decided to take the course       |
+| nrol lment_reason` |                                                 |
++--------------------+-------------------------------------------------+
+| `e                 | ap pr ove/enrolled, dropped, withdrawn          |
+| nrol lment_status` |                                                 |
++--------------------+-------------------------------------------------+
+| `time_spent`       | Time spent in hours for entire course           |
++--------------------+-------------------------------------------------+
 
 : Course Acronym description
 
@@ -187,10 +197,15 @@ associated with when students started and stopped accessing the course).
 
 **Variable Description:**
 
-| Variable                 | Description                                 |
-|--------------------------|---------------------------------------------|
-| `total_p oints_possible` | available points for the course             |
-| `total _points_earned`   | stud \| ent earned for the entire course \| |
++-------------------------+--------------------------------------------+
+| Variable                | Description                                |
++=========================+============================================+
+| `                       | available points for the course            |
+| total_p oints_possible` |                                            |
++-------------------------+--------------------------------------------+
+| `total _points_earned`  | stud \| ent earned for the entire course   |
+|                         | \|                                         |
++-------------------------+--------------------------------------------+
 
 #### Data Source #3: Self-Report Survey
 
@@ -839,7 +854,38 @@ data_to_explore %>%
   skim()
 ```
 
-### Data Visualization
+### Missing values
+
+The `summary` function provides additional information. It can be used
+for the entire dataset, or individual variables
+
+```{r}
+# use the summary() function to look at your data.
+summary(data_to_explore)
+```
+
+If you want ot look for NA's in all your columns you can use dplyr along with the is.na() function to check for NA's in your columns
+```{r}
+data_to_explore %>%
+  select(everything()) %>%  # replace to your needs
+  summarize(across(everything(), ~ sum(is.na(.))))
+```
+
+
+#### **👉 Your Turn** **⤵**
+
+Most of the code is completed. You need to:
+
+1. add the column to the select() function 
+2. add the same column to the sum(is.na()) function
+```{r eval = FALSE}
+data_to_explore %>%
+  select(#add column here) %>%  # Fill in the column you want to look at
+  summarize(na_count = sum(is.na(#add column here)))  # count NA values in the "semester" column
+```
+
+
+### Exploration with Data Visualization
 
 #### Use `ggplot2` package
 

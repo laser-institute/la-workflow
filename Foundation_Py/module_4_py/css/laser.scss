@@ -43,3 +43,20 @@ section.has-dark-background code{
   color: #e77225;
 }
 
+
+section.slide h2 {
+  color: white  !important;
+  background-color: #427E93 !important;
+  position: relative;
+  width: 400vw;
+  left: -20vw;
+  padding-left: 20vw;
+  padding-top: 20px;
+  padding-bottom: 20px;}
+
+// graphic wrap
+.wrap-img {
+    float: left;
+    margin-right: 10px;
+    width: 10%;
+}

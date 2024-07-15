@@ -1,0 +1,433 @@
+---
+title: "Prepare and Wrangle"
+subtitle: "Foundations Python Module 1: Code-Along"
+format: 
+  revealjs:
+    # include-in-header: preview.html
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    # embed-resources: true
+    logo: img/LASERlogo_large.png
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+    slide-number: c/t
+    theme: [default, css/laser.scss]
+jupyter: python3
+execute: 
+  freeze: true
+resources:
+  - demo.pdf
+---
+
+## Welcome to Foundations code along for Module 1
+
+> `Foundations of Learning Analytics` are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research. The following code along is aimed at preparing you for the first section of the case study.
+
+<br/>
+
+![](img/prepare_wflow.png) <br/>
+
+::: notes
+**Prepare** for a data-intensive analysis with clear and refined research questions with an understanding of where the data came from. For example, Krumm et al uses the example surrounding an activity system for which the technology was used.
+
+You may ask yourself - Is it for instructional, reward or even a social collaborative context? Having that understanding will allow for more refined understanding when formulating guiding research questions for the analysis. Identify what gets collected and stored by technology is important for the development of the research question.
+
+Here you may even refine your research question after having a better idea of where the data came from. The question may also be refined and redeveloped after you have started the data intensive analysis.
+
+The Learning Analysis Cycle is not a linear process but rather a process of phases that can be moved around.
+
+In this code-along session, we will concentrate on the "Prepare" phase of the Learning Analytics (LA) cycle. Before we delve into that, it's essential to gain some context regarding the study that will inform our discussions today and over next three modules.
+:::
+
+## Module Objectives
+
+. . .
+
+By the end of this module:
+
+-   Know how to read in the data:
+    -   Learners will be able to identify and describe different types of learning environments, explaining their unique features and applications in educational research.
+
+. . .
+
+-   Characteristics of `Data`:
+    -   Learners will gain proficiency in recognizing and categorizing various data formats commonly used in educational research by the end of this section.
+
+. . .
+
+::: notes
+By the end of this module, learners will know how to read in data and identify different types of learning environments, explaining their unique features and applications in educational research. This is a crucial first step in any data analysis workflow, and we will focus on understanding how to import and read data from various sources such as CSV files, Excel sheets, and databases. Understanding the structure and format of data sources is essential. We will cover the common tools and functions used to read data, such as pd.read_csv() for reading CSV files in Python. Additionally, we will emphasize the importance of knowing the context in which the data was collected, as it influences data interpretation.
+
+Furthermore, learners will gain proficiency in recognizing and categorizing various data formats commonly used in educational research. Understanding the nature of your data is fundamental to choosing the right analysis methods. We will describe different data types, including numerical, categorical, and ordinal data, and explain how to handle missing data, outliers, and inconsistencies. The importance of data cleaning and preprocessing to ensure data quality will also be discussed. By the end of this section, learners will be able to identify and categorize data formats such as survey data, log data, and academic performance data, using tools like pandas in Python. Real-world examples from educational research will demonstrate the practical applications of these skills.
+:::
+
+# Loading and Installing packages {background="#143156"}
+
+## Install Packages
+
+::: columns
+::: {.column width="45%"}
+-   First time using a package
+-   Do this ONLY ONCE in the "terminal"
+:::
+
+::: {.column width="45%"}
+![](img/py_terminal.svg)
+:::
+:::
+
+::: notes
+When working with data in Python, it's essential to install the necessary packages or libraries to facilitate data manipulation and analysis. This process needs to be done only once for each package, using the terminal. On Windows, you can use Command Prompt or PowerShell, while macOS and Linux users can use the Terminal application. To install a package, you use the pip command, which is the package installer for Python. For example, to install the pandas library, you would type pip install pandas in the terminal and press Enter. You can repeat this process for other packages, such as numpy, matplotlib, and scikit-learn, using the respective commands pip install numpy, pip install matplotlib, and pip install scikit-learn.
+
+Refer to the image on the right side of the slide, which shows a screenshot of the terminal with commands to install packages, providing a visual representation of the process. Emphasize that once these packages are installed, they are available for use in any Python script or notebook on the system, eliminating the need for reinstallation. Encourage learners to try installing a package themselves to get familiar with the process, and mention common troubleshooting steps, such as checking the spelling of the package name, ensuring an active internet connection, and verifying that pip is installed correctly. By following these steps, learners will be able to set up their Python environment with the necessary tools for data analysis, ensuring they are ready to dive into practical data manipulation and analysis tasks.
+:::
+
+## Load Packages
+
+::: panel-tabset
+### Python Libraries
+
+Let's start by creating a new Python script and loading some essential packages introduced in LA Workflows:
+
+### Pandas
+
+::: columns
+::: {.column width="30%"}
+![](img/pandas.svg){width="100%"}
+:::
+
+::: {.column width="45%"}
+-   First, install package in `Terminal`
+
+**MAC/LINUX**: \$ python3 -m pip install pandas
+
+<br/>
+
+**Windows**: \$ py -m pip install pandas
+
+<br/>
+
+-   Second, load the package in the quarto document
+
+``` python
+# Load necessary libraries
+import pandas as pd
+```
+:::
+:::
+
+### NumPy
+
+::: columns
+::: {.column width="30%"}
+![](img/numpy.svg){width="100%"}
+:::
+
+::: {.column width="70%"}
+[NumPy](https://pypi.org/project/numpy/) is a Python package for scientific computing with Python. It is used for various types of data manipulation and mathematical operations, particularly when working with large datasets or complex mathematical computations.
+:::
+:::
+
+### **👉 Your Turn** **⤵**
+
+Use your Python script to import the {numpy} package `as np`.
+
+<br/>
+
+If this is your first time you will need to install the package in the terminal:
+
+<br/>
+
+MAC/LINUX: \$ python3 -m pip install numpy
+
+<br/> Windows: \$ py -m pip install numpy
+
+<br/>
+
+```{python}
+#| echo: true
+
+# YOUR CODE HERE
+#
+#
+```
+
+### ANSWER
+
+**👉 Your Turn** **⤵** -\> Answer
+
+<br/>
+
+MAC/LINUX: \$ python3 -m pip install numpy
+
+<br/>
+
+Windows: \$ py -m pip install numpy
+
+<br/>
+
+```{python}
+#| echo: true
+
+# YOUR CODE HERE
+import numpy as np
+
+```
+:::
+
+::: notes
+In this section, we will focus on how to load the necessary packages in a Quarto document. After installing the packages using pip in the terminal, the next step is to load these packages into your Python environment within your Quarto document to ensure that all the functionalities of the installed libraries are available for your data analysis tasks. To load the packages, you use the import statement in Python at the beginning of your script or notebook. For example, to load the pandas library, which is essential for data manipulation and analysis, you would include the following code: import pandas as pd. This command imports the pandas library and assigns it the alias pd, a common convention that simplifies code and makes it more readable.
+
+Make sure to place this import statement at the top of your Quarto document or script, ensuring the library is loaded before any data manipulation or analysis code is executed. This step is crucial for setting up your environment with the necessary tools, allowing you to work efficiently with your data. Remember, unlike the installation step, which is done only once, importing the libraries is necessary each time you start a new script or notebook. This practice brings the library's functions into your working environment, ready for use in your analysis.
+
+Emphasize the importance of importing libraries at the beginning of the script, explain the convention of using aliases like pd for pandas, and ensure learners understand that this step is required every time they begin a new analysis script or notebook. Encourage learners to practice importing the libraries in their own Quarto documents to become comfortable with the process.
+:::
+
+## Reading in Data
+
+::: panel-tabset
+### Read CSVFunction
+
+![](img/readr_function_python.svg){fig-align="center" width="1500"}
+
+### Delimeter
+
+![](img/python_delimiter.svg){fig-align="center" width="1500"}
+
+### Types
+
+![](img/python_types.svg){fig-align="center" width="1100"}
+:::
+
+::: notes
+**Functions:**
+
+The pd.read_csv() function in pandas is a powerful tool for reading CSV files and other delimited text files into a DataFrame. Let's go through some of the key parameters that you can use to customize how data is read in:
+
+filepath_or_buffer: This parameter specifies the file path or a file-like object. It can be a string representing a file path, a URL, or any object with a read() method like a file handle.
+
+Example: df = pd.read_csv('data/file.csv') sep: This defines the delimiter to use. The default is a comma (,), which is standard for CSV files. You can specify other delimiters, such as tabs (\t), semicolons (;), or any character that separates your data fields.
+
+Example: df = pd.read_csv('data/file.csv', sep=';') header: This parameter specifies the row number(s) to use as the column names, and the start of the data. The default is 'infer', which means the first row is used as the header.
+
+Example: df = pd.read_csv('data/file.csv', header=0) names: If your file does not have column headers or you want to specify your own, you can provide a list of column names using this parameter.
+
+Example: df = pd.read_csv('data/file.csv', names=\['col1', 'col2', 'col3'\]) index_col: This parameter sets the column(s) to use as the row labels of the DataFrame. It can be a single column name or index, or a list of column names/indices for a MultiIndex.
+
+Example: df = pd.read_csv('data/file.csv', index_col=0) usecols: This allows you to specify a subset of columns to read from the file. You can pass a list of column names or indices to read only the specified columns.
+
+Example: df = pd.read_csv('data/file.csv', usecols=\['col1', 'col2'\]) dtype: This parameter sets the data type for the columns. You can pass a dictionary where the keys are column names and the values are the desired data types.
+
+Example: df = pd.read_csv('data/file.csv', dtype={'col1': int, 'col2': float}) skiprows: This allows you to skip a specific number of rows at the start of the file. You can pass an integer to skip that many rows or a list of row indices to skip specific rows.
+
+Example: df = pd.read_csv('data/file.csv', skiprows=2) na_values: This specifies additional strings to recognize as NA/NaN. You can pass a single value or a list of values that should be considered as missing.
+
+Example: df = pd.read_csv('data/file.csv', na_values=\['NA', 'N/A', ''\]) parse_dates: This parameter indicates whether to parse dates. It can be a boolean to parse all date-like columns, a list of column names to parse as dates, or a dictionary specifying how to parse dates.
+
+Example: df = pd.read_csv('data/file.csv', parse_dates=\['date_col'\]) compression: This handles on-the-fly decompression of on-disk data. The default is 'infer', which means pandas will automatically detect the compression format based on the file extension. Example: df = pd.read_csv('data/file.csv.gz', compression='gzip')
+
+**Delimeter:** The pd.read_csv() function is versatile and can handle multiple delimiters by adjusting its parameters.
+
+Comma-separated Values (CSV): The most common file format for data. Use the pd.read_csv() function to read CSV files. Example: df_comma = pd.read_csv('file.csv')
+
+Semicolon-separated Values (CSV): Sometimes data is separated by semicolons instead of commas. Use the pd.read_csv() function with the sep=';' parameter to read these files. Example: df_semicolon = pd.read_csv('file.csv', sep=';')
+
+Tab-separated Values (TSV): Data separated by tab characters. Use the pd.read_csv() function with the sep='\t' parameter. Example: df_tab = pd.read_csv('file.tsv', sep='\t')
+
+General Delimited Files: For files with other delimiters such as pipes (\|). Use the pd.read_csv() function with the appropriate sep parameter. Example: df_delim = pd.read_csv('file.txt', sep='\|')
+
+Whitespace-separated Values: For files where data is separated by whitespace. Use the pd.read_csv() function with the delim_whitespace=True parameter. Example: df_whitespace = pd.read_csv('file.txt', delim_whitespace=True)
+:::
+
+## Reading and Inspecting data
+
+::: panel-tabset
+### Let's try
+
+Copy the code below into your script and try out the code. What do you see?
+
+```{python}
+#| echo: True
+
+import pandas as pd
+
+# read and load `sci-online-classes.csv` from data folder
+time_spent = pd.read_csv("data/sci-online-classes.csv")
+
+#inspect data
+time_spent.head()
+
+```
+
+### **👉 Your Turn** **⤵**
+
+Use your Python script to read in `log-data.csv` from the `data` folder, using the `pd.read_csv` function. Save it to a new object called `online_classes`.
+
+```{python}
+#| echo: true
+
+# YOUR CODE HERE
+#
+#
+```
+
+### ANSWER
+
+**👉 Your Turn** **⤵** -\> Answer
+
+```{python}
+#| echo: True
+
+import pandas as pd
+
+# read and load log file from data folder
+time_spent = pd.read_csv("data/log-data.csv")
+
+#inspect data
+time_spent.head()
+
+```
+:::
+
+## Joining data
+
+::: panel-tabset
+
+### Joins
+
+![](img/join.svg){fig-align="center" width="1100"}
+
+
+### Mock Data
+::: {.columns}
+
+::: {.column width="45%"}
+
+Let's create Mock Data Generation
+
+```{python}
+
+#| echo: True
+
+# Create mock data
+import pandas as pd
+
+students = pd.DataFrame({
+    'student_id': [1, 2, 3, 4],
+    'name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'major': ['Math', 'Physics', 'Biology', 'Computer Science']
+})
+students
+```
+
+:::
+
+::: {.column width="45%"}
+
+```{python}
+
+#| echo: True
+
+# Create mock data
+scores = pd.DataFrame({
+    'student_id': [1, 2, 3, 5],
+    'score': [85, 90, 75, 80]
+})
+scores
+```
+
+:::
+
+:::
+
+
+### Inner Join
+
+```{python}
+#| echo: true
+# Inner join: Returns rows that have matching values in both tables
+inner_join_result = pd.merge(students, scores, on='student_id', how='inner')
+inner_join_result
+```
+
+
+### Left Join
+
+```{python}
+#| echo: true
+# Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.
+left_join_result = pd.merge(students, scores, on='student_id', how='left')
+left_join_result
+```
+
+
+### Right Join
+
+```{python}
+#| echo: true
+# Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.
+right_join_result = pd.merge(students, scores, on='student_id', how='right')
+right_join_result
+```
+
+
+
+
+
+### Full Join
+
+```{python}
+#| echo: true
+# Full join: Returns all rows from both tables. If there is no match, the result is NA for the missing values.
+full_join_result = pd.merge(students, scores, on='student_id', how='outer')
+full_join_result
+```
+
+:::{.notes}
+
+** Joins **
+Joining data frames is a common operation in data analysis, allowing us to combine data from different sources based on common keys. This is crucial when dealing with data stored in multiple tables or datasets. Understanding and performing join operations can significantly enhance our ability to analyze and interpret complex data.
+
+**Mock data**
+In this demonstration, we used two mock data frames, students and scores, to illustrate the different types of joins. The students data frame includes student IDs, names, and majors, while the scores data frame includes student IDs and their respective scores. We explored four types of joins: inner join, left join, right join, and full join.
+
+**INNER Join**
+The inner join returns rows that have matching values in both tables. Only the students present in both students and scores data frames are included in the result.
+
+**LEFT Join**
+The left join returns all rows from the left table (students), and the matched rows from the right table (scores). If there is no match, the result is NA for the missing values.
+
+**RIGHT Join**
+The right join returns all rows from the right table (scores), and the matched rows from the left table (students). If there is no match, the result is NA for the missing values.
+
+**FUll Join**
+The full join returns all rows from both tables. If there is no match, the result is NA for the missing values
+
+:::
+
+:::
+
+## {background="#143156"}
+
+::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
+
+**What's next?**
+
+:::
+
+<br/><br/><br/><br/>
+
+
+::: {style="text-align: left; font-size: 50px"}
+
+- Complete the `Prepare` and `Wrangle` parts of the Case Study.
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Do required readings for the next Foundations Module 2.
+
+
+:::
+

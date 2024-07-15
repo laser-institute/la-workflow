@@ -1,0 +1,110 @@
+---
+title: "Model"
+subtitle: "Foundations Python Module 3: Code-Along"
+format: 
+  revealjs:
+    # include-in-header: preview.html
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    # embed-resources: true
+    logo: img/LASERlogo_large.png
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+    slide-number: c/t
+    theme: [default, css/laser.scss]
+jupyter: python3
+execute: 
+  freeze: true
+resources:
+  - demo.pdf
+---
+
+## Welcome to Foundations code along for Module 3
+
+> Modeling for educational researchers builds on insights from Exploratory Data Analysis (EDA) to develop predictive or explanatory models that guide decision-making and enhance learning outcomes. 
+
+*This involves selecting appropriate models, preparing and transforming data, training and validating the models, and interpreting results. Effective modeling helps uncover key factors influencing educational success, allowing for targeted interventions and informed policy decisions.*
+
+::: {.notes}
+
+Modeling for educational researchers is a crucial step following Exploratory Data Analysis (EDA) in the learning analytics workflow. This stage involves developing predictive or explanatory models that guide decision-making and enhance educational outcomes. The process begins with clearly defining research questions or hypotheses based on insights from EDA. Researchers then select appropriate models, prepare and transform data through cleaning and feature engineering, and train and validate the models by splitting data into training and validation sets. Analyzing model outputs, such as feature importances, helps uncover key factors influencing educational success.
+
+
+:::
+
+## Module Objectives
+
+. . .
+
+By the end of this module:
+
+* Introduction to Modeling:
+  - Learners will understand the importance of modeling in the learning analytics workflow and how it helps quantify insights from data.
+
+. . .
+
+
+* Creating and Interpreting Correlations:
+  - Learners will create and interpret correlation matrices using the {corrr} package and create APA-formatted correlation tables using the {apaTables} package.
+
+. . .
+
+* Applying Various Modeling Techniques:
+  - Learners will fit and understand linear regression models to prepare for the case study.
+
+. . .
+
+:::{.notes}
+
+In this module, we will focus on the practical aspects of modeling within the learning analytics workflow. By the end of this module, students will understand the importance of modeling and how it fits into the overall data analysis process. We will specifically cover the steps involved in creating and interpreting correlation matrices, fitting linear regression models, and validating model assumptions using R.
+
+We'll begin by learning how to create and interpret correlation matrices using the {corrr} package. This will help us identify and understand relationships between different variables in our data. We'll also explore how to create APA-formatted correlation tables using the {apaTables} package, which are useful for formal reports and publications.
+
+Next, we'll apply various modeling techniques, starting with fitting linear regression models to predict academic achievement. We will also discuss the importance of validating model assumptions to ensure our models are robust and reliable. Additionally, we'll use the summarize() function from the {dplyr} package to calculate summary statistics for our predictors, helping us to better understand our data and inform our modeling process. By the end of this module, students will have practical experience with these modeling techniques, enabling them to perform more advanced data analysis in their research.
+
+:::
+
+## Steps in the Modeling Process
+
+![](img/model_phase.svg){width="50%"}
+
+:::{.notes}
+
+**Speaker notes**
+
+
+Th modeling phase is important for transforming the insights gained from Exploratory Data Analysis (EDA) into actionable predictions and explanations using statistical models. 
+
+Defining Objectives and Hypotheses:
+
+The first step in modeling is to clearly define the objectives and hypotheses based on the insights gathered from EDA. This sets the direction for the modeling process and ensures that we are addressing the right questions.
+
+Selecting Appropriate Models:
+Once we have our objectives, the next step is to select the appropriate models. This involves choosing the statistical or machine learning techniques that best fit our data and research questions. We will look at various models, such as linear regression, decision trees, and more complex algorithms.
+
+Data Preparation and Feature Engineering:
+
+Preparing the data is crucial for building effective models. This includes cleaning the data, handling missing values, and performing feature engineering to create new variables that better represent the underlying patterns in the data. We will use R to demonstrate these processes.
+Model Training and Validation:
+
+After preparing the data, we move on to training our models. This involves fitting the models to our training data and using validation techniques to assess their performance. We will discuss the importance of splitting data into training and validation sets and using cross-validation to ensure robustness.
+
+Interpreting Model Results:
+
+Once the models are trained, we need to interpret the results. This step involves understanding the model outputs, such as coefficients in a regression model or feature importances in a tree-based model. We will learn how to extract meaningful insights from these results.
+
+Assessing Model Performance:
+
+Assessing model performance is critical to ensure that our models are accurate and reliable. We will use various metrics, such as accuracy, precision, recall, and RMSE, to evaluate the performance of our models and compare different models.
+
+Refining and Tuning Models:
+
+The final step in the modeling process is refining and tuning our models. This involves adjusting hyperparameters, experimenting with different algorithms, and performing feature selection to improve model performance. We will explore techniques for optimizing our models to achieve the best possible results.
+
+
+:::
+

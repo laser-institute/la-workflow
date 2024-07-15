@@ -17,15 +17,15 @@ resources:
   - demo.pdf
 ---
 
-<h1> <br> Characteristics of Data in LA </h1>
+<h1> <br> Prepare and Wrangle </h1>
 
 <h2> Foundations Code along - Module 1 </h2>
 
 <hr>
 
-<h3> Jeanne McClure </h3>
+<h3> The Laser Team </h3>
 
-<h3> 2024-01-01 </h3>
+<h3> July 22, 2024 </h3>
 <br>
 
 [github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
@@ -33,7 +33,7 @@ resources:
  ![](img/LASERLogoB.png){.absolute top=425 left=1000 width="800"}
  
  
-## Welcome to Foundations code along for `Module 1`
+## Welcome to Foundations code along for Module 1
 
 > `Foundations of Learning Analytics` are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research. The following code along is aimed at preparing you for the first section of the case study.
 
@@ -255,7 +255,7 @@ This is convenient (and fast), but not robust. If the imputation fails, you'll n
 ## Using the readr function
 :::: {.columns}
 
-::: {.column width="45%"}
+::: {.column width="45%" style="font-size: 50px" }
 
 - Use `read_csv()` function to read in CSV.
 
@@ -295,7 +295,7 @@ Having a best practices way to set up your directory will help eleviate any conf
 
 :::: {.columns}
 
-::: {.column width="45%"}
+::: {.column width="45%" style="font-size: 45px"}
 
 - Use `read_csv()` function to read in CSV.
 
@@ -314,7 +314,7 @@ knitr::kable(head(online_classes, n=5), format = 'html')
 :::
 
 
-::: {.column width="45%"}
+::: {.column width="45%" style="font-size: 45px"}
 Your turn **👉 Your Turn** **⤵** 
 
 In the corresponding script do the following:
@@ -482,7 +482,15 @@ head(gpa_dt, n=3)
 
 ## Joins Overview
 
- Mock Data Generation
+::: panel-tabset
+
+### Mock Data
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+ Let's create Mock Data Generation
 
 ```{r echo=TRUE}
 # Create mock data
@@ -493,6 +501,17 @@ students <- data.frame(
 )
 students
 
+
+```
+
+:::
+
+
+::: {.column width="45%"}
+
+<br/> <br/>
+
+```{r echo=TRUE}
 scores <- data.frame(
   student_id = c(1, 2, 3, 5),
   score = c(85, 90, 75, 80)
@@ -500,11 +519,17 @@ scores <- data.frame(
 scores
 ```
 
+
+:::
+:::
+
+
+
 :::{.notes}
 We are creating two mock data frames: students and scores. These data frames will help us demonstrate different types of joins in R.
 :::
 
-## Inner join
+### Inner join
 
 ```{r echo=TRUE}
 # Inner join: Returns rows that have matching values in both tables
@@ -516,7 +541,7 @@ inner_join_result
 An inner join returns rows that have matching values in both tables. Only students present in both data frames are included in the result.
 :::
 
-## Left join
+### Left join
 
 ```{r echo=TRUE}
 # Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.
@@ -528,7 +553,7 @@ left_join_result
 A left join returns all rows from the left table (students), and the matched rows from the right table (scores). If there is no match, the result is NA for the missing values.
 :::
 
-## Right join
+### Right join
 
 
 ```{r echo=TRUE}
@@ -540,6 +565,7 @@ right_join_result
 <br/><br/>
 ❓  Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?
 
+:::
 
 :::{.notes}
 A right join returns all rows from the right table (scores), and the matched rows from the left table (students). If there is no match, the result is NA for the missing values.

@@ -1,0 +1,602 @@
+---
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERlogo_large.png
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    code-overflow: scroll
+    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+resources:
+  - demo.pdf
+---
+
+<h1> <br> Exploratory Analysis </h1>
+
+<h2> Foundations Code along - Module 2 </h2>
+
+<hr>
+
+<h3> THe LASER TEAM </h3>
+
+<h3> July 22, 2024 </h3>
+<br>
+
+[github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
+ 
+ ![](img/LASERLogoB.png){.absolute top=425 left=1000 width="800"}
+ 
+ 
+## Welcome to Foundations code along for Module 2
+
+:::: {.columns}
+
+::: {.column width="45%" style="font-size: 45px" }
+
+> Exploratory Data Analysis (EDA) for educational researchers involves **investigating and summarizing** data sets to **uncover patterns**, **spot anomalies**, and **test hypotheses**, using statistical graphics and other data visualization methods. 
+
+*This process helps researchers understand underlying trends in educational data before applying more complex analytical techniques.*
+
+:::
+
+::: {.column width="5%" }
+:::
+
+::: {.column width="45%" }
+
+
+<img src="img/eda_graph_1.svg" height="750px"/>
+
+:::
+:::
+
+:::{.notes}
+
+**Speaker notes**
+
+**EDA** 
+
+
+
+:::
+
+
+## Module Objectives
+
+. . .
+
+By the end of this module:
+
+* Data Visualization with ggplot2:
+-   Learners will understand how to use ggplot2 to create various types of plots and graphs, enabling them to visualize data effectively and identify patterns and trends.
+
+. . .
+
+* Data Transformation and Preprocessing:
+
+-   Learners will gain proficiency in transforming and preprocessing raw data using R, ensuring the data is clean, structured correctly, and ready for analysis.
+
+. . .
+
+
+:::{.notes}
+
+
+
+:::
+
+
+## Explore setup
+
+:::{.columns}
+:::{.column width="40%"}
+
+
+::: incremental
+-   Data Visualization
+
+-   Data Transformation
+
+-   Data Preprocessing (DP)
+
+-   Feature Engineering (FE)
+:::
+:::
+
+:::{.column width="60%"}
+
+![](img/explore_phase.svg){width="2000px"}
+
+:::
+:::
+
+:::{.notes}
+EXPLORE PHASE
+This is essentially exploratory data analysis and this phase allows us to gain an understanding of the data such that we can figure out the course of actions and areas that we can to explore in the modeling phase. This entails the use of descriptive statistics and data visualizations. It is in an unstructured way to uncover initial patterns, characteristics, and points of interest. Data exploration is the art of looking at your data, rapidly generating hypotheses, quickly testing them, then repeating again and again and again. The goal of data exploration is to generate many promising leads that you can later explore in more depth
+
+VISUALIZATION
+One goal in this phase is explore questions that drive the original analysis
+and develop new questions and hypotheses to test in later stages. ggplot2, one of the core members of the tidyverse consists of a grammar of graphics to organize and make sense of  different elements (Wilkinson, 2005). 
+
+TRANSFORMATION
+DATA PREPROCESSING in the wrangling phase is usually about getting large volumes of data from the sources — databases, object stores, data lakes, etc — and performing basic data cleaning and data wrangling preparing them for the later part. TO explore the data here you may need to wrangle or preprocess the data further to get descriptive data
+
+FEATURE ENGINEERING is known as the process of transforming raw data (that has already been processed) into features that better represent the underlying problem to predictive models, resulting in improved model accuracy on unseen data.
+
+:::
+
+## SKIMR FuUNCTION
+
+::: panel-tabset
+
+### PACKAGE 
+
+:::: {.columns}
+:::{.column width="25%"}
+
+<img src="img/skimr.svg" height="500px"/>
+
+:::
+
+
+:::{.column width="75%"}  
+
+<img src="img/skimr_2.svg" height="800px"/>
+
+:::
+:::
+
+### Load Package
+
+
+Your turn **👉 Your Turn** **⤵**
+
+<br/>
+
+```{r echo=TRUE, eval=FALSE}
+#LOAD SKIMR package and use skim() function to skim 'data_to_explore'
+#
+#
+
+```
+
+
+### Answer
+
+
+**👉 Your Turn** **⤵** -> Answer
+
+<br/>
+
+```{r echo=TRUE, eval=FALSE}
+#LOAD SKIMR package and use skim() function to skim 'data_to_explore'
+#
+#
+library(skimr)
+
+```
+
+
+
+### TABLE
+
+
+```{r echo = TRUE, eval=FALSE}
+#load library
+library(skimr)
+
+#skim data
+skim(data_to_explore)
+```
+
+
+
+
+### TIDY 
+
+```{r eval=FALSE, echo=TRUE}
+data_to_explore %>% 
+  select(c('subject', 'gender', 'proportion_earned', 'time_spent')) %>% 
+  filter(subject == "OcnA" | subject == "PhysA") %>%
+  skim() 
+```
+
+
+:::
+
+
+:::{.notes}
+
+**SPEAKER NOTES**
+
+**SKIMR**
+skimr is designed to provide summary statistics about variables in data frames, tibbles, data tables and vectors. It is opinionated in its defaults, but easy to modify.
+
+**TABLE TAB**
+
+As highlighted in both
+[DSEIUR](https://datascienceineducation.com/c03.html#doing-analysis-exploring-visualizing-and-modeling-data)
+and Learning Analytics Goes to School, calculating summary statistics
+and data visualization are a key part of exploratory data analysis. One
+goal in this phase is explore questions that drive the original analysis
+and develop new questions and hypotheses to test in later stages. 
+In this part we will:
+-   **Summarize Key Stats**. We'll learn about the {skmir} package for
+    pulling together some quick creating descriptive statistics when
+    your goal is to understand your data internally.
+
+-   **Visualize Data**. We'll introduce the scatter plots for examining potential relationships between time spent and student performance. Then we will look at histogram geom for taking a
+    quick peak at the distributions of some key variables.
+    
+    On the right,
+    we see that the skimr package is used for creating descriptive statistics *when your goal
+is to understand your data internally* (rather than to create a table for an external-to-the-research-team audience, like for a journal article).
+
+-   Pass to the `skim()` function a single argument
+-   That single *argument* is the data frame (aka in tidyverse parlance,
+    a tibble) for which you are aiming to calculate descriptive
+    statistics
+    
+**Note:** If you are having difficult viewing your data in the code
+chunk, try clicking the icon in the output that looks like a spreadsheet
+with an arrow on it to expand your output in a separate window.
+
+:::
+
+
+
+## GGplot2 
+
+::: panel-tabset
+
+### PACKAGE
+
+<img src="img/ggplot2.png" height="700px"/>
+
+
+### Grammar 101
+
+
+<img src="img/grammar.png" height="750px"/>
+
+
+Do you need all of these things to create a graph?
+
+
+### Geoms
+
+<img src="img/geoms.png" height="800px"/>
+
+
+
+### Basic graph
+
+::::{.columns}
+
+:::{.column width="50%"}
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse) 
+
+data_to_explore <- read_csv("data/data_to_explore.csv")
+```
+
+:::{style="font-size: 50px"}
+```{r echo=TRUE, eval=TRUE}
+ggplot(data_to_explore, aes(x=subject)) + 
+  geom_bar()
+```
+:::
+:::
+
+
+:::{.column width="50%"}
+:::{style="font-size: 50px"}
+```{r echo=TRUE, eval=TRUE}
+ggplot(data_to_explore)+
+  geom_bar(aes(x=subject))
+```
+:::
+:::
+::::
+
+
+### Basic graph2
+
+
+```{r echo=TRUE, eval=TRUE, message = FALSE, warning=FALSE}
+data_to_explore %>% 
+  ggplot(aes(x = subject)) +
+  geom_bar()
+```
+
+
+
+
+[R Software Handbook](https://bookdown.org/aschmi11/RESMHandbook/)
+
+
+::::
+
+
+
+:::{.notes}
+
+**GRAMMER 101 TAB**
+
+In the last session we looked at the first two parts of the Learning Analytics Workflow, *Prepare* and *Wrangle.*
+In this session we will continue with the *Explore* phase in the LA workflow cycle. 
+ggplot. An important package that is used for data visualization.
+
+ggplot consists of a grammar of graphics to organize and make sense of  different elements (Wilkinson, 2005). Healy explains that ggplot breaks up the task of making a graph into a series of distinct tasks. 
+
+ggplot had logical connections between your data and the plot elements are called aesthetic mappings
+
+ggplot2 has **layers** what you see on the plot (lines, points, etc)
+
+- The overall type of plot is called a **geom.** Each geom has a function that creates it.
+- Of course you must name the data that you are using.
+
+- mappings are specified using the **aes()** function.  we need to tell it which variables in the data should be represented by which visual elements in the plot. It also doesn’t know what sort of plot we want.
+- **scales** function maps the data to graphical output
+- **coordinates** the visualization perspective (grid)
+- **labels and legends** create titles and change up your legends.
+- **faceting** provides digital "drill-down" into the data. Multiple plots by value
+- **theme** fine grain control over the visualization of the display (fonts)
+
+Do you need all of these things to create a graph?
+
+
+:::
+
+
+## GGplot2 - Histogram
+
+::: panel-tabset
+
+### Your Turn
+
+**👉 Your Turn** **⤵**
+
+In the corresponding code script add the code for a basic histogram for 'time_spent_hours'.
+
+
+```{r echo=TRUE, warning=FALSE, message=FALSE}
+#
+#
+#
+```
+
+
+
+
+### ANSWER
+
+**👉 Your Turn** **⤵** -> Answer
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+data_to_explore <- read_csv("data/data_to_explore.csv")
+```
+
+
+
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% #<<
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom
+  geom_histogram()
+```
+
+
+
+
+### Bin 
+
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+  geom_histogram(bins = 10)
+```
+
+
+### Color
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+#layer 3b: add color
+  geom_histogram(bins = 30,
+                 fill = "red",
+                 colour = "black") 
+```
+
+]
+
+### Labels
+
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+# Layer 1: add data and aesthetic mapping
+data_to_explore %>% 
+  ggplot(aes(x = time_spent_hours)) +
+# layer 2: add histogram geom 
+# layer 3a: add bin size
+# layer 3b: add color
+  geom_histogram(bins = 30, fill = "red", colour = "black")+
+#layer 4: add Labels
+  labs(title="Time Spent on LMS histogram plot",x="Time Spent(hours)", y = "Count")+
+  theme_classic()
+```
+
+
+How would we interpret this graph?
+
+:::
+
+## SCATTERPLOT
+
+::: panel-tabset
+
+### Basic graph
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+```{r echo = TRUE, eval=FALSE}
+#layer 1: add data and aesthetics mapping 
+ggplot(data_to_explore, #<<
+       aes(x = time_spent_hours, 
+           y = proportion_earned)) +
+#layer 2: +  geom function type
+  geom_point() #<<
+```
+
+:::
+
+
+
+
+::: {.column width="45%"}
+<img src="img/scatter_1.png" height="600px"/>
+
+:::
+:::
+
+
+### Scale
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r echo = TRUE, eval=FALSE}
+#layer 1: add data and aesthetics mapping 
+#layer 3: add color scale by type
+ggplot(data_to_explore, 
+       aes(x = time_spent_hours, 
+           y = proportion_earned,
+           color = enrollment_status)) + #<<
+#layer 2: +  geom function type
+  geom_point()
+```
+:::
+
+
+
+
+
+::: {.column width="45%"}
+<img src="img/scatter_2.png" height="600px"/>
+:::
+:::
+
+### Labels
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+```{r echo = TRUE, eval=FALSE}
+#layer 1: add data and aesthetics mapping 
+#layer 3: add color scale by type
+ggplot(data_to_explore, 
+       aes(x = time_spent_hours, 
+           y = proportion_earned,
+           color = enrollment_status)) +
+#layer 2: +  geom function type
+  geom_point() +
+#layer 4: add labels
+  labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", #<<
+       x="Time Spent (Hours)", #<<
+       y = "Proportion of Points Earned")  #<<
+```
+:::
+
+
+::: {.column width="45%"}
+<img src="img/scatter_3.png" height="600px"/>
+
+:::
+:::
+
+### Facet
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r echo = TRUE, eval=FALSE}
+#layer 1: add data and aesthetics mapping 
+#layer 3: add color scale by type
+viz1 <- ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
+#layer 2: +  geom function type
+  geom_point() +
+#layer 4: add labels
+    labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
+       x="Time Spent (Hours)",
+       y = "Proportion of Points Earned")
+#layer 5: add facet wrap
+  facet_wrap(~ subject) #<<
+```
+:::
+
+
+
+::: {.column width="45%"}
+<img src="img/scatter_4.png" height="600px"/>
+
+:::
+:::
+
+### Discuss
+
+In the corresponding line of your R script, type the name of visualization object we just created and run the code:
+
+```{r echo=TRUE}
+# 
+#
+#
+
+```
+
+How would you interpret this graph?
+
+
+::::
+
+## {background="#143156"}
+
+::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
+
+**What's next?**
+
+:::
+
+<br/><br/><br/><br/>
+
+
+::: {style="text-align: left; font-size: 50px"}
+
+- Complete the `Explore` parts of the Case Study.
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Do required readings for the next Foundations Module 3.
+
+
+:::
+
