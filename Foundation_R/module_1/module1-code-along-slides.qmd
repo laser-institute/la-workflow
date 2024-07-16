@@ -1,36 +1,26 @@
 ---
-format:
-  revealjs: 
-    slide-number: c/t
+title: "Prepare and Wrangle"
+subtitle: "Foundations Module 1: A Code-A-long"
+format: 
+  revealjs:
+    # include-in-header: preview.html
     progress: true
     chalkboard: 
       buttons: false
     preview-links: auto
+    # embed-resources: true
     logo: img/LASERlogo_large.png
-    theme: [default, css/laser.scss]
     width: 1920
     height: 1080
     margin: 0.05
-    code-overflow: scroll
     footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+    slide-number: c/t
+    theme: [default, css/laser.scss]
+execute: 
+  freeze: true
 resources:
   - demo.pdf
 ---
-
-<h1> <br> Prepare and Wrangle </h1>
-
-<h2> Foundations Code along - Module 1 </h2>
-
-<hr>
-
-<h3> The Laser Team </h3>
-
-<h3> July 22, 2024 </h3>
-<br>
-
-[github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
- 
- ![](img/LASERLogoB.png){.absolute top=425 left=1000 width="800"}
  
  
 ## Welcome to Foundations code along for Module 1

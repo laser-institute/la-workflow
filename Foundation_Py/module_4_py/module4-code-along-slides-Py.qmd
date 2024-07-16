@@ -1,6 +1,6 @@
 ---
-title: "Prepare and Wrangle"
-subtitle: "Foundations Python Module 1: Code-Along"
+title: "Communicate"
+subtitle: "Foundations Python Module 4: Code-A-long"
 format: 
   revealjs:
     # include-in-header: preview.html

@@ -1,6 +1,6 @@
 ---
 title: "Explore"
-subtitle: "Foundations Python Module 2: Code-Along"
+subtitle: "Foundations Python Module 2: Code-A-long"
 format: 
   revealjs:
     # include-in-header: preview.html
