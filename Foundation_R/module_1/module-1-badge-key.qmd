@@ -1,7 +1,7 @@
 ---
-title: 'Data Sources badge'
-subtitle: "LASER Institute Foundation Learning Lab 1"
-author: "Jeanne McClure"
+title: 'Data Sources badge - KEY'
+subtitle: "LASER Institute Foundation Learning Lab 1 - KEY"
+author: "YOUR NAME HERE"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output: html_document
 ---
@@ -63,8 +63,6 @@ Draft a research question of guided by techniques and data sources that you are 
     -   
 
 ### Part II: Data Product
-
-After you finish the script file for [lab1_badge](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge) add it to the community board.
 
 ### Problem 1:
 
@@ -134,9 +132,19 @@ print(sci_classes_filtered)
 
 ```
 
-### Knit & Submit
+### Render & Submit
 
-Congratulations, you've completed your Data Sources Badge!
+Congratulations, you've completed Foundations Learning Badge 1! 
+
+To receive your the Foundations Badge, you will need to render this document and publish via a method designated by your instructor such as: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html), [Posit Cloud](https://posit.cloud/learn/guide#publish-from-cloud), [RPubs](https://rpubs.com) , [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html), or [other methods](https://quarto.org/docs/publishing/other.html). Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!
+
+If you have any questions about this badge, or run into any technical issues, don't hesitate to contact your instructor.
+
+![](img/share-link.png){width="80%"}
+
+Once your instructor has checked your link, you will be provided a
+physical version of the badge below!
+
 
 *Complete the following steps to submit your work for review by:*
 
@@ -156,24 +164,10 @@ Complete the following steps to knit and publish your work:
     or in a new browser window. Let's us know if you run into any issues
     with knitting.
 
-3.  Finally, publish your webpage on on Posit Cloud by clicking the
-    "Publish" button located in the Viewer Pane after you knit your
-    document. See screenshot below.
+3.  Finally, publish.
 
 ![](img/knit-publish.png){width="80%"}
 
-### Foundations Learning Badge 1
 
-Congratulations, you've completed Foundations Learning Badge 1! To receive
-credit for this assignment and earn the an official Foundations LASER Badge,
-share the link to published webpage under an empty **Badge Artifact**
-column on the 2023 LASER Scholar Information and Documents spreadsheet:
-<https://go.ncsu.edu/laser-sheet>. We recommend bookmarking this
-spreadsheet as we'll be using it throughout the year to keep track of
-your progress.
 
-![](img/share-link.png){width="80%"}
-
-Once your instructor has checked your link, you will be provided a
-physical version of the badge below!
 

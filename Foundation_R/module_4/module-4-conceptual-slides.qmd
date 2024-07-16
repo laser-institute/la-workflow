@@ -1,35 +1,26 @@
 ---
-format:
-  revealjs: 
-    slide-number: c/t
+title: "Communication with Stakeholders"
+subtitle: "Foundations Module 4: A conceptual Overview"
+format: 
+  revealjs:
+    # include-in-header: preview.html
     progress: true
     chalkboard: 
       buttons: false
     preview-links: auto
-    logo: img/LASERLogoB.png
-    theme: [default, css/laser.scss]
+    # embed-resources: true
+    logo: img/LASERlogo_large.png
     width: 1920
     height: 1080
     margin: 0.05
     footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
+    slide-number: c/t
+    theme: [default, css/laser.scss]
+execute: 
+  freeze: true
 resources:
   - demo.pdf
 ---
-
-<h1><br> Communicating with Stakeholders</h1>
-
-<h2>Foundations Conceptual Overview - Module 4</h2>
-
-<hr>
-
-<h3>The LASER Team</h3>
-
-<h4> `July 22, 2024` </h4>
-<br>
-
-[github.com/Foundations 2024](https://github.com/laser-institute/Foundations_BEAM_2023)
-
-![](img/LASERLogoB.png){.absolute top="425" left="1000" width="800"}
 
 ## Welcome to Foundations of Learning Analytics
 

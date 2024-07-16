@@ -1,12 +1,12 @@
 ---
-title: "Data Products - Badge"
-subtitle: "LASER Institute Foundation Learning Badge 4"
+title: "Data Products - Badge - KEY"
+subtitle: "LASER Institute Foundation Learning Badge 4 - KEY"
 author: ""
 date: "`r Sys.Date()`"
 output: html_document
 ---
 
-![](img/wrkflo_badge.png){width="30%"}
+![](img/FLA_DP_Hx.png){width="30%"}
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 

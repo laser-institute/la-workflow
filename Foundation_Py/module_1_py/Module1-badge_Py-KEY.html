@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
+<meta name="dcterms.date" content="2024-07-16">
 
 <title>LA Workflow - Badge</title>
 <style>
@@ -21,19 +22,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="Module3-badge-3-Py_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Module3-badge-3-Py_files/libs/quarto-html/quarto.js"></script>
-<script src="Module3-badge-3-Py_files/libs/quarto-html/popper.min.js"></script>
-<script src="Module3-badge-3-Py_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Module3-badge-3-Py_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Module3-badge-3-Py_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Module3-badge-3-Py_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Module3-badge-3-Py_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Module3-badge-3-Py_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Module3-badge-3-Py_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Module1-badge_Py-KEY_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Module1-badge_Py-KEY_files/libs/quarto-html/quarto.js"></script>
+<script src="Module1-badge_Py-KEY_files/libs/quarto-html/popper.min.js"></script>
+<script src="Module1-badge_Py-KEY_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Module1-badge_Py-KEY_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Module1-badge_Py-KEY_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Module1-badge_Py-KEY_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Module1-badge_Py-KEY_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Module1-badge_Py-KEY_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Module1-badge_Py-KEY_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">LA Workflow - Badge</h1>
-<p class="subtitle lead">LASER Institute Foundation Learning Badge 3</p>
+<p class="subtitle lead">LASER Institute Foundation Learning Badge 1</p>
 </div>
 
 
@@ -58,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">July 16, 2024</p>
     </div>
   </div>
   
@@ -68,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="img/wrkflo_badge.png" class="img-fluid" style="width:30.0%"></p>
+<p><img src="img/FLA_Primary_Hx.png" class="img-fluid" style="width:30.0%"></p>
 <p>The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.</p>
 <p>To earn a badge for each lab, you are required to respond to a set of prompts for two parts:</p>
 <ul>
@@ -117,6 +152,95 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="part-ii-data-product">Part II: Data Product</h3>
 <p>In our Learning Analytics code-along, we scratched the surface on the number of ways that we can wrangle the data.</p>
 <p>Using one of the data sets provided in the data folder, your goal for this lab is to extend the Learning Analytics Workflow from our code-along by preparing and wrangling different data.</p>
+<p><em>Or alternatively, you may use your own data set to use in the workflow. If you do decide to use your own data set you must include:</em></p>
+<ul>
+<li><p><em>Show two different ways using <code>select</code> function with your data, inspect and save as a new object.</em></p></li>
+<li><p><em>Show one way to use <code>filter</code> function with your data, inspect and save as a new object.</em></p></li>
+<li><p><em>Show one way using <code>arrange</code> function with your data, inspect and save as a new object.</em></p></li>
+<li><p><em>Use the pipe operator to bring it all together.</em></p></li>
+</ul>
+<p>Feel free to create a new script in your lab 2 to work through the following problems. Then when satisfied add the code in the code chunks below. Don;t forget to run the code to make sure it works.</p>
+<p><strong>Instructions:</strong></p>
+<ol type="1">
+<li><p><em>Add</em> your name to the document in author.</p></li>
+<li><p>Set up the first (or, two if using an Introduction) phases of the LA workflow below. I’ve added the wrangle section for you. You will need to <code>Prepare</code> the libraries necessary to wrangle the data.</p></li>
+</ol>
+</section>
+<section id="wrangle" class="level2">
+<h2 class="anchored" data-anchor-id="wrangle">Wrangle</h2>
+<ol start="3" type="1">
+<li>In the chunk called <code>read-data</code>: <em>Import</em> the <code>sci-online-classes.csv</code> from the <code>data</code> folder and <em>save</em> as a new <code>object</code> called <code>sci_classes</code>. Then <em>inspect</em> your data using a <code>function</code> of your choice.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>In the select-1 code chunk: Use the ‘select’ function to <em>select</em> <code>student_id</code>, <code>subject</code>, <code>semester</code>, <code>FinalGradeCEMS</code>. <em>Assign</em> to a new object with a different name (you choose the name).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li></li>
+</ul>
+<p>What do you notice about FinalGradeCEMS?(*Hint: NAs?)</p>
+<ul>
+<li>Answer here</li>
+</ul>
+<ol start="5" type="1">
+<li>In code chunk named <code>select-2</code> <em>select</em> all columns except <code>subject</code> and <code>section</code>. <em>Assign</em> to a new object with a different name. <em>Examine</em> your data frame with a different <code>function</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>In the code chunk named <code>filter-1</code>, <em>Filter</em> the <strong>sci_classes data</strong> frame for students in OcnA courses. <em>Assign</em> to a new object with a different name. <em>Use</em> the head() function to examine your data frame.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Type your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Q: How many rows does the head() function display? <em>Hint: Check the dimensions of your tibble in the console.</em></p>
+<ul>
+<li>Answer here</li>
+</ul>
+<ol start="7" type="1">
+<li>In code chunk named <code>filter-2</code>, <em>filter</em> the <strong>sci_classes data</strong> frame so rows with NA for points earned are removed. <em>Assign</em> to a new object with a different name. <em>Use</em> glimpse() to examine all columns of your data frame.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="8" type="1">
+<li><p>In the code chunk called <code>arrange-1</code>, <em>Arrange</em> <strong>sci_classes data</strong> by <code>subject</code> then <code>percentage_earned</code> in descending order. <em>Assign</em> to a new object. <em>Use</em> the str() function to examine the data type of each column in your data frame.</p></li>
+<li><p>In the code chunk name <code>final-wrangle</code>, <em>use</em> <strong>sci_classes data</strong> data and the %&gt;% <code>pipe</code> operator:</p></li>
+</ol>
+<ul>
+<li>Select <code>student_id</code>, <code>subject</code>, <code>semester</code>, <code>FinalGradeCEMS</code>.</li>
+<li>Filter for students in OcnA courses.</li>
+<li>Arrange grades by section in descending order.</li>
+<li>Assign to a new object.</li>
+<li>Examine the contents using a method of your choosing.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Type your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="knit-submit" class="level3">
+<h3 class="anchored" data-anchor-id="knit-submit">Knit &amp; Submit</h3>
+<p>Congratulations, you’ve completed Foundations Badge 2!</p>
+<p><em>Complete the following steps to submit your work for review by:</em></p>
+<p>Complete the following steps to knit and publish your work:</p>
+<ol type="1">
+<li><p>First, change the name of the <code>author:</code> in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata">YAML header</a> at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn’t actually display in the final output.</p></li>
+<li><p>Next, click the knit button in the toolbar above to “knit” your R Markdown document to a <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">HTML</a> file that will be saved in your R Project folder. You should see a formatted webpage appear in your Viewer tab in the lower right pan or in a new browser window. Let’s us know if you run into any issues with knitting.</p></li>
+<li><p>Finally, publish your webpage on on Posit Cloud by clicking the “Publish” button located in the Viewer Pane after you knit your document. See screenshot below.</p></li>
+</ol>
+<p><img src="img/knit-publish.png" class="img-fluid" style="width:80.0%"></p>
+</section>
+<section id="foundations-learning-badge-2" class="level3">
+<h3 class="anchored" data-anchor-id="foundations-learning-badge-2">Foundations Learning Badge 2</h3>
+<p>Congratulations, you’ve completed Foundations Learning Badge 2! To receive credit for this assignment and earn the an official Foundations LASER Badge, share the link to published webpage under an empty <strong>Badge Artifact</strong> column on the 2023 LASER Scholar Information and Documents spreadsheet: <a href="https://go.ncsu.edu/laser-sheet" class="uri">https://go.ncsu.edu/laser-sheet</a>. We recommend bookmarking this spreadsheet as we’ll be using it throughout the year to keep track of your progress.</p>
+<p><img src="img/share-link.png" class="img-fluid" style="width:80.0%"></p>
+<p>Once your instructor has checked your link, you will be provided a physical version of the badge below!</p>
+</section>
 </section>
 
 </main>

@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
+<meta name="author" content="YOUR NAME HERE">
+<meta name="dcterms.date" content="2024-07-16">
 
-<title>Data Products - Badge</title>
+<title>Data Sources badge</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,19 +22,53 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="Module4 - badge-R_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Module4 - badge-R_files/libs/quarto-html/quarto.js"></script>
-<script src="Module4 - badge-R_files/libs/quarto-html/popper.min.js"></script>
-<script src="Module4 - badge-R_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Module4 - badge-R_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Module4 - badge-R_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Module4 - badge-R_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Module4 - badge-R_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Module4 - badge-R_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Module4 - badge-R_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="module1-badge_files/libs/clipboard/clipboard.min.js"></script>
+<script src="module1-badge_files/libs/quarto-html/quarto.js"></script>
+<script src="module1-badge_files/libs/quarto-html/popper.min.js"></script>
+<script src="module1-badge_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="module1-badge_files/libs/quarto-html/anchor.min.js"></script>
+<link href="module1-badge_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="module1-badge_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="module1-badge_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="module1-badge_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="module1-badge_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -46,19 +81,25 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Products - Badge</h1>
-<p class="subtitle lead">LASER Institute Foundation Learning Badge 4</p>
+<h1 class="title">Data Sources badge</h1>
+<p class="subtitle lead">LASER Institute Foundation Learning Lab 1</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>YOUR NAME HERE </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">July 16, 2024</p>
     </div>
   </div>
   
@@ -68,45 +109,52 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="img/wrkflo_badge.png" class="img-fluid" style="width:30.0%"></p>
+<p><img src="img/datasource_badge.png" class="img-fluid" style="width:30.0%"></p>
 <p>The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.</p>
 <p>To earn a badge for each lab, you are required to respond to a set of prompts for two parts:</p>
 <ul>
 <li><p>In Part I, you will reflect on your understanding of key concepts and begin to think about potential next steps for your own study.</p></li>
-<li><p>In Part II, you will complete a few R exercises that demonstrates your ability to apply the first phases of the LA workflow and data wrangling techniques introduced in this learning lab.</p></li>
+<li><p>In Part II, you will create a simple data product in R that demonstrates your ability to apply a data analysis technique introduced in this learning lab.</p></li>
 </ul>
 <section id="part-i-reflect-and-plan" class="level3">
 <h3 class="anchored" data-anchor-id="part-i-reflect-and-plan">Part I: Reflect and Plan</h3>
-<p>Use the institutional library (e.g.&nbsp;<a href="https://www.lib.ncsu.edu/#articles">NCSU Library</a>), <a href="https://scholar.google.com/">Google Scholar</a> or search engine to locate a research article, presentation, or resource that applies learning analytics analysis to an educational context or topic of interest. More specifically, <strong>locate a study that makes use of the Learning Analytics Workflow we learned today.</strong> You are also welcome to select one of your research papers.</p>
+<p>Use the institutional library (e.g.&nbsp;<a href="https://www.lib.ncsu.edu/#articles">NCSU Library</a>), <a href="https://scholar.google.com/">Google Scholar</a> or search engine to locate a research article, presentation, or resource that applies learning analytics analysis to an educational context or topic of interest. More specifically, <strong>locate a study that makes use of one of the data structures we learned today.</strong> You are also welcome to select one of your research papers.</p>
 <ol type="1">
 <li><p>Provide an APA citation for your selected study.</p>
 <ul>
 <li></li>
 </ul></li>
-<li><p>What educational issue, “problem of practice,” and/or questions were addressed?</p>
+<li><p>What types of data are associated with LA ?</p>
 <ul>
 <li></li>
 </ul></li>
-<li><p>Briefly describe any steps of the data-intensive research workflow that detailed in your article or presentation.</p>
+<li><p>What type of data structures are analyzed in the educational context?</p>
 <ul>
 <li></li>
 </ul></li>
-<li><p>What were the key findings or conclusions? What value, if any, might education practitioners find in these results?</p>
+<li><p>How might this article be used to better understand a dataset or educational context of personal or professional interest to you?</p>
 <ul>
 <li></li>
 </ul></li>
-<li><p>Finally, how, if at at, were educators in your self-selected article involved prior to wrangling and analysis?</p>
+<li><p>Finally, how do these processes compare with what teachers and educational organizations already do to support and assess student learning?</p>
 <ul>
 <li></li>
 </ul></li>
 </ol>
-<p>Draft a new research question of guided by the the phases of the Learning Analytics Workflow. Or use one of your current research questions.</p>
+<p>Draft a research question of guided by techniques and data sources that you are potentially interested in exploring in more depth.</p>
 <ol type="1">
-<li><p>What educational issue, “problem of practice,” and/or questions is addressed??</p>
+<li><p>What data source(s) should be analyzed or discussed?</p>
 <ul>
 <li></li>
 </ul></li>
-<li><p>Briefly describe any steps of the data-intensive research workflow that can be detailed in your article or presentation.</p></li>
+<li><p>What is the purpose of your article?</p>
+<ul>
+<li></li>
+</ul></li>
+<li><p>Explain the analytical level at which these data would need to be collected and analyzed.</p>
+<ul>
+<li></li>
+</ul></li>
 <li><p>How, if at all, will your article touch upon the application(s) of LA to “understand and improve learning and the contexts in which learning occurs?”</p>
 <ul>
 <li></li>
@@ -115,8 +163,71 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="part-ii-data-product" class="level3">
 <h3 class="anchored" data-anchor-id="part-ii-data-product">Part II: Data Product</h3>
-<p>In our Learning Analytics code-along, we scratched the surface on the number of ways that we can wrangle the data.</p>
-<p>Using one of the data sets provided in the data folder, your goal for this lab is to extend the Learning Analytics Workflow from our code-along by preparing and wrangling different data.</p>
+</section>
+<section id="problem-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1">Problem 1:</h3>
+<p>Create a data frame that includes two columns, one named “students” and the other named “foods.” The first column should be this vector (note the intentional repeated values): Thor, Rogue, Electra, Electra, Wolverine</p>
+<p>The second column should be this vector: Bread, Orange, Chocolate, Carrots, Milk</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR FINAL CODE BELOW</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<p>Using the data frame created in Problem 2, use the table() command to create a frequency table for the column called “students”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR FINAL CODE BELOW</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
+<p>Create a vector of five numbers of your choice between 0 and 10, save that vector to an object, and use the sum() function to calculate the sum of the numbers.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR FINAL CODE BELOW</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-4" class="level3">
+<h3 class="anchored" data-anchor-id="problem-4">Problem 4</h3>
+<ol type="a">
+<li><p>Create code to read the data/sci-online-classes.csv file into R using function(s) from the tidyverse package. <strong>(Note: this requires the package tidyverse)</strong>. Save the data as an object called <strong>sci_classes</strong>.</p></li>
+<li><p>Examine the contents of sci_classes in your console. <strong>Is your object a tibble? How do you know?</strong> (Hint: Check the output in the console.)</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR FINAL CODE BELOW</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To examine if sci_classes is a tibble</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-5">Problem 5</h3>
+<p>Using the sci_classes data frame:</p>
+<ol type="a">
+<li><p>Select all columns except subject and section.</p></li>
+<li><p>Assign to a new object with a different name.</p></li>
+<li><p>Examine your data frame.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR FINAL CODE BELOW</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># To examine the new data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="render-submit" class="level3">
+<h3 class="anchored" data-anchor-id="render-submit">Render &amp; Submit</h3>
+<p>Congratulations, you’ve completed Foundations Learning Badge 1!</p>
+<p>To receive your the Foundations Badge, you will need to render this document and publish via a method designated by your instructor such as: <a href="https://quarto.org/docs/publishing/quarto-pub.html">Quarto Pub</a>, <a href="https://posit.cloud/learn/guide#publish-from-cloud">Posit Cloud</a>, <a href="https://rpubs.com">RPubs</a> , <a href="https://quarto.org/docs/publishing/github-pages.html">GitHub Pages</a>, or <a href="https://quarto.org/docs/publishing/other.html">other methods</a>. Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!</p>
+<p>If you have any questions about this badge, or run into any technical issues, don’t hesitate to contact your instructor.</p>
+<p><img src="img/share-link.png" class="img-fluid" style="width:80.0%"></p>
+<p>Once your instructor has checked your link, you will be provided a physical version of the badge below!</p>
+<p><em>Complete the following steps to submit your work for review by:</em></p>
+<p>Complete the following steps to knit and publish your work:</p>
+<ol type="1">
+<li><p>First, change the name of the <code>author:</code> in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata">YAML header</a> at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn’t actually display in the final output.</p></li>
+<li><p>Next, click the knit button in the toolbar above to “knit” your R Markdown document to a <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">HTML</a> file that will be saved in your R Project folder. You should see a formatted webpage appear in your Viewer tab in the lower right pan or in a new browser window. Let’s us know if you run into any issues with knitting.</p></li>
+<li><p>Finally, publish.</p></li>
+</ol>
+<p><img src="img/knit-publish.png" class="img-fluid" style="width:80.0%"></p>
 </section>
 
 </main>

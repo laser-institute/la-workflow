@@ -6,7 +6,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-![](img/dataviz_badge.png){width="30%"}
+![](img/FLA_Primary_Hx.png){width="30%"}
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
 To earn a badge for each lab, you are required to respond to a set of prompts for two parts: 
