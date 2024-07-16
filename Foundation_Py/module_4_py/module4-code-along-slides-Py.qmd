@@ -9,7 +9,7 @@ format:
       buttons: false
     preview-links: auto
     # embed-resources: true
-    logo: img/LASERlogo_large.png
+    logo: img/LASERlogoB.png
     width: 1920
     height: 1080
     margin: 0.05
