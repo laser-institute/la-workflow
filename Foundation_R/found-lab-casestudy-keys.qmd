@@ -1610,8 +1610,8 @@ findings from an analysis:
 
 #### **👉 Your Turn** **⤵**
 
-Create a Data Story with our current data set. Make sure to use the LA
-workflow as your guid to include
+Create a Data Story with our current data set, or your own. Make sure to use the LA
+workflow as your guide to include
 
 \- Develop a research question
 
@@ -1627,3 +1627,4 @@ stakeholders. Remember to write it in terms the stakeholders understand.
 simple web page using Markdown to share her insights with colleagues.
 This acts as a practical example of how data can inform teaching
 practices.***
+

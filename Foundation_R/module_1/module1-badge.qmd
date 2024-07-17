@@ -1,13 +1,20 @@
 ---
-title: 'Data Sources badge'
+title: 'LA Foundations badge'
 subtitle: "LASER Institute Foundation Learning Lab 1"
 author: "YOUR NAME HERE"
-date: "`r format(Sys.Date(),'%B %e, %Y')`"
-output: html_document
+date: today 
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: right
+theme:
+  light: simplex
+  dark: cyborg
+editor: visual
 ---
 
-
-![](img/datasource_badge.png){width="30%"}
+![](img/FLA_Primary_Hx.png){width="30%"}
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
@@ -59,78 +66,136 @@ Draft a research question of guided by techniques and data sources that you are 
 
     -   
 
+
 ### Part II: Data Product
 
-### Problem 1:
+In our Learning Analytics code-along, we scratched the surface on the number of ways that we can wrangle the data.
 
-Create a data frame that includes two columns, one named "students" and the other named "foods." The first column should be this vector (note the intentional repeated values): Thor, Rogue, Electra, Electra, Wolverine
+Using one of the data sets provided in the data folder, your goal for this lab is to extend the Learning Analytics Workflow from our code-along by preparing and wrangling different data.
 
-The second column should be this vector: Bread, Orange, Chocolate, Carrots, Milk
+*Or alternatively, you may use your own data set to use in the workflow. If you do decide to use your own data set you must include:*
 
-```{r, problem_1}
-# YOUR FINAL CODE BELOW
+- *Show two different ways using `select` function with your data, inspect and save as a new object.*
 
+- *Show one way to use `filter` function with your data, inspect and save as a new object.*
 
-```
+- *Show one way using `arrange` function with your data, inspect and save as a new object.*
 
-### Problem 2
+- *Use the pipe operator to bring it all together.*
 
-Using the data frame created in Problem 2, use the table() command to create a frequency table for the column called "students"
+Feel free to create a new script in your lab 2 to work through the following problems. Then when satisfied add the code in the code chunks below. Don't forget to run the code to make sure it works.
 
-```{r, problem_2}
-# YOUR FINAL CODE BELOW
+**Instructions:**
 
-```
+1. _Add_ your name to the document in author.
 
-### Problem 3
-
-Create a vector of five numbers of your choice between 0 and 10, save that vector to an object, and use the sum() function to calculate the sum of the numbers.
-
-```{r, problem_3}
-# YOUR FINAL CODE BELOW
+2. Set up the first (or, two if using an Introduction) phases of the LA workflow below. I've added the wrangle section for you. You will need to `Prepare` the libraries necessary to wrangle the data.
 
 
-```
+## Wrangle
 
-### Problem 4
-
-a. Create code to read the data/sci-online-classes.csv file into R using function(s) from the tidyverse package. **(Note: this requires the package tidyverse)**. Save the data as an object called **sci_classes**.
-
-b. Examine the contents of sci_classes in your console. **Is your object a tibble? How do you know?** (Hint: Check the output in the console.)
-
-```{r, problem_4}
-# YOUR FINAL CODE BELOW
-
-# To examine if sci_classes is a tibble
+3. In the chunk called `read-data`: _Import_ the `sci-online-classes.csv` from the `data` folder and _save_ as a new `object` called `sci_classes`. Then _inspect_ your data using a `function` of your choice.
 
 
-```
-
-### Problem 5
-
-Using the sci_classes data frame:
-
-a.  Select all columns except subject and section.
-
-b.  Assign to a new object with a different name.
-
-c.  Examine your data frame.
-
-```{r, problem_5}
-# YOUR FINAL CODE BELOW
+```{r, read-data}
+# Type your code here
+#load todyverse
 
 
-# To examine the new data frame
+#import
+
+
+#inspect your data
 
 
 ```
 
 
+
+4. In the select-1 code chunk: Use the 'select' function to  _select_  `student_id`, `subject`, `semester`, `FinalGradeCEMS`. _Assign_ to a new object with a different name (you choose the name).
+```{r, select-1}
+# Type your code here
+
+
+#inspect your data
+
+```
+
+What do you notice about FinalGradeCEMS?(*Hint: NAs?)
+
+- Answer here
+{possible answer: *I notice NA values indicating missing data. This requires handling either by imputation or removal depending on the analysis requirements.*}
+
+5. In code chunk named `select-2` _select_ all columns except `subject` and `section`. _Assign_ to a new object with a different name. _Inspect_ your data frame with a different `function`.
+
+```{r, select-2}
+# Type your code here
+
+
+#inspect data
+
+```
+
+6. In the code chunk named `filter-1`, _Filter_ the **sci_classes data** frame for students in OcnA courses. _Assign_ to a new object with a different name. _Use_ the head() function to examine your data frame. 
+ 
+```{r, filter-1}
+#Type your code here
+
+
+
+#inspect your data
+
+```
+
+Q: How many rows does the head() function display?
+*Hint: Check the dimensions of your tibble in the console.*
+
+- Answer here
+
+{Possible answerr: *The head function displays 5 rows of data*}
+
+
+7. In code chunk named `filter-2`, _filter_ the **sci_classes data** frame so rows with NA for points earned are removed. _Assign_ to a new object with a different name. _Use_ glimpse() to examine all columns of your data frame.
+
+```{r, filter 2}
+# Type your code here
+
+
+
+#inspect data 
+
+```
+
+8. In the code chunk called `arrange-1`, _Arrange_ **sci_classes data** by `subject` then `percentage_earned` in descending order. _Assign_ to a new object. _Use_ the str() function to examine the data type of each column in your data frame.
+
+```{r}
+# Type your code here
+
+
+#inpsect data
+
+
+```
+
+
+9. In the code chunk name `final-wrangle`, _use_ **sci_classes data** data and the %>% `pipe` operator: 
+  + Select `student_id`, `subject`, `semester`, `FinalGradeCEMS`. 
+  + Filter for students in OcnA courses.
+  + Arrange grades by section in descending order. 
+  + Assign to a new object. 
+  + Examine the contents using a method of your choosing. 
+  
+```{r}
+#Type your code here
+
+
+
+```
 
 
 ### Render & Submit
 
-Congratulations, you've completed Foundations Learning Badge 1! 
+Congratulations, you've completed Foundations Learning Badge 1!
 
 To receive your the Foundations Badge, you will need to render this document and publish via a method designated by your instructor such as: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html), [Posit Cloud](https://posit.cloud/learn/guide#publish-from-cloud), [RPubs](https://rpubs.com) , [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html), or [other methods](https://quarto.org/docs/publishing/other.html). Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!
 
@@ -138,32 +203,16 @@ If you have any questions about this badge, or run into any technical issues, do
 
 ![](img/share-link.png){width="80%"}
 
-Once your instructor has checked your link, you will be provided a
-physical version of the badge below!
-
+Once your instructor has checked your link, you will be provided a physical version of the badge below!
 
 *Complete the following steps to submit your work for review by:*
 
 Complete the following steps to knit and publish your work:
 
-1.  First, change the name of the `author:` in the [YAML
-    header](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata)
-    at the very top of this document to your name. The YAML header
-    controls the style and feel for knitted document but doesn't
-    actually display in the final output.
+1.  First, change the name of the `author:` in the [YAML header](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata) at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn't actually display in the final output.
 
-2.  Next, click the knit button in the toolbar above to "knit" your R
-    Markdown document to a
-    [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file
-    that will be saved in your R Project folder. You should see a
-    formatted webpage appear in your Viewer tab in the lower right pan
-    or in a new browser window. Let's us know if you run into any issues
-    with knitting.
+2.  Next, click the knit button in the toolbar above to "knit" your R Markdown document to a [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file that will be saved in your R Project folder. You should see a formatted webpage appear in your Viewer tab in the lower right pan or in a new browser window. Let's us know if you run into any issues with knitting.
 
 3.  Finally, publish.
 
 ![](img/knit-publish.png){width="80%"}
-
-
-
-

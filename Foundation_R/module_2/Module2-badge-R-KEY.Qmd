@@ -1,20 +1,28 @@
 ---
 title: "Data Visualization - badge"
-subtitle: "LASER Institute Foundation Learning Lab 3"
-author: ""
-date: "`r Sys.Date()`"
-output: html_document
+subtitle: "LASER Institute Foundation Learning Lab 2"
+author: "ADD YOUR NAME HERE"
+date: today 
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: right
+theme:
+  light: simplex
+  dark: cyborg
+editor: visual
 ---
 
 ![](img/FLA_Primary_Hx.png){width="30%"}
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
-To earn a badge for each lab, you are required to respond to a set of prompts for two parts: 
+To earn a badge for each lab, you are required to respond to a set of prompts for two parts:
 
 -   In Part I, you will reflect on your understanding of key concepts and begin to think about potential next steps for your own study.
 
--   In Part II, you will create a simple data product in R that demonstrates your ability to apply a data analysis technique introduced in this learning lab.
+-   In Part II, you will create a simple data product in R that demonstrates your ability to apply a data viz analysis technique introduced in this learning lab.
 
 ### Part I: Reflect and Plan
 
@@ -24,119 +32,107 @@ Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#art
 
     -   
 
-2.  What educational issue, “problem of practice,” and/or questions were addressed?
+2.  What educational issue, "problem of practice," and/or questions were addressed?
 
     -   
 
-
 3.  What are some common approaches EDA approaches used and what did they entail?
-
 
     -   
 
 4.  How were data visualization or feature engineering used to support analysis, if at all?What were the key findings or conclusions?
 
     -   
-5. Finally,  what value, if any, might education practitioners find in these results?
+
+5.  Finally, what value, if any, might education practitioners find in these results?
 
     -   
 
 Draft a new research question of guided by the the phases of the Learning Anlytics Workflow. Or use one of your current research questions.
 
-1.  What educational issue, “problem of practice,” and/or questions is  addressed??
+1.  What educational issue, "problem of practice," and/or questions is addressed??
 
     -   
 
 2.  Briefly describe any steps of the EDA approach that will be used..
- 
-    - 
+
+    -   
 
 3.  What elements of EDA might require human judgement and decision making?
 
     -   
 
+
 ### Part II: Data Product
 
-In our Learning Analytics code-along, we only scratched the surface on the number of ways that we can wrangle the data.
+In our Learning Analytics code-along, we scratched the surface on the number of ways that we can `Model` the data.
 
-Using one of the data sets provided in the data folder, your goal for this lab is to extend the Data Visualizations using `ggplot` for Learning Analytics. 
-You have three options for completing the Data Product portion:
-You can create the visualization exercise provided.
-Create a visualization of your choice using a data set from the data folder 
-Create a visualization using your own data.
+You have two options for completing the Data Product portion:
 
+1.  Create a visualization of your choice using a data set from the data folder, or your own .
+2.  Create a visualization using your own data.
 
+Finally, for each exercise:
 
-I highly recommend creating a new R script in your lab-3 folder to complete this task. When your code is ready to share, use the code chunk below to share the final code for your model and answer the questions that follow.
+1.  Add a write up about the motivation for your data visualization.
+    1.  What is the question you are asking?
+    2.  What is the Model telling us?
+    3.  Who is the stakeholder for this analysis?
 
-Exercise 1:
-- Using the `sci-online to create a basic visualization that:
-  + Examine the relationship between two categorical variables.
-  + Add an appropriate title to your chart.
-  + Add a caption that poses a question educators may have about this data that your visualization could help answer.
+I highly recommend creating a new R script in your Module 3 folder to complete this task. When your code is ready to share, use the code chunk below to share the final code for your model and answer the questions that follow.
 
+Exercise 1: - Using the `sci-online` data or your own to create a basic visualization that:
+
+1.  Examine the relationship between two categorical variables.
+2.  Add an appropriate title to your chart.
+3.  Add a caption that poses a question educators may have about this data that your visualization could help answer.
 
 ```{r, data-viz1}
 # YOUR FINAL CODE HERE
+
+
+
 ```
 
+{Write the motivation here: ......}
 
 Exercise 2:
-- Using the `sci-online to create a basic visualization that:
-  + examines the relationship between two continuous variables. (scatterplot with layers, 
-#' a log-log or line plot, or one using coord functions.)
-  + Add an appropriate title to your chart.
-  + Add a caption that poses a question educators may have about this data that your visualization could help answer.
-  + Add or adjust any aesthetics to improve the 
-  readability of visual appeal of your viz. 
-  + Use a color scale if appropriate to modify the  default colors used by ggplot. 
-  + Adjust or remove your legend as appropriate. 
+
+Using the `sci-online` data, create a basic visualization that:
+
+1.  Examines the relationship between **two continuous variables.** (scatterplot with layers, \#' a log-log or line plot, or one using coord functions.)
+2.  Add an appropriate title to your chart.
+3.  Add a caption that poses a question educators may have about this data that your visualization could help answer.
+4.  Add or adjust any aesthetics to improve the readability of visual appeal of your viz.
+5.  Use a color scale if appropriate to modify the default colors used by ggplot.
+6.  Adjust or remove your legend as appropriate.
 
 ```{r, data-viz2}
 # YOUR FINAL CODE HERE
 ```
 
-### Knit & Submit
+{Write the motivation here: ......}
 
-Congratulations, you've completed your FOundations badge 3 - Data Viz!
+### Render & Submit
+
+Congratulations, you've completed Foundations Learning Badge 2!
+
+To receive your the Foundations Badge, you will need to render this document and publish via a method designated by your instructor such as: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html), [Posit Cloud](https://posit.cloud/learn/guide#publish-from-cloud), [RPubs](https://rpubs.com) , [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html), or [other methods](https://quarto.org/docs/publishing/other.html). Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!
+
+If you have any questions about this badge, or run into any technical issues, don't hesitate to contact your instructor.
+
+![](img/share-link.png){width="80%"}
+
+Once your instructor has checked your link, you will be provided a physical version of the badge below!
 
 *Complete the following steps to submit your work for review by:*
 
 Complete the following steps to knit and publish your work:
 
-1.  First, change the name of the `author:` in the [YAML
-    header](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata)
-    at the very top of this document to your name. The YAML header
-    controls the style and feel for knitted document but doesn't
-    actually display in the final output.
+1.  First, change the name of the `author:` in the [YAML header](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata) at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn't actually display in the final output.
 
-2.  Next, click the knit button in the toolbar above to "knit" your R
-    Markdown document to a
-    [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file
-    that will be saved in your R Project folder. You should see a
-    formatted webpage appear in your Viewer tab in the lower right pan
-    or in a new browser window. Let's us know if you run into any issues
-    with knitting.
+2.  Next, click the knit button in the toolbar above to "knit" your R Markdown document to a [HTML](https://bookdown.org/yihui/rmarkdown/html-document.html) file that will be saved in your R Project folder. You should see a formatted webpage appear in your Viewer tab in the lower right pan or in a new browser window. Let's us know if you run into any issues with knitting.
 
-3.  Finally, publish your webpage on on Posit Cloud by clicking the
-    "Publish" button located in the Viewer Pane after you knit your
-    document. See screenshot below.
+3.  Finally, publish.
 
 ![](img/knit-publish.png){width="80%"}
-
-### Foundations Learning Badge 3
-
-Congratulations, you've completed Foundations Learning Badge 3 - Data Viz! 
-
-To receive
-credit for this assignment and earn the an official Foundations LASER Badge,
-share the link to published webpage under an empty **Badge Artifact**
-column on the 2023 LASER Scholar Information and Documents spreadsheet:
-<https://go.ncsu.edu/laser-sheet>. We recommend bookmarking this
-spreadsheet as we'll be using it throughout the year to keep track of
-your progress.
-
-![](img/share-link.png){width="80%"}
-
-Once your instructor has checked your link, you will be provided a
-physical version of the badge below!
