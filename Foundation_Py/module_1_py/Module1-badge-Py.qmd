@@ -1,6 +1,6 @@
 ---
-title: "LA Foundations - Badge - KEY"
-subtitle: "LASER Institute Foundation Learning Badge 1 - KEY"
+title: "LA Foundations - Badge"
+subtitle: "LASER Institute Foundation Learning Badge 1"
 author: "ADD YOUR NAME HERE"
 date: today 
 format:
@@ -90,25 +90,26 @@ Feel free to create a new script in your lab 2 to work through the following pro
 
 ```{python, read-data}
 # Type your code here
-import pandas as pd
+
 
 # Load the CSV file
-sci_classes = pd.read_csv("data/sci-online-classes.csv")
+
 
 # Inspect the DataFrame
-print(sci_classes.head())  # Display the first few rows of the DataFrame
+
 
 ```
+
 
 4.  In the select-1 code chunk: Use the indexing method to select student_id, subject, semester, FinalGradeCEMS. Assign to a new object with a different name.
 
 ```{python, select-1}
 # Type your code here
 # Select specific columns and create a new DataFrame
-selected_data = sci_classes[['student_id', 'subject', 'semester', 'FinalGradeCEMS']]
+
 
 # Inspect the selected data
-print(selected_data.describe())  # Provides summary statistics which can include NAs analysis
+
 ```
 
 What do you notice about FinalGradeCEMS?(\*Hint: NAs?)
@@ -122,20 +123,15 @@ What do you notice about FinalGradeCEMS?(\*Hint: NAs?)
 selected_data = sci_classes[['student_id', 'subject', 'semester', 'FinalGradeCEMS']]
 
 # Inspect the selected data for missing values
-print(selected_data.describe())  # Provides summary statistics, useful for identifying missing data
+
 
 # Handle missing values in 'FinalGradeCEMS'
-# Option 1: Drop rows where 'FinalGradeCEMS' is missing
-cleaned_data = selected_data.dropna(subset=['FinalGradeCEMS'])
 
-# Option 2: Fill missing 'FinalGradeCEMS' with a placeholder or statistical value (mean, median, etc.)
-# For example, filling with the median (consider if this is appropriate based on your analysis requirements)
-median_value = selected_data['FinalGradeCEMS'].median()
-selected_data['FinalGradeCEMS'].fillna(median_value, inplace=True)
+
+
 
 # Display the cleaned data
-print(cleaned_data.head())  # Using option 1: dropped NA rows
-print(selected_data.head())  # Using option 2: filled NA values
+
 
 ```
 
@@ -144,21 +140,20 @@ print(selected_data.head())  # Using option 2: filled NA values
 ```{python, select-2}
 # Type your code here
 # Select all columns except 'subject' and 'section'
-reduced_data = sci_classes.drop(columns=['subject', 'section'])
+
 
 # Inspect the reduced data
-print(reduced_data.info())  # Displays information about the DataFrame including data types and non-null counts
+
 ```
 
 7.  In the code chunk named `filter-1`, Filter the sci_classes data frame for students in OcnA courses. Assign to a new object with a different name. Use the head() function to examine your data frame.
 
 ```{python, filter-1}
 #Type your code here
-DataFrame for students in 'OcnA' courses
-ocna_students = sci_classes[sci_classes['subject'] == 'OcnA']
+
 
 # Display the first few rows of the filtered data
-print(ocna_students.head())  # The head function by default displays the first 5 rows
+
 ```
 
 Q: How many rows does the head() function display? *Hint: Check the dimensions of your tibble in the console.*
@@ -171,10 +166,10 @@ Q: How many rows does the head() function display? *Hint: Check the dimensions o
 
 ```{python, filter 2}
 # Filter out rows with NA in 'points_earned'
-no_na_points = sci_classes.dropna(subset=['points_earned'])
+
 
 # Inspect the modified DataFrame
-print(no_na_points.info())  # Displays information similar to str in R
+
 ```
 
 9.  In the code chunk called `arrange-1`: Arrange sci_classes data by subject then percentage_earned in descending order. Assign to a new object. Use the dtypes function to examine the data type of each column in your data frame.
@@ -182,10 +177,10 @@ print(no_na_points.info())  # Displays information similar to str in R
 ```{python}
 # Type your code here
 # Arrange the DataFrame by 'subject' and 'percentage_earned' in descending order
-arranged_classes = sci_classes.sort_values(by=['subject', 'percentage_earned'], ascending=[True, False])
+
 
 # Inspect the structure of the arranged DataFrame
-print(arranged_classes.dtypes)  # Similar to str function in R
+
 ```
 
 10. Use the pandas library to chain together multiple data manipulation methods on the sci_classes data. Here's what you need to do step by step:
@@ -199,10 +194,10 @@ print(arranged_classes.dtypes)  # Similar to str function in R
 ```{python}
 #Type your code here
 # Use chaining to select, filter, and arrange data
-final_data = (sci_classes.loc[:, ['student_id', 'subject', 'semester', 'FinalGradeCEMS']].query("subject == 'OcnA'").sort_values('FinalGradeCEMS', ascending=False))
+
 
 # Examine the contents of the final data manipulation
-print(final_data)
+
 
 ```
 

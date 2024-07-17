@@ -1,6 +1,6 @@
 ---
-title: "Data Visualization - badge"
-subtitle: "LASER Institute Foundation Learning Lab 2"
+title: "Data Visualization - badge - Key"
+subtitle: "LASER Institute Foundation Learning Lab 3 - Key"
 author: "ADD YOUR NAME HERE"
 date: today 
 format:
@@ -12,7 +12,6 @@ theme:
   light: simplex
   dark: cyborg
 editor: visual
-jupyter: python3
 ---
 
 ![](img/DV_Primary_Hx.png){width="30%"}
@@ -78,14 +77,14 @@ You should include:
     1.  Includes the motivation for the model/analysis
     2.  Brief Interpretation of the model
 
-I highly recommend creating a new R script in your Module 2 folder to complete this task. When your code is ready to share, use the code chunk below to share the final code for your model and answer the questions that follow.
+I highly recommend creating a new R script in your Module 3 folder to complete this task. When your code is ready to share, use the code chunk below to share the final code for your model and answer the questions that follow.
 
 **Exercise**: - Using a data set from the data folder or your own, create a model/statistical analysis that you are curious about:
 
 -   Include a Data Visualization for the Model
 -   Write up a brief motivation and interpretation
 
-```{r, data-model1}
+```{python, data-model1}
 # YOUR FINAL CODE HERE
 
 

@@ -1,6 +1,6 @@
 ---
-title: "Data Viz Basics - Badge"
-subtitle: "LASER Institute Foundation Learning Badge 3"
+title: "Data Viz Basics - Badge - Key"
+subtitle: "LASER Institute Foundation Learning Badge 2 - Key"
 author: "ADD YOUR NAME HERE"
 date: today 
 format:
@@ -12,7 +12,6 @@ theme:
   light: simplex
   dark: cyborg
 editor: visual
-jupyter: python3
 ---
 
 ![](img/DV_Primary_Hx.png){width="30%"}
@@ -85,7 +84,7 @@ Exercise 1: - Using the `sci-online` data or your own to create a basic visualiz
 2.  Add an appropriate title to your chart.
 3.  Add a caption that poses a question educators may have about this data that your visualization could help answer.
 
-```{r, data-viz1}
+```{python, data-viz1}
 # YOUR FINAL CODE HERE
 
 
@@ -105,7 +104,7 @@ Using the `sci-online` data, create a basic visualization that:
 5.  Use a color scale if appropriate to modify the default colors used by ggplot.
 6.  Adjust or remove your legend as appropriate.
 
-```{r, data-viz2}
+```{python, data-viz2}
 # YOUR FINAL CODE HERE
 ```
 
