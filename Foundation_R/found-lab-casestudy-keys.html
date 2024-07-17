@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="PUT YOUR NAME HERE">
-<meta name="dcterms.date" content="2024-07-15">
+<meta name="dcterms.date" content="2024-07-17">
 
 <title>Narrated: Foundations Case Study</title>
 <style>
@@ -101,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 15, 2024</p>
+      <p class="date">July 17, 2024</p>
     </div>
   </div>
   
@@ -488,23 +488,23 @@ $ total_points_earned   &lt;dbl&gt; 1150.00, 1384.23, 1116.00, 1492.73, 1994.75,
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 662 × 26
-     q10    q7    q3 date.y                 q1 semester post_percomp percomp
-   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;   &lt;dbl&gt;
- 1     4     4     4 NA                      4 S216             NA       4  
- 2     4     4     2 NA                      4 S116             NA       3  
- 3     4     3     3 NA                      5 S216             NA       3  
- 4     4     3     2 NA                      4 S216             NA       2.5
- 5     3     4     3 NA                      4 S116             NA       3.5
- 6     4     4     3 NA                      4 S216             NA       3.5
- 7     4     2     4 NA                      4 S216             NA       3  
- 8     4     3     3 2016-01-02 00:41:00     4 S116              3.5     3  
- 9     2     3     3 2015-10-13 14:11:00     5 S116              3       3  
-10     4     4     4 NA                      5 S216             NA       4  
+   section    q9 subject    tv    q1 date.y              course_ID        q3
+   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;         &lt;dbl&gt;
+ 1 02          3 FrScA    3.86     4 NA                  FrScA-S216-02     4
+ 2 01          3 OcnA     3.57     4 NA                  OcnA-S116-01      2
+ 3 01          3 FrScA    3.71     5 NA                  FrScA-S216-01     3
+ 4 01          4 OcnA     3.86     4 NA                  OcnA-S216-01      2
+ 5 01          3 PhysA    3.71     4 NA                  PhysA-S116-01     3
+ 6 03          4 FrScA    3.71     4 NA                  FrScA-S216-03     3
+ 7 01          4 AnPhA    4        4 NA                  AnPhA-S216-01     4
+ 8 01          3 PhysA    4        4 2016-01-02 00:41:00 PhysA-S116-01     3
+ 9 01          2 FrScA    3        5 2015-10-13 14:11:00 FrScA-S116-01     3
+10 01          3 FrScA    4.14     5 NA                  FrScA-S216-01     4
 # ℹ 652 more rows
-# ℹ 18 more variables: course_ID &lt;chr&gt;, q9 &lt;dbl&gt;, date.x &lt;dttm&gt;, q8 &lt;dbl&gt;,
-#   section &lt;chr&gt;, tv &lt;dbl&gt;, subject &lt;chr&gt;, q4 &lt;dbl&gt;, val &lt;dbl&gt;, q2 &lt;dbl&gt;,
-#   q5 &lt;dbl&gt;, q6 &lt;dbl&gt;, student_ID &lt;chr&gt;, post_uv &lt;dbl&gt;, int &lt;dbl&gt;,
-#   date &lt;dttm&gt;, post_int &lt;dbl&gt;, post_tv &lt;dbl&gt;</code></pre>
+# ℹ 18 more variables: student_ID &lt;chr&gt;, q5 &lt;dbl&gt;, q10 &lt;dbl&gt;, q4 &lt;dbl&gt;,
+#   date &lt;dttm&gt;, date.x &lt;dttm&gt;, post_uv &lt;dbl&gt;, q7 &lt;dbl&gt;, q6 &lt;dbl&gt;,
+#   post_int &lt;dbl&gt;, int &lt;dbl&gt;, post_percomp &lt;dbl&gt;, q2 &lt;dbl&gt;, semester &lt;chr&gt;,
+#   val &lt;dbl&gt;, post_tv &lt;dbl&gt;, percomp &lt;dbl&gt;, q8 &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -4936,7 +4936,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 </ol>
 <section id="your-turn-28" class="level4">
 <h4 class="anchored" data-anchor-id="your-turn-28"><strong>👉 Your Turn</strong> <strong>⤵</strong></h4>
-<p>Create a Data Story with our current data set. Make sure to use the LA workflow as your guid to include</p>
+<p>Create a Data Story with our current data set, or your own. Make sure to use the LA workflow as your guide to include</p>
 <p>- Develop a research question</p>
 <p>- Add ggplot visualizations</p>
 <p>- Modeling visualizations</p>

@@ -14,7 +14,7 @@ theme:
 editor: visual
 ---
 
-![](img/FLA_Primary_Hx.png){width="30%"}
+![](img/DV_Primary_Hx.png){width="30%"}
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 

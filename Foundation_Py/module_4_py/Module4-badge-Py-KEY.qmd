@@ -2,7 +2,7 @@
 title: "Data Products - Badge - KEY"
 subtitle: "LASER Institute Foundation Learning Badge 4 - KEY"
 author: "ADD YOUR NAME HERE"
-date: today 
+jupyter: python3
 format:
   html:
     toc: true

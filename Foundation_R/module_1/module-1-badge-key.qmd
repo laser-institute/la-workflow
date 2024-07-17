@@ -2,15 +2,19 @@
 title: 'LA Foundations - KEY'
 subtitle: "LASER Institute Foundation Learning Lab 1 - KEY"
 author: "YOUR NAME HERE"
-date: "`r format(Sys.Date(),'%B %e, %Y')`"
-output: html_document
+date: today 
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: right
+theme:
+  light: simplex
+  dark: cyborg
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-![](img/datasource_badge.png){width="30%"}
+![](img/FLA_Primary_Hx.png){width="30%"}
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
@@ -88,7 +92,7 @@ Feel free to create a new script in your lab 2 to work through the following pro
 2. Set up the first (or, two if using an Introduction) phases of the LA workflow below. I've added the wrangle section for you. You will need to `Prepare` the libraries necessary to wrangle the data.
 
 
-## Wrangle
+#### Wrangle
 
 3. In the chunk called `read-data`: _Import_ the `sci-online-classes.csv` from the `data` folder and _save_ as a new `object` called `sci_classes`. Then _inspect_ your data using a `function` of your choice.
 
@@ -155,7 +159,7 @@ Q: How many rows does the head() function display?
 ```{r, filter 2}
 # Type your code here
 
-no_na_points <- filter(sci_classes, !is.na(points_earned))
+no_na_points <- filter(sci_classes, !is.na(total_points_possible))
 
 #inspect data 
 glimpse(no_na_points)

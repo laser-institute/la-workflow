@@ -2,7 +2,7 @@
 title: "Data Viz Basics - Badge - Key"
 subtitle: "LASER Institute Foundation Learning Badge 2 - Key"
 author: "ADD YOUR NAME HERE"
-date: today 
+jupyter: python3
 format:
   html:
     toc: true
@@ -84,11 +84,25 @@ Exercise 1: - Using the `sci-online` data or your own to create a basic visualiz
 2.  Add an appropriate title to your chart.
 3.  Add a caption that poses a question educators may have about this data that your visualization could help answer.
 
-```{python, data-viz1}
+```{python}
+
+#| eval: false
 # YOUR FINAL CODE HERE
 
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+import numpy as np
 
+data_to_explore = pd.read_csv("data/data_to_explore.csv")
 
+subject_counts = data_to_explore['subject'].value_counts().reset_index()
+subject_counts.columns = ['subject', 'count']
+
+# Create the bar plot using sns.barplot()
+plt.figure(figsize=(10, 6))
+sns.barplot(data=subject_counts, x='subject', y='count')
+plt.show()
 ```
 
 {Write the motivation here: ......}
@@ -97,15 +111,40 @@ Exercise 2:
 
 Using the `sci-online` data, create a basic visualization that:
 
-1.  Examines the relationship between **two continuous variables.** (scatterplot with layers, \#' a log-log or line plot, or one using coord functions.)
+1.  Examines the relationship between **two continuous variables.** (scatterplot with layers, a log-log or line plot, or one using coord functions.)
 2.  Add an appropriate title to your chart.
 3.  Add a caption that poses a question educators may have about this data that your visualization could help answer.
 4.  Add or adjust any aesthetics to improve the readability of visual appeal of your viz.
 5.  Use a color scale if appropriate to modify the default colors used by ggplot.
 6.  Adjust or remove your legend as appropriate.
 
-```{python, data-viz2}
+{Write the motivation here: ......}
+
+Exercise 2:
+
+Using the `sci-online` data, create a basic visualization that:
+
+1.  Examines the relationship between **two continuous variables.** (scatterplot with layers, a log-log or line plot, or one using coord functions.)
+2.  Add an appropriate title to your chart.
+3.  Add a caption that poses a question educators may have about this data that your visualization could help answer.
+4.  Add or adjust any aesthetics to improve the readability of visual appeal of your viz.
+5.  Use a color scale if appropriate to modify the default colors used by ggplot.
+6.  Adjust or remove your legend as appropriate.
+
+```{python}
+#| eval: false
 # YOUR FINAL CODE HERE
+pivot_data = data_to_explore.pivot_table(index='enrollment_reason', columns='subject', aggfunc='size', fill_value=0)
+
+# Create the heatmap
+plt.figure(figsize=(12, 8))
+sns.heatmap(pivot_data, cmap="YlOrRd", annot=True)
+plt.title("Reasons for Enrollment by Subject")  # Add the title
+plt.xlabel("Subject")  # Label for the x-axis
+plt.ylabel("Enrollment Reason")  # Label for the y-axis
+plt.figtext(0.5, -0.1, "Which subjects were the least available at local schools?", ha="center", fontsize=10)  # Add the caption
+plt.show()
+
 ```
 
 {Write the motivation here: ......}

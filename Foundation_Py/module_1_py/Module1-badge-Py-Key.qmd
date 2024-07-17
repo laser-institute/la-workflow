@@ -1,6 +1,6 @@
 ---
-title: "LA Foundations - Badge"
-subtitle: "LASER Institute Foundation Learning Badge 1"
+title: "LA Foundations - Badge - KEY"
+subtitle: "LASER Institute Foundation Learning Badge 1 - KEY"
 author: "ADD YOUR NAME HERE"
 jupyter: python3
 format:
@@ -91,13 +91,14 @@ Feel free to create a new script in your lab 2 to work through the following pro
 ```{python, read-data}
 
 # YOUR FINAL CODE HERE
-
+# Type your code here
+import pandas as pd
 
 # Load the CSV file
-
+sci_classes = pd.read_csv("data/sci-online-classes.csv")
 
 # Inspect the DataFrame
-
+print(sci_classes.head())  # Display the first few rows of the DataFrame
 
 ```
 
@@ -107,10 +108,10 @@ Feel free to create a new script in your lab 2 to work through the following pro
 
 # YOUR FINAL CODE HERE
 # Select specific columns and create a new DataFrame
-
+selected_data = sci_classes[['student_id', 'subject', 'semester', 'FinalGradeCEMS']]
 
 # Inspect the selected data
-
+print(selected_data.describe())  # Provides summary statistics which can include NAs analysis
 ```
 
 **Note on FinalGradeCEMS:** You may observe NA values indicating missing data. This requires handling either by imputation or removal depending on the analysis requirements.
@@ -120,9 +121,18 @@ Feel free to create a new script in your lab 2 to work through the following pro
 ```{python}
 # YOUR FINAL CODE HERE
 # Inspect the selected data for missing values
+print(selected_data.describe())  # Provides summary statistics, useful for identifying missing data
 
-# Inspect the cleaned data
+# Option 1: Drop rows where 'FinalGradeCEMS' is missing
+cleaned_data = selected_data.dropna(subset=['FinalGradeCEMS'])
 
+# Option 2: Fill missing 'FinalGradeCEMS' with a placeholder or statistical value (mean, median, etc.)
+median_value = selected_data['FinalGradeCEMS'].median()
+selected_data['FinalGradeCEMS'].fillna(median_value, inplace=True)
+
+# Display the cleaned data
+print(cleaned_data.head())  # Using option 1: dropped NA rows
+print(selected_data.head())  # Using option 2: filled NA values
 ```
 
 6.In the select-2 code chunk: \_Select all columns except subject and section. Assign to a new object with a different name. Inspect your data frame with a different function.
@@ -131,10 +141,10 @@ Feel free to create a new script in your lab 2 to work through the following pro
 # YOUR FINAL CODE HERE
 
 # Select all columns except 'subject' and 'section'
-
+reduced_data = sci_classes.drop(columns=['subject', 'section'])
 
 # Inspect the reduced data
-
+print(reduced_data.info())  # Displays information about the DataFrame including data types and non-null counts
 ```
 
 7.In the filter-1 code chunk: Filter the sci_classes data frame for students in OcnA courses. Assign to a new object with a different name. Use the head() function to examine your data frame.
@@ -143,10 +153,10 @@ Feel free to create a new script in your lab 2 to work through the following pro
 # YOUR FINAL CODE HERE
 
 # Filter the DataFrame for students in 'OcnA' courses
-
+ocna_students = sci_classes[sci_classes['subject'] == 'OcnA']
 
 # Display the first few rows of the filtered data
-
+print(ocna_students.head())  # The head function by default displays the first 5 rows
 ```
 
 Question: How many rows does the head() function display? Answer: The head function displays 5 rows by default.
@@ -158,10 +168,10 @@ Question: How many rows does the head() function display? Answer: The head funct
 # YOUR FINAL CODE HERE
 
 # Filter out rows with NA in 'total_points_possible'
-
+no_na_points = sci_classes.dropna(subset=['total_points_possible'])
 
 # Inspect the modified DataFrame
-
+print(no_na_points.info())  # Displays information similar to str in R
 
 ```
 
@@ -173,10 +183,10 @@ Question: How many rows does the head() function display? Answer: The head funct
 # YOUR FINAL CODE HERE
 
 # Arrange the DataFrame by 'subject' and 'percentage_earned' in descending order
-
+arranged_classes = sci_classes.sort_values(by=['subject', 'percentage_earned'], ascending=[True, False])
 
 # Inspect the structure of the arranged DataFrame
-
+print(arranged_classes.dtypes)  # Similar to str function in R
 ```
 
 10. In the code chunk named final-wrangle: Use the pandas library to chain together multiple data manipulation methods on the sci_classes data. Here's what you need to do step by step:
@@ -191,10 +201,13 @@ Question: How many rows does the head() function display? Answer: The head funct
 # YOUR FINAL CODE HERE
 
 # Use chaining to select, filter, and arrange data
-
+final_data = (sci_classes
+              .loc[:, ['student_id', 'subject', 'semester', 'FinalGradeCEMS']]
+              .query("subject == 'OcnA'")
+              .sort_values('FinalGradeCEMS', ascending=False))
 
 # Examine the contents of the final data manipulation
-
+print(final_data)
 
 ```
 
