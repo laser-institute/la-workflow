@@ -134,15 +134,11 @@ Using the `sci-online` data, create a basic visualization that:
 ```{python}
 
 # YOUR FINAL CODE HERE
-pivot_data = data_to_explore.pivot_table(index='enrollment_reason', columns='subject', aggfunc='size', fill_value=0)
-
-# Create the heatmap
-plt.figure(figsize=(12, 8))
-sns.heatmap(pivot_data, cmap="YlOrRd", annot=True)
-plt.title("Reasons for Enrollment by Subject")  # Add the title
-plt.xlabel("Subject")  # Label for the x-axis
-plt.ylabel("Enrollment Reason")  # Label for the y-axis
-plt.figtext(0.5, -0.1, "Which subjects were the least available at local schools?", ha="center", fontsize=10)  # Add the caption
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=data_to_explore, x='time_spent_hours', y='proportion_earned')
+plt.title("Relationship Between Time Spent and Proportion of Points Earned")  # Add the title
+plt.xlabel("Time Spent (Hours)")  # Label for the x-axis
+plt.ylabel("Proportion of Points Earned")  # Label for the y-axis
 plt.show()
 
 ```

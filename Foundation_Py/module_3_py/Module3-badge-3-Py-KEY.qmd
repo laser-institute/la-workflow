@@ -1,5 +1,5 @@
 ---
-title: "Data Visualization - badge - Key"
+title: "Data sources in LA - badge - Key"
 subtitle: "LASER Institute Foundation Learning Lab 3 - Key"
 author: "ADD YOUR NAME HERE"
 jupyter: python3
@@ -14,7 +14,7 @@ theme:
 editor: visual
 ---
 
-![](img/DV_Primary_Hx.png){width="30%"}
+![](img/FLA_DSLA_Hx.png){width="30%"}
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
@@ -100,7 +100,6 @@ To receive your the Foundations Badge, you will need to render this document and
 
 If you have any questions about this badge, or run into any technical issues, don't hesitate to contact your instructor.
 
-![](img/share-link.png){width="80%"}
 
 Once your instructor has checked your link, you will be provided a physical version of the badge below!
 
@@ -114,4 +113,3 @@ Complete the following steps to knit and publish your work:
 
 3.  Finally, publish.
 
-![](img/knit-publish.png){width="80%"}

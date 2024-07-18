@@ -90,9 +90,7 @@ If you have any questions about this badge, or run into any technical issues, do
 
 Once your instructor has checked your link, you will be provided a physical version of the badge below!
 
-Complete the following steps to submit your work for review by:
-
-Complete the following steps to knit and publish your work:
+*Complete the following steps to submit your work for review by:*
 
 First, change the name of the author: in the YAML header at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn't actually display in the final output.
 

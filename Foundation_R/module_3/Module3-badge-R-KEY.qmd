@@ -1,5 +1,5 @@
 ---
-title: "LA Workflow - Badge"
+title: "Data sources in LA - Badge"
 subtitle: "LASER Institute Foundation Learning Badge 3"
 author: "ADD YOUR NAME HERE"
 date: today 
@@ -101,7 +101,6 @@ If you have any questions about this badge, or run into any technical issues, do
 ![](img/share-link.png){width="80%"}
 
 Once your instructor has checked your link, you will be provided a physical version of the badge below!
-
 
 Complete the following steps to submit your work for review by:
 
