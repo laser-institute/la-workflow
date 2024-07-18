@@ -161,7 +161,6 @@ print(ocna_students.head())  # The head function by default displays the first 5
 
 Question: How many rows does the head() function display? Answer: The head function displays 5 rows by default.
 
-
 8.In the filter-2 code chunk: Filter the sci_classes data frame so rows with NA for 'total_points_possible' are removed. Assign to a new object with a different name. Use info() to examine all columns of your data frame.
 
 ```{python}
@@ -175,9 +174,7 @@ print(no_na_points.info())  # Displays information similar to str in R
 
 ```
 
-
-
-9. In the arrange-1 code chunk: Arrange sci_classes data by subject then percentage_earned in descending order. Assign to a new object. Use the dtypes function to examine the data type of each column in your data frame.
+9.  In the arrange-1 code chunk: Arrange sci_classes data by subject then percentage_earned in descending order. Assign to a new object. Use the dtypes function to examine the data type of each column in your data frame.
 
 ```{python}
 # YOUR FINAL CODE HERE
@@ -211,7 +208,6 @@ print(final_data)
 
 ```
 
-
 ## Render & Submit
 
 Congratulations, you've completed Foundations Learning Badge 4!
@@ -222,13 +218,10 @@ If you have any questions about this badge, or run into any technical issues, do
 
 Once your instructor has checked your link, you will be provided a physical version of the badge below!
 
-Complete the following steps to submit your work for review by:
-
-Complete the following steps to knit and publish your work:
+*Complete the following steps to submit your work for review by:*
 
 First, change the name of the author: in the YAML header at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn't actually display in the final output.
 
 Next, click the knit button in the toolbar above to "knit" your R Markdown document to a HTML file that will be saved in your R Project folder. You should see a formatted webpage appear in your Viewer tab in the lower right pan or in a new browser window. Let's us know if you run into any issues with knitting.
 
 Finally, publish.
-

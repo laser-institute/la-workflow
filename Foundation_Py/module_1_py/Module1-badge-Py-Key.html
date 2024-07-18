@@ -83,8 +83,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#part-i-reflect-and-plan" id="toc-part-i-reflect-and-plan" class="nav-link active" data-scroll-target="#part-i-reflect-and-plan">Part I: Reflect and Plan</a></li>
-  <li><a href="#part-ii-data-product" id="toc-part-ii-data-product" class="nav-link" data-scroll-target="#part-ii-data-product">Part II: Data Product</a></li>
+  <li><a href="#part-ii-data-product" id="toc-part-ii-data-product" class="nav-link" data-scroll-target="#part-ii-data-product">Part II: Data Product</a>
+  <ul>
   <li><a href="#wrangle" id="toc-wrangle" class="nav-link" data-scroll-target="#wrangle">Wrangle</a></li>
+  </ul></li>
   <li><a href="#render-submit" id="toc-render-submit" class="nav-link" data-scroll-target="#render-submit">Render &amp; Submit</a></li>
   </ul>
 </nav>
@@ -177,9 +179,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><em>Add</em> your name to the document in author.</p></li>
 <li><p>Set up the first (or, two if using an Introduction) phases of the LA workflow below. I’ve added the wrangle section for you. You will need to <code>Prepare</code> the libraries necessary to wrangle the data.</p></li>
 </ol>
-</section>
-<section id="wrangle" class="level2">
-<h2 class="anchored" data-anchor-id="wrangle">Wrangle</h2>
+<section id="wrangle" class="level4">
+<h4 class="anchored" data-anchor-id="wrangle">Wrangle</h4>
 <ol start="3" type="1">
 <li>In the chunk called <code>read-data</code>:Import the sci-online-classes.csv from the data folder and save as a new object called sci_classes. Then inspect your data using a function of your choice.</li>
 </ol>
@@ -290,7 +291,7 @@ max    97441.000000      100.000000
 4       48797   PhysA     S116       84.000000</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/g9/4cy0xld1441bjvm88t2w19fm0000gq/T/ipykernel_66470/1159102793.py:10: SettingWithCopyWarning: 
+<pre><code>/var/folders/g9/4cy0xld1441bjvm88t2w19fm0000gq/T/ipykernel_97222/1159102793.py:10: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -391,7 +392,7 @@ None</code></pre>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR FINAL CODE HERE</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out rows with NA in 'points_earned'</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out rows with NA in 'total_points_possible'</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>no_na_points <span class="op">=</span> sci_classes.dropna(subset<span class="op">=</span>[<span class="st">'total_points_possible'</span>])</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the modified DataFrame</span></span>
@@ -521,14 +522,14 @@ dtype: object</code></pre>
 </div>
 </div>
 </section>
+</section>
 <section id="render-submit" class="level2">
 <h2 class="anchored" data-anchor-id="render-submit">Render &amp; Submit</h2>
 <p>Congratulations, you’ve completed Foundations Learning Badge 4!</p>
 <p>To receive your the Foundations Badge, you will need to render this document and publish via a method designated by your instructor such as: Quarto Pub, Posit Cloud, RPubs , GitHub Pages, or other methods. Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!</p>
 <p>If you have any questions about this badge, or run into any technical issues, don’t hesitate to contact your instructor.</p>
 <p>Once your instructor has checked your link, you will be provided a physical version of the badge below!</p>
-<p>Complete the following steps to submit your work for review by:</p>
-<p>Complete the following steps to knit and publish your work:</p>
+<p><em>Complete the following steps to submit your work for review by:</em></p>
 <p>First, change the name of the author: in the YAML header at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn’t actually display in the final output.</p>
 <p>Next, click the knit button in the toolbar above to “knit” your R Markdown document to a HTML file that will be saved in your R Project folder. You should see a formatted webpage appear in your Viewer tab in the lower right pan or in a new browser window. Let’s us know if you run into any issues with knitting.</p>
 <p>Finally, publish.</p>

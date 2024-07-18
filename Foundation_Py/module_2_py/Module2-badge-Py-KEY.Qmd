@@ -86,11 +86,11 @@ Exercise 1: - Using the `sci-online` data or your own to create a basic visualiz
 
 ```{python}
 
-#| eval: false
 # YOUR FINAL CODE HERE
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.linear_model import LinearRegression
 import numpy as np
 
@@ -132,7 +132,7 @@ Using the `sci-online` data, create a basic visualization that:
 6.  Adjust or remove your legend as appropriate.
 
 ```{python}
-#| eval: false
+
 # YOUR FINAL CODE HERE
 pivot_data = data_to_explore.pivot_table(index='enrollment_reason', columns='subject', aggfunc='size', fill_value=0)
 
@@ -157,13 +157,9 @@ To receive your the Foundations Badge, you will need to render this document and
 
 If you have any questions about this badge, or run into any technical issues, don't hesitate to contact your instructor.
 
-![](img/share-link.png){width="80%"}
-
 Once your instructor has checked your link, you will be provided a physical version of the badge below!
 
 *Complete the following steps to submit your work for review by:*
-
-Complete the following steps to knit and publish your work:
 
 1.  First, change the name of the `author:` in the [YAML header](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata) at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn't actually display in the final output.
 

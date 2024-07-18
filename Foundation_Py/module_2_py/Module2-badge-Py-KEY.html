@@ -188,18 +188,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>data_to_explore <span class="op">=</span> pd.read_csv(<span class="st">"data/data_to_explore.csv"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>subject_counts <span class="op">=</span> data_to_explore[<span class="st">'subject'</span>].value_counts().reset_index()</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>subject_counts.columns <span class="op">=</span> [<span class="st">'subject'</span>, <span class="st">'count'</span>]</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot using sns.barplot()</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>subject_counts, x<span class="op">=</span><span class="st">'subject'</span>, y<span class="op">=</span><span class="st">'count'</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>data_to_explore <span class="op">=</span> pd.read_csv(<span class="st">"data/data_to_explore.csv"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>subject_counts <span class="op">=</span> data_to_explore[<span class="st">'subject'</span>].value_counts().reset_index()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>subject_counts.columns <span class="op">=</span> [<span class="st">'subject'</span>, <span class="st">'count'</span>]</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot using sns.barplot()</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>subject_counts, x<span class="op">=</span><span class="st">'subject'</span>, y<span class="op">=</span><span class="st">'count'</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Module2-badge-Py-KEY_files/figure-html/cell-2-output-1.png" width="816" height="503"></p>
+</div>
 </div>
 <p>{Write the motivation here: ……}</p>
 <p>Exercise 2:</p>
@@ -235,6 +239,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Enrollment Reason"</span>)  <span class="co"># Label for the y-axis</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.figtext(<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.1</span>, <span class="st">"Which subjects were the least available at local schools?"</span>, ha<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">10</span>)  <span class="co"># Add the caption</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Module2-badge-Py-KEY_files/figure-html/cell-3-output-1.png" width="1104" height="795"></p>
+</div>
 </div>
 <p>{Write the motivation here: ……}</p>
 </section>
@@ -243,10 +250,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Congratulations, you’ve completed Foundations Learning Badge 1!</p>
 <p>To receive your the Foundations Badge, you will need to render this document and publish via a method designated by your instructor such as: <a href="https://quarto.org/docs/publishing/quarto-pub.html">Quarto Pub</a>, <a href="https://posit.cloud/learn/guide#publish-from-cloud">Posit Cloud</a>, <a href="https://rpubs.com">RPubs</a> , <a href="https://quarto.org/docs/publishing/github-pages.html">GitHub Pages</a>, or <a href="https://quarto.org/docs/publishing/other.html">other methods</a>. Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!</p>
 <p>If you have any questions about this badge, or run into any technical issues, don’t hesitate to contact your instructor.</p>
-<p><img src="img/share-link.png" class="img-fluid" style="width:80.0%"></p>
 <p>Once your instructor has checked your link, you will be provided a physical version of the badge below!</p>
 <p><em>Complete the following steps to submit your work for review by:</em></p>
-<p>Complete the following steps to knit and publish your work:</p>
 <ol type="1">
 <li><p>First, change the name of the <code>author:</code> in the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata">YAML header</a> at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn’t actually display in the final output.</p></li>
 <li><p>Next, click the knit button in the toolbar above to “knit” your R Markdown document to a <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">HTML</a> file that will be saved in your R Project folder. You should see a formatted webpage appear in your Viewer tab in the lower right pan or in a new browser window. Let’s us know if you run into any issues with knitting.</p></li>

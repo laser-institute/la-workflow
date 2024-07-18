@@ -11,22 +11,37 @@ format:
 theme:
   light: simplex
   dark: cyborg
+editor: 
+  markdown: 
+    wrap: 72
 ---
-
 
 ![](img/FLA_Primary_Hx.png){width="30%"}
 
-The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
+The final activity for each learning lab provides space to work with
+data and to reflect on how the concepts and techniques introduced in
+each lab might apply to your own research.
 
-To earn a badge for each lab, you are required to respond to a set of prompts for two parts:
+To earn a badge for each lab, you are required to respond to a set of
+prompts for two parts:
 
--   In Part I, you will reflect on your understanding of key concepts and begin to think about potential next steps for your own study.
+-   In Part I, you will reflect on your understanding of key concepts
+    and begin to think about potential next steps for your own study.
 
--   In Part II, you will create a simple data product in R that demonstrates your ability to apply a data analysis technique introduced in this learning lab.
+-   In Part II, you will create a simple data product in R that
+    demonstrates your ability to apply a data analysis technique
+    introduced in this learning lab.
 
 ### Part I: Reflect and Plan
 
-Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#articles)), [Google Scholar](https://scholar.google.com/) or search engine to locate a research article, presentation, or resource that applies learning analytics analysis to an educational context or topic of interest. More specifically, **locate a study that makes use of one of the data structures we learned today.** You are also welcome to select one of your research papers.
+Use the institutional library (e.g. [NCSU
+Library](https://www.lib.ncsu.edu/#articles)), [Google
+Scholar](https://scholar.google.com/) or search engine to locate a
+research article, presentation, or resource that applies learning
+analytics analysis to an educational context or topic of interest. More
+specifically, **locate a study that makes use of one of the data
+structures we learned today.** You are also welcome to select one of
+your research papers.
 
 1.  Provide an APA citation for your selected study.
 
@@ -36,19 +51,24 @@ Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#art
 
     -   
 
-3.  What type of data structures are analyzed in the educational context?
+3.  What type of data structures are analyzed in the educational
+    context?
 
     -   
 
-4.  How might this article be used to better understand a dataset or educational context of personal or professional interest to you?
+4.  How might this article be used to better understand a dataset or
+    educational context of personal or professional interest to you?
 
     -   
 
-5.  Finally, how do these processes compare with what teachers and educational organizations already do to support and assess student learning?
+5.  Finally, how do these processes compare with what teachers and
+    educational organizations already do to support and assess student
+    learning?
 
     -   
 
-Draft a research question of guided by techniques and data sources that you are potentially interested in exploring in more depth.
+Draft a research question of guided by techniques and data sources that
+you are potentially interested in exploring in more depth.
 
 1.  What data source(s) should be analyzed or discussed?
 
@@ -58,44 +78,58 @@ Draft a research question of guided by techniques and data sources that you are 
 
     -   
 
-3.  Explain the analytical level at which these data would need to be collected and analyzed.
+3.  Explain the analytical level at which these data would need to be
+    collected and analyzed.
 
     -   
 
-4.  How, if at all, will your article touch upon the application(s) of LA to "understand and improve learning and the contexts in which learning occurs?"
+4.  How, if at all, will your article touch upon the application(s) of
+    LA to "understand and improve learning and the contexts in which
+    learning occurs?"
 
     -   
-
 
 ### Part II: Data Product
 
-In our Learning Analytics code-along, we scratched the surface on the number of ways that we can wrangle the data.
+In our Learning Analytics code-along, we scratched the surface on the
+number of ways that we can wrangle the data.
 
-Using one of the data sets provided in the data folder, your goal for this lab is to extend the Learning Analytics Workflow from our code-along by preparing and wrangling different data.
+Using one of the data sets provided in the data folder, your goal for
+this lab is to extend the Learning Analytics Workflow from our
+code-along by preparing and wrangling different data.
 
-*Or alternatively, you may use your own data set to use in the workflow. If you do decide to use your own data set you must include:*
+*Or alternatively, you may use your own data set to use in the workflow.
+If you do decide to use your own data set you must include:*
 
-- *Show two different ways using `select` function with your data, inspect and save as a new object.*
+-   *Show two different ways using `select` function with your data,
+    inspect and save as a new object.*
 
-- *Show one way to use `filter` function with your data, inspect and save as a new object.*
+-   *Show one way to use `filter` function with your data, inspect and
+    save as a new object.*
 
-- *Show one way using `arrange` function with your data, inspect and save as a new object.*
+-   *Show one way using `arrange` function with your data, inspect and
+    save as a new object.*
 
-- *Use the pipe operator to bring it all together.*
+-   *Use the pipe operator to bring it all together.*
 
-Feel free to create a new script in your lab 2 to work through the following problems. Then when satisfied add the code in the code chunks below. Don't forget to run the code to make sure it works.
+Feel free to create a new script in your lab 2 to work through the
+following problems. Then when satisfied add the code in the code chunks
+below. Don't forget to run the code to make sure it works.
 
 **Instructions:**
 
-1. _Add_ your name to the document in author.
+1.  *Add* your name to the document in author.
 
-2. Set up the first (or, two if using an Introduction) phases of the LA workflow below. I've added the wrangle section for you. You will need to `Prepare` the libraries necessary to wrangle the data.
-
+2.  Set up the first (or, two if using an Introduction) phases of the LA
+    workflow below. I've added the wrangle section for you. You will
+    need to `Prepare` the libraries necessary to wrangle the data.
 
 #### Wrangle
 
-3. In the chunk called `read-data`: _Import_ the `sci-online-classes.csv` from the `data` folder and _save_ as a new `object` called `sci_classes`. Then _inspect_ your data using a `function` of your choice.
-
+3.  In the chunk called `read-data`: *Import* the
+    `sci-online-classes.csv` from the `data` folder and *save* as a new
+    `object` called `sci_classes`. Then *inspect* your data using a
+    `function` of your choice.
 
 ```{r, read-data}
 # Type your code here
@@ -110,9 +144,10 @@ sci_classes
 
 ```
 
+4.  In the select-1 code chunk: Use the 'select' function to *select*
+    `student_id`, `subject`, `semester`, `FinalGradeCEMS`. *Assign* to a
+    new object with a different name (you choose the name).
 
-
-4. In the select-1 code chunk: Use the 'select' function to  _select_  `student_id`, `subject`, `semester`, `FinalGradeCEMS`. _Assign_ to a new object with a different name (you choose the name).
 ```{r, select-1}
 # Type your code here
 selected_data <- select(sci_classes, student_id, subject, semester, FinalGradeCEMS)
@@ -121,12 +156,15 @@ selected_data <- select(sci_classes, student_id, subject, semester, FinalGradeCE
 summary(selected_data)
 ```
 
-What do you notice about FinalGradeCEMS?(*Hint: NAs?)
+What do you notice about FinalGradeCEMS?(\*Hint: NAs?)
 
-- Answer here
-{possible answer: *I notice NA values indicating missing data. This requires handling either by imputation or removal depending on the analysis requirements.*}
+-   Answer here {possible answer: *I notice NA values indicating missing
+    data. This requires handling either by imputation or removal
+    depending on the analysis requirements.*}
 
-5. In code chunk named `select-2` _select_ all columns except `subject` and `section`. _Assign_ to a new object with a different name. _Inspect_ your data frame with a different `function`.
+5.  In code chunk named `select-2` *select* all columns except `subject`
+    and `section`. *Assign* to a new object with a different name.
+    *Inspect* your data frame with a different `function`.
 
 ```{r, select-2}
 # Type your code here
@@ -136,8 +174,11 @@ reduced_data <- select(sci_classes, -subject, -section)
 str(reduced_data)
 ```
 
-6. In the code chunk named `filter-1`, _Filter_ the **sci_classes data** frame for students in OcnA courses. _Assign_ to a new object with a different name. _Use_ the head() function to examine your data frame. 
- 
+6.  In the code chunk named `filter-1`, *Filter* the **sci_classes
+    data** frame for students in OcnA courses. *Assign* to a new object
+    with a different name. *Use* the head() function to examine your
+    data frame.
+
 ```{r, filter-1}
 #Type your code here
 
@@ -146,15 +187,17 @@ ocna_students <- filter(sci_classes, subject == "OcnA")
 head(ocna_students)
 ```
 
-Q: How many rows does the head() function display?
-*Hint: Check the dimensions of your tibble in the console.*
+Q: How many rows does the head() function display? *Hint: Check the
+dimensions of your tibble in the console.*
 
-- Answer here
+-   Answer here
 
 {Possible answerr: *The head function displays 5 rows of data*}
 
-
-7. In code chunk named `filter-2`, _filter_ the **sci_classes data** frame so rows with NA for points earned are removed. _Assign_ to a new object with a different name. _Use_ glimpse() to examine all columns of your data frame.
+7.  In code chunk named `filter-2`, *filter* the **sci_classes data**
+    frame so rows with NA for points earned are removed. *Assign* to a
+    new object with a different name. *Use* glimpse() to examine all
+    columns of your data frame.
 
 ```{r, filter 2}
 # Type your code here
@@ -165,7 +208,10 @@ no_na_points <- filter(sci_classes, !is.na(total_points_possible))
 glimpse(no_na_points)
 ```
 
-8. In the code chunk called `arrange-1`, _Arrange_ **sci_classes data** by `subject` then `percentage_earned` in descending order. _Assign_ to a new object. _Use_ the str() function to examine the data type of each column in your data frame.
+8.  In the code chunk called `arrange-1`, *Arrange* **sci_classes data**
+    by `subject` then `percentage_earned` in descending order. *Assign*
+    to a new object. *Use* the str() function to examine the data type
+    of each column in your data frame.
 
 ```{r}
 # Type your code here
@@ -176,14 +222,15 @@ str(arranged_classes)
 
 ```
 
+9.  In the code chunk name `final-wrangle`, *use* **sci_classes data**
+    data and the %\>% `pipe` operator:
 
-9. In the code chunk name `final-wrangle`, _use_ **sci_classes data** data and the %>% `pipe` operator: 
-  + Select `student_id`, `subject`, `semester`, `FinalGradeCEMS`. 
-  + Filter for students in OcnA courses.
-  + Arrange grades by section in descending order. 
-  + Assign to a new object. 
-  + Examine the contents using a method of your choosing. 
-  
+-   Select `student_id`, `subject`, `semester`, `FinalGradeCEMS`.
+-   Filter for students in OcnA courses.
+-   Arrange grades by section in descending order.
+-   Assign to a new object.
+-   Examine the contents using a method of your choosing.
+
 ```{r}
 #Type your code here
 
@@ -195,25 +242,28 @@ print(final_data)
 
 ```
 
-
-
 ### Render & Submit
 
-Congratulations, you've completed Foundations Learning Badge 1! 
+Congratulations, you've completed Foundations Learning Badge 1!
 
-To receive your the Foundations Badge, you will need to render this document and publish via a method designated by your instructor such as: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html), [Posit Cloud](https://posit.cloud/learn/guide#publish-from-cloud), [RPubs](https://rpubs.com) , [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html), or [other methods](https://quarto.org/docs/publishing/other.html). Once you have shared a link to you published document with your instructor and they have reviewed your work, you will be provided a physical or digital version of the badge pictured at the top of this document!
+To receive your the Foundations Badge, you will need to render this
+document and publish via a method designated by your instructor such as:
+[Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html), [Posit
+Cloud](https://posit.cloud/learn/guide#publish-from-cloud),
+[RPubs](https://rpubs.com) , [GitHub
+Pages](https://quarto.org/docs/publishing/github-pages.html), or [other
+methods](https://quarto.org/docs/publishing/other.html). Once you have
+shared a link to you published document with your instructor and they
+have reviewed your work, you will be provided a physical or digital
+version of the badge pictured at the top of this document!
 
-If you have any questions about this badge, or run into any technical issues, don't hesitate to contact your instructor.
-
-![](img/share-link.png){width="80%"}
+If you have any questions about this badge, or run into any technical
+issues, don't hesitate to contact your instructor.
 
 Once your instructor has checked your link, you will be provided a
 physical version of the badge below!
 
-
 *Complete the following steps to submit your work for review by:*
-
-Complete the following steps to knit and publish your work:
 
 1.  First, change the name of the `author:` in the [YAML
     header](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-anatomy.html#yaml-metadata)
@@ -230,9 +280,3 @@ Complete the following steps to knit and publish your work:
     with knitting.
 
 3.  Finally, publish.
-
-![](img/knit-publish.png){width="80%"}
-
-
-
-

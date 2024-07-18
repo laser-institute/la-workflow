@@ -18,7 +18,7 @@ editor: visual
 
 The final activity for each learning lab provides space to work with data and to reflect on how the concepts and techniques introduced in each lab might apply to your own research.
 
-To earn a badge for each lab, you are required to respond to a set of prompts for two parts: 
+To earn a badge for each lab, you are required to respond to a set of prompts for two parts:
 
 -   In Part I, you will reflect on your understanding of key concepts and begin to think about potential next steps for your own study.
 
@@ -32,14 +32,11 @@ Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#art
 
     -   
 
-2.  What educational issue, “problem of practice,” and/or questions were addressed?
+2.  What educational issue, "problem of practice," and/or questions were addressed?
 
     -   
 
-
-3.  Briefly describe any steps of the data-intensive research workflow that detailed in your article or presentation. 
-
-
+3.  Briefly describe any steps of the data-intensive research workflow that detailed in your article or presentation.
 
     -   
 
@@ -47,21 +44,19 @@ Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#art
 
     -   
 
-5. Finally, how, if at at, were educators in your self-selected article involved prior to wrangling and analysis?
+5.  Finally, how, if at at, were educators in your self-selected article involved prior to wrangling and analysis?
 
     -   
 
 Draft a new research question of guided by the the phases of the Learning Analytics Workflow. Or use one of your current research questions.
 
-1.  What educational issue, “problem of practice,” and/or questions is  addressed??
+1.  What educational issue, "problem of practice," and/or questions is addressed??
 
     -   
 
 2.  Briefly describe any steps of the data-intensive research workflow that can be detailed in your article or presentation.
- 
 
-
-3.  How, if at all, will your article touch upon the application(s) of LA to “understand and improve learning and the contexts in which learning occurs?”
+3.  How, if at all, will your article touch upon the application(s) of LA to "understand and improve learning and the contexts in which learning occurs?"
 
     -   
 
@@ -71,8 +66,7 @@ In our Learning Analytics code-along, we scratched the surface on the number of 
 
 Using one of the data sets provided in the data folder, or your own, your goal for this lab is to create a Quarto dashboard. You will need to:
 
-Create a Data Story with our current data set, or your own. Make sure to use the LA
-workflow as your guide to include
+Create a Data Story with our current data set, or your own. Make sure to use the LA workflow as your guide to include
 
 \- Develop a research question
 
@@ -80,13 +74,11 @@ workflow as your guide to include
 
 \- Modeling visualizations
 
-\- Communicate by writing up a short write up for the intended
-stakeholders. Remember to write it in terms the stakeholders understand.
+\- Communicate by writing up a short write up for the intended stakeholders. Remember to write it in terms the stakeholders understand.
 
 You can use the template in the `r-product_eamples` folder or create your own dashboard.
 
 When complete Render this badge and also your dashboard and share with the instructor. There are two things you need to show to receive the physical Module 4 `Data Products` badge.
-
 
 ## Render & Submit
 
@@ -99,8 +91,6 @@ If you have any questions about this badge, or run into any technical issues, do
 Once your instructor has checked your link, you will be provided a physical version of the badge below!
 
 Complete the following steps to submit your work for review by:
-
-Complete the following steps to knit and publish your work:
 
 First, change the name of the author: in the YAML header at the very top of this document to your name. The YAML header controls the style and feel for knitted document but doesn't actually display in the final output.
 

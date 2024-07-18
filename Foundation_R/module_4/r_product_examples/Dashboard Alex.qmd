@@ -21,9 +21,9 @@ library(skimr)
 library(ggplot2)
 library(dplyr)
 
-time_spent <- read_csv("module_1/data/log-data.csv")
-gradebook <- read_csv("module_1/data/gradebook-summary.csv",show_col_types = FALSE)
-survey <- read_csv("module_1/data/survey.csv",show_col_types = FALSE)
+time_spent <- read_csv("data/log-data.csv")
+gradebook <- read_csv("data/gradebook-summary.csv",show_col_types = FALSE)
+survey <- read_csv("data/survey.csv",show_col_types = FALSE)
 time_spent <- time_spent %>%  
   separate(course_id,
            c("subject", "semester", "section"))
