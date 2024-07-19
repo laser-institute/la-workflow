@@ -1,0 +1,106 @@
+---
+title: "What factors influence academic performance?"
+author:  "Alex Johnson"
+format: 
+  dashboard
+---
+
+```{python}
+#| label: setup
+#| include: false
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from IPython.display import display
+
+# Load the datasets
+data_to_explore = pd.read_csv("data/data_to_explore.csv")
+
+subject_mapping = {
+    "AnPhA": "Anatomy",
+    "BioA": "Biology",
+    "FrScA": "Forensics",
+    "OcnA": "Oceanography",
+    "PhysA": "Physics"
+}
+data_to_explore['subject'] = data_to_explore['subject'].map(subject_mapping).fillna(data_to_explore['subject'])
+
+# Remove rows with any NAs in the relevant columns
+clean_data = data_to_explore.dropna(subset=['tv', 'percomp'])
+
+# Categorizing the 'tv' variable
+clean_data['tv_category'] = pd.cut(clean_data['tv'], bins=[0, 1, 2, 3, 4, float('Inf')], labels=["0-1 hours", "1-2 hours", "2-3 hours", "3-4 hours", "4+ hours"])
+
+# Calculating the mean 'percomp' score for each 'tv' category
+tv_percomp_means = clean_data.groupby('tv_category')['percomp'].mean().reset_index()
+
+# Remove rows with any missing values in int or proportion_earned
+clean_data = data_to_explore.dropna(subset=['int', 'proportion_earned'])
+```
+
+
+
+## Inputs {.sidebar}
+
+The dashboard is created to show student behaviors and academic outcomes.
+
+## TV Watching and Perceived competence 
+
+```{python warning=FALSE, message=FALSE}
+#| output: false
+
+# Create the plot
+plt.figure(figsize=(10, 6))
+sns.barplot(data=tv_percomp_means, x='tv_category', y='percomp', palette='viridis')
+plt.title('Average Perceived Competence by TV Watching Category')
+plt.xlabel('TV Watching Category')
+plt.ylabel('Mean Perceived Competence')
+
+# Save the plot to a file
+plt.savefig('tv_watching_perceived_competence.png')
+
+# Close the plot to prevent it from displaying in this chunk
+plt.close()
+             
+    
+```
+
+```{python}
+from IPython.display import Image, display
+
+# Display the saved plot
+display(Image(filename='tv_watching_perceived_competence.png'))
+```
+
+-   That higher television viewing may be inversely related to students' self-assessed academic confidence, potentially impeding their engagement with the subject matter.
+
+
+
+## CHART B
+
+```{python}
+#| output: false
+
+plt.figure(figsize=(10, 6))
+fig2 = sns.scatterplot(data=clean_data, x='int', y='proportion_earned', alpha=0.5, color='olivedrab')
+sns.regplot(data=clean_data, x='int', y='proportion_earned', scatter=False, color='maroon')
+plt.title('Scatter Plot of Proportion Earned vs. Student Interest')
+plt.xlabel('Student Interest (1-5 scale)')
+plt.ylabel('Proportion of Points Earned')
+
+# Save the plot to a file
+plt.savefig('scatter_plot_proportion_interest.png')
+
+# Close the plot to prevent it from displaying in this chunk
+plt.close()
+
+```
+
+```{python}
+# Display the saved plot
+display(Image(filename='scatter_plot_proportion_interest.png'))
+```
+
+-   Students who watch TV for 4+ hours report the highest perceived competence, contrary to the initial hypothesis of a negative correlation between TV watching time and perceived academic competence.
+
+-   The trend is not linear; students watching 3-4 hours of TV have a higher perceived competence than those watching 2-3 hours, suggesting a more complex relationship with no clear linear trend.

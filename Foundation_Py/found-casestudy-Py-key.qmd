@@ -926,8 +926,6 @@ Matplotlib and Seaborn are powerful Python libraries for creating static, intera
 
 For more detailed resources on these libraries, you can refer to the [Matplotlib documentation](https://matplotlib.org/stable/users/index.html) and the [Seaborn documentation](https://seaborn.pydata.org/). Additionally, online galleries like [Python Graph Gallery](https://python-graph-gallery.com/) offer code examples and inspiration.
 
-![](module_4/img/grammar.png){width="382" height="340"}
-
 "Elegant Graphics for Data Analysis" states that "every Matplotlib/Seaborn plot can include:
 
 -   Data,

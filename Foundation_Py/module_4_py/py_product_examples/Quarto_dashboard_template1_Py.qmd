@@ -1,0 +1,39 @@
+---
+title: "Quarto-Template-Python"
+format: dashboard
+---
+
+```{python}
+#| label: setup
+#| include: false
+import pandas as pd
+```
+
+
+# Page 1
+
+## Row 1
+
+You will remove *"#|echo: true"* it is put there to show you where the code goes for the graphics in the columns and rows 
+
+```{python}
+#|echo: true
+# Column 1 row 1
+```
+
+```{python}
+#|echo: true
+# Column 2 row 1
+```
+
+
+## Row 2
+
+```{python}
+#|echo: true
+# Column 1 row 2
+```
+
+# Page 2
+
+
