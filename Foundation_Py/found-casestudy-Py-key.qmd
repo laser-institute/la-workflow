@@ -1494,7 +1494,7 @@ plt.show()
 
 ***As Alex explores the data through visualizations and summary statistics, she begins to see trends that could indicate which students are at risk. Her observations guide her to consider changes in her teaching approach or additional support for certain students.***
 
-🛑 Stop here. Congratulations you finished the second part of the case study.
+### 🛑 Stop here. Congratulations you finished the second part of the case study.
 
 ## 4. Model (Module 3)
 
@@ -1808,37 +1808,19 @@ Add your interpretation below:
 
 ## 5. Communicate (Module 4)
 
-For your final Your Turn, your goal is to distill our analysis into a
-Quarto "data product" designed to illustrate key findings. Feel free
-to use the template in the lab 4 folder.
+For your final Your Turn, your goal is to distill our analysis into a Quarto "data product" designed to illustrate key findings. Feel free to use the template in the lab 4 folder.
 
-The final step in the workflow/process is sharing the results of your
-analysis with wider audience. Krumm et al. @krumm2018 have outlined the
-following 3-step process for communicating with education stakeholders
-findings from an analysis:
+The final step in the workflow/process is sharing the results of your analysis with wider audience. Krumm et al. @krumm2018 have outlined the following 3-step process for communicating with education stakeholders findings from an analysis:
 
-1.  **Select.** Communicating what one has learned involves selecting
-    among those analyses that are most important and most useful to an
-    intended audience, as well as selecting a form for displaying that
-    information, such as a graph or table in static or interactive form,
-    i.e. a "data product."
+1.  **Select.** Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e. a "data product."
 
-2.  **Polish**. After creating initial versions of data products,
-    research teams often spend time refining or polishing them, by
-    adding or editing titles, labels, and notations and by working with
-    colors and shapes to highlight key points.
+2.  **Polish**. After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.
 
-3.  **Narrate.** Writing a narrative to accompany the data products
-    involves, at a minimum, pairing a data product with its related
-    research question, describing how best to interpret the data
-    product, and explaining the ways in which the data product helps
-    answer the research question and might be used to inform new
-    analyses or a "change idea" for improving student learning.
+3.  **Narrate.** Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question and might be used to inform new analyses or a "change idea" for improving student learning.
 
 #### **👉 Your Turn** **⤵**
 
-Create a Data Story with our current data set, or your own. Make sure to use the LA
-workflow as your guide to include
+Create a Data Story with our current data set, or your own. Make sure to use the LA workflow as your guide to include
 
 \- Develop a research question
 
@@ -1846,13 +1828,6 @@ workflow as your guide to include
 
 \- Modeling visualizations
 
-\- Communicate by writing up a short write up for the intended
-stakeholders. Remember to write it in terms the stakeholders understand.
+\- Communicate by writing up a short write up for the intended stakeholders. Remember to write it in terms the stakeholders understand.
 
-<img src="img/teacher%20persona.png" alt="Teacher Persona" class="wrap-img"/>
-***Finally, Alex prepares to communicate her findings. She creates a
-simple web page using Markdown to share her insights with colleagues.
-This acts as a practical example of how data can inform teaching
-practices.***
-
-
+<img src="img/teacher%20persona.png" alt="Teacher Persona" class="wrap-img"/> ***Finally, Alex prepares to communicate her findings. She creates a simple web page using Markdown to share her insights with colleagues. This acts as a practical example of how data can inform teaching practices.***

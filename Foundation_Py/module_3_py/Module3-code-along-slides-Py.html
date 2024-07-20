@@ -8,7 +8,7 @@
 <link href="Module3-code-along-slides-Py_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="Module3-code-along-slides-Py_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="Module3-code-along-slides-Py_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.5.55">
 
   <title>Model</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="Module3-code-along-slides-Py_files/libs/revealjs/dist/theme/quarto.css">
   <link href="Module3-code-along-slides-Py_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -157,7 +222,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -400,8 +466,8 @@
 </section>
 <section id="steps-in-the-modeling-process" class="slide level2">
 <h2>Steps in the Modeling Process</h2>
-<p><img data-src="img/model_phase.svg" style="width:50.0%"></p>
-<aside class="notes">
+
+<img data-src="img/model_phase.svg" style="width:50.0%" class="r-stretch"><aside class="notes">
 <p><strong>Speaker notes</strong></p>
 <p>Th modeling phase is important for transforming the insights gained from Exploratory Data Analysis (EDA) into actionable predictions and explanations using statistical models.</p>
 <p>Defining Objectives and Hypotheses:</p>
@@ -427,9 +493,319 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<p><img src="img/LASERlogo_large.png" class="slide-logo"></p>
+</section>
+<section id="dummy-data" class="slide level2">
+<h2>Dummy Data</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Create dummy data</a></li><li><a href="#tabset-1-2">Introduce NaN</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div id="13e10c67" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Creating demo data</span></span>
+<span id="cb1-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a><span class="co"># Seed for reproducibility</span></span>
+<span id="cb1-6"><a href=""></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-7"><a href=""></a></span>
+<span id="cb1-8"><a href=""></a><span class="co"># Create demo data</span></span>
+<span id="cb1-9"><a href=""></a>demo_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-10"><a href=""></a>    <span class="st">'completion_percentage'</span>: np.random.uniform(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">100</span>),  <span class="co"># Completion between 50% and 100%</span></span>
+<span id="cb1-11"><a href=""></a>    <span class="st">'hours_online'</span>: np.random.uniform(<span class="dv">1</span>, <span class="dv">50</span>, <span class="dv">100</span>),             <span class="co"># Hours online between 1 and 50</span></span>
+<span id="cb1-12"><a href=""></a>    <span class="st">'boredom_score'</span>: np.random.uniform(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">100</span>)              <span class="co"># Boredom score between 1 and 5</span></span>
+<span id="cb1-13"><a href=""></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li><p>Purpose: The .loc function in Pandas is a powerful tool for accessing and modifying data in a DataFrame.</p></li>
+<li><p>Functionality: It allows for selection by label and the assignment of new values to those selected locations.</p></li>
+</ul>
+<div id="069dcb12" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># Introduce some NaN values</span></span>
+<span id="cb2-2"><a href=""></a>demo_data.loc[np.random.choice(demo_data.index, size<span class="op">=</span><span class="dv">10</span>, replace<span class="op">=</span><span class="va">False</span>), <span class="st">'completion_percentage'</span>] <span class="op">=</span> np.nan</span>
+<span id="cb2-3"><a href=""></a>demo_data.loc[np.random.choice(demo_data.index, size<span class="op">=</span><span class="dv">10</span>, replace<span class="op">=</span><span class="va">False</span>), <span class="st">'hours_online'</span>] <span class="op">=</span> np.nan</span>
+<span id="cb2-4"><a href=""></a>demo_data.loc[np.random.choice(demo_data.index, size<span class="op">=</span><span class="dv">10</span>, replace<span class="op">=</span><span class="va">False</span>), <span class="st">'boredom_score'</span>] <span class="op">=</span> np.nan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Creating dummy data</strong> goal is to create a realistic set of data that we can work with to understand various functions and methods in data analysis.</p>
+<p>First, we set a seed for reproducibility using np.random.seed(42). This ensures that every time we run this code, we will get the same set of random numbers. Reproducibility is essential in data analysis because it allows us to verify results and ensure that our findings are consistent.</p>
+<p>Next, we generate our demo data using the pd.DataFrame() function from the Pandas library. We create a DataFrame with three columns:</p>
+<p>completion_percentage: This column contains random values between 50% and 100%, representing the percentage of course completion by students. hours_online: This column includes random values between 1 and 50, indicating the number of hours students spend online. boredom_score: This column has random values between 1 and 5, representing a self-reported score of how bored students feel during their online sessions. Each of these columns is populated with 100 random values, which will provide a robust dataset for our subsequent analysis and modeling exercises.</p>
+<p>By setting up our demo data in this way, we can simulate a realistic scenario where we have to handle various types of data and potential issues, such as missing values or data imputation, which we will address in later sections.</p>
+<p><strong>Introduce NaN</strong> .loc function allows us to select data by label, and we can also assign new values to those selected locations. This is particularly helpful when we want to introduce missing values or simulate specific data conditions.</p>
+<p>In our example, we are introducing NaN values into specific columns to simulate missing data. We use the np.random.choice function to randomly select 10 indices from our DataFrame, ensuring no index is selected more than once with replace=False.</p>
+<p>We then use .loc to assign NaN values to the selected indices in the completion_percentage, hours_online, and boredom_score columns.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="correlation" class="slide level2">
+<h2>Correlation</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Corr()</a></li><li><a href="#tabset-2-2">Discussion</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>The corr() method (in Pandas) calculates the relationship between each column in your data set.</p>
+<div id="00c29036" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># Select specific variables for analysis</span></span>
+<span id="cb3-2"><a href=""></a>selected_data <span class="op">=</span> demo_data[[<span class="st">'completion_percentage'</span>, <span class="st">'hours_online'</span>]]</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a><span class="co"># Calculate the correlation matrix</span></span>
+<span id="cb3-5"><a href=""></a>correlation_matrix <span class="op">=</span> selected_data.corr()</span>
+<span id="cb3-6"><a href=""></a></span>
+<span id="cb3-7"><a href=""></a><span class="co"># Print the correlation matrix</span></span>
+<span id="cb3-8"><a href=""></a><span class="bu">print</span>(correlation_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                       completion_percentage  hours_online
+completion_percentage               1.000000     -0.094677
+hours_online                       -0.094677      1.000000</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<p>What is the interpretation of -.095 correlation?</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p><strong>Correlation</strong></p>
+<p><strong>Discussion</strong></p>
+<p>The correlation matrix provides the pairwise correlations between the selected variables, allowing us to understand the relationships between them. Specifically, the correlation coefficient between completion_percentage and hours_online is -0.094677. This value is close to 0, indicating a very weak negative correlation.</p>
+<p>A negative correlation suggests that as one variable increases, the other tends to decrease. However, in this case, the relationship is very weak. The diagonal values in the matrix are always 1.000000, representing the correlation of each variable with itself.</p>
+<p>Interpreting this, the correlation coefficient of -0.094677 between completion_percentage and hours_online implies a very weak negative relationship between these two variables. Practically, this means that there is almost no linear relationship between the hours spent online and the completion percentage. The negative sign indicates a slight tendency for the completion percentage to decrease as hours online increase, but this trend is not strong enough to be of significant concern.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="linear-regression" class="slide level2">
+<h2>Linear Regression</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">package <strong>👉 Your Turn</strong> <strong>⤵</strong></a></li><li><a href="#tabset-3-2">Answer</a></li><li><a href="#tabset-3-3">Regression</a></li><li><a href="#tabset-3-4">Code and output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p>Linear regression is implemented using the statsmodels library</p>
+<p>Add the <code>statsmodels.api</code> packages as <code>sm</code></p>
+</div>
+<div id="tabset-3-2">
+<p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
+<div id="cb4c2649" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co">#import stats model</span></span>
+<span id="cb5-2"><a href=""></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-3">
+<p><strong>Instructions:</strong></p>
+<ol type="1">
+<li><p>Clean the data</p></li>
+<li><p>Create a linear regression model with <code>hours_online</code> as the independent variable and <code>completion_percentage</code> as the dependent variable.</p></li>
+<li><p>Fit the model and inspect the summary.</p></li>
+<li><p>Visualize the model with a scatter plot and regression line</p></li>
+</ol>
+</div>
+<div id="tabset-3-4">
+<div id="550b71c8" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># Step 1: Drop rows with missing values</span></span>
+<span id="cb6-2"><a href=""></a>data_cleaned <span class="op">=</span> selected_data.dropna()</span>
+<span id="cb6-3"><a href=""></a></span>
+<span id="cb6-4"><a href=""></a><span class="co"># Step 2: Define independent and dependent variables</span></span>
+<span id="cb6-5"><a href=""></a>X <span class="op">=</span> data_cleaned[[<span class="st">'hours_online'</span>]]  <span class="co"># Independent variable</span></span>
+<span id="cb6-6"><a href=""></a>y <span class="op">=</span> data_cleaned[<span class="st">'completion_percentage'</span>]  <span class="co"># Dependent variable</span></span>
+<span id="cb6-7"><a href=""></a></span>
+<span id="cb6-8"><a href=""></a><span class="co"># Step 3: Add a constant to the model (for the intercept)</span></span>
+<span id="cb6-9"><a href=""></a>X <span class="op">=</span> sm.add_constant(X)</span>
+<span id="cb6-10"><a href=""></a></span>
+<span id="cb6-11"><a href=""></a><span class="co"># Step 4: Fit the model</span></span>
+<span id="cb6-12"><a href=""></a>model <span class="op">=</span> sm.OLS(y, X).fit()</span>
+<span id="cb6-13"><a href=""></a></span>
+<span id="cb6-14"><a href=""></a><span class="co"># Step 5: Output the summary of the model</span></span>
+<span id="cb6-15"><a href=""></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     completion_percentage   R-squared:                       0.009
+Model:                               OLS   Adj. R-squared:                 -0.003
+Method:                    Least Squares   F-statistic:                    0.7236
+Date:                   Sat, 20 Jul 2024   Prob (F-statistic):              0.398
+Time:                           14:43:37   Log-Likelihood:                -335.86
+No. Observations:                     82   AIC:                             675.7
+Df Residuals:                         80   BIC:                             680.5
+Df Model:                              1                                         
+Covariance Type:               nonrobust                                         
+================================================================================
+                   coef    std err          t      P&gt;|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const           76.2415      3.254     23.433      0.000      69.767      82.716
+hours_online    -0.0957      0.112     -0.851      0.398      -0.320       0.128
+==============================================================================
+Omnibus:                       30.477   Durbin-Watson:                   2.093
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):                5.312
+Skew:                           0.038   Prob(JB):                       0.0702
+Kurtosis:                       1.755   Cond. No.                         57.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Defining Variables:</p>
+<p>We define the independent variable (X) as hours_online and the dependent variable (y) as completion_percentage. We add a constant to the model to account for the intercept. Fitting the Model:</p>
+<p>Using the statsmodels library, we fit an Ordinary Least Squares (OLS) regression model. statsmodels is a powerful library specifically designed for statistical modeling in Python. The summary() function provides detailed statistics about the model, including coefficients, R-squared value, and p-values.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="multiple-regression" class="slide level2">
+<h2>Multiple regression</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><strong>👉 Your Turn</strong> <strong>⤵</strong></a></li><li><a href="#tabset-4-2">Answer</a></li><li><a href="#tabset-4-3">Bonus - Visualize</a></li><li><a href="#tabset-4-4">Bonus - ANSWER</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p><strong>Instructions:</strong></p>
+<ol type="1">
+<li><p>Clean the data using the <code>dropna()</code> function</p></li>
+<li><p>Create a linear regression model with <code>hours_online</code> and <code>boredom_score</code> as the independent variable and <code>completion_percentage</code> as the dependent variable.</p></li>
+<li><p>Fit the model and inspect the summary.</p></li>
+</ol>
+</div>
+<div id="tabset-4-2">
+<div id="138061b6" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co">#install libraries</span></span>
+<span id="cb8-2"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co">#seaborn</span></span>
+<span id="cb8-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co">#matplot</span></span>
+<span id="cb8-4"><a href=""></a></span>
+<span id="cb8-5"><a href=""></a><span class="co"># Step 1: Drop rows with missing values in any of the selected columns</span></span>
+<span id="cb8-6"><a href=""></a>cleaned_data <span class="op">=</span> demo_data.dropna()</span>
+<span id="cb8-7"><a href=""></a></span>
+<span id="cb8-8"><a href=""></a><span class="co"># Step 1a: Verify that there are no missing values in cleaned_data</span></span>
+<span id="cb8-9"><a href=""></a><span class="bu">print</span>(cleaned_data.isna().<span class="bu">sum</span>())</span>
+<span id="cb8-10"><a href=""></a></span>
+<span id="cb8-11"><a href=""></a><span class="co"># Steps 2, add independent and dependent variables to X and y</span></span>
+<span id="cb8-12"><a href=""></a>X <span class="op">=</span> cleaned_data[[<span class="st">'hours_online'</span>, <span class="st">'boredom_score'</span>]]  <span class="co"># independent variables</span></span>
+<span id="cb8-13"><a href=""></a>y <span class="op">=</span> cleaned_data[<span class="st">'completion_percentage'</span>]  <span class="co"># dependent variable</span></span>
+<span id="cb8-14"><a href=""></a></span>
+<span id="cb8-15"><a href=""></a><span class="co"># Adding a constant to the model (for the intercept)</span></span>
+<span id="cb8-16"><a href=""></a>X <span class="op">=</span> sm.add_constant(X)</span>
+<span id="cb8-17"><a href=""></a></span>
+<span id="cb8-18"><a href=""></a><span class="co"># Steps 4 and 5 to Fit the model</span></span>
+<span id="cb8-19"><a href=""></a>model <span class="op">=</span> sm.OLS(y, X, missing<span class="op">=</span><span class="st">'drop'</span>).fit()</span>
+<span id="cb8-20"><a href=""></a></span>
+<span id="cb8-21"><a href=""></a><span class="co"># Output the summary of the model</span></span>
+<span id="cb8-22"><a href=""></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>completion_percentage    0
+hours_online             0
+boredom_score            0
+dtype: int64
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     completion_percentage   R-squared:                       0.009
+Model:                               OLS   Adj. R-squared:                 -0.019
+Method:                    Least Squares   F-statistic:                    0.3072
+Date:                   Sat, 20 Jul 2024   Prob (F-statistic):              0.736
+Time:                           14:43:37   Log-Likelihood:                -302.45
+No. Observations:                     74   AIC:                             610.9
+Df Residuals:                         71   BIC:                             617.8
+Df Model:                              2                                         
+Covariance Type:               nonrobust                                         
+=================================================================================
+                    coef    std err          t      P&gt;|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+const            78.1010      6.191     12.615      0.000      65.756      90.446
+hours_online     -0.0954      0.123     -0.778      0.439      -0.340       0.149
+boredom_score    -0.3567      1.484     -0.240      0.811      -3.315       2.602
+==============================================================================
+Omnibus:                       28.689   Durbin-Watson:                   1.998
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):                4.959
+Skew:                           0.027   Prob(JB):                       0.0838
+Kurtosis:                       1.733   Cond. No.                         106.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-3">
+<p><strong>👉 Your Turn</strong> <strong>⤵</strong></p>
+<p>Vizualise the model with a scatter plot and regression line</p>
+</div>
+<div id="tabset-4-4">
+<p>To see the code check out the slides.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div id="804816b2" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="Module3-code-along-slides-Py_files/figure-revealjs/cell-11-output-1.png" width="816" height="523"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:45%;">
+<div id="e532c725" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="Module3-code-along-slides-Py_files/figure-revealjs/cell-12-output-1.png" width="816" height="523"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Multiple linear regression is a statistical technique used to model the relationship between two or more independent variables and a single dependent variable. It extends simple linear regression by including additional predictor variables, which helps to better understand the influence of multiple factors on the outcome.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="quarto-auto-generated-content">
+<p><img src="img/LASERlogoB.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://www.fi.ncsu.edu/projects/laser-institute">LASER Institute</a></p><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+</a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 </a></section><a href="https://www.fi.ncsu.edu/projects/laser-institute">
     </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
@@ -459,7 +835,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -677,18 +1052,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -720,11 +1084,50 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -734,8 +1137,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -749,7 +1161,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
