@@ -1,5 +1,5 @@
 ---
-title: "Narrated: Foundations Case Study - Key" 
+title: "Narrated: Foundations Case Study - Student Version" 
 subtitle: "Independent/Group work"
 author: "The LASER Team"
 jupyter: python3
@@ -257,25 +257,17 @@ You need to:
 ```{python}
 # load grade book data from data folder
 #YOUR CODE HERE:
-gradebook = pd.read_csv("data/gradebook-summary.csv")
+
 
 #inspect data
 #YOUR CODE HERE:
-print(gradebook)
+
 
 ```
 
 #### Self-reporting survey
 
 Load the file `survey.csv` from data folder.
-
-##### **👉 Your Turn** **⤵**
-
-You need to:
-
-1.  First, use the correct function to read in the .csv file and load the `survey.csv` file.
-2.  Second, add a function to the code (to inspect the data (your choice).
-3.  Third, press the green arrow head to run the code.
 
 #### **👉 Your Turn** **⤵**
 
@@ -288,11 +280,11 @@ You need to:
 ```{python}
 # load survey data from data folder
 #YOUR CODE HERE:
-survey = pd.read_csv("data/survey.csv")
+
 
 #inspect data
 #YOUR CODE HERE:
-print(survey.tail())
+
 
 ```
 
@@ -310,11 +302,11 @@ You need to:
 
 # Read python object into R using 'py$` syntax
 #YOUR CODE HERE:
-survey_r = as_tibble(py$survey)
+
 
 # View R object as per usual
 #YOUR CODE HERE:
-head(survey_r)
+
 ```
 
 #### Using `info()` and `describe()`function.
@@ -360,9 +352,15 @@ print(survey.sample(n=10))
 
 Inspect three datasets we loaded and answer the question:
 
+```{python}
+
+
+```
+
+
 ❓ What do you notice? What do you wonder about? Did you note the number of observations, the different variables names? Finally what about the classes the variables are such as float, integer, object(string), or logical.
 
--   YOUR RESPONSE HERE
+-    YOUR RESPONSE HERE
 
 ### Tidy data
 
@@ -451,12 +449,12 @@ STEP 2 You need to:
 
 ```{python}
 # Convert 'student_id' to strings
-#(add code below)
-gradebook['student_id'] = gradebook['student_id'].astype(str)
+#YOUR CODE HERE:
+
 
 # Inspect the updated DataFrame
 #YOUR CODE HERE:
-print("Updated data types in 'gradebook':\n", gradebook.dtypes)
+
 
 ```
 
@@ -468,6 +466,7 @@ print(gradebook.head(5))
 
 As you can see in the gradebook dataframe the `total points earned` is in points and it is hard to know the proportion. Therefore, we want it to mutate that to a proportion.
 
+##### **👉 Your Turn** **⤵**
 1.  First, calculate the proportion of total points earned. Create a new column named proportion_earned. This column will be the result of dividing total_points_earned by total_points_possible and then multiplying by 100 to convert the result into a percentage.
 2.  Second, inspect the updated DataFrame.
 3.  Third, press the green arrow head to run the code.
@@ -475,11 +474,11 @@ As you can see in the gradebook dataframe the `total points earned` is in points
 ```{python}
 # Calculate the proportion of total points earned and convert it to percentage, then add as a new column
 #YOUR CODE HERE:
-gradebook['proportion_earned'] = (gradebook['total_points_earned'] / gradebook['total_points_possible']) * 100
+
 
 # Inspect the updated DataFrame
 #YOUR CODE HERE:
-print(gradebook)
+
 ```
 
 Maybe you want to round proportion to two decimal places. We can do that with method chaining. When you add .round(2) or any other method like .sum(), .mean(), etc., after a pandas object like a DataFrame or Series, you're using what's called method chaining. Method chaining is a powerful feature in pandas that allows you to apply multiple methods sequentially in a single line of code. This feature is not only about efficiency but also about making the code cleaner and more readable.
@@ -601,7 +600,7 @@ You need to:
 ```{python}
 #merge joined_data
 #YOUR CODE HERE:
-data_to_explore = pd.merge(joined_data, survey, on=['student_id', 'course_id'], how='outer')
+
 
 ```
 
@@ -855,7 +854,7 @@ We will check for missing values step by step
 ```{python}
 #find cells with missing values
 #YOUR CODE HERE
-null_data = data_to_explore.isnull()
+
 
 ```
 
@@ -864,9 +863,7 @@ null_data = data_to_explore.isnull()
 ```{python}
 #calculate the number of missing values
 #YOUR CODE HERE
-missing_count = null_data.sum()
 
-print(missing_count)
 
 ```
 
@@ -875,7 +872,7 @@ print(missing_count)
 ```{python}
 #find the number of rows in the df
 #YOUR CODE HERE
-total_entries = len(data_to_explore)
+
 
 ```
 
@@ -887,11 +884,11 @@ missing_percentage = (missing_count / total_entries) * 100
 
 ```
 
-5.  Finally, print or display the missing_percentage to review the percentage of missing data in each column.
+5.  Finally, print or display the `missing_percentage` to review the percentage of missing data in each column.
 
 ```{python}
 #show output
-print(missing_percentage)
+#YOUR CODE HERE
 
 ```
 
@@ -946,7 +943,7 @@ You need to: 1. First, inspect the `data_to_explore` to understand what variable
 ```{r}
 # Inspect the data frame
 #YOUR CODE HERE:
-data_to_explore_r
+
 ```
 
 #### Install visualization libraries
@@ -994,14 +991,13 @@ plt.clf() #add to clear the plot
 
 So, now you can answer the question: ❓ Which online course had the largest enrollment numbers?
 
--   Your answer here
+-    "ADD YOUR ANSWER HERE"
 
 #### Level b. Add Labels
 
 Adding labels to your plot helps provide context and clarity to the data being visualized. The `plt.title()` function is used to add a title to the plot, while `plt.xlabel()` and `plt.ylabel()` add labels to the x-axis and y-axis, respectively, ensuring that viewers understand what each axis represents. Additionally, `plt.figtext()` is used to add a caption below the plot, which can provide further explanation or insight into the data presented.
 
 ```{python}
-#YOUR CODE HERE:
 # Create a bar plot with labels
 sns.countplot(data=data_to_explore, x='subject')
 plt.title("Number of Student Enrollments per Subject")  # Adding a title
@@ -1165,17 +1161,13 @@ print(f'Missing values after imputation: {missing_values_after}')
 
 ```{python}
 # Create a pivot table for the heatmap
-pivot_data = data_to_explore.pivot_table(index='enrollment_reason', columns='subject', aggfunc='size', fill_value=0)
+#YOUR CODE HERE:
+
 
 # Create the heatmap
-plt.figure(figsize=(12, 8))
-sns.heatmap(pivot_data, cmap="YlOrRd", annot=True)
-plt.title("Reasons for Enrollment by Subject")  # Add the title
-plt.xlabel("Subject")  # Label for the x-axis
-plt.ylabel("Enrollment Reason")  # Label for the y-axis
-plt.figtext(0.5, -0.1, "Which subjects were the least available at local schools?", ha="center", fontsize=10)  # Add the caption
-plt.show()
-plt.clf() #add to clear the plot
+#YOUR CODE HERE:
+
+
 
 ```
 
@@ -1221,14 +1213,9 @@ Includes:
 #### **👉 Your Turn** **⤵**
 
 ```{python}
-# Create a scatter plot
-plt.figure(figsize=(10, 6))
-sns.scatterplot(data=data_to_explore, x='time_spent_hours', y='proportion_earned')
-plt.title("Relationship Between Time Spent and Proportion of Points Earned")  # Add the title
-plt.xlabel("Time Spent (Hours)")  # Label for the x-axis
-plt.ylabel("Proportion of Points Earned")  # Label for the y-axis
-plt.show()
-plt.clf() #add to clear the plot
+#YOUR CODE HERE:
+
+
 ```
 
 #### Level b. Add another layer with labels
@@ -1244,12 +1231,9 @@ plt.clf() #add to clear the plot
 ```{python}
 # Create a scatter plot with labels
 #YOUR CODE HERE:
-plt.figure(figsize=(10, 6))
-sns.scatterplot(data=data_to_explore, x='time_spent_hours', y='proportion_earned')
-plt.title("How Time Spent on Course LMS is Related to Points Earned in the Course")  # Add the title
-plt.xlabel("Time Spent (Hours)")  # Label for the x-axis
-plt.ylabel("Proportion of Points Earned")  # Label for the y-axis
-plt.show()
+
+
+
 ```
 
 #### Level c. Add **Scale** with a different color.
@@ -1263,12 +1247,7 @@ plt.show()
 ```{python}
 # Create a scatter plot with color based on enrollment_status
 #YOUR CODE HERE:
-plt.figure(figsize=(10, 6))
-sns.scatterplot(data=data_to_explore, x='time_spent_hours', y='proportion_earned', hue='enrollment_status')
-plt.title("How Time Spent on Course LMS is Related to Points Earned in the Course by Enrollment Status")  # Add the title
-plt.xlabel("Time Spent (Hours)")  # Label for the x-axis
-plt.ylabel("Proportion of Points Earned")  # Label for the y-axis
-plt.show()
+
   
 ```
 
@@ -1281,13 +1260,9 @@ plt.show()
 ```{python}
 # Create a scatter plot with facets for each subject
 #YOUR CODE HERE:
-g = sns.FacetGrid(data_to_explore, col='subject', col_wrap=3, height=4)
-g.map(sns.scatterplot, 'time_spent_hours', 'proportion_earned', 'enrollment_status')
-g.add_legend()
-g.set_titles("{col_name} Subject")
-g.set_axis_labels("Time Spent (Hours)", "Proportion of Points Earned")
-plt.figtext(0.5, -0.1, "How Time Spent on Course LMS is Related to Points Earned in the Course by Subject", ha="center", fontsize=10)  # Add the caption
-plt.show()
+
+
+
 ```
 
 #### Level e. How can we remove NA's from plot? and What will the code look like without the comments?
@@ -1371,14 +1346,8 @@ To make it even clearer, you can add a scatter plot on top of the box plot to hi
 ```{python}
 # Create a box plot with scatter plot overlay for outliers
 #YOUR CODE HERE:
-plt.figure(figsize=(12, 8))
-sns.boxplot(data=data_to_explore, x='subject', y='tv')
-sns.stripplot(data=data_to_explore, x='subject', y='tv', color='red', jitter=True, alpha=0.5)
-plt.title("Box Plot of TV Watching Hours by Subject with Outliers Highlighted")  # Add the title
-plt.xlabel("Subject")  # Label for the x-axis
-plt.ylabel("TV Watching Hours")  # Label for the y-axis
-plt.figtext(0.5, -0.1, "Identifying Outliers in TV Watching Hours by Subject", ha="center", fontsize=10)  # Add the caption
-plt.show()
+
+
 ```
 
 By overlaying a scatter plot on the box plot, you can clearly see which points are considered outliers. This method provides a comprehensive view of the data distribution and highlights any anomalies.
@@ -1552,9 +1521,8 @@ You need to:
 
 ```{python}
 #YOUR CODE HERE:
-# Selecting specific variables
-#add the specific variables in the brackets
-selected_data = data_to_explore[['proportion_earned', 'time_spent_hours']]
+
+
 ```
 
 A correlation matrix is a handy way to calculate the pairwise correlation coefficients between two or more (numeric) variables. The Pandas data frame has this functionality built-in to its `corr()` method.
@@ -1573,10 +1541,8 @@ Visualize with `sns.heatmap()` for the new object `correlation_matrix`
 
 ```{python}
 #YOUR CODE HERE:
-# Visualizing the correlation matrix
-#(add code below)
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
-plt.show()
+
+
 ```
 
 **APA Write-Up:** "In our study, we calculated Pearson's correlation coefficient to assess the relationship between the proportion of course materials earned and the hours spent on course materials. The analysis revealed a moderate positive correlation of X (replace X with actual correlation value), suggesting that as students spend more time on course materials, their proportion of earned credits increases."
@@ -1649,8 +1615,8 @@ Your turn
 
 ```{python}
 #YOUR CODE HERE:
-# run the model
-print(model.summary())
+
+
 
 ```
 
@@ -1665,12 +1631,13 @@ The model's R-squared value is 0.192, indicating that about 19.2% of the varianc
 First, we need to add the variables to the `data_cleaned` object
 
 ```{python}
+#select the variables and create a new dataFrame called data_cleaned
 data_cleaned = data_to_explore[['time_spent_hours', 'proportion_earned', 'int']]
 
-# Step 2: Drop rows with missing values in any of the selected columns
+# Step 1: Drop rows with missing values in any of the selected columns
 data_cleaned = data_cleaned.dropna()
 
-# Step 3: Verify that there are no missing values in data_cleaned
+# Step 2: Verify that there are no missing values in data_cleaned
 print(data_cleaned.isna().sum())
 
 ```
@@ -1679,28 +1646,16 @@ print(data_cleaned.isna().sum())
 
 ```{python}
 #YOUR CODE HERE:
-# Steps 1 -3, add independent and dependent variables to X and y
-X = data_cleaned[['time_spent_hours', 'int']]  # independent variables
-y = data_cleaned['proportion_earned']  # dependent variable
 
-# Adding a constant to the model (for the intercept)
-X = sm.add_constant(X)
 
-#Steps 4 and 5 to Fit the model
-model = sm.OLS(y, X, missing='drop').fit()
-
-# Output the summary of the model
-print(model.summary())
 
 ```
 
 #### **👉 Your Turn** **⤵**
 
-**APA write up:** \*"A linear regression analysis was conducted to assess the effects of time spent in hours (time_spent_hours) and students' attitude interest (int) on their proportion of points earned (proportion_earned). The model accounted for a moderate proportion of the variance in proportion_earned, R² = .186, adjusted R² = .183. The overall model was statistically significant, F(2, 536) = 61.18, p \< .001.
+**APA write up:** \*
 
-The regression coefficients indicated that each additional hour spent is associated with a significant increase of 0.43 points in the proportion of points earned (B = 0.4255, SE = 0.041, p \< .001). Furthermore, attitude interest was significantly positive, showing that higher interest levels were associated with an increase of about 4.63 points in the proportion of points earned (B = 4.6282, SE = 1.536, p = .003).
-
-In summary, both time spent and attitude interest significantly predicted the proportion of points earned by the students, with both predictors contributing positively to students' performance"\*
+-   "ADD YOUR ANSWER HERE"
 
 #### D. Assumptions
 
@@ -1768,13 +1723,10 @@ In the code chunk below:
 
 ```{python}
 #YOUR CODE HERE:
-plt.figure(figsize=(10, 6))
-sns.scatterplot(x=fitted_vals, y=np.sqrt(np.abs(residuals)), edgecolor='w')
-plt.title('Scale-Location Plot')
-plt.xlabel('Fitted values')
-plt.ylabel('Sqrt(|Residuals|)')
-plt.show()
-plt.clf()  # Clear the plot
+
+
+
+
 ```
 
 4.  **Absence of Multicollinearity**
@@ -1802,7 +1754,7 @@ print(vif_data)
 
 Add your interpretation below:
 
--   "In summary, for the model, the VIF values for `time_spent_hours` and `int` are both close to 1, indicating that there is no significant multicollinearity between the predictor variables. Therefore, you can be confident that the regression coefficients for these variables are stable and interpretable. The high VIF for the constant term is not typically a concern in this context."
+-  "ADD YOUR ANSWER HERE"
 
 ### 🛑 Stop here. Congratulations you finished the third part of the case study.
 

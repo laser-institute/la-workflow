@@ -1,63 +1,23 @@
 /*-- scss:defaults --*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
-// fonts
-$font-family-sans-serif: 'Open Sans','Roboto', sans-serif !default;
-$presentation-font-size-root: 50px;
 
-// colors
-$body-bg: #FFFFFF !default;
-$body-color: #000000 !default;
-$linkColor: #427E93 !default;
-$linkColorHover: #d34126 !default;
-$selection-bg: #26351c;
+$navbar-bg:    black !default;
+$navbar-fg: white !default;
 
-// headings
-$presentation-heading-font: 'Open Sans','Roboto', sans-serif !default;
-$presentation-heading-color: #427E93 !default;
-
-/*-- scss:rules --*/
-.reveal .slide {
-  margin: 10px;
+.navbar-container {
+    height: 75px
 }
 
-.reveal a {
-  line-height: 1em;
-  color: #990000;
+.bslib-card .card-body p {
+    font-size: 0.9rem;
+    align-content: center;
 }
 
-.reveal .footer {
-  color: #143156;
-}
-
-.reveal .footer a {
-  color: #8f303b;
-}
-
-.reveal h2 {
-  font-size: 1.5em;
-  margin-bottom: 50px;
-}
-
-section.has-dark-background code{
-  color: #e77225;
+.bslib-card .bslib-value-box .value-box-title {
+    font-size: 1.8rem;
 }
 
 
-section.slide h2 {
-  color: white  !important;
-  background-color: #427E93 !important;
-  position: relative;
-  width: 400vw;
-  left: -20vw;
-  padding-left: 20vw;
-  padding-top: 20px;
-  padding-bottom: 20px;}
-
-// graphic wrap
-.wrap-img {
-    float: left;
-    margin-right: 10px;
-    width: 10%;
+.bslib-value-box .value-box-area {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
 }
-
