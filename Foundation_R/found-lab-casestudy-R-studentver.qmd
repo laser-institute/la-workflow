@@ -1,5 +1,5 @@
 ---
-title: "Narrated: Foundations Case Study - Key" 
+title: "Narrated: Foundations Case Study - Student Version" 
 subtitle: "Independent/Group work"
 author: "PUT YOUR NAME HERE"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
@@ -299,8 +299,11 @@ You need to:
 
 ```{r}
 #load grade book data from data folder
-#YOUR CODE HERE
-gradebook <- read_csv("module_1/data/gradebook-summary.csv",show_col_types = FALSE)
+# YOUR CODE BELOW
+
+
+
+
 ```
 
 #### Attitude survey
@@ -319,8 +322,10 @@ You need to:
 
 ```{r}
 #load survey data from data folder
-#(add code below)
-survey <- read_csv("module_1/data/survey.csv",show_col_types = FALSE)
+# YOUR CODE BELOW
+
+
+
 ```
 
 ### Inspect data
@@ -343,9 +348,7 @@ glimpse(gradebook)
 
 #### Using Global Environment
 
-![](img/global%20environment.png){width="34%"}
-
-![](img/gradebook.png){width="50%"}
+![](img/global_environment.png){width="50%"}
 
 #### Inspecting first and last few rows
 
@@ -374,7 +377,7 @@ of observations, the different variables names? Finally what about the
 classes the variables are such as numeric, integer, character, or
 logical.
 
-\*YOUR RESPONSE HERE
+YOUR RESPONSE HERE
 
 ### Tidy data
 
@@ -458,15 +461,15 @@ You need to:
 
 ```{r warning=FALSE, message=FALSE}
 #separate the course_id variable and save to 'gradebook' object
-#YOUR CODE HERE
-gradebook <- gradebook %>% separate(course_id,
-           c("subject", "semester", "section"))
+# YOUR CODE BELOW
 
 
 
 #inspect
-#YOUR CODE HERE
-gradebook
+# YOUR CODE BELOW
+
+
+
 ```
 
 ##### Use the `mutate()` function from `dplyr`
@@ -554,14 +557,13 @@ library(janitor)
 
 ```{r warning=FALSE, message=FALSE}
 #clean columns of the survey data and save to survey object
-#(add code below - some code is given to you)
+# YOUR CODE BELOW
 
-survey <- clean_names(survey)
 
 #inspect data to check for consistency with other data
-#(add code below)
+# YOUR CODE BELOW
 
-survey
+
 ```
 
 ### Data merging and reshaping
@@ -637,12 +639,13 @@ with the following variables:
 
 ```{r eval = FALSE}
 # use join to join data sets by student_id, subject, semester and section.
-#(add code below - some code has been added for you)
-#data_to_explore  <- full_join(survey, joined_data, 
-                         #by = c("student_id", "subject", "semester", "section"))
+# YOUR CODE BELOW
+
   
 #inspect
-#data_to_explore
+# YOUR CODE BELOW
+
+
 ```
 
 ::: callout-note
@@ -681,13 +684,16 @@ You need to:
 
 ```{r}
 #mutate to change variable class from double or numeric to character
-#(add code below - some code has been already added)
-joined_data <- joined_data %>%
-  mutate(student_id=as.character(student_id))
-#survey <- subset(survey, select = -student_ID) #drop the column
+# YOUR CODE BELOW
+
+
+
+
 
 #inspect
-joined_data
+# YOUR CODE BELOW
+
+
 ```
 
 ##### NOW: - Full join
@@ -713,11 +719,16 @@ Now, that the variables are the same class you need to:
 ```{r}
 #try again to together the grade_book and log_wrangled
 #(add code below - some code has been already added)
-data_to_explore  <- full_join(survey, joined_data, 
-                         by = c("student_id", "subject", "semester", "section"))
+# YOUR CODE BELOW
+
+
+
   
 #inspect
-data_to_explore
+# YOUR CODE BELOW
+
+
+
 ```
 
 Let's transform the subject names to a more convenient format:
@@ -778,7 +789,7 @@ Think what other factors are important to identify students at risk. Run
 your code and analyze the results:
 
 ```{r}
-#YOUR CODE HERE:
+# YOUR CODE BELOW
 
 ```
 
@@ -836,8 +847,11 @@ library(skimr)
 
 ```{r messages=FALSE, warning=FALSE}
 #skim the data by adding the skim function in front of the data
-#(add code below)
-skim(data_to_explore)
+# YOUR CODE BELOW
+
+
+
+
 ```
 
 In the code chunk below: us the `group_by` `subject` variable, then
@@ -849,9 +863,10 @@ In the code chunk below: us the `group_by` `subject` variable, then
     variable - then `skim()` function from `skimr` package.
 
 ```{r messages=FALSE, warning=FALSE}
-data_to_explore %>%
-  group_by(subject)%>%
-  skim()
+# YOUR CODE BELOW
+
+
+
 ```
 
 ### Missing values
@@ -935,9 +950,10 @@ You need to: 1. First, inspect the `data_to_explore` to understand what
 variables we might need to explore the research question.
 
 ```{r messages=FALSE, warning=FALSE}
-#inspect the data frame
-#(add code below)
-data_to_explore
+# YOUR CODE BELOW
+
+
+
 ```
 
 #### Level a. The most basic level for a plot
@@ -1026,14 +1042,12 @@ STHDA](http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guid
 #### **👉 Your Turn** **⤵**
 
 ```{r messages=FALSE, warning=FALSE}
-# Add data
-ggplot(data_to_explore, aes(x = tv)) +
-  # Add the geom
-  geom_histogram(bins = 5) +
-  # Add the labs
-  labs(title = "Histogram of TV Watching Hours",
-       x = "TV Watching Hours",
-       y = "Count")
+# YOUR CODE BELOW
+
+
+
+
+
 ```
 
 ### Two categorical Variables
@@ -1062,17 +1076,12 @@ courses?
 #### **👉 Your Turn** **⤵**
 
 ```{r messages=FALSE, warning=FALSE}
+# YOUR CODE BELOW
 
-data_to_explore %>%
-  count(subject, enrollment_reason) %>%
-  ggplot(aes(x = subject, y = enrollment_reason, fill = n)) + 
-    geom_tile() +
-    scale_fill_gradient(low = "orange", high = "maroon") +  #Change to red color gradient
-    labs(title = "Reasons for Enrollment by Subject",
-         caption = "Which subjects were the least available at local schools?",
-         x = "Subject",
-         y = "Enrollment Reason",
-         fill = "Count")
+
+
+
+
 ```
 
 ### Two continuous variables
@@ -1109,8 +1118,6 @@ Includes:
     -   proportion earned mapped to y position
 -   **Geom**: `geom_point()` function - Scatter plot
 
-#### **👉 Your Turn** **⤵**
-
 ```{r messages=FALSE, warning=FALSE}
 #(add code below)
 #layer 1: add data and aesthetics mapping 
@@ -1135,11 +1142,11 @@ ggplot(data_to_explore,
 head(data_to_explore)
 
 # Create a scatter plot
-ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned)) +
-  geom_point() +
-  labs(title = "Relationship Between Time Spent and Proportion of Points Earned",
-       x = "Time Spent (Hours)",
-       y = "Proportion of Points Earned")
+# YOUR CODE BELOW
+
+
+
+
 ```
 
 #### Level c. Add **Scale** with a different color.
@@ -1152,12 +1159,11 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned)) +
 
 ```{r messages=FALSE, warning=FALSE}
 # Create a scatter plot with color based on enrollment_status
-ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
-  geom_point() +
-  labs(title = "How Time Spent on Course LMS is Related to Points Earned in the course?",
-       x = "Time Spent (Hours)",
-       y = "Proportion of Points Earned",
-       color = "Enrollment Status")
+# YOUR CODE BELOW
+
+
+
+
 ```
 
 #### Level d. Divide up graphs using facet to visualize by subject.
@@ -1168,13 +1174,12 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 
 ```{r message=FALSE, warning=FALSE}
 # Create a scatter plot with facets for each subject
-ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color = enrollment_status)) +
-  geom_point() +
-  facet_wrap(~subject) +
-  labs(title = "Relationship Between Time Spent and Proportion of Points Earned by Subject",
-       x = "Time Spent (Hours)",
-       y = "Proportion of Points Earned",
-       color = "Enrollment Status")
+# YOUR CODE BELOW
+
+
+
+
+
 ```
 
 #### Level e. How can we remove NA's from plot? and What will the code look like without the comments?
@@ -1246,9 +1251,9 @@ to install.packages() in th console if this is your first time using
 loading the package.)
 
 ```{r messages=FALSE, warning=FALSE}
-# load in corrr library
-#(add code below)
-library(corrr)
+# YOUR CODE BELOW
+
+
 ```
 
 ### Simple Correlation
@@ -1266,10 +1271,10 @@ You need to:
 3\. use `correlate()` function
 
 ```{r messages = FALSE, warning=FALSE}
-#(add code below)
-data_to_explore %>% 
-  select(proportion_earned, time_spent_hours) %>%
-  correlate()
+# YOUR CODE BELOW
+
+
+
 ```
 
 **For printing** purposes,the `fashion()` function can be added for
@@ -1305,7 +1310,7 @@ format? Write below **⤵**
 #### **👉 Your Turn⤵**
 
 ```{r messages=FALSE, warning=FALSE}
-#(add code below)
+# YOUR CODE BELOW
 
 ```
 
@@ -1328,11 +1333,8 @@ then create a correlation table using `apa.cor.table()`.
 
 -   load `apaTables` library
 
-#### **👉 Your Turn** **⤵**
-
 ```{r messages=FALSE, warning=FALSE}
 # read in apatables library
-#(add code below)
 library(apaTables)
 
 data_to_explore_subset <- data_to_explore %>% 
@@ -1383,10 +1385,10 @@ predicted by one independent variable
 #### **👉 Your Turn** **⤵**
 
 ```{r messages=FALSE, warning=FALSE}
+# YOUR CODE BELOW
 
-# add predictor variable for `science interest `int`
-lm(proportion_earned ~ time_spent_hours , 
-   data = data_to_explore)
+
+
 ```
 
 We can see that the intercept is now estimated at 0.44, which tells us
@@ -1410,8 +1412,8 @@ Run a summary model for the model you just created called, `m1.`
 #### **👉 Your Turn** **⤵**
 
 ```{r messages=FALSE, warning=FALSE}
-#run the summary
-summary(m1)
+# YOUR CODE BELOW
+
 
 ```
 
@@ -1451,9 +1453,10 @@ save it to a new variable called `mean_time`
 #### **👉 Your Turn** **⤵**
 
 ```{r message=FALSE, warning=FALSE}
-#add code here
-data_to_explore %>% 
-  summarize(mean_time = mean(time_spent_hours, na.rm = TRUE))
+# YOUR CODE BELOW
+
+
+
 ```
 
 The mean value for interest is quite high. If we multiply the estimate
@@ -1547,10 +1550,12 @@ shapiro.test(residuals(m1))
 
 ### Multicollinearity
 
+Use the car package For more information {[car
+package](https://cran.r-project.org/web/packages/car/index.html)}
+
 ##### **👉 Your Turn** **⤵**
 
-Use the `car` package For more information {[Car
-package](https://cran.r-project.org/web/packages/car/index.html)}
+We will need to add the car package to find the VIF of our model
 
 -   Use the `vif()` function and add the model `m1`
 
@@ -1559,7 +1564,7 @@ package](https://cran.r-project.org/web/packages/car/index.html)}
 library(car)
 
 # YOUR CODE BELOW
-vif(m1)
+
 ```
 
 ### Interpretation of VIF Scores:
