@@ -8,7 +8,7 @@
 <link href="module1-code-along-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="module1-code-along-slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="module1-code-along-slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.5.55">
 
   <title>Prepare and Wrangle</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -222,7 +222,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -511,14 +512,13 @@
 </ul>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Install Packages</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Install Packages</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:45%;">
 
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p><strong>PACKAGES-TAB</strong></p>
 <p>In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. Although there are read-in capabilities with the <code>utils package</code> in base r, we are going to use a more modern approach. One of the packages in Tidyverse allows for reading in Comma delimiter files, or CSV.</p>
@@ -546,30 +546,29 @@
 </ul>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Install Packages</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Install Packages</span></span>
+<span id="cb2-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:45%;">
 <p>Your turn <strong>👉 Your Turn</strong> <strong>⤵</strong></p>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Load tidyverse package </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Load tidyverse package </span></span>
+<span id="cb3-2"><a href=""></a><span class="co">#</span></span>
+<span id="cb3-3"><a href=""></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>What is the function to load the tidyverse library?</p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="your-turn---answer" class="slide level2">
 <h2><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</h2>
 <div class="fragment">
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Load tidyverse package </span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Load tidyverse package </span></span>
+<span id="cb4-2"><a href=""></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>If you see <span style="color:red;">red</span> it does not always mean error.</p>
@@ -594,7 +593,7 @@
 <div id="tabset-1-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/delimiter.png" width="1500"></p>
+<p><img data-src="img/delimiter.png" class="quarto-figure quarto-figure-center" width="1500"></p>
 </figure>
 </div>
 </div>
@@ -631,17 +630,16 @@
 </ul>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|2|5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#use read_csv function to read in sci-online-classes.csv rename object to online_classes</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>online_classes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sci-online-classes.csv"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#use head() function</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(online_classes, <span class="at">n=</span><span class="dv">5</span>), <span class="at">format =</span> <span class="st">'html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|2|5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co">#use read_csv function to read in sci-online-classes.csv rename object to online_classes</span></span>
+<span id="cb5-2"><a href=""></a>online_classes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sci-online-classes.csv"</span>)</span>
+<span id="cb5-3"><a href=""></a></span>
+<span id="cb5-4"><a href=""></a><span class="co">#use head() function</span></span>
+<span id="cb5-5"><a href=""></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(online_classes, <span class="at">n=</span><span class="dv">5</span>), <span class="at">format =</span> <span class="st">'html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:45%;">
 
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p>readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)</p>
 <ul>
@@ -671,11 +669,11 @@
 </ul>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#use read_csv function to read in sci-online-classes.csv rename object to online_classes</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>online_classes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sci-online-classes.csv"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#use head() function</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(online_classes, <span class="at">n=</span><span class="dv">5</span>), <span class="at">format =</span> <span class="st">'html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co">#use read_csv function to read in sci-online-classes.csv rename object to online_classes</span></span>
+<span id="cb6-2"><a href=""></a>online_classes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sci-online-classes.csv"</span>)</span>
+<span id="cb6-3"><a href=""></a></span>
+<span id="cb6-4"><a href=""></a><span class="co">#use head() function</span></span>
+<span id="cb6-5"><a href=""></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(online_classes, <span class="at">n=</span><span class="dv">5</span>), <span class="at">format =</span> <span class="st">'html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="font-size: 45px">
@@ -688,17 +686,16 @@
 </ul>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># 1. Install and read in the readxl Package </span></span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># 2. use read_excel() function to read in data.</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>csss_tweets <span class="ot">&lt;-</span> </span>
-<span id="cb7-5"><a href="#cb7-5"></a>  </span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># 3. use head() function to read </span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># 1. Install and read in the readxl Package </span></span>
+<span id="cb7-2"><a href=""></a></span>
+<span id="cb7-3"><a href=""></a><span class="co"># 2. use read_excel() function to read in data.</span></span>
+<span id="cb7-4"><a href=""></a>csss_tweets <span class="ot">&lt;-</span> </span>
+<span id="cb7-5"><a href=""></a>  </span>
+<span id="cb7-6"><a href=""></a><span class="co"># 3. use head() function to read </span></span>
+<span id="cb7-7"><a href=""></a><span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p>To read in an excel file we will need to install the readxl package and then read in with the read_excel function. We can see that it is an excel file with the .xlsx extension.</p>
 <style type="text/css">
@@ -718,14 +715,14 @@
 <div class="fragment">
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|2|5|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#Install and read in the readxl Package </span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#use read_excel() function to read in data/csss_tweets.xlsx</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>csss_tweets <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/csss_tweets.xlsx"</span>)<span class="co">#&lt;&lt;</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="co">#use head() function to read </span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="fu">head</span>(csss_tweets, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|2|5|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co">#Install and read in the readxl Package </span></span>
+<span id="cb8-2"><a href=""></a><span class="fu">library</span>(readxl)</span>
+<span id="cb8-3"><a href=""></a></span>
+<span id="cb8-4"><a href=""></a><span class="co">#use read_excel() function to read in data/csss_tweets.xlsx</span></span>
+<span id="cb8-5"><a href=""></a>csss_tweets <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/csss_tweets.xlsx"</span>)<span class="co">#&lt;&lt;</span></span>
+<span id="cb8-6"><a href=""></a></span>
+<span id="cb8-7"><a href=""></a><span class="co">#use head() function to read </span></span>
+<span id="cb8-8"><a href=""></a><span class="fu">head</span>(csss_tweets, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 91
   user_id             status_id     created_at          screen_name text  source
@@ -755,14 +752,14 @@
 <section id="import-excel-sheet" class="slide level2">
 <h2>import Excel Sheet</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|1|4|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">excel_sheets</span>(<span class="st">"data/csss_tweets.xlsx"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|1|4|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">excel_sheets</span>(<span class="st">"data/csss_tweets.xlsx"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Sheet1"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="|1|4|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>csss_tweets <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/csss_tweets.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"Sheet1"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2"></a></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="co">#use head() function to read </span></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="fu">head</span>(csss_tweets, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="|1|4|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>csss_tweets <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/csss_tweets.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"Sheet1"</span>)</span>
+<span id="cb12-2"><a href=""></a></span>
+<span id="cb12-3"><a href=""></a><span class="co">#use head() function to read </span></span>
+<span id="cb12-4"><a href=""></a><span class="fu">head</span>(csss_tweets, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 91
   user_id             status_id     created_at          screen_name text  source
@@ -813,19 +810,18 @@
 </ul>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="|1|3|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># 1. Install and read in the haven function </span></span>
-<span id="cb14-2"><a href="#cb14-2"></a></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># 2. use read_excel() function to read in data/GPA3.dta</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>gpa_dt <span class="ot">&lt;-</span> </span>
-<span id="cb14-5"><a href="#cb14-5"></a>  </span>
-<span id="cb14-6"><a href="#cb14-6"></a><span class="co"># 3. Inspect the data</span></span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="|1|3|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="co"># 1. Install and read in the haven function </span></span>
+<span id="cb14-2"><a href=""></a></span>
+<span id="cb14-3"><a href=""></a><span class="co"># 2. use read_excel() function to read in data/GPA3.dta</span></span>
+<span id="cb14-4"><a href=""></a>gpa_dt <span class="ot">&lt;-</span> </span>
+<span id="cb14-5"><a href=""></a>  </span>
+<span id="cb14-6"><a href=""></a><span class="co"># 3. Inspect the data</span></span>
+<span id="cb14-7"><a href=""></a><span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:45%;">
 
-</div>
-</div>
+</div></div>
 </section>
 <section id="your-turn-1" class="slide level2">
 <h2><strong>👉 Your Turn</strong> <strong>⤵</strong></h2>
@@ -840,27 +836,27 @@
 </ul>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># 1. Install and read in the haven function </span></span>
-<span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="co"># 2. use read_excel() function to read in data/GPA3.dta</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>gpa_dt <span class="ot">&lt;-</span> </span>
-<span id="cb15-5"><a href="#cb15-5"></a>  </span>
-<span id="cb15-6"><a href="#cb15-6"></a><span class="co"># 3. Inspect the data</span></span>
-<span id="cb15-7"><a href="#cb15-7"></a><span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co"># 1. Install and read in the haven function </span></span>
+<span id="cb15-2"><a href=""></a></span>
+<span id="cb15-3"><a href=""></a><span class="co"># 2. use read_dta() function to read in data/GPA3.dta</span></span>
+<span id="cb15-4"><a href=""></a>gpa_dt <span class="ot">&lt;-</span> </span>
+<span id="cb15-5"><a href=""></a>  </span>
+<span id="cb15-6"><a href=""></a><span class="co"># 3. Inspect the data</span></span>
+<span id="cb15-7"><a href=""></a><span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:45%;">
 <p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
 <div style="font-size: 50px">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|2|5|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># 1. Install and read in the haven function </span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">library</span>(haven)</span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># 2. use read_excel() function to read in data/GPA3.dta</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>gpa_dt <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"data/GPA3.dta"</span>)</span>
-<span id="cb16-6"><a href="#cb16-6"></a>  </span>
-<span id="cb16-7"><a href="#cb16-7"></a><span class="co"># 3. Inspect the data</span></span>
-<span id="cb16-8"><a href="#cb16-8"></a><span class="fu">head</span>(gpa_dt, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|2|5|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># 1. Install and read in the haven function </span></span>
+<span id="cb16-2"><a href=""></a><span class="fu">library</span>(haven)</span>
+<span id="cb16-3"><a href=""></a></span>
+<span id="cb16-4"><a href=""></a><span class="co"># 2. use read_dta() function to read in data/GPA3.dta</span></span>
+<span id="cb16-5"><a href=""></a>gpa_dt <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"data/GPA3.dta"</span>)</span>
+<span id="cb16-6"><a href=""></a>  </span>
+<span id="cb16-7"><a href=""></a><span class="co"># 3. Inspect the data</span></span>
+<span id="cb16-8"><a href=""></a><span class="fu">head</span>(gpa_dt, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 23
    term   sat tothrs cumgpa season frstsem crsgpa verbmath trmgpa hssize hsrank
@@ -874,8 +870,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="joins-overview" class="slide level2">
 <h2>Joins Overview</h2>
@@ -887,13 +882,13 @@
 <div class="column" style="width:45%;">
 <p>Let’s create Mock Data Generation</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Create mock data</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb18-3"><a href="#cb18-3"></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
-<span id="cb18-4"><a href="#cb18-4"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
-<span id="cb18-5"><a href="#cb18-5"></a>  <span class="at">major =</span> <span class="fu">c</span>(<span class="st">"Math"</span>, <span class="st">"Physics"</span>, <span class="st">"Biology"</span>, <span class="st">"Computer Science"</span>)</span>
-<span id="cb18-6"><a href="#cb18-6"></a>)</span>
-<span id="cb18-7"><a href="#cb18-7"></a>students</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># Create mock data</span></span>
+<span id="cb18-2"><a href=""></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb18-3"><a href=""></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb18-4"><a href=""></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
+<span id="cb18-5"><a href=""></a>  <span class="at">major =</span> <span class="fu">c</span>(<span class="st">"Math"</span>, <span class="st">"Physics"</span>, <span class="st">"Biology"</span>, <span class="st">"Computer Science"</span>)</span>
+<span id="cb18-6"><a href=""></a>)</span>
+<span id="cb18-7"><a href=""></a>students</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name            major
 1          1   Alice             Math
@@ -905,11 +900,11 @@
 </div><div class="column" style="width:45%;">
 <p><br> <br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">80</span>)</span>
-<span id="cb20-4"><a href="#cb20-4"></a>)</span>
-<span id="cb20-5"><a href="#cb20-5"></a>scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb20-2"><a href=""></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
+<span id="cb20-3"><a href=""></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">80</span>)</span>
+<span id="cb20-4"><a href=""></a>)</span>
+<span id="cb20-5"><a href=""></a>scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id score
 1          1    85
@@ -918,8 +913,7 @@
 4          5    80</code></pre>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p>We are creating two mock data frames: students and scores. These data frames will help us demonstrate different types of joins in R.</p>
 <style type="text/css">
@@ -936,9 +930,9 @@
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Inner join: Returns rows that have matching values in both tables</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>inner_join_result <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
-<span id="cb22-3"><a href="#cb22-3"></a>inner_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="co"># Inner join: Returns rows that have matching values in both tables</span></span>
+<span id="cb22-2"><a href=""></a>inner_join_result <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb22-3"><a href=""></a>inner_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name   major score
 1          1   Alice    Math    85
@@ -962,9 +956,9 @@
 </div>
 <div id="tabset-2-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a>left_join_result <span class="ot">&lt;-</span> <span class="fu">left_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
-<span id="cb24-3"><a href="#cb24-3"></a>left_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="co"># Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.</span></span>
+<span id="cb24-2"><a href=""></a>left_join_result <span class="ot">&lt;-</span> <span class="fu">left_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb24-3"><a href=""></a>left_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name            major score
 1          1   Alice             Math    85
@@ -989,9 +983,9 @@
 </div>
 <div id="tabset-2-4">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>right_join_result <span class="ot">&lt;-</span> <span class="fu">right_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
-<span id="cb26-3"><a href="#cb26-3"></a>right_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="co"># Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.</span></span>
+<span id="cb26-2"><a href=""></a>right_join_result <span class="ot">&lt;-</span> <span class="fu">right_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb26-3"><a href=""></a>right_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name   major score
 1          1   Alice    Math    85
@@ -1023,9 +1017,9 @@
 <section id="full-join" class="slide level2">
 <h2>Full join</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># Full join: Returns all rows when there is a match in one of the tables. If there is no match, the result is NA for the missing values.</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>full_join_result <span class="ot">&lt;-</span> <span class="fu">full_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
-<span id="cb28-3"><a href="#cb28-3"></a>full_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="co"># Full join: Returns all rows when there is a match in one of the tables. If there is no match, the result is NA for the missing values.</span></span>
+<span id="cb28-2"><a href=""></a>full_join_result <span class="ot">&lt;-</span> <span class="fu">full_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb28-3"><a href=""></a>full_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name            major score
 1          1   Alice             Math    85
@@ -1058,13 +1052,15 @@
 <div style="text-align: left; font-size: 50px">
 <ul>
 <li>Complete the <code>Prepare</code> and <code>Wrangle</code> parts of the Case Study.</li>
-<li>Complete the Badge requirement document <a href="https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html">Foundations badge - Data Sources</a></li>
+<li>Complete the Badge requirement document <a href="https://laser-institute.github.io/la-workflow/Foundation_R/module_1/module-1-badge-key.html">Foundations badge - Data Sources</a></li>
 <li>Do required readings for the next Foundations Module 2.</li>
 </ul>
 </div>
-
-<img src="img/LASERlogo_large.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<div class="quarto-auto-generated-content">
+<p><img src="img/LASERlogo_large.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://www.fi.ncsu.edu/projects/laser-institute">LASER Institute</a></p><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+</a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 </a></section></section><a href="https://www.fi.ncsu.edu/projects/laser-institute">
     </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
@@ -1094,7 +1090,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1350,18 +1345,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1393,11 +1377,50 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1407,8 +1430,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1422,7 +1454,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

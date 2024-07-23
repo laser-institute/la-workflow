@@ -437,7 +437,7 @@ head()
 
 # 1. Install and read in the haven function 
 
-# 2. use read_excel() function to read in data/GPA3.dta
+# 2. use read_dta() function to read in data/GPA3.dta
 gpa_dt <- 
   
 # 3. Inspect the data
@@ -458,7 +458,7 @@ head()
 # 1. Install and read in the haven function 
 library(haven)
 
-# 2. use read_excel() function to read in data/GPA3.dta
+# 2. use read_dta() function to read in data/GPA3.dta
 gpa_dt <- read_dta("data/GPA3.dta")
   
 # 3. Inspect the data
