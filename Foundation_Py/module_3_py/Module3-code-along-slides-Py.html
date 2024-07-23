@@ -500,7 +500,7 @@
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Create dummy data</a></li><li><a href="#tabset-1-2">Introduce NaN</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div id="13e10c67" class="cell" data-execution_count="1">
+<div id="3e70cb5f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Creating demo data</span></span>
 <span id="cb1-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -521,7 +521,7 @@
 <li><p>Purpose: The .loc function in Pandas is a powerful tool for accessing and modifying data in a DataFrame.</p></li>
 <li><p>Functionality: It allows for selection by label and the assignment of new values to those selected locations.</p></li>
 </ul>
-<div id="069dcb12" class="cell" data-execution_count="2">
+<div id="a3ebc469" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># Introduce some NaN values</span></span>
 <span id="cb2-2"><a href=""></a>demo_data.loc[np.random.choice(demo_data.index, size<span class="op">=</span><span class="dv">10</span>, replace<span class="op">=</span><span class="va">False</span>), <span class="st">'completion_percentage'</span>] <span class="op">=</span> np.nan</span>
 <span id="cb2-3"><a href=""></a>demo_data.loc[np.random.choice(demo_data.index, size<span class="op">=</span><span class="dv">10</span>, replace<span class="op">=</span><span class="va">False</span>), <span class="st">'hours_online'</span>] <span class="op">=</span> np.nan</span>
@@ -558,7 +558,7 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <p>The corr() method (in Pandas) calculates the relationship between each column in your data set.</p>
-<div id="00c29036" class="cell" data-execution_count="3">
+<div id="6352f943" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># Select specific variables for analysis</span></span>
 <span id="cb3-2"><a href=""></a>selected_data <span class="op">=</span> demo_data[[<span class="st">'completion_percentage'</span>, <span class="st">'hours_online'</span>]]</span>
 <span id="cb3-3"><a href=""></a></span>
@@ -608,7 +608,7 @@ hours_online                       -0.094677      1.000000</code></pre>
 </div>
 <div id="tabset-3-2">
 <p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
-<div id="cb4c2649" class="cell" data-execution_count="5">
+<div id="3250c909" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co">#import stats model</span></span>
 <span id="cb5-2"><a href=""></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -623,7 +623,7 @@ hours_online                       -0.094677      1.000000</code></pre>
 </ol>
 </div>
 <div id="tabset-3-4">
-<div id="550b71c8" class="cell" data-execution_count="6">
+<div id="b10a3907" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># Step 1: Drop rows with missing values</span></span>
 <span id="cb6-2"><a href=""></a>data_cleaned <span class="op">=</span> selected_data.dropna()</span>
 <span id="cb6-3"><a href=""></a></span>
@@ -645,8 +645,8 @@ hours_online                       -0.094677      1.000000</code></pre>
 Dep. Variable:     completion_percentage   R-squared:                       0.009
 Model:                               OLS   Adj. R-squared:                 -0.003
 Method:                    Least Squares   F-statistic:                    0.7236
-Date:                   Sat, 20 Jul 2024   Prob (F-statistic):              0.398
-Time:                           14:43:37   Log-Likelihood:                -335.86
+Date:                   Mon, 22 Jul 2024   Prob (F-statistic):              0.398
+Time:                           21:01:38   Log-Likelihood:                -335.86
 No. Observations:                     82   AIC:                             675.7
 Df Residuals:                         80   BIC:                             680.5
 Df Model:                              1                                         
@@ -700,7 +700,7 @@ Notes:
 </ol>
 </div>
 <div id="tabset-4-2">
-<div id="138061b6" class="cell" data-execution_count="8">
+<div id="96e8caf6" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co">#install libraries</span></span>
 <span id="cb8-2"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co">#seaborn</span></span>
 <span id="cb8-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co">#matplot</span></span>
@@ -733,8 +733,8 @@ dtype: int64
 Dep. Variable:     completion_percentage   R-squared:                       0.009
 Model:                               OLS   Adj. R-squared:                 -0.019
 Method:                    Least Squares   F-statistic:                    0.3072
-Date:                   Sat, 20 Jul 2024   Prob (F-statistic):              0.736
-Time:                           14:43:37   Log-Likelihood:                -302.45
+Date:                   Mon, 22 Jul 2024   Prob (F-statistic):              0.736
+Time:                           21:01:38   Log-Likelihood:                -302.45
 No. Observations:                     74   AIC:                             610.9
 Df Residuals:                         71   BIC:                             617.8
 Df Model:                              2                                         
@@ -765,7 +765,7 @@ Notes:
 <p>To see the code check out the slides.</p>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div id="804816b2" class="cell" data-execution_count="10">
+<div id="04e1ac26" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -775,7 +775,7 @@ Notes:
 </div>
 </div>
 </div><div class="column" style="width:45%;">
-<div id="e532c725" class="cell" data-execution_count="11">
+<div id="db9e9253" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -801,6 +801,20 @@ Notes:
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="section" class="slide level2" data-background="#143156">
+<h2></h2>
+<div style="text-align: left; margin-top: 1em; font-size: 160px">
+<p><strong>What’s next?</strong></p>
+</div>
+<p><br><br><br><br></p>
+<div style="text-align: left; font-size: 50px">
+<ul>
+<li>Complete the <code>Model</code> parts of the Case Study.</li>
+<li>Complete the Badge requirement document <a href="https://laser-institute.github.io/la-workflow/Foundation_Py/module_3_py/Module3-badge-3-Py-KEY.html">Foundations badge - Data Sources</a></li>
+<li>Do required readings for the next Foundations Module 4.</li>
+</ul>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="img/LASERlogoB.png" class="slide-logo"></p>
 <div class="footer footer-default">

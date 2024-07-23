@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="Module1-code-along-slides-Py_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="Module1-code-along-slides-Py_files/libs/clipboard/clipboard.min.js"></script>
 <script src="Module1-code-along-slides-Py_files/libs/quarto-html/tabby.min.js"></script>
 <script src="Module1-code-along-slides-Py_files/libs/quarto-html/popper.min.js"></script>
 <script src="Module1-code-along-slides-Py_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -8,7 +8,7 @@
 <link href="Module1-code-along-slides-Py_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="Module1-code-along-slides-Py_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="Module1-code-along-slides-Py_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.5.55">
 
   <title>Prepare and Wrangle</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -222,7 +222,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -386,7 +387,7 @@
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
@@ -477,8 +478,7 @@
 </ul>
 </div><div class="column" style="width:45%;">
 <p><img data-src="img/py_terminal.svg"></p>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p>When working with data in Python, it’s essential to install the necessary packages or libraries to facilitate data manipulation and analysis. This process needs to be done only once for each package, using the terminal. On Windows, you can use Command Prompt or PowerShell, while macOS and Linux users can use the Terminal application. To install a package, you use the pip command, which is the package installer for Python. For example, to install the pandas library, you would type pip install pandas in the terminal and press Enter. You can repeat this process for other packages, such as numpy, matplotlib, and scikit-learn, using the respective commands pip install numpy, pip install matplotlib, and pip install scikit-learn.</p>
 <p>Refer to the image on the right side of the slide, which shows a screenshot of the terminal with commands to install packages, providing a visual representation of the process. Emphasize that once these packages are installed, they are available for use in any Python script or notebook on the system, eliminating the need for reinstallation. Encourage learners to try installing a package themselves to get familiar with the process, and mention common troubleshooting steps, such as checking the spelling of the package name, ensuring an active internet connection, and verifying that pip is installed correctly. By following these steps, learners will be able to set up their Python environment with the necessary tools for data analysis, ensuring they are ready to dive into practical data manipulation and analysis tasks.</p>
@@ -517,10 +517,9 @@
 <ul>
 <li>Second, load the package in the quarto document</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb1-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
 </div>
 <div id="tabset-1-3">
 <div class="columns">
@@ -528,8 +527,7 @@
 <p><img data-src="img/numpy.svg" style="width:100.0%"></p>
 </div><div class="column" style="width:70%;">
 <p><a href="https://pypi.org/project/numpy/">NumPy</a> is a Python package for scientific computing with Python. It is used for various types of data manipulation and mathematical operations, particularly when working with large datasets or complex mathematical computations.</p>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-1-4">
 <p>Use your Python script to import the {numpy} package <code>as np</code>.</p>
@@ -539,10 +537,10 @@
 <p>MAC/LINUX: $ python3 -m pip install numpy</p>
 <p><br> Windows: $ py -m pip install numpy</p>
 <p><br></p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># YOUR CODE HERE</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cd5e60ee" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="co"># YOUR CODE HERE</span></span>
+<span id="cb2-2"><a href=""></a><span class="co">#</span></span>
+<span id="cb2-3"><a href=""></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-5">
@@ -552,9 +550,9 @@
 <p><br></p>
 <p>Windows: $ py -m pip install numpy</p>
 <p><br></p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># YOUR CODE HERE</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f5ebbfda" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="co"># YOUR CODE HERE</span></span>
+<span id="cb3-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -583,21 +581,21 @@
 <div id="tabset-2-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/readr_function_python.svg" width="1500"></p>
+<p><img data-src="img/readr_function_python.svg" class="quarto-figure quarto-figure-center" width="1500"></p>
 </figure>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/python_delimiter.svg" width="1500"></p>
+<p><img data-src="img/python_delimiter.svg" class="quarto-figure quarto-figure-center" width="1500"></p>
 </figure>
 </div>
 </div>
 <div id="tabset-2-3">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/python_types.svg" width="1100"></p>
+<p><img data-src="img/python_types.svg" class="quarto-figure quarto-figure-center" width="1100"></p>
 </figure>
 </div>
 </div>
@@ -642,14 +640,14 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <p>Copy the code below into your script and try out the code. What do you see?</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># read and load `sci-online-classes.csv` from data folder</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>time_spent <span class="op">=</span> pd.read_csv(<span class="st">"data/sci-online-classes.csv"</span>)</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#inspect data</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>time_spent.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="464d3f56" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="co"># read and load `sci-online-classes.csv` from data folder</span></span>
+<span id="cb4-4"><a href=""></a>time_spent <span class="op">=</span> pd.read_csv(<span class="st">"data/sci-online-classes.csv"</span>)</span>
+<span id="cb4-5"><a href=""></a></span>
+<span id="cb4-6"><a href=""></a><span class="co">#inspect data</span></span>
+<span id="cb4-7"><a href=""></a>time_spent.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <style scoped="">
@@ -666,7 +664,7 @@
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -824,22 +822,22 @@
 </div>
 <div id="tabset-3-2">
 <p>Use your Python script to read in <code>log-data.csv</code> from the <code>data</code> folder, using the <code>pd.read_csv</code> function. Save it to a new object called <code>online_classes</code>.</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># YOUR CODE HERE</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="co">#</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="baf921e6" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># YOUR CODE HERE</span></span>
+<span id="cb5-2"><a href=""></a><span class="co">#</span></span>
+<span id="cb5-3"><a href=""></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-3-3">
 <p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># read and load log file from data folder</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>time_spent <span class="op">=</span> pd.read_csv(<span class="st">"data/log-data.csv"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#inspect data</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>time_spent.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f8799cba" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a><span class="co"># read and load log file from data folder</span></span>
+<span id="cb6-4"><a href=""></a>time_spent <span class="op">=</span> pd.read_csv(<span class="st">"data/log-data.csv"</span>)</span>
+<span id="cb6-5"><a href=""></a></span>
+<span id="cb6-6"><a href=""></a><span class="co">#inspect data</span></span>
+<span id="cb6-7"><a href=""></a>time_spent.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 <style scoped="">
@@ -856,7 +854,7 @@
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -932,7 +930,7 @@
 <div id="tabset-4-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/join.svg" width="1100"></p>
+<p><img data-src="img/join.svg" class="quarto-figure quarto-figure-center" width="1100"></p>
 </figure>
 </div>
 </div>
@@ -940,16 +938,16 @@
 <div class="columns">
 <div class="column" style="width:45%;">
 <p>Let’s create Mock Data Generation</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Create mock data</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a>students <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb7-5"><a href="#cb7-5"></a>    <span class="st">'student_id'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="st">'name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>, <span class="st">'David'</span>],</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    <span class="st">'major'</span>: [<span class="st">'Math'</span>, <span class="st">'Physics'</span>, <span class="st">'Biology'</span>, <span class="st">'Computer Science'</span>]</span>
-<span id="cb7-8"><a href="#cb7-8"></a>})</span>
-<span id="cb7-9"><a href="#cb7-9"></a>students</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="73755cc9" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="co"># Create mock data</span></span>
+<span id="cb7-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-3"><a href=""></a></span>
+<span id="cb7-4"><a href=""></a>students <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb7-5"><a href=""></a>    <span class="st">'student_id'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb7-6"><a href=""></a>    <span class="st">'name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>, <span class="st">'David'</span>],</span>
+<span id="cb7-7"><a href=""></a>    <span class="st">'major'</span>: [<span class="st">'Math'</span>, <span class="st">'Physics'</span>, <span class="st">'Biology'</span>, <span class="st">'Computer Science'</span>]</span>
+<span id="cb7-8"><a href=""></a>})</span>
+<span id="cb7-9"><a href=""></a>students</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 <style scoped="">
@@ -966,7 +964,7 @@
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1007,13 +1005,13 @@
 </div>
 </div>
 </div><div class="column" style="width:45%;">
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Create mock data</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>scores <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb8-3"><a href="#cb8-3"></a>    <span class="st">'student_id'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>],</span>
-<span id="cb8-4"><a href="#cb8-4"></a>    <span class="st">'score'</span>: [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">80</span>]</span>
-<span id="cb8-5"><a href="#cb8-5"></a>})</span>
-<span id="cb8-6"><a href="#cb8-6"></a>scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5af8b5c2" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># Create mock data</span></span>
+<span id="cb8-2"><a href=""></a>scores <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb8-3"><a href=""></a>    <span class="st">'student_id'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>],</span>
+<span id="cb8-4"><a href=""></a>    <span class="st">'score'</span>: [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">80</span>]</span>
+<span id="cb8-5"><a href=""></a>})</span>
+<span id="cb8-6"><a href=""></a>scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <style scoped="">
@@ -1030,7 +1028,7 @@
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1065,14 +1063,13 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-4-3">
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Inner join: Returns rows that have matching values in both tables</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>inner_join_result <span class="op">=</span> pd.merge(students, scores, on<span class="op">=</span><span class="st">'student_id'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a>inner_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="51820dd6" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="co"># Inner join: Returns rows that have matching values in both tables</span></span>
+<span id="cb9-2"><a href=""></a>inner_join_result <span class="op">=</span> pd.merge(students, scores, on<span class="op">=</span><span class="st">'student_id'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb9-3"><a href=""></a>inner_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 <style scoped="">
@@ -1089,7 +1086,7 @@
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1129,10 +1126,10 @@
 </div>
 </div>
 <div id="tabset-4-4">
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>left_join_result <span class="op">=</span> pd.merge(students, scores, on<span class="op">=</span><span class="st">'student_id'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb10-3"><a href="#cb10-3"></a>left_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e4d5aa5d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.</span></span>
+<span id="cb10-2"><a href=""></a>left_join_result <span class="op">=</span> pd.merge(students, scores, on<span class="op">=</span><span class="st">'student_id'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
+<span id="cb10-3"><a href=""></a>left_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 <style scoped="">
@@ -1149,7 +1146,7 @@
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1196,10 +1193,10 @@
 </div>
 </div>
 <div id="tabset-4-5">
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>right_join_result <span class="op">=</span> pd.merge(students, scores, on<span class="op">=</span><span class="st">'student_id'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span>
-<span id="cb11-3"><a href="#cb11-3"></a>right_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="87027221" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.</span></span>
+<span id="cb11-2"><a href=""></a>right_join_result <span class="op">=</span> pd.merge(students, scores, on<span class="op">=</span><span class="st">'student_id'</span>, how<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb11-3"><a href=""></a>right_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 <style scoped="">
@@ -1216,7 +1213,7 @@
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1263,10 +1260,10 @@
 </div>
 </div>
 <div id="tabset-4-6">
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Full join: Returns all rows from both tables. If there is no match, the result is NA for the missing values.</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>full_join_result <span class="op">=</span> pd.merge(students, scores, on<span class="op">=</span><span class="st">'student_id'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
-<span id="cb12-3"><a href="#cb12-3"></a>full_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="48a78ed4" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># Full join: Returns all rows from both tables. If there is no match, the result is NA for the missing values.</span></span>
+<span id="cb12-2"><a href=""></a>full_join_result <span class="op">=</span> pd.merge(students, scores, on<span class="op">=</span><span class="st">'student_id'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb12-3"><a href=""></a>full_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 <style scoped="">
@@ -1283,7 +1280,7 @@
     }
 </style>
 
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1366,13 +1363,15 @@
 <div style="text-align: left; font-size: 50px">
 <ul>
 <li>Complete the <code>Prepare</code> and <code>Wrangle</code> parts of the Case Study.</li>
-<li>Complete the Badge requirement document <a href="https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html">Foundations badge - Data Sources</a></li>
+<li>Complete the Badge requirement document <a href="https://laser-institute.github.io/la-workflow/Foundation_Py/module_1_py/Module1-badge-Py-Key.html">Foundations badge - Data Sources</a></li>
 <li>Do required readings for the next Foundations Module 2.</li>
 </ul>
 </div>
-
-<img src="img/LASERlogo_large.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<div class="quarto-auto-generated-content">
+<p><img src="img/LASERlogoB.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://www.fi.ncsu.edu/projects/laser-institute">LASER Institute</a></p><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+</a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 </a></section></section><a href="https://www.fi.ncsu.edu/projects/laser-institute">
     </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
@@ -1402,7 +1401,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1620,18 +1618,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1663,11 +1650,50 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1677,8 +1703,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1692,7 +1727,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

@@ -285,7 +285,7 @@ The following code estimates a model in which `proportion_earned`, the proportio
 ::: {style="text-align: left; font-size: 50px"}
 
 - Complete the `Model` parts of the Case Study.
-- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/la-workflow/Foundation_R/module_3/Module3-badge-R-KEY.html)
 - Do required readings for the next Foundations Module 4.
 
 

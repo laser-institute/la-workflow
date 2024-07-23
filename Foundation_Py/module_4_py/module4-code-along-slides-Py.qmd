@@ -408,6 +408,6 @@ Create a Data Story with our current data set
 ::: {style="text-align: left; font-size: 50px"}
 
 - Complete the `the Dashboard for the Stakeholder` parts of the Case Study.
-- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/la-workflow/Foundation_Py/module_4_py/Module4-badge-Py-KEY.html)
 
 :::

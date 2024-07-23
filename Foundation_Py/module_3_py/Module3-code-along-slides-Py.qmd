@@ -237,8 +237,7 @@ The negative sign indicates a slight tendency for the completion percentage to d
 ## Linear Regression
 
 ::: panel-tabset
-
-### package **👉 Your Turn** **⤵** 
+### package **👉 Your Turn** **⤵**
 
 Linear regression is implemented using the statsmodels library
 
@@ -247,7 +246,6 @@ Add the `statsmodels.api` packages as `sm`
 ```{python}
 #| echo: true
 ```
-
 
 ### Answer
 
@@ -264,17 +262,15 @@ import statsmodels.api as sm
 
 **Instructions:**
 
-1. Clean the data
+1.  Clean the data
 
-2. Create a linear regression model with `hours_online` as the independent variable and `completion_percentage` as the dependent variable.
+2.  Create a linear regression model with `hours_online` as the independent variable and `completion_percentage` as the dependent variable.
 
 3.  Fit the model and inspect the summary.
 
 4.  Visualize the model with a scatter plot and regression line
 
-
 ### Code and output
-
 
 ```{python}
 
@@ -296,33 +292,30 @@ model = sm.OLS(y, X).fit()
 # Step 5: Output the summary of the model
 print(model.summary())
 ```
-
 :::
 
-:::{.notes}
-
+::: notes
 Defining Variables:
 
 We define the independent variable (X) as hours_online and the dependent variable (y) as completion_percentage.
 We add a constant to the model to account for the intercept.
 Fitting the Model:
 
-Using the statsmodels library, we fit an Ordinary Least Squares (OLS) regression model. statsmodels is a powerful library specifically designed for statistical modeling in Python.
+Using the statsmodels library, we fit an Ordinary Least Squares (OLS) regression model.
+statsmodels is a powerful library specifically designed for statistical modeling in Python.
 The summary() function provides detailed statistics about the model, including coefficients, R-squared value, and p-values.
-
 :::
 
-## Multiple regression 
+## Multiple regression
 
 ::: panel-tabset
-
-### **👉 Your Turn** **⤵** 
+### **👉 Your Turn** **⤵**
 
 **Instructions:**
 
-1. Clean the data using the `dropna()` function
+1.  Clean the data using the `dropna()` function
 
-2. Create a linear regression model with `hours_online` and `boredom_score` as the independent variable and `completion_percentage` as the dependent variable. 
+2.  Create a linear regression model with `hours_online` and `boredom_score` as the independent variable and `completion_percentage` as the dependent variable.
 
 3.  Fit the model and inspect the summary.
 
@@ -335,8 +328,6 @@ The summary() function provides detailed statistics about the model, including c
 ```
 
 ### Answer
-
-
 
 ```{python}
 #| echo: true
@@ -364,9 +355,9 @@ model = sm.OLS(y, X, missing='drop').fit()
 print(model.summary())
 ```
 
-### Bonus - Visualize 
+### Bonus - Visualize
 
-**👉 Your Turn** **⤵** 
+**👉 Your Turn** **⤵**
 
 Vizualise the model with a scatter plot and regression line
 
@@ -379,9 +370,8 @@ Vizualise the model with a scatter plot and regression line
 
 To see the code check out the slides.
 
-:::{.columns}
-:::{.column width="45%"}
-
+::: columns
+::: {.column width="45%"}
 ```{python}
 # Scatter plot for hours_online
 plt.figure(figsize=(10, 6))
@@ -392,11 +382,9 @@ plt.xlabel('Hours Online')
 plt.ylabel('Completion Percentage')
 plt.show()
 ```
-
 :::
 
-:::{.column width="45%"}
-
+::: {.column width="45%"}
 ```{python}
 # Scatter plot for boredom_score
 plt.figure(figsize=(10, 6))
@@ -409,11 +397,30 @@ plt.show()
 ```
 :::
 :::
-
 :::
 
-:::{.notes}
-
+::: notes
 Multiple linear regression is a statistical technique used to model the relationship between two or more independent variables and a single dependent variable.
 It extends simple linear regression by including additional predictor variables, which helps to better understand the influence of multiple factors on the outcome.
 :::
+
+## {background="#143156"}
+
+::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
+
+**What's next?**
+
+:::
+
+<br/><br/><br/><br/>
+
+
+::: {style="text-align: left; font-size: 50px"}
+
+- Complete the `Model` parts of the Case Study.
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/la-workflow/Foundation_Py/module_3_py/Module3-badge-3-Py-KEY.html)
+- Do required readings for the next Foundations Module 4.
+
+
+:::
+

@@ -595,7 +595,7 @@ A full join returns all rows from both tables, whether there is a match or not. 
 ::: {style="text-align: left; font-size: 50px"}
 
 - Complete the `Prepare` and `Wrangle` parts of the Case Study.
-- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/la-workflow/Foundation_R/module_1/module-1-badge-key.html)
 - Do required readings for the next Foundations Module 2.
 
 

@@ -425,7 +425,7 @@ The full join returns all rows from both tables. If there is no match, the resul
 ::: {style="text-align: left; font-size: 50px"}
 
 - Complete the `Prepare` and `Wrangle` parts of the Case Study.
-- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/la-workflow/Foundation_Py/module_1_py/Module1-badge-Py-Key.html)
 - Do required readings for the next Foundations Module 2.
 
 

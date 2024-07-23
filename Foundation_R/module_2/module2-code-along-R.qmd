@@ -584,7 +584,7 @@ How would you interpret this graph?
 ::: {style="text-align: left; font-size: 50px"}
 
 - Complete the `Explore` parts of the Case Study.
-- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)
+- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/la-workflow/Foundation_R/module_2/Module2-badge-R-KEY.html)
 - Do required readings for the next Foundations Module 3.
 
 
