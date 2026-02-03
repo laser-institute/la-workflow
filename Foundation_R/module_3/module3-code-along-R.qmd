@@ -271,16 +271,7 @@ The following code estimates a model in which `proportion_earned`, the proportio
 
 :::
 
-## {background="#143156"}
-
-::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
-
-**What's next?**
-
-:::
-
-<br/><br/><br/><br/>
-
+# What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
 

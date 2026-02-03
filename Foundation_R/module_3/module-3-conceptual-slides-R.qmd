@@ -414,14 +414,7 @@ AND ...
 
 Can you propose solutions or share experiences on how to overcome these challenges effectively?
 
-# {background="#143156"}
-
-::: {style="text-align: left; margin-top: .05em; font-size: 160px"}
-
-**What's next?**
-:::
-
-<br/><br/><br/>
+# What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
 

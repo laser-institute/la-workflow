@@ -237,14 +237,7 @@ We can see some real world examples with
 Know your audience: Tailor the visualization to the target audience's background and needs. Keep it simple: Avoid clutter and unnecessary complexity to ensure clarity and ease of interpretation. Use appropriate visuals: Select the most suitable visualization technique based on the data and the insights you want to convey. Provide context: Include clear labels, titles, and annotations to provide context and aid understanding. Ensure accessibility: Ensure that visualizations are accessible to all users, including those with visual impairments. Iterate and refine: Continuously refine and improve visualizations based on feedback and evaluation.
 :::
 
-#  {background="#143156"}
-
-::: {style="text-align: left; margin-top: .05em; font-size: 160px"}
-**What's next?**
-:::
-
-<br/><br/><br/>
-
+# What's Next? {background="#143156"}
 ::: {style="text-align: left; font-size: 50px"}
 -   Complete the `Explore` section of the Case Study
 -   Complete the `Badge requirement` [Foundations badge - Data Sources](https://laser-institute.github.io/LASER_Foundations_2023/lab1/found-lab-1-badge.html)

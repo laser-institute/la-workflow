@@ -508,14 +508,7 @@ Think about the following questions and then discuss at your table:
 -   Personalized Learning Frameworks: Design personalized learning experiences that use data responsibly. This could include systems that allow students to view their own data and understand how it is being used to tailor their learning experiences, thereby enhancing transparency and control.
 :::
 
-# {background="#143156"}
-
-::: {style="text-align: left; margin-top: .05em; font-size: 160px"}
-
-**What's next?**
-:::
-
-<br/><br/><br/>
+# What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
 

@@ -403,18 +403,7 @@ Create a Data Story with our current data set
 [Quarto dashboard: Easy interactive dashboards for R](https://posit.co/blog/flexdashboard-easy-interactive-dashboards-for-r/)
 
 
-
-    
-## {background="#143156"}
-
-::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
-
-**What's next?**
-
-:::
-
-<br/><br/><br/><br/>
-
+# What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
 
