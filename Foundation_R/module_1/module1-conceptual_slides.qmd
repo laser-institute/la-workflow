@@ -20,6 +20,9 @@ execute:
   freeze: true
 resources:
   - demo.pdf
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 ## Welcome to Foundations of Learning Analytics
@@ -36,9 +39,9 @@ of LA includes:
 
 . . .
 
-::: columns
-::: {.column width="40%"}
-::: {style="font-size: 65%;"}
+::::::::::::: columns
+::::::: {.column width="40%"}
+:::::: {style="font-size: 65%;"}
 ::: {.fragment .fade-in-then-semi-out}
 -   Essential readings
 :::
@@ -50,14 +53,14 @@ of LA includes:
 ::: {.fragment .fade-in-then-semi-out}
 -   Code a-long slidedeck
 :::
-:::
-:::
+::::::
+:::::::
 
 ::: {.column width="10%"}
 :::
 
-::: {.column width="50%"}
-::: {style="font-size: 65%;"}
+:::::: {.column width="50%"}
+::::: {style="font-size: 65%;"}
 ::: {.fragment .fade-in-then-semi-out}
 -   Case study activity that correlates with the Learning Analytics
     workflow
@@ -66,9 +69,9 @@ of LA includes:
 ::: {.fragment .fade-in-then-semi-out}
 -   Optional badge activity
 :::
-:::
-:::
-:::
+:::::
+::::::
+:::::::::::::
 
 <br/>
 
@@ -76,7 +79,7 @@ of LA includes:
 
 By the end of this module:
 
-::: {style="font-size: 75%;"}
+::::: {style="font-size: 75%;"}
 ::: fragment
 -   Types of `Learning Environments`:
     -   Learners will be able to identify and describe different types
@@ -90,9 +93,9 @@ By the end of this module:
         various data formats commonly used in educational research by
         the end of this section.
 :::
-:::
+:::::
 
-::: {style="font-size: 65%;"}
+:::: {style="font-size: 65%;"}
 ::: fragment
 Essential readings:
 
@@ -106,14 +109,15 @@ Essential readings:
     By Romero &
     Ventura](https://laser-institute.github.io/LASER_Foundations_2023/lab1/Readings/Educational_data_mining_and_learning_analytics.pdf)
 
--   Optional Readings on Stakeholders in folder By Gašević et al., 2022 and Sun et al., 2019
+-   Optional Readings on Stakeholders in folder By Gašević et al., 2022
+    and Sun et al., 2019
 :::
-:::
+::::
 
 ## Education Data
 
-::: columns
-::: {.column width="40%"}
+::::::: columns
+:::: {.column width="40%"}
 ::: fragment
 -   Interaction between instructors and students
 
@@ -123,14 +127,14 @@ Essential readings:
 
 -   Student affectivity
 :::
-:::
+::::
 
-::: {.column width="60%"}
+:::: {.column width="60%"}
 ::: fragment
-![](img/granularity.png){.absolute top="425" left="850" width="1000"}
+![](img/granularity.png){.absolute top="150" left="850" width="1000"}
 :::
-:::
-:::
+::::
+:::::::
 
 ::: notes
 Interaction between Instructors and Students: Examining how students and
@@ -143,7 +147,7 @@ Demographic Data: Analysis of student demographics, such as age and
 gender, demographic data can be used to understand diverse learning
 needs.
 
-Student Affectivity: Focuses on the emotional and motivational aspects
+Student affectivity: Focuses on the emotional and motivational aspects
 of students, crucial for personalized learning experiences.
 
 Each category plays a vital role in shaping educational strategies and
@@ -152,8 +156,8 @@ outcomes.
 
 ## Types of Learning Environments
 
-::: columns
-::: {.column width="40%"}
+:::::::: columns
+:::::: {.column width="40%"}
 <br />
 
 ::: {.fragment .fade-in-then-semi-out}
@@ -167,19 +171,19 @@ outcomes.
 ::: {.fragment .fade-in-then-semi-out}
 -   Digital (computer aided) Learning Systems
 :::
-:::
+::::::
 
 ::: {.column width="60%"}
 ![](img/la_ed_environments.png){.absolute .fragment top="150" right="50"
 width="1000"}
 :::
-:::
+::::::::
 
 ::: notes
 Digital learning environments include any set of technology-based
 methods that can be applied to support learning and instruction.
 
-According to Krumm et al, Digital Learning Environments have fueled data
+According to Krumm et al., Digital Learning Environments have fueled data
 intensive research in education more than any other data.
 
 The ones we are probably most familiar with are....
@@ -216,40 +220,34 @@ increase in the use of Digital Learning Systems and Blended.
 
 ## Digital Learning Environments (Computer Aided)
 
-::: columns
-::: {.column width="40%"}
-::: {.fragment .highlight-red}
+::::::::: columns
+::::: {.column width="40%"}
 -   Adaptive and Intelligent Hypermedia System (AIHS)
-:::
 
-::: {.fragment .highlight-red}
 -   Intelligent Tutoring System (ITS)
-:::
 
 -   Serious Games and Simulations
 
 -   Learning Management System (LMS)
 
 -   AI-driven virtual tutors and chatbots
-:::
+:::::
 
 ::: {.column width="10%"}
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 -   Massive Open Online Course (MOOC)
 
-::: {.fragment .highlight-red}
 -   Test and quiz system
-:::
 
 -   Sensor Wearable learning systems and Virtual
 
 -   Augmented reality systems
 
 -   Multimodal Computer Aided Learning
-:::
-:::
+::::
+:::::::::
 
 ::: notes
 Adaptive and Intelligent Hypermedia System (AIHS) - These systems
@@ -275,14 +273,10 @@ statistics.
 
 ## Discussion
 
--   Choose one category (Interaction, Administrative, Demographic,
+-   Choose one category (Interaction, Administrative, Demographic, or
     Student Affectivity).
 
--   
-
-    ```         
-      Share an example of how data in this category can be collected.
-    ```
+-   Share an example of how data in this category can be collected.
 
 -   Discuss the potential impact of this data on educational
     decision-making.
@@ -449,21 +443,13 @@ on data.
 
 ## Discussion
 
-What challenges arise from the different needs and priorities of these
+-  What challenges arise from the different needs and priorities of these
 stakeholder groups when it comes to data use and management?
 
-<br/> <br/>
-
-How can these challenges be addressed to ensure that data is used
+-  How can these challenges be addressed to ensure that data is used
 ethically and effectively to improve education for all students?
 
-#  {background="#143156"}
-
-::: {style="text-align: left; margin-top: .05em; font-size: 160px"}
-**What's next?**
-:::
-
-<br/><br/><br/>
+# What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
 -   Complete the `Prepare and Wrangle` part of the Case Study

@@ -581,16 +581,7 @@ full_join_result
 A full join returns all rows from both tables, whether there is a match or not. If there is no match, the result is NA for the missing values.
 :::
 
-## {background="#143156"}
-
-::: {style="text-align: left; margin-top: 1em; font-size: 160px"}
-
-**What's next?**
-
-:::
-
-<br/><br/><br/><br/>
-
+# What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
 
