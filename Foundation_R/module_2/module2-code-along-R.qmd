@@ -63,17 +63,17 @@ resources:
 
 By the end of this module:
 
-* Data Visualization with ggplot2:
+:::fragment
+**Data Visualization with ggplot2:**
+
 -   Learners will understand how to use ggplot2 to create various types of plots and graphs, enabling them to visualize data effectively and identify patterns and trends.
+:::
 
-. . .
-
-* Data Transformation and Preprocessing:
+:::fragment
+**Data Transformation and Preprocessing:**
 
 -   Learners will gain proficiency in transforming and preprocessing raw data using R, ensuring the data is clean, structured correctly, and ready for analysis.
-
-. . .
-
+:::
 
 :::{.notes}
 
@@ -82,7 +82,7 @@ By the end of this module:
 :::
 
 
-## Explore setup
+## Exploratory Data Analysis
 
 :::{.columns}
 :::{.column width="40%"}
@@ -121,11 +121,11 @@ FEATURE ENGINEERING is known as the process of transforming raw data (that has a
 
 :::
 
-## SKIMR FuUNCTION
+## About skimr
 
 ::: panel-tabset
 
-### PACKAGE 
+### Overview 
 
 :::: {.columns}
 :::{.column width="25%"}
@@ -142,41 +142,11 @@ FEATURE ENGINEERING is known as the process of transforming raw data (that has a
 :::
 :::
 
-### Load Package
+### 👉 Your Turn ⤵ 
 
-
-Your turn **👉 Your Turn** **⤵**
-
-<br/>
-
-```{r echo=TRUE, eval=FALSE}
-#LOAD SKIMR package and use skim() function to skim 'data_to_explore'
-#
-#
-
-```
-
+- Load the skimr package and use skim() to skim data_to_explore
 
 ### Answer
-
-
-**👉 Your Turn** **⤵** -> Answer
-
-<br/>
-
-```{r echo=TRUE, eval=FALSE}
-#LOAD SKIMR package and use skim() function to skim 'data_to_explore'
-#
-#
-library(skimr)
-
-```
-
-
-
-### TABLE
-
-
 ```{r echo = TRUE, eval=FALSE}
 #load library
 library(skimr)
@@ -185,10 +155,7 @@ library(skimr)
 skim(data_to_explore)
 ```
 
-
-
-
-### TIDY 
+### Tidy with skimr 
 
 ```{r eval=FALSE, echo=TRUE}
 data_to_explore %>% 
@@ -241,16 +208,16 @@ with an arrow on it to expand your output in a separate window.
 
 
 
-## GGplot2 
+## About ggplot2 
 
 ::: panel-tabset
 
-### PACKAGE
+### Overview
 
 <img src="img/ggplot2.png" height="700px"/>
 
 
-### Grammar 101
+### ggplot Grammar
 
 
 <img src="img/grammar.png" height="750px"/>
@@ -264,8 +231,7 @@ Do you need all of these things to create a graph?
 <img src="img/geoms.png" height="800px"/>
 
 
-
-### Basic graph
+### Basic Graphs
 
 ::::{.columns}
 
@@ -296,7 +262,7 @@ ggplot(data_to_explore)+
 ::::
 
 
-### Basic graph2
+### ggplot + Pipes
 
 
 ```{r echo=TRUE, eval=TRUE, message = FALSE, warning=FALSE}
@@ -304,16 +270,7 @@ data_to_explore %>%
   ggplot(aes(x = subject)) +
   geom_bar()
 ```
-
-
-
-
-[R Software Handbook](https://bookdown.org/aschmi11/RESMHandbook/)
-
-
 ::::
-
-
 
 :::{.notes}
 
@@ -341,56 +298,34 @@ ggplot2 has **layers** what you see on the plot (lines, points, etc)
 
 Do you need all of these things to create a graph?
 
-
 :::
 
-
-## GGplot2 - Histogram
+## Plotting Histograms
 
 ::: panel-tabset
 
-### Your Turn
+### 👉 Your Turn ⤵
 
-**👉 Your Turn** **⤵**
+- Load ggplot2 
+- Write the code for a basic histogram for time_spent_hours
 
-In the corresponding code script add the code for a basic histogram for 'time_spent_hours'.
-
-
-```{r echo=TRUE, warning=FALSE, message=FALSE}
-#
-#
-#
-```
-
-
-
-
-### ANSWER
-
-**👉 Your Turn** **⤵** -> Answer
-
+### Answer
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
-
 data_to_explore <- read_csv("data/data_to_explore.csv")
 ```
-
-
-
 
 ```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 
 # Layer 1: add data and aesthetic mapping
-data_to_explore %>% #<<
+data_to_explore %>%
   ggplot(aes(x = time_spent_hours)) +
 # layer 2: add histogram geom
   geom_histogram()
 ```
 
 
-
-
-### Bin 
+### Bin Size
 
 
 ```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
@@ -417,10 +352,8 @@ data_to_explore %>%
                  colour = "black") 
 ```
 
-]
 
 ### Labels
-
 
 ```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 # Layer 1: add data and aesthetic mapping
@@ -435,12 +368,9 @@ data_to_explore %>%
   theme_classic()
 ```
 
-
-How would we interpret this graph?
-
 :::
 
-## SCATTERPLOT
+## Plotting Scatterplots
 
 ::: panel-tabset
 
@@ -555,20 +485,11 @@ viz1 <- ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned,
 :::
 
 ### Discuss
+How would you interpret this final graph?
 
-In the corresponding line of your R script, type the name of visualization object we just created and run the code:
+<img src="img/scatter_4.png" height="600px"/>
 
-```{r echo=TRUE}
-# 
-#
-#
-
-```
-
-How would you interpret this graph?
-
-
-::::
+:::
 
 # What's Next? {background="#143156"}
 

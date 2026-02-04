@@ -233,18 +233,18 @@
 <h2>Module Objectives</h2>
 <div class="fragment">
 <p>By the end of this module:</p>
+<div class="fragment">
+<p><strong>Data Visualization with ggplot2:</strong></p>
 <ul>
-<li>Data Visualization with ggplot2:</li>
 <li>Learners will understand how to use ggplot2 to create various types of plots and graphs, enabling them to visualize data effectively and identify patterns and trends.</li>
 </ul>
 </div>
 <div class="fragment">
+<p><strong>Data Transformation and Preprocessing:</strong></p>
 <ul>
-<li><p>Data Transformation and Preprocessing:</p></li>
-<li><p>Learners will gain proficiency in transforming and preprocessing raw data using R, ensuring the data is clean, structured correctly, and ready for analysis.</p></li>
+<li>Learners will gain proficiency in transforming and preprocessing raw data using R, ensuring the data is clean, structured correctly, and ready for analysis.</li>
 </ul>
 </div>
-<div class="fragment">
 <aside class="notes">
 
 <style type="text/css">
@@ -260,8 +260,8 @@
       }</style></aside>
 </div>
 </section>
-<section id="explore-setup" class="slide level2">
-<h2>Explore setup</h2>
+<section id="exploratory-data-analysis" class="slide level2">
+<h2>Exploratory Data Analysis</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
@@ -290,10 +290,10 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="skimr-fuunction" class="slide level2">
-<h2>SKIMR FuUNCTION</h2>
+<section id="about-skimr" class="slide level2">
+<h2>About skimr</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">PACKAGE</a></li><li><a href="#tabset-1-2">Load Package</a></li><li><a href="#tabset-1-3">Answer</a></li><li><a href="#tabset-1-4">TABLE</a></li><li><a href="#tabset-1-5">TIDY</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Overview</a></li><li><a href="#tabset-1-2">👉 Your Turn ⤵</a></li><li><a href="#tabset-1-3">Answer</a></li><li><a href="#tabset-1-4">Tidy with skimr</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="columns">
@@ -304,39 +304,25 @@
 </div></div>
 </div>
 <div id="tabset-1-2">
-<p>Your turn <strong>👉 Your Turn</strong> <strong>⤵</strong></p>
-<p><br></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co">#LOAD SKIMR package and use skim() function to skim 'data_to_explore'</span></span>
-<span id="cb1-2"><a href=""></a><span class="co">#</span></span>
-<span id="cb1-3"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<ul>
+<li>Load the skimr package and use skim() to skim data_to_explore</li>
+</ul>
 </div>
 <div id="tabset-1-3">
-<p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
-<p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co">#LOAD SKIMR package and use skim() function to skim 'data_to_explore'</span></span>
-<span id="cb2-2"><a href=""></a><span class="co">#</span></span>
-<span id="cb2-3"><a href=""></a><span class="co">#</span></span>
-<span id="cb2-4"><a href=""></a><span class="fu">library</span>(skimr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co">#load library</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">library</span>(skimr)</span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a><span class="co">#skim data</span></span>
+<span id="cb1-5"><a href=""></a><span class="fu">skim</span>(data_to_explore)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co">#load library</span></span>
-<span id="cb3-2"><a href=""></a><span class="fu">library</span>(skimr)</span>
-<span id="cb3-3"><a href=""></a></span>
-<span id="cb3-4"><a href=""></a><span class="co">#skim data</span></span>
-<span id="cb3-5"><a href=""></a><span class="fu">skim</span>(data_to_explore)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div id="tabset-1-5">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href=""></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">'subject'</span>, <span class="st">'gender'</span>, <span class="st">'proportion_earned'</span>, <span class="st">'time_spent'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-3"><a href=""></a>  <span class="fu">filter</span>(subject <span class="sc">==</span> <span class="st">"OcnA"</span> <span class="sc">|</span> subject <span class="sc">==</span> <span class="st">"PhysA"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a href=""></a>  <span class="fu">skim</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href=""></a>  <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">'subject'</span>, <span class="st">'gender'</span>, <span class="st">'proportion_earned'</span>, <span class="st">'time_spent'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href=""></a>  <span class="fu">filter</span>(subject <span class="sc">==</span> <span class="st">"OcnA"</span> <span class="sc">|</span> subject <span class="sc">==</span> <span class="st">"PhysA"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href=""></a>  <span class="fu">skim</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -365,10 +351,10 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="ggplot2" class="slide level2">
-<h2>GGplot2</h2>
+<section id="about-ggplot2" class="slide level2">
+<h2>About ggplot2</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">PACKAGE</a></li><li><a href="#tabset-2-2">Grammar 101</a></li><li><a href="#tabset-2-3">Geoms</a></li><li><a href="#tabset-2-4">Basic graph</a></li><li><a href="#tabset-2-5">Basic graph2</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Overview</a></li><li><a href="#tabset-2-2">ggplot Grammar</a></li><li><a href="#tabset-2-3">Geoms</a></li><li><a href="#tabset-2-4">Basic Graphs</a></li><li><a href="#tabset-2-5">ggplot + Pipes</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <p><img src="img/ggplot2.png" height="700px"></p>
@@ -385,12 +371,12 @@
 <div class="column" style="width:50%;">
 <div style="font-size: 50px">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">ggplot</span>(data_to_explore, <span class="fu">aes</span>(<span class="at">x=</span>subject)) <span class="sc">+</span> </span>
-<span id="cb5-2"><a href=""></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">ggplot</span>(data_to_explore, <span class="fu">aes</span>(<span class="at">x=</span>subject)) <span class="sc">+</span> </span>
+<span id="cb3-2"><a href=""></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -399,12 +385,12 @@
 </div><div class="column" style="width:50%;">
 <div style="font-size: 50px">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">ggplot</span>(data_to_explore)<span class="sc">+</span></span>
-<span id="cb6-2"><a href=""></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>subject))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">ggplot</span>(data_to_explore)<span class="sc">+</span></span>
+<span id="cb4-2"><a href=""></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>subject))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -414,18 +400,17 @@
 </div>
 <div id="tabset-2-5">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> subject)) <span class="sc">+</span></span>
-<span id="cb7-3"><a href=""></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> subject)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="https://bookdown.org/aschmi11/RESMHandbook/">R Software Handbook</a></p>
 </div>
 </div>
 </div>
@@ -458,28 +443,82 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="ggplot2---histogram" class="slide level2">
-<h2>GGplot2 - Histogram</h2>
+<section id="plotting-histograms" class="slide level2">
+<h2>Plotting Histograms</h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Your Turn</a></li><li><a href="#tabset-3-2">ANSWER</a></li><li><a href="#tabset-3-3">Bin</a></li><li><a href="#tabset-3-4">Color</a></li><li><a href="#tabset-3-5">Labels</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">👉 Your Turn ⤵</a></li><li><a href="#tabset-3-2">Answer</a></li><li><a href="#tabset-3-3">Bin Size</a></li><li><a href="#tabset-3-4">Color</a></li><li><a href="#tabset-3-5">Labels</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<p><strong>👉 Your Turn</strong> <strong>⤵</strong></p>
-<p>In the corresponding code script add the code for a basic histogram for ‘time_spent_hours’.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co">#</span></span>
-<span id="cb8-2"><a href=""></a><span class="co">#</span></span>
-<span id="cb8-3"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<ul>
+<li>Load ggplot2</li>
+<li>Write the code for a basic histogram for time_spent_hours</li>
+</ul>
 </div>
 <div id="tabset-3-2">
-<p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Layer 1: add data and aesthetic mapping</span></span>
+<span id="cb6-2"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href=""></a><span class="co"># layer 2: add histogram geom</span></span>
+<span id="cb6-5"><a href=""></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># Layer 1: add data and aesthetic mapping</span></span>
+<span id="cb7-2"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href=""></a><span class="co"># layer 2: add histogram geom </span></span>
+<span id="cb7-5"><a href=""></a><span class="co"># layer 3a: add bin size</span></span>
+<span id="cb7-6"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># Layer 1: add data and aesthetic mapping</span></span>
+<span id="cb8-2"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href=""></a><span class="co"># layer 2: add histogram geom </span></span>
+<span id="cb8-5"><a href=""></a><span class="co"># layer 3a: add bin size</span></span>
+<span id="cb8-6"><a href=""></a><span class="co">#layer 3b: add color</span></span>
+<span id="cb8-7"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>,</span>
+<span id="cb8-8"><a href=""></a>                 <span class="at">fill =</span> <span class="st">"red"</span>,</span>
+<span id="cb8-9"><a href=""></a>                 <span class="at">colour =</span> <span class="st">"black"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-5">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Layer 1: add data and aesthetic mapping</span></span>
-<span id="cb9-2"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> <span class="co">#&lt;&lt;</span></span>
+<span id="cb9-2"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
 <span id="cb9-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours)) <span class="sc">+</span></span>
-<span id="cb9-4"><a href=""></a><span class="co"># layer 2: add histogram geom</span></span>
-<span id="cb9-5"><a href=""></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-4"><a href=""></a><span class="co"># layer 2: add histogram geom </span></span>
+<span id="cb9-5"><a href=""></a><span class="co"># layer 3a: add bin size</span></span>
+<span id="cb9-6"><a href=""></a><span class="co"># layer 3b: add color</span></span>
+<span id="cb9-7"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb9-8"><a href=""></a><span class="co">#layer 4: add Labels</span></span>
+<span id="cb9-9"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Time Spent on LMS histogram plot"</span>,<span class="at">x=</span><span class="st">"Time Spent(hours)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)<span class="sc">+</span></span>
+<span id="cb9-10"><a href=""></a>  <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -489,71 +528,11 @@
 </div>
 </div>
 </div>
-<div id="tabset-3-3">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># Layer 1: add data and aesthetic mapping</span></span>
-<span id="cb10-2"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours)) <span class="sc">+</span></span>
-<span id="cb10-4"><a href=""></a><span class="co"># layer 2: add histogram geom </span></span>
-<span id="cb10-5"><a href=""></a><span class="co"># layer 3a: add bin size</span></span>
-<span id="cb10-6"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-3-4">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># Layer 1: add data and aesthetic mapping</span></span>
-<span id="cb11-2"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
-<span id="cb11-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours)) <span class="sc">+</span></span>
-<span id="cb11-4"><a href=""></a><span class="co"># layer 2: add histogram geom </span></span>
-<span id="cb11-5"><a href=""></a><span class="co"># layer 3a: add bin size</span></span>
-<span id="cb11-6"><a href=""></a><span class="co">#layer 3b: add color</span></span>
-<span id="cb11-7"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>,</span>
-<span id="cb11-8"><a href=""></a>                 <span class="at">fill =</span> <span class="st">"red"</span>,</span>
-<span id="cb11-9"><a href=""></a>                 <span class="at">colour =</span> <span class="st">"black"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>]</p>
-</div>
-<div id="tabset-3-5">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co"># Layer 1: add data and aesthetic mapping</span></span>
-<span id="cb12-2"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span> </span>
-<span id="cb12-3"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours)) <span class="sc">+</span></span>
-<span id="cb12-4"><a href=""></a><span class="co"># layer 2: add histogram geom </span></span>
-<span id="cb12-5"><a href=""></a><span class="co"># layer 3a: add bin size</span></span>
-<span id="cb12-6"><a href=""></a><span class="co"># layer 3b: add color</span></span>
-<span id="cb12-7"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
-<span id="cb12-8"><a href=""></a><span class="co">#layer 4: add Labels</span></span>
-<span id="cb12-9"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Time Spent on LMS histogram plot"</span>,<span class="at">x=</span><span class="st">"Time Spent(hours)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)<span class="sc">+</span></span>
-<span id="cb12-10"><a href=""></a>  <span class="fu">theme_classic</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="module2-code-along-R_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>How would we interpret this graph?</p>
-</div>
 </div>
 </div>
 </section>
-<section id="scatterplot" class="slide level2">
-<h2>SCATTERPLOT</h2>
+<section id="plotting-scatterplots" class="slide level2">
+<h2>Plotting Scatterplots</h2>
 <div class="panel-tabset">
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Basic graph</a></li><li><a href="#tabset-4-2">Scale</a></li><li><a href="#tabset-4-3">Labels</a></li><li><a href="#tabset-4-4">Facet</a></li><li><a href="#tabset-4-5">Discuss</a></li></ul>
 <div class="tab-content">
@@ -561,12 +540,12 @@
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co">#layer 1: add data and aesthetics mapping </span></span>
-<span id="cb13-2"><a href=""></a><span class="fu">ggplot</span>(data_to_explore, <span class="co">#&lt;&lt;</span></span>
-<span id="cb13-3"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, </span>
-<span id="cb13-4"><a href=""></a>           <span class="at">y =</span> proportion_earned)) <span class="sc">+</span></span>
-<span id="cb13-5"><a href=""></a><span class="co">#layer 2: +  geom function type</span></span>
-<span id="cb13-6"><a href=""></a>  <span class="fu">geom_point</span>() <span class="co">#&lt;&lt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co">#layer 1: add data and aesthetics mapping </span></span>
+<span id="cb10-2"><a href=""></a><span class="fu">ggplot</span>(data_to_explore, <span class="co">#&lt;&lt;</span></span>
+<span id="cb10-3"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, </span>
+<span id="cb10-4"><a href=""></a>           <span class="at">y =</span> proportion_earned)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href=""></a><span class="co">#layer 2: +  geom function type</span></span>
+<span id="cb10-6"><a href=""></a>  <span class="fu">geom_point</span>() <span class="co">#&lt;&lt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:45%;">
 <p><img src="img/scatter_1.png" height="600px"></p>
@@ -576,14 +555,14 @@
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="co">#layer 1: add data and aesthetics mapping </span></span>
-<span id="cb14-2"><a href=""></a><span class="co">#layer 3: add color scale by type</span></span>
-<span id="cb14-3"><a href=""></a><span class="fu">ggplot</span>(data_to_explore, </span>
-<span id="cb14-4"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, </span>
-<span id="cb14-5"><a href=""></a>           <span class="at">y =</span> proportion_earned,</span>
-<span id="cb14-6"><a href=""></a>           <span class="at">color =</span> enrollment_status)) <span class="sc">+</span> <span class="co">#&lt;&lt;</span></span>
-<span id="cb14-7"><a href=""></a><span class="co">#layer 2: +  geom function type</span></span>
-<span id="cb14-8"><a href=""></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co">#layer 1: add data and aesthetics mapping </span></span>
+<span id="cb11-2"><a href=""></a><span class="co">#layer 3: add color scale by type</span></span>
+<span id="cb11-3"><a href=""></a><span class="fu">ggplot</span>(data_to_explore, </span>
+<span id="cb11-4"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, </span>
+<span id="cb11-5"><a href=""></a>           <span class="at">y =</span> proportion_earned,</span>
+<span id="cb11-6"><a href=""></a>           <span class="at">color =</span> enrollment_status)) <span class="sc">+</span> <span class="co">#&lt;&lt;</span></span>
+<span id="cb11-7"><a href=""></a><span class="co">#layer 2: +  geom function type</span></span>
+<span id="cb11-8"><a href=""></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:45%;">
 <p><img src="img/scatter_2.png" height="600px"></p>
@@ -593,18 +572,18 @@
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co">#layer 1: add data and aesthetics mapping </span></span>
-<span id="cb15-2"><a href=""></a><span class="co">#layer 3: add color scale by type</span></span>
-<span id="cb15-3"><a href=""></a><span class="fu">ggplot</span>(data_to_explore, </span>
-<span id="cb15-4"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, </span>
-<span id="cb15-5"><a href=""></a>           <span class="at">y =</span> proportion_earned,</span>
-<span id="cb15-6"><a href=""></a>           <span class="at">color =</span> enrollment_status)) <span class="sc">+</span></span>
-<span id="cb15-7"><a href=""></a><span class="co">#layer 2: +  geom function type</span></span>
-<span id="cb15-8"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb15-9"><a href=""></a><span class="co">#layer 4: add labels</span></span>
-<span id="cb15-10"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"How Time Spent on Course LMS is Related to Points Earned in the Course"</span>, <span class="co">#&lt;&lt;</span></span>
-<span id="cb15-11"><a href=""></a>       <span class="at">x=</span><span class="st">"Time Spent (Hours)"</span>, <span class="co">#&lt;&lt;</span></span>
-<span id="cb15-12"><a href=""></a>       <span class="at">y =</span> <span class="st">"Proportion of Points Earned"</span>)  <span class="co">#&lt;&lt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co">#layer 1: add data and aesthetics mapping </span></span>
+<span id="cb12-2"><a href=""></a><span class="co">#layer 3: add color scale by type</span></span>
+<span id="cb12-3"><a href=""></a><span class="fu">ggplot</span>(data_to_explore, </span>
+<span id="cb12-4"><a href=""></a>       <span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, </span>
+<span id="cb12-5"><a href=""></a>           <span class="at">y =</span> proportion_earned,</span>
+<span id="cb12-6"><a href=""></a>           <span class="at">color =</span> enrollment_status)) <span class="sc">+</span></span>
+<span id="cb12-7"><a href=""></a><span class="co">#layer 2: +  geom function type</span></span>
+<span id="cb12-8"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-9"><a href=""></a><span class="co">#layer 4: add labels</span></span>
+<span id="cb12-10"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"How Time Spent on Course LMS is Related to Points Earned in the Course"</span>, <span class="co">#&lt;&lt;</span></span>
+<span id="cb12-11"><a href=""></a>       <span class="at">x=</span><span class="st">"Time Spent (Hours)"</span>, <span class="co">#&lt;&lt;</span></span>
+<span id="cb12-12"><a href=""></a>       <span class="at">y =</span> <span class="st">"Proportion of Points Earned"</span>)  <span class="co">#&lt;&lt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:45%;">
 <p><img src="img/scatter_3.png" height="600px"></p>
@@ -614,30 +593,25 @@
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co">#layer 1: add data and aesthetics mapping </span></span>
-<span id="cb16-2"><a href=""></a><span class="co">#layer 3: add color scale by type</span></span>
-<span id="cb16-3"><a href=""></a>viz1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_to_explore, <span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, <span class="at">y =</span> proportion_earned, <span class="at">color =</span> enrollment_status)) <span class="sc">+</span></span>
-<span id="cb16-4"><a href=""></a><span class="co">#layer 2: +  geom function type</span></span>
-<span id="cb16-5"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb16-6"><a href=""></a><span class="co">#layer 4: add labels</span></span>
-<span id="cb16-7"><a href=""></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"How Time Spent on Course LMS is Related to Points Earned in the Course"</span>, </span>
-<span id="cb16-8"><a href=""></a>       <span class="at">x=</span><span class="st">"Time Spent (Hours)"</span>,</span>
-<span id="cb16-9"><a href=""></a>       <span class="at">y =</span> <span class="st">"Proportion of Points Earned"</span>)</span>
-<span id="cb16-10"><a href=""></a><span class="co">#layer 5: add facet wrap</span></span>
-<span id="cb16-11"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> subject) <span class="co">#&lt;&lt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co">#layer 1: add data and aesthetics mapping </span></span>
+<span id="cb13-2"><a href=""></a><span class="co">#layer 3: add color scale by type</span></span>
+<span id="cb13-3"><a href=""></a>viz1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_to_explore, <span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, <span class="at">y =</span> proportion_earned, <span class="at">color =</span> enrollment_status)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href=""></a><span class="co">#layer 2: +  geom function type</span></span>
+<span id="cb13-5"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-6"><a href=""></a><span class="co">#layer 4: add labels</span></span>
+<span id="cb13-7"><a href=""></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"How Time Spent on Course LMS is Related to Points Earned in the Course"</span>, </span>
+<span id="cb13-8"><a href=""></a>       <span class="at">x=</span><span class="st">"Time Spent (Hours)"</span>,</span>
+<span id="cb13-9"><a href=""></a>       <span class="at">y =</span> <span class="st">"Proportion of Points Earned"</span>)</span>
+<span id="cb13-10"><a href=""></a><span class="co">#layer 5: add facet wrap</span></span>
+<span id="cb13-11"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> subject) <span class="co">#&lt;&lt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:45%;">
 <p><img src="img/scatter_4.png" height="600px"></p>
 </div></div>
 </div>
 <div id="tabset-4-5">
-<p>In the corresponding line of your R script, type the name of visualization object we just created and run the code:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="co"># </span></span>
-<span id="cb17-2"><a href=""></a><span class="co">#</span></span>
-<span id="cb17-3"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 <p>How would you interpret this graph?</p>
+<p><img src="img/scatter_4.png" height="600px"></p>
 </div>
 </div>
 </div>

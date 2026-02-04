@@ -65,7 +65,7 @@ It consists of consists of four modules. Each module of the Foundation of LA inc
 :::
 :::
 
-## Module 2 Objectives
+## Module Objectives
 
 By the end of this module:
 
@@ -98,7 +98,7 @@ Essential readings:
 :::
 :::
 
-## What is Data Visualizations?
+## What is Data Visualization?
 
 <img src="img/animation_comparison.gif" height="850px"/>
 
@@ -155,7 +155,7 @@ Common types of data will include: Bar charts: Suitable for comparing discrete c
 
 ::: columns
 ::: {.column width="30%"}
-Student performance data from an introductory chemistry course. (Deng, et al., 2019)
+Student performance data from an introductory chemistry course (Deng et al., 2019)
 :::
 
 ::: {.column width="10%"}
@@ -170,7 +170,7 @@ Student performance data from an introductory chemistry course. (Deng, et al., 2
 
 ::: columns
 ::: {.column width="30%"}
-[Learning pathway analysis](https://metals-ids-18fall.github.io/student-pathway/) Yang,K., 2018\]
+[Learning pathway analysis](https://metals-ids-18fall.github.io/student-pathway/) (Yang, K., 2018)
 :::
 
 ::: {.column width="10%"}
@@ -185,7 +185,7 @@ Student performance data from an introductory chemistry course. (Deng, et al., 2
 
 ::: columns
 ::: {.column width="30%"}
-\[[Inform curricular (re)design](https://isit.arts.ubc.ca/learning-analytics-examples/)\]
+[Inform curricular (re)design](https://isit.arts.ubc.ca/learning-analytics-examples/)
 :::
 
 ::: {.column width="10%"}
