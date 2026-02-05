@@ -27,7 +27,7 @@ editor:
 
 ## Welcome to Learning Analytics Workflow
 
--   Learning Analytics Workflow is designed for those seeking an
+-   Learning Analytics Workflow (LAW) is designed for those seeking an
     introductory understanding of learning analytics using basic R
     programming skills, particularly in the context of STEM education
     research.
@@ -79,14 +79,14 @@ By the end of this module:
 
 ::::: {style="font-size: 75%;"}
 ::: fragment
--   Types of `Learning Environments`:
+-   **Types of Learning Environments:**
     -   Learners will be able to identify and describe different types
         of learning environments, explaining their unique features and
         applications in educational research.
 :::
 
 ::: fragment
--   Characteristics of `Data`:
+-   **Characteristics of Data:**
     -   Learners will gain proficiency in recognizing and categorizing
         various data formats commonly used in educational research by
         the end of this section.

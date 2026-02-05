@@ -77,22 +77,22 @@ By the end of this module:
 
 :::::: {style="font-size: 75%;"}
 ::: fragment
--   Diverse Learning Analytics Methodologies:
-    -   Understand various methodologies like predictive analytics,
-        social network analysis, and more, and their contributions to
-        learning analytics.
+-   **Diverse Learning Analytics Methodologies:**
+    -   Learners will understand various methodologies like predictive
+        analytics, social network analysis, and more, and their
+        contributions to learning analytics.
 :::
 
 ::: fragment
 -   Application of Analytical Techniques:
-    -   Gain insights into applying different analytical techniques to
-        enhance educational outcomes.
+    -   Learners will gain insights into applying different analytical
+        techniques to enhance educational outcomes.
 :::
 
 ::: fragment
 -   Integration of Analytical Approaches:
-    -   Learn to integrate and compare different analytical methods for
-        a comprehensive understanding of learning processes.
+    -   Learners will integrate and compare different analytical methods
+        for a comprehensive understanding of learning processes.
 :::
 ::::::
 

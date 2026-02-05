@@ -1,6 +1,6 @@
 ---
 title: "Communicate"
-subtitle: "Foundations Module 4: A Code-A-long"
+subtitle: "LAW Module 4: A Code-a-long"
 format: 
   revealjs:
     # include-in-header: preview.html
@@ -25,9 +25,9 @@ editor:
     wrap: 72
 ---
 
-## Welcome to LAW code-a-long for Module 4
+## Welcome to the LAW Code-a-long for Module 4
 
--   In the communicate section of the Learning Analytics workflow, the
+-   In the *Communicate* section of the Learning Analytics workflow, the
     focus is on effectively presenting and sharing the results of your
     analysis with stakeholders. This involves creating clear and
     compelling visualizations, writing comprehensive reports, and
@@ -403,8 +403,10 @@ R](https://posit.co/blog/flexdashboard-easy-interactive-dashboards-for-r/)
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
--   Complete the `Dashboard for the Stakeholder` parts of the case
-    study.
--   Complete the Badge requirement document [Foundations badge - Data
-    Sources](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
+-   Complete the *Communicate* part of the [case
+    study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
+-   Complete the [Data Products
+    badge](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
+-   Optional: Complete the [LAW
+    Microcredential](https://laser-institute.github.io/la-workflow/microcredential/law-microcredential.html)
 :::

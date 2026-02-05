@@ -1,6 +1,6 @@
 ---
-title: "Modeling"
-subtitle: "Foundations Module 3: A Code-A-long"
+title: "Model"
+subtitle: "LAW Module 3: A Code-a-long"
 format: 
   revealjs:
     # include-in-header: preview.html
@@ -25,7 +25,7 @@ editor:
     wrap: 72
 ---
 
-## Welcome to Foundations code along for Module 3
+## Welcome to the LAW Code-a-long for Module 3
 
 -   Modeling for educational researchers builds on insights from
     Exploratory Data Analysis (EDA) to develop predictive or explanatory
@@ -313,8 +313,11 @@ interest in science.
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
--   Complete the `model` parts of the case study.
--   Complete the Badge requirement document [Foundations badge - Data
-    Sources](https://laser-institute.github.io/la-workflow/Foundation_R/module_3/Module3-badge-R-KEY.html)
--   Do required readings for the next Foundations module 4.
+-   Complete the *Model* part of the [case
+    study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
+-   Complete the [Data Sources in Learning
+    Analytics](https://laser-institute.github.io/la-workflow/Foundation_R/module_3/Module3-badge-R-KEY.html)
+    badge
+-   Do [essential readings for the next
+    module](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/module-4-conceptual-slides.html#/module-4-objectives)
 :::

@@ -78,23 +78,23 @@ editor:
 :::::: {style="font-size: 75%;"}
 ::: fragment
 -   **Fundamentals of Data Visualization:**
--   Learners will grasp the basic concepts and significance of data
-    visualization in distilling complex educational data into
-    comprehensible and actionable insights.
+    -   Learners will grasp the basic concepts and significance of data
+        visualization in distilling complex educational data into
+        comprehensible and actionable insights.
 :::
 
 ::: fragment
 -   **Variety of Visualization Techniques:**
--   Participants will be able to identify and apply different types of
-    visualizations, such as charts, graphs, and heatmaps, to represent
-    educational data effectively.
+    -   Participants will be able to identify and apply different types
+        of visualizations, such as charts, graphs, and heatmaps, to
+        represent educational data effectively.
 :::
 
 ::: fragment
 -   **Practical Application and Best Practices:**
--   Learners will gain insights into real-world applications of data
-    visualization in education and learn best practices to enhance the
-    clarity and impact of their visual data presentations.
+    -   Learners will gain insights into real-world applications of data
+        visualization in education and learn best practices to enhance
+        the clarity and impact of their visual data presentations.
 :::
 ::::::
 
