@@ -201,38 +201,48 @@
 </div>
 
 </section>
-<section id="welcome-to-foundations-code-along-for-module-4" class="slide level2">
-<h2>Welcome to Foundations code along for Module 4</h2>
-<blockquote>
-<p>In the communicate section of the Learning Analytics workflow, the focus is on effectively presenting and sharing the results of your analysis with stakeholders. This involves creating clear and compelling visualizations, writing comprehensive reports, and delivering presentations that highlight key insights and actionable recommendations.</p>
-</blockquote>
-<p><em>The goal is to ensure that the findings are easily understood and can inform decision-making processes, ultimately leading to improved educational outcomes. Utilizing tools like ggplot2 for visualizations and packages like RMarkdown for report generation can enhance the clarity and impact of your communication.</em></p>
+<section id="welcome-to-law-code-a-long-for-module-4" class="slide level2">
+<h2>Welcome to LAW code-a-long for Module 4</h2>
+<ul>
+<li><p>In the communicate section of the Learning Analytics workflow, the focus is on effectively presenting and sharing the results of your analysis with stakeholders. This involves creating clear and compelling visualizations, writing comprehensive reports, and delivering presentations that highlight key insights and actionable recommendations.</p></li>
+<li><p>The goal is to ensure that the findings are easily understood and can inform decision-making processes, ultimately leading to improved educational outcomes. Utilizing tools like ggplot2 for visualizations and packages like RMarkdown for report generation can enhance the clarity and impact of your communication.</p></li>
+</ul>
 </section>
 <section id="communicate" class="slide level2">
 <h2>Communicate</h2>
 <p><img src="img/communicate_wflow.png" height="700px"></p>
 </section>
-<section id="flow" class="slide level2">
-<h2>Flow</h2>
+<section id="preparing-findings-for-communication" class="slide level2">
+<h2>Preparing Findings for Communication</h2>
 <p><img src="img/communicate.png" height="800px"></p>
 </section>
-<section id="dashboard-product" class="slide level2">
-<h2>DASHBOARD Product</h2>
+<section id="dashboards-via-quarto" class="slide level2">
+<h2>Dashboards via Quarto</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Quarto dashboard</a></li><li><a href="#tabset-1-2">Components</a></li><li><a href="#tabset-1-3">YAML Header</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Overview</a></li><li><a href="#tabset-1-2">Components</a></li><li><a href="#tabset-1-3">YAML</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<p>Process can be automated using R and R Markdown</p>
-<p>Output can include interactive elements</p>
-<p>Output as a stand alone html file - Universal file format - No requirement for password protected shiny server - Can continue to be distributed via email to restrict access</p>
+<ul>
+<li><p>Process can be automated using R and R Markdown, and knitted using Quarto</p></li>
+<li><p>Dashboards are valuable because they can include interactive elements</p></li>
+<li><p>By using HTML, dashboards are :</p>
+<ul>
+<li><p>Essentially universal and readable by any computer</p></li>
+<li><p>Has no password protection for ease of distribution</p></li>
+</ul></li>
+</ul>
 </div>
 <div id="tabset-1-2">
-<p>Navigation Bar — Icon, title, and author along with links to sub-pages (if more than one page is defined).</p>
-<p>Pages, Rows, Columns, and Tabsets — Pages, rows and columns are defined using markdown headings (with optional attributes to control height, width, etc.). Tabsets can be used to further divide content within a row or column.</p>
-<p>Cards, Sidebars, and Toolbars — Cards are containers for plots, data display, and free form content. The content of cards typically maps to cells in your notebook or source document. Sidebars and toolbars are used to present inputs within interactive dashboards.</p>
+<ul>
+<li><p>Navigation bar: Icon, title, and author along with links to sub-pages if needed</p></li>
+<li><p>Pages, rows, &amp; columns: Defined using markdown headings (with optional attributes to control height, width, etc.)</p></li>
+<li><p>Tabsets: Used to further divide content within a row or column</p></li>
+<li><p>Cards: Containers for plots, data display, and free form content, typically mapped to cells in your notebook or source document</p></li>
+<li><p>Sidebars and toolbars: Present inputs within interactive dashboards</p></li>
+</ul>
 </div>
 <div id="tabset-1-3">
-<p>Define output as flexdashboard in YAML header of R Markdown document:</p>
+<p>Define output as flexdashboard in YAML header of R markdown document:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="sc">---</span></span>
 <span id="cb1-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"ADD A TITLE"</span></span>
@@ -252,8 +262,8 @@
 </div>
 </div>
 </section>
-<section id="dashboard-template" class="slide level2">
-<h2>dashboard template</h2>
+<section id="basic-dashboard" class="slide level2">
+<h2>Basic Dashboard</h2>
 <p><img src="img/flexdashboard.jpg" height="700px"></p>
 </section>
 <section id="navigation-bar-and-pages" class="slide level2">
@@ -354,9 +364,6 @@
 <p><img data-src="img/chart-focal-top.png" style="width:90.0%"></p>
 </div></div>
 </section>
-<section id="section" class="slide level2 no-line" data-background-image="images/dashboards/customer-churn.png" data-background-size="contain">
-<h2></h2>
-</section>
 <section id="layout-columns" class="slide level2">
 <h2>Layout: Columns</h2>
 <div class="columns">
@@ -411,9 +418,6 @@
 <p><img data-src="img/chart-tabset-row.png" style="width:87.0%"></p>
 </div></div>
 </section>
-<section id="section-1" class="slide level2 no-line" data-background-image="images/dashboards/mynorfolk.png" data-background-size="contain">
-<h2></h2>
-</section>
 <section id="plots" class="slide level2">
 <h2>Plots</h2>
 <p>Each code chunk makes a card, and can take a title</p>
@@ -457,10 +461,6 @@
 <li><p>Expanding cards</p></li>
 </ul>
 </section>
-<section id="dashboard-deployment" class="slide level2">
-<h2>Dashboard deployment</h2>
-<p>Dashboards are typically just static HTML pages so can be deployed to any web server or web host!</p>
-</section>
 <section id="interactive-dashboards" class="slide level2">
 <h2>Interactive Dashboards</h2>
 <p><a href="https://quarto.org/docs/dashboards/interactivity/shiny-r" class="uri">https://quarto.org/docs/dashboards/interactivity/shiny-r</a></p>
@@ -473,22 +473,22 @@
 <section id="communicate-in-the-la-workflow" class="slide level2">
 <h2>Communicate in the LA workflow</h2>
 <div style="font-size: 40px">
-<p>The final(ish) step in our workflow/process is sharing the results of analysis with wider audience. Krumm et al.(2018) have outline the following 3-step process for communicating with education stakeholders what you have learned through analysis:</p>
+<p>The final(ish) step in our workflow/process is sharing the results of analysis with wider audience. Krumm et al.&nbsp;(2018) have outline the following 3-step process for communicating with education stakeholders what you have learned through analysis:</p>
 <ol type="1">
-<li><p><strong>Select</strong>. Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e.a “data product.”</p></li>
-<li><p><strong>Polish</strong>. After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.</p></li>
-<li><p><strong>Narrate</strong>. Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question.</p></li>
+<li><p><strong>Select</strong>: Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e.a “data product.”</p></li>
+<li><p><strong>Polish</strong>: After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.</p></li>
+<li><p><strong>Narrate</strong>: Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question.</p></li>
 </ol>
 </div>
 </section>
-<section id="make-a-dashboard-for-your-stakeholder" class="slide level2">
-<h2>Make a dashboard for your Stakeholder!</h2>
-<p>Create a Data Story with our current data set</p>
+<section id="make-a-dashboard" class="slide level2">
+<h2>Make a Dashboard!</h2>
+<p>Create a Data Story with our current data set.</p>
 <ul>
 <li class="fragment">Develop a research question</li>
 <li class="fragment">Add ggplot visualizations</li>
 <li class="fragment">Modeling visualizations</li>
-<li class="fragment">add a short write up for the intended stakeholders</li>
+<li class="fragment">Add a short write up for the intended stakeholders</li>
 </ul>
 <h3 id="resources">Resources</h3>
 <p><a href="https://quarto.org/docs/dashboards/">Quarto Dashboard in R</a></p>
@@ -499,7 +499,7 @@
 <h1>What’s Next?</h1>
 <div style="text-align: left; font-size: 50px">
 <ul>
-<li>Complete the <code>the Dashboard for the Stakeholder</code> parts of the Case Study.</li>
+<li>Complete the <code>Dashboard for the Stakeholder</code> parts of the case study.</li>
 <li>Complete the Badge requirement document <a href="https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html">Foundations badge - Data Sources</a></li>
 </ul>
 </div>

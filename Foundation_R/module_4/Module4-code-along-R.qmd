@@ -20,57 +20,69 @@ execute:
   freeze: true
 resources:
   - demo.pdf
+editor: 
+  markdown: 
+    wrap: 72
 ---
- 
- 
-## Welcome to Foundations code along for Module 4
 
-> In the communicate section of the Learning Analytics workflow, the focus is on effectively presenting and sharing the results of your analysis with stakeholders. This involves creating clear and compelling visualizations, writing comprehensive reports, and delivering presentations that highlight key insights and actionable recommendations. 
+## Welcome to LAW code-a-long for Module 4
 
-*The goal is to ensure that the findings are easily understood and can inform decision-making processes, ultimately leading to improved educational outcomes. Utilizing tools like ggplot2 for visualizations and packages like RMarkdown for report generation can enhance the clarity and impact of your communication.*
+-   In the communicate section of the Learning Analytics workflow, the
+    focus is on effectively presenting and sharing the results of your
+    analysis with stakeholders. This involves creating clear and
+    compelling visualizations, writing comprehensive reports, and
+    delivering presentations that highlight key insights and actionable
+    recommendations.
 
-
+-   The goal is to ensure that the findings are easily understood and
+    can inform decision-making processes, ultimately leading to improved
+    educational outcomes. Utilizing tools like ggplot2 for
+    visualizations and packages like RMarkdown for report generation can
+    enhance the clarity and impact of your communication.
 
 ## Communicate
 
-
 <img src="img/communicate_wflow.png" height="700px"/>
 
-
-## Flow
-
+## Preparing Findings for Communication
 
 <img src="img/communicate.png" height="800px"/>
 
-
-## DASHBOARD Product
+## Dashboards via Quarto
 
 ::: panel-tabset
+### Overview
 
+-   Process can be automated using R and R Markdown, and knitted using
+    Quarto
 
+-   Dashboards are valuable because they can include interactive
+    elements
 
-### Quarto dashboard
-Process can be automated using R and R Markdown
+-   By using HTML, dashboards are :
 
-Output can include interactive elements
+    -   Essentially universal and readable by any computer
 
-Output as a stand alone html file
--   Universal file format
--   No requirement for password protected shiny server
--   Can continue to be distributed via email to restrict access
+    -   Has no password protection for ease of distribution
 
 ### Components
 
-Navigation Bar — Icon, title, and author along with links to sub-pages (if more than one page is defined).
+-   Navigation bar: Icon, title, and author along with links to
+    sub-pages if needed
 
-Pages, Rows, Columns, and Tabsets — Pages, rows and columns are defined using markdown headings (with optional attributes to control height, width, etc.). Tabsets can be used to further divide content within a row or column.
+-   Pages, rows, & columns: Defined using markdown headings (with
+    optional attributes to control height, width, etc.)
 
-Cards, Sidebars, and Toolbars — Cards are containers for plots, data display, and free form content. The content of cards typically maps to cells in your notebook or source document. Sidebars and toolbars are used to present inputs within interactive dashboards.
+-   Tabsets: Used to further divide content within a row or column
 
+-   Cards: Containers for plots, data display, and free form content,
+    typically mapped to cells in your notebook or source document
 
-### YAML Header
+-   Sidebars and toolbars: Present inputs within interactive dashboards
 
-Define output as flexdashboard in YAML header of R Markdown document:
+### YAML
+
+Define output as flexdashboard in YAML header of R markdown document:
 
 ```{r echo=TRUE, eval=FALSE}
 ---
@@ -88,21 +100,17 @@ editor_options:
 ---
   
 ```
-
 :::
 
-## dashboard template
+## Basic Dashboard
 
 <img src="img/flexdashboard.jpg" height="700px"/>
-
-
 
 ## Navigation Bar and Pages
 
 ![](img/navigation-toolbar.png)
 
 ::: {style="margin-top: 0.7em;"}
-
 ``` markdown
 --- 
 title: "Palmer Penguins"
@@ -123,7 +131,7 @@ format:
 
 ## Sidebars: Page Level
 
-:::: columns
+::::: columns
 ::: column
 ```` {.markdown style="margin-top: 45px;"}
 ---
@@ -151,11 +159,11 @@ format: dashboard
 ::: {.column .fragment}
 ![](img/chart-input-sidebar.png)
 :::
-::::
+:::::
 
 ## Sidebars: Global
 
-::: columns
+::::: columns
 ::: column
 ```` {.markdown style="margin-top: 45px;"}
 ---
@@ -182,11 +190,11 @@ Sidebar content (e.g. inputs)
 ::: {.column .fragment}
 ![](img/global-sidebar.png){width="80%"}
 :::
-:::
+:::::
 
 ## Layout: Rows
 
-::: columns
+::::: columns
 ::: {.column style="margin-top: 65px;"}
 ```` markdown
 ---
@@ -212,13 +220,11 @@ format: dashboard
 ::: {.column .fragment}
 ![](img/chart-focal-top.png){width="90%"}
 :::
-:::
-
-##  {.no-line background-image="images/dashboards/customer-churn.png" background-size="contain"}
+:::::
 
 ## Layout: Columns
 
-::: columns
+::::: columns
 ::: {.column style="margin-top: 40px;"}
 ```` markdown
 ---
@@ -246,13 +252,11 @@ format:
 ::: {.column .fragment}
 ![](img/chart-focal-left.png)
 :::
-:::
-
-
+:::::
 
 ## Tabset
 
-::: columns
+::::: columns
 ::: {.column style="margin-top: 45px;"}
 ```` markdown
 ---
@@ -280,16 +284,13 @@ format: dashboard
 ::: {.column .fragment}
 ![](img/chart-tabset-row.png){width="87%"}
 :::
-:::
-
-
-##  {.no-line background-image="images/dashboards/mynorfolk.png" background-size="contain"}
+:::::
 
 ## Plots
 
 Each code chunk makes a card, and can take a title
 
-::: columns
+::::: columns
 ::: {.column .fragment .smaller}
 ```` r
 ```{{r}}
@@ -305,13 +306,13 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) +
 ::: {.column .fragment}
 ![](img/ggplot-gapminder.png){width="85%"}
 :::
-:::
+:::::
 
 ## Tables
 
 Each code chunk makes a card, doesn't have to have a title
 
-::: columns
+::::: columns
 ::: {.column .fragment .smaller}
 ```` r
 ```{{r}}
@@ -330,8 +331,7 @@ gapminder |>
 ::: {.column .fragment}
 ![](img/kable-gapminder.png){width="85%"}
 :::
-:::
-
+:::::
 
 ## Other features
 
@@ -341,73 +341,70 @@ gapminder |>
 
 -   Expanding cards
 
-## Dashboard deployment
-
-Dashboards are typically just static HTML pages so can be deployed to any web server or web host!
-
 ## Interactive Dashboards
 
 <https://quarto.org/docs/dashboards/interactivity/shiny-r>
 
--   For interactive exploration, some dashboards can benefit from a live R backend
+-   For interactive exploration, some dashboards can benefit from a live
+    R backend
 
--   To do this with Quarto Dashboards, add interactive [Shiny](https://shiny.posit.co) components
+-   To do this with Quarto Dashboards, add interactive
+    [Shiny](https://shiny.posit.co) components
 
 -   Deploy with or without a server!
 
 ## Communicate in the LA workflow
 
-:::{style="font-size: 40px"}
+::: {style="font-size: 40px"}
 The final(ish) step in our workflow/process is sharing the results of
-analysis with wider audience. Krumm et al.(2018) have outline the
+analysis with wider audience. Krumm et al. (2018) have outline the
 following 3-step process for communicating with education stakeholders
 what you have learned through analysis:
 
-1.  **Select**. Communicating what one has learned involves selecting
+1.  **Select**: Communicating what one has learned involves selecting
     among those analyses that are most important and most useful to an
     intended audience, as well as selecting a form for displaying that
     information, such as a graph or table in static or interactive form,
     i.e.a "data product."
 
-2.  **Polish**. After creating initial versions of data products,
+2.  **Polish**: After creating initial versions of data products,
     research teams often spend time refining or polishing them, by
     adding or editing titles, labels, and notations and by working with
     colors and shapes to highlight key points.
 
-3.  **Narrate**. Writing a narrative to accompany the data products
+3.  **Narrate**: Writing a narrative to accompany the data products
     involves, at a minimum, pairing a data product with its related
     research question, describing how best to interpret the data
     product, and explaining the ways in which the data product helps
-    answer the research question.   
-
+    answer the research question.
 :::
 
-## Make a dashboard for your Stakeholder!
+## Make a Dashboard!
 
-Create a Data Story with our current data set 
+Create a Data Story with our current data set.
 
 ::: incremental
-- Develop a research question
-- Add ggplot visualizations 
-- Modeling visualizations
-- add a short write up for the intended stakeholders
+-   Develop a research question
+-   Add ggplot visualizations
+-   Modeling visualizations
+-   Add a short write up for the intended stakeholders
 :::
-
 
 ### Resources
 
 [Quarto Dashboard in R](https://quarto.org/docs/dashboards/)
 
-[Quarto Dashboard Gallery layouts](https://quarto.org/docs/gallery/#dashboards)
+[Quarto Dashboard Gallery
+layouts](https://quarto.org/docs/gallery/#dashboards)
 
-[Quarto dashboard: Easy interactive dashboards for R](https://posit.co/blog/flexdashboard-easy-interactive-dashboards-for-r/)
-
+[Quarto dashboard: Easy interactive dashboards for
+R](https://posit.co/blog/flexdashboard-easy-interactive-dashboards-for-r/)
 
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
-
-- Complete the `the Dashboard for the Stakeholder` parts of the Case Study.
-- Complete the Badge requirement document [Foundations badge - Data Sources](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
-
+-   Complete the `Dashboard for the Stakeholder` parts of the case
+    study.
+-   Complete the Badge requirement document [Foundations badge - Data
+    Sources](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
 :::

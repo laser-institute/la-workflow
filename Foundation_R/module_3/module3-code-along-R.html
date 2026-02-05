@@ -203,10 +203,10 @@
 </section>
 <section id="welcome-to-foundations-code-along-for-module-3" class="slide level2">
 <h2>Welcome to Foundations code along for Module 3</h2>
-<blockquote>
-<p>Modeling for educational researchers builds on insights from Exploratory Data Analysis (EDA) to develop predictive or explanatory models that guide decision-making and enhance learning outcomes.</p>
-</blockquote>
-<p><em>This involves selecting appropriate models, preparing and transforming data, training and validating the models, and interpreting results. Effective modeling helps uncover key factors influencing educational success, allowing for targeted interventions and informed policy decisions.</em></p>
+<ul>
+<li><p>Modeling for educational researchers builds on insights from Exploratory Data Analysis (EDA) to develop predictive or explanatory models that guide decision-making and enhance learning outcomes.</p></li>
+<li><p>This involves selecting appropriate models, preparing and transforming data, training and validating the models, and interpreting results. Effective modeling helps uncover key factors influencing educational success, allowing for targeted interventions and informed policy decisions.</p></li>
+</ul>
 <aside class="notes">
 <p>Modeling for educational researchers is a crucial step following Exploratory Data Analysis (EDA) in the learning analytics workflow. This stage involves developing predictive or explanatory models that guide decision-making and enhance educational outcomes. The process begins with clearly defining research questions or hypotheses based on insights from EDA. Researchers then select appropriate models, prepare and transform data through cleaning and feature engineering, and train and validate the models by splitting data into training and validation sets. Analyzing model outputs, such as feature importances, helps uncover key factors influencing educational success.</p>
 <style type="text/css">
@@ -223,32 +223,21 @@
 </section>
 <section id="module-objectives" class="slide level2">
 <h2>Module Objectives</h2>
-<div class="fragment">
 <p>By the end of this module:</p>
 <ul>
 <li>Introduction to Modeling:
 <ul>
 <li>Learners will understand the importance of modeling in the learning analytics workflow and how it helps quantify insights from data.</li>
 </ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
 <li>Creating and Interpreting Correlations:
 <ul>
 <li>Learners will create and interpret correlation matrices using the {corrr} package and create APA-formatted correlation tables using the {apaTables} package.</li>
 </ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
 <li>Applying Various Modeling Techniques:
 <ul>
 <li>Learners will fit and understand linear regression models to prepare for the case study.</li>
 </ul></li>
 </ul>
-</div>
-<div class="fragment">
 <aside class="notes">
 <p>In this module, we will focus on the practical aspects of modeling within the learning analytics workflow. By the end of this module, students will understand the importance of modeling and how it fits into the overall data analysis process. We will specifically cover the steps involved in creating and interpreting correlation matrices, fitting linear regression models, and validating model assumptions using R.</p>
 <p>We’ll begin by learning how to create and interpret correlation matrices using the {corrr} package. This will help us identify and understand relationships between different variables in our data. We’ll also explore how to create APA-formatted correlation tables using the {apaTables} package, which are useful for formal reports and publications.</p>
@@ -264,14 +253,12 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
 <section id="steps-in-the-modeling-process" class="slide level2">
 <h2>Steps in the Modeling Process</h2>
 
 <img data-src="img/model_phase.svg" style="width:100.0%" class="r-stretch"><aside class="notes">
-<p><strong>Speaker notes</strong></p>
-<p>Th modeling phase is important for transforming the insights gained from Exploratory Data Analysis (EDA) into actionable predictions and explanations using statistical models.</p>
+<p>The modeling phase is important for transforming the insights gained from Exploratory Data Analysis (EDA) into actionable predictions and explanations using statistical models.</p>
 <p>Defining Objectives and Hypotheses:</p>
 <p>The first step in modeling is to clearly define the objectives and hypotheses based on the insights gathered from EDA. This sets the direction for the modeling process and ensures that we are addressing the right questions.</p>
 <p>Selecting Appropriate Models: Once we have our objectives, the next step is to select the appropriate models. This involves choosing the statistical or machine learning techniques that best fit our data and research questions. We will look at various models, such as linear regression, decision trees, and more complex algorithms.</p>
@@ -296,9 +283,11 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="correlation" class="slide level2">
-<h2>Correlation</h2>
-<p><code>Corrr</code> package for correlation</p>
+<section id="the-corrr-package" class="slide level2">
+<h2>The <code>corrr</code> Package</h2>
+<ul>
+<li><code>corrr</code> allows you to run a correlation analysis between two variables</li>
+</ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co">#install corrr package if this is your first time</span></span>
 <span id="cb1-2"><a href=""></a><span class="co">#install.packages("corrr")</span></span>
@@ -316,10 +305,12 @@
 2 time_spent_hours              0.438           NA    </code></pre>
 </div>
 </div>
-<p>How can we interpret this?</p>
+<ul>
+<li>How can we interpret this?</li>
+</ul>
 </section>
-<section id="apa-table" class="slide level2">
-<h2>APA TABLE</h2>
+<section id="formatting-corrr-for-apa" class="slide level2">
+<h2>Formatting <code>corrr</code> for APA</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -341,14 +332,20 @@
 <section id="linear-regression" class="slide level2">
 <h2>Linear Regression</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">YOUR TURN</a></li><li><a href="#tabset-1-2">ANSWER</a></li><li><a href="#tabset-1-3">YOUR TURN</a></li><li><a href="#tabset-1-4">ANSWER</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Overview</a></li><li><a href="#tabset-1-2">👉 Your Turn ⤵</a></li><li><a href="#tabset-1-3">Answer</a></li><li><a href="#tabset-1-4">👉 Your Turn ⤵</a></li><li><a href="#tabset-1-5">Answer</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<p><strong>👉 Your Turn</strong> <strong>⤵</strong></p>
-<p>In the corresponding script 1. create a linear regression - independent = <code>time_spent_hours</code> - dependent = <code>proportion_earned</code> 2. save as a new object 3. inspect the data</p>
+<p>Linear regression uses the <code>lm()</code> function.</p>
+<p><code>lm(dependent ~ independent, data = "your data name")</code></p>
 </div>
 <div id="tabset-1-2">
-<p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
+<ol type="1">
+<li><p>Create a linear regression with <code>time_spent_hours</code> as the independent variable and <code>proportion_earned</code> as the dependent variable</p></li>
+<li><p>Save as a new object <code>model1</code></p></li>
+<li><p>Inspect the data using <code>summary()</code></p></li>
+</ol>
+</div>
+<div id="tabset-1-3">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(proportion_earned <span class="sc">~</span> time_spent_hours, </span>
 <span id="cb4-2"><a href=""></a>   <span class="at">data =</span> data_to_explore)</span>
@@ -376,35 +373,28 @@ F-statistic: 141.8 on 1 and 596 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-1-3">
-<p><strong>👉 Your Turn</strong> <strong>⤵</strong></p>
-<ul>
-<li>create a ggplot viz for our model</li>
-<li>Add + geom_smooth(method = “lm”) after your geom_point</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co">#</span></span>
-<span id="cb6-2"><a href=""></a><span class="co">#</span></span>
-<span id="cb6-3"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
 <div id="tabset-1-4">
-<p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
+<ul>
+<li>Create a ggplot viz for our model</li>
+<li>Add <code>+ geom_smooth(method = "lm")</code> after your <code>geom_point</code></li>
+</ul>
+</div>
+<div id="tabset-1-5">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, </span>
-<span id="cb7-3"><a href=""></a>             <span class="at">y =</span> proportion_earned, </span>
-<span id="cb7-4"><a href=""></a>             <span class="at">color =</span> enrollment_status)) <span class="sc">+</span></span>
-<span id="cb7-5"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb7-6"><a href=""></a><span class="co"># add geom_smooth for lm</span></span>
-<span id="cb7-7"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
-<span id="cb7-8"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"How Time Spent on Course LMS is Related to Points Earned in the Course"</span>, </span>
-<span id="cb7-9"><a href=""></a>       <span class="at">x=</span><span class="st">"Time Spent (Hours)"</span>,</span>
-<span id="cb7-10"><a href=""></a>       <span class="at">y =</span> <span class="st">"Proportion of Points Earned"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>data_to_explore <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time_spent_hours, </span>
+<span id="cb6-3"><a href=""></a>             <span class="at">y =</span> proportion_earned, </span>
+<span id="cb6-4"><a href=""></a>             <span class="at">color =</span> enrollment_status)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-6"><a href=""></a><span class="co"># add geom_smooth for lm</span></span>
+<span id="cb6-7"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)<span class="sc">+</span></span>
+<span id="cb6-8"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"How Time Spent on Course LMS is Related to Points Earned in the Course"</span>, </span>
+<span id="cb6-9"><a href=""></a>       <span class="at">x=</span><span class="st">"Time Spent (Hours)"</span>,</span>
+<span id="cb6-10"><a href=""></a>       <span class="at">y =</span> <span class="st">"Proportion of Points Earned"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="module3-code-along-R_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+<p><img data-src="module3-code-along-R_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -413,7 +403,7 @@ F-statistic: 141.8 on 1 and 596 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <aside class="notes">
-<p><strong>MODEL TAB</strong> Quantify the insights using mathematical models. As highlighted in.<a href="https://datascienceineducation.com/c03.html">Chapter 3 of Data Science in Education Using R</a>, the.<strong>Model</strong>.step of the data science process entails “using statistical models, from simple to complex, to understand trends and patterns in the data.” The authors note that while descriptive statistics and data visualization during the<strong>Explore</strong>step can help us to identify patterns and relationships in our data, statistical models can be used to help us determine if relationships, patterns and trends are actually meaningful.</p>
+<p><strong>MODEL TAB</strong> Quantify the insights using mathematical models. As highlighted in.<a href="https://datascienceineducation.com/c03.html">Chapter 3 of Data Science in Education Using R</a>, the <strong>Model</strong> step of the data science process entails “using statistical models, from simple to complex, to understand trends and patterns in the data.” The authors note that while descriptive statistics and data visualization during the <strong>Explore</strong> step can help us to identify patterns and relationships in our data, statistical models can be used to help us determine if relationships, patterns and trends are actually meaningful.</p>
 <p><strong>Correlation TAB</strong></p>
 <p>As highlighted in <span class="citation" data-cites="macfadyen2010">@macfadyen2010</span>, scatter plots are a useful initial approach for identifying potential correlational trends between variables under investigation, but to further interrogate the significance of selected variables as indicators of student achievement, a simple correlation analysis of each variable with student final grade can be conducted.</p>
 <p>There are two efficient ways to create correlation matrices, one that is best for internal use, and one that is best for inclusion in a manuscript. The {corrr} package provides a way to create a correlation matrix in a {tidyverse}-friendly way. Like for the {skimr} package, it can take as little as a line of code to create a correlation matrix. If not familiar, a correlation matrix is a table that presents how <em>all of the variables</em> are related to <em>all of the other variables</em>.</p>
@@ -441,9 +431,9 @@ F-statistic: 141.8 on 1 and 596 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h1>What’s Next?</h1>
 <div style="text-align: left; font-size: 50px">
 <ul>
-<li>Complete the <code>Model</code> parts of the Case Study.</li>
+<li>Complete the <code>model</code> parts of the case study.</li>
 <li>Complete the Badge requirement document <a href="https://laser-institute.github.io/la-workflow/Foundation_R/module_3/Module3-badge-R-KEY.html">Foundations badge - Data Sources</a></li>
-<li>Do required readings for the next Foundations Module 4.</li>
+<li>Do required readings for the next Foundations module 4.</li>
 </ul>
 </div>
 <a href="https://www.fi.ncsu.edu/projects/laser-institute">

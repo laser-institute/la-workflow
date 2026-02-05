@@ -135,13 +135,12 @@
 </div>
 
 </section>
-<section id="welcome-to-foundations-of-learning-analytics" class="slide level2">
-<h2>Welcome to Foundations of Learning Analytics</h2>
-<blockquote>
-<p><code>Foundations of Learning Analytics</code> are designed for those seeking an introductory understanding of learning analytics and either basic R programming skills or basic Python skills, particularly in the context of STEM education research.</p>
-</blockquote>
-<p><br></p>
-<p>It consists of consists of four modules. Each module of the Foundation of LA includes:</p>
+<section id="welcome-to-learning-analytics-workflow" class="slide level2">
+<h2>Welcome to Learning Analytics Workflow</h2>
+<ul>
+<li><p>Learning Analytics Workflow is designed for those seeking an introductory understanding of learning analytics using basic R programming skills, particularly in the context of STEM education research.</p></li>
+<li><p>It consists of consists of four modules. Each module of LAW includes:</p></li>
+</ul>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -207,7 +206,7 @@
 <div class="fragment">
 <p>Essential readings:</p>
 <ol type="1">
-<li><a href="https://laser-institute.github.io/LASER_Foundations_2023/lab4/Readings/Learning%20Analytics%20Goes%20to%20School.pdf">Learning Analytics Goes to School, (Model/Communicate Ch. 3, pp.&nbsp;49 - 59) By Andrew Krumm, Barbara Means, Marie Bienkowski</a></li>
+<li><a href="https://laser-institute.github.io/LASER_Foundations_2023/lab4/Readings/Learning%20Analytics%20Goes%20to%20School.pdf">Learning Analytics Goes to School, (Model/Communicate Ch. 3, pp. 49 - 59) By Andrew Krumm, Barbara Means, Marie Bienkowski</a></li>
 <li><a href="https://r4ds.had.co.nz/graphics-for-communication.html">R for Data Science, (Ch. 28 &amp; 29) by Hadley Wickham &amp; Garrett Grolemund</a></li>
 </ol>
 <ul>
@@ -302,17 +301,17 @@
 <section id="communicating-your-message-with-r-markdown" class="slide level2">
 <h2>Communicating Your Message with R Markdown</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">RMarkdown</a></li><li><a href="#tabset-1-2">Basics</a></li><li><a href="#tabset-1-3">Yaml</a></li><li><a href="#tabset-1-4">Table</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">R Markdown</a></li><li><a href="#tabset-1-2">Basics</a></li><li><a href="#tabset-1-3">YAML</a></li><li><a href="#tabset-1-4">Tables</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="columns">
 <div class="column" style="width:30%;">
-<p><strong>Supports many output formats</strong>:</p>
+<p><strong>Supports many output formats, including:</strong></p>
 <ul>
 <li><p>PDF</p></li>
 <li><p>Html</p></li>
 <li><p>Word</p></li>
-<li><p>Slideshows…and more</p></li>
+<li><p>Slideshows</p></li>
 </ul>
 </div><div class="column" style="width:10%;">
 
@@ -327,26 +326,23 @@
 </div>
 <div id="tabset-1-2">
 <ul>
-<li>Plain text file with extension .Rmd</li>
-<li>Code and its output appear together in the file/report*</li>
-<li>Contains 3 types of content:</li>
-<li>Optional YAML header</li>
+<li>Plain text file with extension .rmd</li>
+<li>Code and its output appear together in the file/report</li>
+<li>Contains 3 types of content:
+<ul>
+<li>YAML (optional)</li>
 <li>Chunks of R code</li>
 <li>Text with simple formatting text</li>
-<li>“Knit” to produce a complete report</li>
+</ul></li>
+<li>Use <code>knit</code> to produce a complete report</li>
 </ul>
 </div>
 <div id="tabset-1-3">
 <div class="columns">
 <div class="column" style="width:30%;">
-<p><strong>Designed for communicating with</strong>:</p>
 <ul>
-<li><p>Controls “whole document” settings</p></li>
-<li><p>Here, we’ll focus on just two types of settings:</p>
-<ul>
-<li><p>output:</p></li>
-<li><p>bibliography:</p></li>
-</ul></li>
+<li><p>An optional header that gives instructions for “whole document” settings</p></li>
+<li><p>This example demonstrates controls for title, date, and output format</p></li>
 </ul>
 </div><div class="column" style="width:10%;">
 
@@ -355,29 +351,29 @@
 </div></div>
 </div>
 <div id="tabset-1-4">
-<p>Default table formatting in R Markdown is same as what appears in console. Add formatting with knitr::kable function For additional customization, see help within IDE (?knitr::kable).</p>
+<p>Default table formatting in R Markdown is same as what appears in console. Add formatting with <code>knitr::kable</code> function. For additional customization, see help within the IDE with <code>?knitr::kable</code>.</p>
 <p>Additional packages allow for further customization:</p>
 <ul>
-<li><p>xtable</p></li>
-<li><p>stargazer</p></li>
-<li><p>pander</p></li>
-<li><p>tables</p></li>
-<li><p>asci</p></li>
+<li><p><code>xtable</code></p></li>
+<li><p><code>stargazer</code></p></li>
+<li><p><code>pander</code></p></li>
+<li><p><code>tables</code></p></li>
+<li><p><code>asci</code></p></li>
 </ul>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p><strong>RMARKDOWN TAB</strong></p>
+<p><strong>R Markdown</strong></p>
 <p>According to Wickam et al.&nbsp;“R Markdown provides a unified authoring framework for data science, combining your code, its results, and your prose commentary”p.423</p>
 <p>All right so we’re going to step away from sort of the conceptual piece here and now talk about how you would actually accomplish some of these things in R markdown. So I started out here with a quote from Wickham and Grolemund from the R for Data Science book, it says “R markdown provides a unified authoring framework for data science, combining your code, its results, and your prose commentary.” So R markdown has some really nice features, and one of them is that you can use it to create reports in a variety of formats, including HTML, PDF, word, slideshows, websites, book formats, and more. And R markdown is designed for communicating with lots of different types of audience members, so it’s really a good fit for communicating data to education stakeholders.</p>
-<p><strong>BASICS TAB</strong></p>
-<p>As a reminder on the RMarkdown basics from Foundation lab 2 -</p>
-<p>When you go into the R IDE, you will have different options for the type of file that you can open or create and R Markdown files are files with the extension.rmd. An R markdown file allows you to combine your code and the output of that code together in a single file or report. By default that your code and the code’s output are going to show up together in your report, however there are ways to adjust that. For example you can suppress the code, you can suppress the output, you can include things that you don’t necessarily want to run every time, you can even set it so that the code is visible but only if your viewer clicks a button to sort of unfold or show that code. So there are some options there.</p>
+<p><strong>Basics</strong></p>
+<p>As a reminder on the R markdown basics from Foundation lab 2:</p>
+<p>When you go into the R IDE, you will have different options for the type of file that you can open or create and R markdown files are files with the extension.rmd. An R markdown file allows you to combine your code and the output of that code together in a single file or report. By default that your code and the code’s output are going to show up together in your report, however there are ways to adjust that. For example you can suppress the code, you can suppress the output, you can include things that you don’t necessarily want to run every time, you can even set it so that the code is visible but only if your viewer clicks a button to sort of unfold or show that code. So there are some options there.</p>
 <p>The R markdown file contains three basic types of content: your YAML header, your chunks of our code, and interspersed with these chunks of code you have your text with some simple formatting. When you are done composing your report you are then going to knit it, which will convert your report to the format you choose, using a package called Pandoc. When you knit the file, you’ll have the opportunity to choose the format of your output and we’ll talk more about that in a bit.</p>
-<p><strong>YAML: TAB</strong></p>
+<p><strong>YAML</strong></p>
 <p>So let’s talk about the yaml header first. YAML stands for yet another markdown language. The YAML header allows you to create settings that affect your whole document. And there are a number of settings and parameters that you can set in the YAML header but for today we’re really just going to talk about two primary ones, output and bibliography, and then a brief mention for citation styles as well. So off to the right here I just have a quick example, and this is from the Wickham and Grolemund text, of a very brief YAML header. And you can see in this header there is a title for the file, the date of creation, and then it specifies how you would like this report to be knitted. So in this case, the final product of this report once we knit it is going to be an HTML document.</p>
-<p><strong>TABLE TAB</strong></p>
+<p><strong>Table</strong></p>
 <p>So when we are creating reports, or articles for journals, it’s common to have tables to convey data concisely and in one place. R markdown’s basic format for tables looks pretty much identical to what is going to appear in the console, and this may not be the most visually appealing output. Luckily there are lots of different packages that can help you to create tables that are much more visually appealing and easier to read. So the formatting option that Wickham and Grolemunc recommend is to use the kable function which is part of the knitR package. And you can always learn more about that package in the IDE help function and I’ve just given you the command for that here. They also recommend several other packages that can help with even further customization of tables and I’ve listed these here on the slide.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -398,14 +394,13 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <ul>
-<li><p>Two ways to set output of a document</p></li>
-<li><p>Permanently, by modifying the YAML header</p></li>
-<li><p>Transiently, by calling rmarkdown::render()</p></li>
-<li><p>Useful if you want to produce multiple types of output</p></li>
-<li><p>When you knit, R will automatically put output in format listed in YAML header</p>
+<li><p>There are two ways to set the output of a document:</p>
 <ul>
-<li>You can choose something different from the dropdown menu beside the knit button</li>
+<li><p>Permanently, by modifying the YAML header</p></li>
+<li><p>Transiently, by calling <code>rmarkdown::render()</code></p></li>
 </ul></li>
+<li><p>Useful if you want to produce multiple types of output</p></li>
+<li><p>When you knit, R will automatically put output indicated in the YAML header, but you can choose something different from the dropdown menu beside the knit button</p></li>
 </ul>
 </div>
 <div id="tabset-2-2">
@@ -415,7 +410,7 @@
 </div><div class="column" style="width:10%;">
 
 </div><div class="column" style="width:40%;">
-<p><strong>Designed for communicating with</strong>:</p>
+<p><strong>Output options include:</strong></p>
 <ul>
 <li>Word: <code>word_document</code></li>
 <li>OpenDocument text: <code>odt_document</code></li>
@@ -424,24 +419,23 @@
 <li>GitHub: <code>github_document</code></li>
 <li>PDF: <code>pdf_document</code></li>
 </ul>
-<p><em>Must install LaTeX package first</em></p>
 </div></div>
 </div>
 <div id="tabset-2-3">
 <div class="columns">
-<div class="column" style="width:30%;">
+<div class="column" style="width:50%;">
 <ul>
 <li>Built in formats
 <ul>
-<li>HTML presentation with ioslides <code>ioslides_presentation</code></li>
-<li>HTML presentation with W3C Slidy <code>slidy_presentation</code></li>
-<li>HTML presentation <a href="https://laser-institute.github.io/foundational-skills/foundation_lab_1/index.html#1"><code>xarnigan_presentation</code></a></li>
-<li>PDF presentation with LaTeX Beamer <a href="https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_4/final_pdf.pdf"><code>beamer_presentation</code></a> ]</li>
+<li>HTML with ioslides: <code>ioslides_presentation</code></li>
+<li>HTML with W3C Slidy: <code>slidy_presentation</code></li>
+<li>HTML: <a href="https://laser-institute.github.io/foundational-skills/foundation_lab_1/index.html#1"><code>xarnigan_presentation</code></a></li>
+<li>PDF with LaTeX Beamer: <a href="https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_4/final_pdf.pdf"><code>beamer_presentation</code></a></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:10%;">
 
-</div><div class="column" style="width:60%;">
+</div><div class="column" style="width:40%;">
 <ul>
 <li>New slides begin at each first (#) or second (##)
 <ul>
@@ -454,10 +448,9 @@
 <div class="columns">
 <div class="column" style="width:30%;">
 <ul>
-<li>Specify a <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">bibliography file</a>. ie: bibliography: rmarkdown.bib</li>
-<li>use @ and the citation identifier Facts from articles <span class="citation" data-cites="smith04 doe99">[@smith04; @doe99]</span></li>
-<li>Change style with citation style language (CSL)</li>
-<li>csl: apa.csl</li>
+<li>Specify a <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">bibliography file</a> (i.e., <code>bibliography:rmarkdown.bib</code>)</li>
+<li>use @ and citation identifiers from articles (e.g., <span class="citation" data-cites="smith04 doe99">[@smith04; @doe99]</span>)</li>
+<li>Change style with citation style language (CSL) (e.g., <code>csl:apa.csl</code>)</li>
 </ul>
 </div><div class="column" style="width:10%;">
 
@@ -469,29 +462,17 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li><p>Interactive apps</p>
-<ul>
-<li><a href="https://shiny.rstudio.com/gallery">Shiny package</a></li>
-</ul></li>
-<li><p><a href="https://rstudio.github.io/flexdashboard/articles/examples.html">Flex Dashboards in R</a></p></li>
+<li><p><a href="https://shiny.rstudio.com/gallery"><code>shiny</code></a> for interactive applications</p></li>
+<li><p><a href="https://rstudio.github.io/flexdashboard/articles/examples.html">Flex dashboards in R</a></p></li>
 <li><p><a href="http://bit.ly/RMarkdownWebsites">Websites</a></p></li>
 </ul>
 </div><div class="column" style="width:10%;">
 
 </div><div class="column" style="width:40%;">
 <ul>
-<li><p>Books</p>
-<ul>
-<li><a href="https://bookdown.org/">bookdown package</a></li>
-</ul></li>
-<li><p>Themed documents</p>
-<ul>
-<li><a href="https://prettydoc.statr.me/themes.html">prettydoc package</a></li>
-</ul></li>
-<li><p>Articles formatted for specific journals</p>
-<ul>
-<li><a href="https://bookdown.org/yihui/rmarkdown/rticles-templates.html">rticles package</a></li>
-</ul></li>
+<li><p>Books via <a href="https://bookdown.org/"><code>bookdown</code></a></p></li>
+<li><p>Themed documents via <a href="https://prettydoc.statr.me/themes.html"><code>prettydoc</code></a></p></li>
+<li><p>Articles formatted for specific journals via <a href="https://bookdown.org/yihui/rmarkdown/rticles-templates.html"><code>rticles</code></a></p></li>
 </ul>
 </div></div>
 </div>
@@ -523,13 +504,13 @@
 <section id="ethical-considerations-in-learning-analytics" class="slide level2">
 <h2>Ethical Considerations in Learning Analytics</h2>
 <ul>
-<li><p><strong>Data Privacy</strong></p></li>
-<li><p><strong>Bias in Data Analysis</strong></p></li>
-<li><p><strong>Student Consent</strong></p></li>
-<li><p><strong>Responsible Data Usage</strong></p></li>
-<li><p><strong>Inclusive Practices</strong></p></li>
-<li><p><strong>Transparent Communication</strong></p></li>
-<li><p><strong>Continuous Evaluation</strong></p></li>
+<li class="fragment"><p>Data privacy</p></li>
+<li class="fragment"><p>Bias in data analysis</p></li>
+<li class="fragment"><p>Student consent</p></li>
+<li class="fragment"><p>Responsible data usage</p></li>
+<li class="fragment"><p>Inclusive practices</p></li>
+<li class="fragment"><p>Transparent communication</p></li>
+<li class="fragment"><p>Continuous evaluation</p></li>
 </ul>
 <aside class="notes">
 <p><strong>Data Privacy:</strong> Challenge: Protecting sensitive student data from unauthorized access or misuse. Initiative: Adoption of robust data encryption and secure storage protocols to safeguard privacy.</p>
@@ -538,8 +519,7 @@
 <p><strong>Responsible Data Usage:</strong> Challenge: Balancing data-driven insights with ethical responsibilities. Initiative: Establishing ethical review boards to oversee learning analytics projects and decision-making.</p>
 <p><strong>Inclusive Practices:</strong> Challenge: Ensuring learning analytics benefit all students, regardless of background. Initiative: Encouraging inclusive data collection and analysis practices to address disparities.</p>
 <p><strong>Transparent Communication:</strong> Challenge: Effectively communicating learning analytics goals and methods to all stakeholders. Initiative: Promoting transparency through clear communication and accessible documentation.</p>
-<p><strong>Continuous Evaluation:</strong></p>
-<p>Challenge: Keeping up with evolving ethical standards and challenges. Initiative: Engaging in ongoing evaluation and adaptation of ethical guidelines.</p>
+<p><strong>Continuous Evaluation:</strong> Challenge: Keeping up with evolving ethical standards and challenges. Initiative: Engaging in ongoing evaluation and adaptation of ethical guidelines.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -554,7 +534,6 @@
 </section>
 <section id="discussion-1" class="slide level2">
 <h2>Discussion</h2>
-<p>Think about the following questions and then discuss at your table:</p>
 <ul>
 <li><p>What do you think are currently import ethical considerations for LA?</p></li>
 <li><p>How can educational institutions balance the need for data-driven decision-making with the ethical considerations of data privacy?</p></li>
@@ -603,7 +582,7 @@
 <div style="text-align: left; font-size: 50px">
 <ul>
 <li>Complete the <code>Communication section</code> part of the Case Study</li>
-<li>Complete the <code>Badge requirement</code> <a href="https://laser-institute.github.io/LASER_Foundations_2023/lab4/found-lab-4-badge.html">foundationlab4_badge- Data Visualization</a></li>
+<li>Complete the <code>badge requirement</code> foundation lab <a href="https://laser-institute.github.io/LASER_Foundations_2023/lab4/found-lab-4-badge.html">Badge-Data Visualization</a></li>
 </ul>
 </div>
 <a href="https://www.fi.ncsu.edu/projects/laser-institute">
@@ -612,7 +591,7 @@
   </a><div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/LASERlogo_large.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://www.fi.ncsu.edu/projects/laser-institute">LASER Institute</a></p><a href="https://www.fi.ncsu.edu/projects/laser-institute">
+<p><a href="https://www.fi.ncsu.edu/projects/laser-institute">LASER Institute&gt;</a></p><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 </a></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 </a></div></div><a href="https://www.fi.ncsu.edu/projects/laser-institute">
 
