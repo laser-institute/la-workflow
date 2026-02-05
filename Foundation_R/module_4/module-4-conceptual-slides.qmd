@@ -1,6 +1,6 @@
 ---
 title: "Communication with Stakeholders"
-subtitle: "Foundations Module 4: A conceptual Overview"
+subtitle: "LAW Module 4: Conceptual Overview"
 format: 
   revealjs:
     # include-in-header: preview.html
@@ -13,7 +13,7 @@ format:
     width: 1920
     height: 1080
     margin: 0.05
-    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute>
+    footer: <a href=https://www.fi.ncsu.edu/projects/laser-institute>LASER Institute
     slide-number: c/t
     theme: [default, css/laser.scss]
 execute: 
@@ -773,7 +773,10 @@ adaptation of ethical guidelines.
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
--   Complete the `Communication section` part of the Case Study
--   Complete the `badge requirement` foundation lab [Badge-Data
-    Visualization](https://laser-institute.github.io/LASER_Foundations_2023/lab4/found-lab-4-badge.html)
+-   Complete the *Communicate* part of the [case
+    study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
+-   Complete the [Data Products
+    badge](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
+-   Optional: Complete the [LAW
+    Microcredential](https://laser-institute.github.io/la-workflow/microcredential/law-microcredential.html)
 :::

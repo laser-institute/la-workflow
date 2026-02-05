@@ -1,6 +1,6 @@
 ---
-title: "Methods used in LA"
-subtitle: "Foundations Module 3: A conceptual Overview"
+title: "Learning Analytics Methods"
+subtitle: "LAW Module 3: Conceptual Overview"
 format: 
   revealjs:
     # include-in-header: preview.html
@@ -25,17 +25,15 @@ editor:
     wrap: 72
 ---
 
-## Welcome to Foundations of Learning Analytics
+## Welcome to Learning Analytics Workflow
 
-> `Foundations of Learning Analytics` are designed for those seeking an
-> introductory understanding of learning analytics and either basic R
-> programming skills or basic Python skills, particularly in the context
-> of STEM education research.
+-   Learning Analytics Workflow is designed for those seeking an
+    introductory understanding of learning analytics using basic R
+    programming skills, particularly in the context of STEM education
+    research.
 
-<br/>
-
-It consists of consists of four modules. Each module of the Foundation
-of LA includes:
+-   It consists of consists of four modules. Each module of LAW
+    includes:
 
 . . .
 
@@ -166,7 +164,6 @@ practical and theoretical aspects of learning analytics.
 -   Support Vector Machines (SVM)
 -   Time Series Analysis
 -   Ensemble Methods
-
 :::
 
 ::: notes
@@ -562,7 +559,11 @@ capture gestures, gaze, or speech.
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
--   Complete the `explore` part of the case study
--   Complete the `badge requirement` *Foundations badge - Data Sources*
--   Do `essential readings` for the next Foundations module.
+-   Complete the *Model* part of the [case
+    study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
+-   Complete the [Data Sources in Learning
+    Analytics](https://laser-institute.github.io/la-workflow/Foundation_R/module_3/Module3-badge-R-KEY.html)
+    badge
+-   Do [essential readings for the next
+    module](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/module-4-conceptual-slides.html#/module-4-objectives)
 :::
