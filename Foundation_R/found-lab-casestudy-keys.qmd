@@ -1,7 +1,7 @@
 ---
 title: "Narrated: Foundations Case Study - Key" 
 subtitle: "Independent/Group work"
-author: "Jeanne McClure"
+author: "Jeanne McClure, Duncan Culbreth"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output:
   html_document:
@@ -104,19 +104,19 @@ Finally, a linear multiple regression analysis was conducted in order to
 develop a predictive model in which a student final grade was the
 continuous dependent variable.
 
-+----------------------------------------------------------------------+
-| **Introduction to the [Stakeholder]{.underline}**                    |
-+======================================================================+
-| **Name:** Alex Johnson                                               |
-|                                                                      |
-| **Role:** University Science Professor                               |
-|                                                                      |
-| **Experience:** 5 years teaching, enthusiastic about integrating     |
-| technology in education                                              |
-|                                                                      |
-| **Goal:** Alex aims to improve student engagement and performance in |
-| her online science classes.                                          |
-+----------------------------------------------------------------------+
++---------------------------------------------------------------------+
+| **Introduction to the [Stakeholder]{.underline}**                   |
++=====================================================================+
+| **Name:** Alex Johnson                                              |
+|                                                                     |
+| **Role:** University Science Professor                              |
+|                                                                     |
+| **Experience:** 5 years teaching, enthusiastic about integrating    |
+| technology in education                                             |
+|                                                                     |
+| **Goal:** Alex aims to improve student engagement and performance   |
+| in her online science classes.                                      |
++---------------------------------------------------------------------+
 
 ```{=html}
 <style>
@@ -163,14 +163,24 @@ associated with when students started and stopped accessing the course).
 
 **Log Data Variables**
 
-| Variable            | Description                                      |
-|---------------------|--------------------------------------------------|
-| `student_id`        | student's id at institution                      |
-| `course_id`         | abbreviation for course, course number, semester |
-| `gender`            | male/female/NA                                   |
-| `enrollment_reason` | reason student decided to take the course        |
-| `enrollment_status` | approved/enrolled, dropped, withdrawn            |
-| `time_spent`        | Time spent in hours for entire course            |
++--------------------+-------------------------------------------------+
+| Variable           | Description                                     |
++====================+=================================================+
+| `student_id`       | student's id at institution                     |
++--------------------+-------------------------------------------------+
+| `course_id`        | abbreviation for course, course number,         |
+|                    | semester                                        |
++--------------------+-------------------------------------------------+
+| `gender`           | male/female/NA                                  |
++--------------------+-------------------------------------------------+
+| `                  | reason student decided to take the course       |
+| enrollment_reason` |                                                 |
++--------------------+-------------------------------------------------+
+| `                  | approved/enrolled, dropped, withdrawn           |
+| enrollment_status` |                                                 |
++--------------------+-------------------------------------------------+
+| `time_spent`       | Time spent in hours for entire course           |
++--------------------+-------------------------------------------------+
 
 : **Course Acronym Descriptions**
 
@@ -1593,12 +1603,25 @@ vif(m1)
 
 **Interpretation of VIF Scores**
 
-| VIF Value | Interpretation |
-|----|----|
-| = 1 | No correlation among the predictor and all other predictors |
-| \< 5 | Generally indicates a moderate level of multicollinearity |
-| \>= 5 to 10 | May indicate a problematic amount of multicollinearity, depending on the context and sources |
-| \>10 | Signifies high multicollinearity that can severely distort the least squares estimates |
++----------------------------------+----------------------------------+
+| VIF Value                        | Interpretation                   |
++==================================+==================================+
+| = 1                              | No correlation among the         |
+|                                  | predictor and all other          |
+|                                  | predictors                       |
++----------------------------------+----------------------------------+
+| \< 5                             | Generally indicates a moderate   |
+|                                  | level of multicollinearity       |
++----------------------------------+----------------------------------+
+| \>= 5 to 10                      | May indicate a problematic       |
+|                                  | amount of multicollinearity,     |
+|                                  | depending on the context and     |
+|                                  | sources                          |
++----------------------------------+----------------------------------+
+| \>10                             | Signifies high multicollinearity |
+|                                  | that can severely distort the    |
+|                                  | least squares estimates          |
++----------------------------------+----------------------------------+
 
 Both of the VIF scores are slightly above 1, which suggests that there
 is **almost no multicollinearity** among these predictors. This is a
