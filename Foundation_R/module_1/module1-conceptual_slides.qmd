@@ -1,5 +1,5 @@
 ---
-title: "Learning Analytics Workflow"
+title: "Characteristics of Data in Learning Analytics"
 subtitle: "LAW Module 1: Conceptual Overview"
 format: 
   revealjs:
