@@ -120,31 +120,55 @@ Research Questions:
 :::
 
 ::: notes
-kn'obh'o
 :::
 
-# Loading and Installing packages {background="#143156"}
+## Installing and Loading Packages {background="#143156"}
 
-## Load Pacakges
+::: panel-tabset
+## Install
 
-:::::: columns
-:::: {.column width="45%"}
--   First time using a package
--   Do this ONLY ONCE in the "console"
+-   When you start a new session, you have to first install *most*
+    packages to your development environment (RStudio)
+-   `install.packages()` downloads a package from a repository,
+    typically the Comprehensive R Archive Network (CRAN) unless you say
+    otherwise
+-   You only have to do this once per session
+-   When installing, [red]{style="color:red;"} output text usually
+    doesn't necessarily mean there is a problem!
 
-::: {style="font-size: 50px"}
+## 👉 Your Turn ⤵
+
+-   Use `install.packages()` to install the tidyverse package
+
+-   Use quotations around the package name since it is identified as a
+    string variable
+
+## Answer
+
 ```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
-#| code-line-numbers: "|2"
-# Install Packages
+# Install the tidyverse package
 install.packages("tidyverse")
+```
 
+## Load
+
+-   Once you have a package installed, you load it into your session
+    with `library()`
+
+## 👉 Your Turn ⤵
+
+-   Use `library()` to load the tidyverse package
+
+-   Since the package has been installed as an object in RStudio, don't
+    use quotations around the package name when loading it
+
+## Answer
+
+```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+# Load the tidyverse package
+library(tidyverse)
 ```
 :::
-::::
-
-::: {.column width="45%"}
-:::
-::::::
 
 ::: notes
 **PACKAGES-TAB**
@@ -170,80 +194,52 @@ designed to work together. Think Google products or Microsoft products.
 data importing, data wrangling and plotting.
 :::
 
-## Load Pacakges
+## Reading in Data with `readr` {background="#143156"}
 
-::::::: columns
-:::: {.column width="45%"}
--   First time using a package
--   Do this ONLY ONCE in the "console"
+::: panel-tabset
+### Common Arguments
 
-::: {style="font-size: 50px"}
-```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+-   `file` File to path
 
-# Install Packages
-install.packages("tidyverse")
+-   `col_names` Uses the first row of raw data available as the column
+    names if TRUE, creates placeholder column names if FALSE
 
+-   `na` Looks for text in the data to treat as non-applicable. Can be a
+    list like `c("", "na")`
 
-```
-:::
-::::
+-   `skip` Tells the function to "skip" ahead by reading at a given row
+    of data.
 
-:::: {.column width="45%"}
-Your turn **👉 Your Turn** **⤵**
+-   `col_types` Coerces columns to specific types of data. If NULL, the
+    function guesses the type of each column, which is useful but not
+    robust
 
-::: {style="font-size: 50px"}
-```{r echo=TRUE}
-# Load tidyverse package 
-#
-#
-
-```
-:::
-
-What is the function to load the tidyverse library?
-::::
-:::::::
-
-## **👉 Your Turn** **⤵** -\> Answer
-
-. . .
-
-::: {style="font-size: 50px"}
-```{r echo=TRUE}
-#| code-line-numbers: "|2"
-# Load tidyverse package 
-library(tidyverse)
-
-```
-:::
-
-If you see [red]{style="color:red;"} it does not always mean error.
-
-# Reading in data {background="#143156"}
-
-## Function
-
-:::: panel-tabset
-## Readr functions
-
-::: {style="font-size: 80px"}
-Common {[readr](https://readr.tidyverse.org)} functions to read in
-different types of data
-:::
-
-![](img/readr_function.png){width="1300"}
-
-## Delimeter
+### Delimiters
 
 ![](img/delimiter.png){fig-align="center" width="1500"}
-::::
+
+### 👉 Your Turn ⤵
+
+-   Use `read_csv()` to read in `sci-online.classes.csv`
+
+-   This file is located in your data folder
+
+### Answer
+
+```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+#use read_csv function to read in sci-online-classes.csv rename object to online_classes
+online_classes <- read_csv("data/sci-online-classes.csv")
+
+#You can take a peek at the read in data with head()
+knitr::kable(head(online_classes, n=5), format = 'html')
+```
+:::
 
 ::: notes
-**FUNCTIONS-TAB**
+Common arguments that are included when you read in data are:
 
-Common functions that are included when you read in data are 1. the
-file, we need to give a path to get the data. It should be in the
-working directory.
+1.  the file, we need to give a path to get the data. It should be in
+    the working directory.
 
 2.  column names corresponds to variables on the first row. The first
     row of the input will be used as the column names, and will not be
@@ -261,36 +257,10 @@ working directory.
     default guess_max. This is convenient (and fast), but not robust. If
     the imputation fails, you'll need to increase the guess_max or
     supply the correct types yourself.
-
-6.  guess_max if the imputation fails increase the number beyond the
-    1000 default to guess col_types correctly.
 :::
-
-## Using the readr function
-
-:::::: columns
-:::: {.column width="45%" style="font-size: 50px"}
--   Use `read_csv()` function to read in CSV.
-
-::: {style="font-size: 50px"}
-```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
-#| code-line-numbers: "|2|5"
-#use read_csv function to read in sci-online-classes.csv rename object to online_classes
-online_classes <- read_csv("data/sci-online-classes.csv")
-
-#use head() function
-knitr::kable(head(online_classes, n=5), format = 'html')
-
-```
-:::
-::::
-
-::: {.column width="45%"}
-:::
-::::::
 
 ::: notes
-readr is a quick way to read in comma-separated values (CSV) and
+`readr` is a quick way to read in comma-separated values (CSV) and
 tab-separated values (TSV)
 
 -   We read in from the path. My data is stored in a folder called data.
@@ -299,73 +269,35 @@ tab-separated values (TSV)
 -   (instructor is showing how to import from file) a quick way to see
     where your data file is stored is by clicking on the file under
     files and then import.
--   PLease note that we do NOT need to set working directory because we
-    opened the projects fiolder. If we just click on the dataframe to
+-   Please note that we do NOT need to set working directory because we
+    opened the projects folder. If we just click on the dataframe to
     open it it will not be connectd to the project.
 
 Having a best practices way to set up your directory will help eleviate
 any confusion on data organization and location.
 :::
 
-## Using the readr function
+## Other Data Types {background="#143156"}
 
-::::::: columns
-:::: {.column width="45%" style="font-size: 45px"}
--   Use `read_csv()` function to read in CSV.
+::: panel-tabset
+## .xlsx
 
-::: {style="font-size: 50px"}
-```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
+-   Excel files are proprietary to Microsoft but also very ubiquitous
 
-#use read_csv function to read in sci-online-classes.csv rename object to online_classes
-online_classes <- read_csv("data/sci-online-classes.csv")
+-   R solves this with `readxl`
 
-#use head() function
-knitr::kable(head(online_classes, n=5), format = 'html')
+## 👉 Your Turn ⤵
 
+-   Load in the `readxl` package
 
-```
-:::
-::::
+-   Read in `csss_tweets.xlsx` with the `read_excel()` function to a new
+    object `csss_tweets`
 
-:::: {.column width="45%" style="font-size: 45px"}
-Your turn **👉 Your Turn** **⤵**
+-   Inspect the object with `head()`
 
-In the corresponding script do the following:
+## Answer
 
--   load in the `readxl` package,
--   load in `"data/csss_tweets.xlsx"` file save to a new object
-    csss_tweets
--   inspect the data by `head()` function
-
-::: {style="font-size: 50px"}
-```{r echo=TRUE, eval=FALSE}
-
-# 1. Install and read in the readxl Package 
-
-# 2. use read_excel() function to read in data.
-csss_tweets <- 
-  
-# 3. use head() function to read 
-head()
-```
-:::
-::::
-:::::::
-
-::: notes
-To read in an excel file we will need to install the readxl package and
-then read in with the read_excel function. We can see that it is an
-excel file with the .xlsx extension.
-:::
-
-## **👉 Your Turn** **⤵** -\> Answer
-
-. . .
-
-::: {style="font-size: 50px"}
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-#| code-line-numbers: "|2|5|8"
-
+```{r echo=TRUE}
 #Install and read in the readxl Package 
 library(readxl)
 
@@ -374,125 +306,54 @@ csss_tweets <- read_excel("data/csss_tweets.xlsx")#<<
 
 #use head() function to read 
 head(csss_tweets, n = 5)
-
-```
-:::
-
-. . .
-
-::: {style="font-size: 70px"}
-**What did you notice in the printed output?**
-:::
-
-## import Excel Sheet
-
-```{r echo = TRUE, message = FALSE, warning=FALSE}
-#| code-line-numbers: "|1|4|"
-excel_sheets("data/csss_tweets.xlsx") 
-
-
-csss_tweets <- read_excel("data/csss_tweets.xlsx", sheet = "Sheet1")
-
-#use head() function to read 
-head(csss_tweets, n = 5)
 ```
 
-::: {style="font-size: 50px"}
-Hint: To learn more about functions for this package type:\
-**?read_excel in the script.**
+## .dta
+
+-   .dta files are used by statistical software like R, Python, Stata,
+    and SAS
+
+-   They are accessed via `haven`
+
+## 👉 Your Turn ⤵
+
+-   Install and load in `haven`
+
+-   Read in `GPA3.dta` with the `read_dta()` function to a new object
+    `gpa_dt`
+
+-   Inspect the object with `head()`
+
+## Answer
+
+```{r echo=TRUE}
+# Install and read in the haven function 
+library(haven)
+
+# Use read_dta() function to read in data/GPA3.dta
+gpa_dt <- read_dta("data/GPA3.dta")
+  
+# Inspect the data
+head(gpa_dt, n=3)
+```
 :::
 
 ::: notes
 You can check what sheets are included in your excel file by calling it
-with the excel_sheets function. Then you can call only that sheet. Our
+with the `excel_sheets` function. Then you can call only that sheet. Our
 data only includes one sheet so we do not really need to use this
 function, but it's good to know.
-
-Don't forget to use the ? in front of a function if you want to know
-more. Do you remember where this information shows up? {ANSWER: Help
-tab}
 :::
 
-## **👉 Your Turn** **⤵**
+## Joining Data
 
-:::::: columns
-:::: {.column width="45%"}
--   Do the following:
--   load in the `haven` package,
--   load in "data/GPA3.dta" file save to a new object called gpa_dt
--   inspect the data with function of your choice
--   explain what you see
-
-::: {style="font-size: 50px"}
-```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
-#| code-line-numbers: "|1|3|6"
-# 1. Install and read in the haven function 
-
-# 2. use read_excel() function to read in data/GPA3.dta
-gpa_dt <- 
-  
-# 3. Inspect the data
-head()
-```
-:::
-::::
-
-::: {.column width="45%"}
-:::
-::::::
-
-## **👉 Your Turn** **⤵**
-
-::::::: columns
-:::: {.column width="45%"}
--   Do the following:
--   load in the `haven` package,
--   load in "data/GPA3.dta" file save to a new object called gpa_dt
--   inspect the data with function of your choice
--   explain what you see
-
-::: {style="font-size: 50px"}
-```{r eval = FALSE, echo=TRUE, message = FALSE, warning=FALSE}
-
-# 1. Install and read in the haven function 
-
-# 2. use read_dta() function to read in data/GPA3.dta
-gpa_dt <- 
-  
-# 3. Inspect the data
-head()
-
-```
-:::
-::::
-
-:::: {.column width="45%"}
-**👉 Your Turn** **⤵** -\> Answer
-
-::: {style="font-size: 50px"}
-```{r echo=TRUE}
-#| code-line-numbers: "|2|5|8"
-# 1. Install and read in the haven function 
-library(haven)
-
-# 2. use read_dta() function to read in data/GPA3.dta
-gpa_dt <- read_dta("data/GPA3.dta")
-  
-# 3. Inspect the data
-head(gpa_dt, n=3)
-```
-:::
-::::
-:::::::
-
-## Joins Overview
-
-::::::::: panel-tabset
+::::::::::: panel-tabset
 ### Mock Data
 
 ::::: columns
 ::: {.column width="45%"}
-Let's create Mock Data Generation
+Let's create some mock data: One data frame for students, and one for
+scores.
 
 ```{r echo=TRUE}
 # Create mock data
@@ -502,8 +363,6 @@ students <- data.frame(
   major = c("Math", "Physics", "Biology", "Computer Science")
 )
 students
-
-
 ```
 :::
 
@@ -525,9 +384,10 @@ We are creating two mock data frames: students and scores. These data
 frames will help us demonstrate different types of joins in R.
 :::
 
-### Inner join
+### Inner Join
 
 ```{r echo=TRUE}
+library(tidyverse)
 # Inner join: Returns rows that have matching values in both tables
 inner_join_result <- inner_join(students, scores, by = "student_id")
 inner_join_result
@@ -538,10 +398,11 @@ An inner join returns rows that have matching values in both tables.
 Only students present in both data frames are included in the result.
 :::
 
-### Left join
+### Left Join
 
 ```{r echo=TRUE}
-# Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.
+# Left join: Returns all rows from the left table, and the matched rows from the right table
+# If there is no match, the result is NA
 left_join_result <- left_join(students, scores, by = "student_id")
 left_join_result
 ```
@@ -552,23 +413,34 @@ matched rows from the right table (scores). If there is no match, the
 result is NA for the missing values.
 :::
 
-### Right join
+### Right Join
 
 ```{r echo=TRUE}
-# Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.
+# Right join: Returns all rows from the right table, and the matched rows from the left table. 
+#If there is no match, the result is NA.
 right_join_result <- right_join(students, scores, by = "student_id")
 right_join_result
 ```
-
-<br/><br/> ❓ Why might you choose to use an inner join instead of a
-left join when analyzing student data alongside their scores and grades?
-:::::::::
 
 ::: notes
 A right join returns all rows from the right table (scores), and the
 matched rows from the left table (students). If there is no match, the
 result is NA for the missing values.
+:::
 
+### Full Join
+
+```{r echo=TRUE}
+# Full join: Returns all rows when there is a match in one of the tables. 
+# If there is no match, the result is NA for the missing values.
+full_join_result <- full_join(students, scores, by = "student_id")
+full_join_result
+```
+
+❓ Why might you choose to use an inner join instead of a left join when
+analyzing student data alongside their scores and grades?
+
+::: notes
 Question: Why might you choose to use an inner join instead of a left
 join when analyzing student data alongside their scores and grades?
 
@@ -583,20 +455,7 @@ complete data sets. By using an inner join, you ensure that the dataset
 you are working with is fully populated with the necessary information
 from both sources.
 :::
-
-## Full join
-
-```{r echo = TRUE}
-# Full join: Returns all rows when there is a match in one of the tables. If there is no match, the result is NA for the missing values.
-full_join_result <- full_join(students, scores, by = "student_id")
-full_join_result
-
-```
-
-::: notes
-A full join returns all rows from both tables, whether there is a match
-or not. If there is no match, the result is NA for the missing values.
-:::
+:::::::::::
 
 # What's Next? {background="#143156"}
 

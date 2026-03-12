@@ -6,8 +6,8 @@
 <script src="module1-code-along-slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="module1-code-along-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="module1-code-along-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="module1-code-along-slides_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="module1-code-along-slides_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>Prepare and Wrangle</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="module1-code-along-slides_files/libs/revealjs/dist/theme/quarto-636c74adf1682b120dcb6c80121c1fa2.css">
+  <link rel="stylesheet" href="module1-code-along-slides_files/libs/revealjs/dist/theme/quarto-21aee3abd076e2d4ae33a57cf39d5596.css">
   <link href="module1-code-along-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="module1-code-along-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="module1-code-along-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -286,7 +286,7 @@
 </ul>
 </div>
 <aside class="notes">
-<p>kn’obh’o</p>
+
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -299,28 +299,50 @@
           display:block!important;
       }</style></aside>
 </section>
-<section>
-<section id="loading-and-installing-packages" class="title-slide slide level1 center" data-background="#143156">
-<h1>Loading and Installing packages</h1>
-
-</section>
-<section id="load-pacakges" class="slide level2">
-<h2>Load Pacakges</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
+<section id="installing-and-loading-packages" class="slide level2" data-background="#143156">
+<h2>Installing and Loading Packages</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Install</a></li><li><a href="#tabset-1-2">👉 Your Turn ⤵</a></li><li><a href="#tabset-1-3">Answer</a></li><li><a href="#tabset-1-4">Load</a></li><li><a href="#tabset-1-5">👉 Your Turn ⤵</a></li><li><a href="#tabset-1-6">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <ul>
-<li>First time using a package</li>
-<li>Do this ONLY ONCE in the “console”</li>
+<li>When you start a new session, you have to first install <em>most</em> packages to your development environment (RStudio)</li>
+<li><code>install.packages()</code> downloads a package from a repository, typically the Comprehensive R Archive Network (CRAN) unless you say otherwise</li>
+<li>You only have to do this once per session</li>
+<li>When installing, <span style="color:red;">red</span> output text usually doesn’t necessarily mean there is a problem!</li>
 </ul>
-<div style="font-size: 50px">
+</div>
+<div id="tabset-1-2">
+<ul>
+<li><p>Use <code>install.packages()</code> to install the tidyverse package</p></li>
+<li><p>Use quotations around the package name since it is identified as a string variable</p></li>
+</ul>
+</div>
+<div id="tabset-1-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Install Packages</span></span>
-<span id="cb1-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Install the tidyverse package</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</div><div class="column" style="width:45%;">
-
-</div></div>
+<div id="tabset-1-4">
+<ul>
+<li>Once you have a package installed, you load it into your session with <code>library()</code></li>
+</ul>
+</div>
+<div id="tabset-1-5">
+<ul>
+<li><p>Use <code>library()</code> to load the tidyverse package</p></li>
+<li><p>Since the package has been installed as an object in RStudio, don’t use quotations around the package name when loading it</p></li>
+</ul>
+</div>
+<div id="tabset-1-6">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Load the tidyverse package</span></span>
+<span id="cb2-2"><a href=""></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 <aside class="notes">
 <p><strong>PACKAGES-TAB</strong></p>
 <p>In order to read in data we must load packages that allow us to read data in, like we did in foundation lab 1. Although there are read-in capabilities with the <code>utils package</code> in base r, we are going to use a more modern approach. One of the packages in Tidyverse allows for reading in Comma delimiter files, or CSV.</p>
@@ -338,78 +360,52 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="load-pacakges-1" class="slide level2">
-<h2>Load Pacakges</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<ul>
-<li>First time using a package</li>
-<li>Do this ONLY ONCE in the “console”</li>
-</ul>
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Install Packages</span></span>
-<span id="cb2-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div><div class="column" style="width:45%;">
-<p>Your turn <strong>👉 Your Turn</strong> <strong>⤵</strong></p>
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Load tidyverse package </span></span>
-<span id="cb3-2"><a href=""></a><span class="co">#</span></span>
-<span id="cb3-3"><a href=""></a><span class="co">#</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<p>What is the function to load the tidyverse library?</p>
-</div></div>
-</section>
-<section id="your-turn---answer" class="slide level2">
-<h2><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</h2>
-<div class="fragment">
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Load tidyverse package </span></span>
-<span id="cb4-2"><a href=""></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<p>If you see <span style="color:red;">red</span> it does not always mean error.</p>
-</div>
-</section></section>
-<section>
-<section id="reading-in-data" class="title-slide slide level1 center" data-background="#143156">
-<h1>Reading in data</h1>
-
-</section>
-<section id="function" class="slide level2">
-<h2>Function</h2>
+<section id="reading-in-data-with-readr" class="slide level2" data-background="#143156">
+<h2>Reading in Data with <code>readr</code></h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Readr functions</a></li><li><a href="#tabset-1-2">Delimeter</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Common Arguments</a></li><li><a href="#tabset-2-2">Delimiters</a></li><li><a href="#tabset-2-3">👉 Your Turn ⤵</a></li><li><a href="#tabset-2-4">Answer</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
-<div style="font-size: 80px">
-<p>Common {<a href="https://readr.tidyverse.org">readr</a>} functions to read in different types of data</p>
+<div id="tabset-2-1">
+<ul>
+<li><p><code>file</code> File to path</p></li>
+<li><p><code>col_names</code> Uses the first row of raw data available as the column names if TRUE, creates placeholder column names if FALSE</p></li>
+<li><p><code>na</code> Looks for text in the data to treat as non-applicable. Can be a list like <code>c("", "na")</code></p></li>
+<li><p><code>skip</code> Tells the function to “skip” ahead by reading at a given row of data.</p></li>
+<li><p><code>col_types</code> Coerces columns to specific types of data. If NULL, the function guesses the type of each column, which is useful but not robust</p></li>
+</ul>
 </div>
-<p><img data-src="img/readr_function.png" width="1300"></p>
-</div>
-<div id="tabset-1-2">
+<div id="tabset-2-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/delimiter.png" class="quarto-figure quarto-figure-center" width="1500"></p>
 </figure>
 </div>
 </div>
+<div id="tabset-2-3">
+<ul>
+<li><p>Use <code>read_csv()</code> to read in <code>sci-online.classes.csv</code></p></li>
+<li><p>This file is located in your data folder</p></li>
+</ul>
+</div>
+<div id="tabset-2-4">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co">#use read_csv function to read in sci-online-classes.csv rename object to online_classes</span></span>
+<span id="cb3-2"><a href=""></a>online_classes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sci-online-classes.csv"</span>)</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a><span class="co">#You can take a peek at the read in data with head()</span></span>
+<span id="cb3-5"><a href=""></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(online_classes, <span class="at">n=</span><span class="dv">5</span>), <span class="at">format =</span> <span class="st">'html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
-<p><strong>FUNCTIONS-TAB</strong></p>
-<p>Common functions that are included when you read in data are 1. the file, we need to give a path to get the data. It should be in the working directory.</p>
-<ol start="2" type="1">
+<p>Common arguments that are included when you read in data are:</p>
+<ol type="1">
+<li><p>the file, we need to give a path to get the data. It should be in the working directory.</p></li>
 <li><p>column names corresponds to variables on the first row. The first row of the input will be used as the column names, and will not be included in the data frame. If FALSE, column names will be generated automatically: X1, X2, X3 etc.</p></li>
 <li><p>NA corresponds to missing values. commonly you will see capital NA but you may also see quotations or only a period depending on the original database (excel, SAS, STATA etc).</p></li>
 <li><p>Skip functions allows you to skill to when your data starts.</p></li>
 <li><p>col_types is not typically needed but good to know. R guesses what type of column types you have when it reads in the file using the default guess_max. This is convenient (and fast), but not robust. If the imputation fails, you’ll need to increase the guess_max or supply the correct types yourself.</p></li>
-<li><p>guess_max if the imputation fails increase the number beyond the 1000 default to guess col_types correctly.</p></li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -422,32 +418,12 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="using-the-readr-function" class="slide level2">
-<h2>Using the readr function</h2>
-<div class="columns">
-<div class="column" style="font-size: 50px">
-<ul>
-<li>Use <code>read_csv()</code> function to read in CSV.</li>
-</ul>
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="|2|5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co">#use read_csv function to read in sci-online-classes.csv rename object to online_classes</span></span>
-<span id="cb5-2"><a href=""></a>online_classes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sci-online-classes.csv"</span>)</span>
-<span id="cb5-3"><a href=""></a></span>
-<span id="cb5-4"><a href=""></a><span class="co">#use head() function</span></span>
-<span id="cb5-5"><a href=""></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(online_classes, <span class="at">n=</span><span class="dv">5</span>), <span class="at">format =</span> <span class="st">'html'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div><div class="column" style="width:45%;">
-
-</div></div>
 <aside class="notes">
-<p>readr is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)</p>
+<p><code>readr</code> is a quick way to read in comma-separated values (CSV) and tab-separated values (TSV)</p>
 <ul>
 <li>We read in from the path. My data is stored in a folder called data. I then use the assignment operator to save it as a new object called online-classes.</li>
 <li>(instructor is showing how to import from file) a quick way to see where your data file is stored is by clicking on the file under files and then import.</li>
-<li>PLease note that we do NOT need to set working directory because we opened the projects fiolder. If we just click on the dataframe to open it it will not be connectd to the project.</li>
+<li>Please note that we do NOT need to set working directory because we opened the projects folder. If we just click on the dataframe to open it it will not be connectd to the project.</li>
 </ul>
 <p>Having a best practices way to set up your directory will help eleviate any confusion on data organization and location.</p>
 <style type="text/css">
@@ -462,203 +438,76 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="using-the-readr-function-1" class="slide level2">
-<h2>Using the readr function</h2>
-<div class="columns">
-<div class="column" style="font-size: 45px">
+<section id="other-data-types" class="slide level2" data-background="#143156">
+<h2>Other Data Types</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">.xlsx</a></li><li><a href="#tabset-3-2">👉 Your Turn ⤵</a></li><li><a href="#tabset-3-3">Answer</a></li><li><a href="#tabset-3-4">.dta</a></li><li><a href="#tabset-3-5">👉 Your Turn ⤵</a></li><li><a href="#tabset-3-6">Answer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
 <ul>
-<li>Use <code>read_csv()</code> function to read in CSV.</li>
+<li><p>Excel files are proprietary to Microsoft but also very ubiquitous</p></li>
+<li><p>R solves this with <code>readxl</code></p></li>
 </ul>
-<div style="font-size: 50px">
+</div>
+<div id="tabset-3-2">
+<ul>
+<li><p>Load in the <code>readxl</code> package</p></li>
+<li><p>Read in <code>csss_tweets.xlsx</code> with the <code>read_excel()</code> function to a new object <code>csss_tweets</code></p></li>
+<li><p>Inspect the object with <code>head()</code></p></li>
+</ul>
+</div>
+<div id="tabset-3-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co">#use read_csv function to read in sci-online-classes.csv rename object to online_classes</span></span>
-<span id="cb6-2"><a href=""></a>online_classes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/sci-online-classes.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co">#Install and read in the readxl Package </span></span>
+<span id="cb4-2"><a href=""></a><span class="fu">library</span>(readxl)</span>
+<span id="cb4-3"><a href=""></a></span>
+<span id="cb4-4"><a href=""></a><span class="co">#use read_excel() function to read in data/csss_tweets.xlsx</span></span>
+<span id="cb4-5"><a href=""></a>csss_tweets <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/csss_tweets.xlsx"</span>)<span class="co">#&lt;&lt;</span></span>
+<span id="cb4-6"><a href=""></a></span>
+<span id="cb4-7"><a href=""></a><span class="co">#use head() function to read </span></span>
+<span id="cb4-8"><a href=""></a><span class="fu">head</span>(csss_tweets, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 91
+  user_id             status_id     created_at          screen_name text  source
+  &lt;chr&gt;               &lt;chr&gt;         &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
+1 1331246991762976769 136572200862… 2021-02-27 17:54:35 InnerSchol… "@We… Twitt…
+2 1331246991762976769 136572187371… 2021-02-27 17:54:03 InnerSchol… "@Bo… Twitt…
+3 1331246991762976769 136572178780… 2021-02-27 17:53:42 InnerSchol… "@Co… Twitt…
+4 1331246991762976769 136572174606… 2021-02-27 17:53:32 InnerSchol… "@Co… Twitt…
+5 1331246991762976769 136572164488… 2021-02-27 17:53:08 InnerSchol… "Ano… Twitt…
+# ℹ 85 more variables: display_text_width &lt;dbl&gt;, reply_to_status_id &lt;chr&gt;,
+#   reply_to_user_id &lt;chr&gt;, reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;,
+#   is_retweet &lt;lgl&gt;, favorite_count &lt;dbl&gt;, retweet_count &lt;dbl&gt;,
+#   quote_count &lt;lgl&gt;, reply_count &lt;lgl&gt;, hashtags &lt;lgl&gt;, symbols &lt;lgl&gt;,
+#   urls_url &lt;lgl&gt;, urls_t.co &lt;lgl&gt;, urls_expanded_url &lt;lgl&gt;, media_url &lt;lgl&gt;,
+#   media_t.co &lt;lgl&gt;, media_expanded_url &lt;lgl&gt;, media_type &lt;lgl&gt;,
+#   ext_media_url &lt;lgl&gt;, ext_media_t.co &lt;lgl&gt;, ext_media_expanded_url &lt;lgl&gt;, …</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-4">
+<ul>
+<li><p>.dta files are used by statistical software like R, Python, Stata, and SAS</p></li>
+<li><p>They are accessed via <code>haven</code></p></li>
+</ul>
+</div>
+<div id="tabset-3-5">
+<ul>
+<li><p>Install and load in <code>haven</code></p></li>
+<li><p>Read in <code>GPA3.dta</code> with the <code>read_dta()</code> function to a new object <code>gpa_dt</code></p></li>
+<li><p>Inspect the object with <code>head()</code></p></li>
+</ul>
+</div>
+<div id="tabset-3-6">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Install and read in the haven function </span></span>
+<span id="cb6-2"><a href=""></a><span class="fu">library</span>(haven)</span>
 <span id="cb6-3"><a href=""></a></span>
-<span id="cb6-4"><a href=""></a><span class="co">#use head() function</span></span>
-<span id="cb6-5"><a href=""></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(online_classes, <span class="at">n=</span><span class="dv">5</span>), <span class="at">format =</span> <span class="st">'html'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div><div class="column" style="font-size: 45px">
-<p>Your turn <strong>👉 Your Turn</strong> <strong>⤵</strong></p>
-<p>In the corresponding script do the following:</p>
-<ul>
-<li>load in the <code>readxl</code> package,</li>
-<li>load in <code>"data/csss_tweets.xlsx"</code> file save to a new object csss_tweets</li>
-<li>inspect the data by <code>head()</code> function</li>
-</ul>
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># 1. Install and read in the readxl Package </span></span>
-<span id="cb7-2"><a href=""></a></span>
-<span id="cb7-3"><a href=""></a><span class="co"># 2. use read_excel() function to read in data.</span></span>
-<span id="cb7-4"><a href=""></a>csss_tweets <span class="ot">&lt;-</span> </span>
-<span id="cb7-5"><a href=""></a>  </span>
-<span id="cb7-6"><a href=""></a><span class="co"># 3. use head() function to read </span></span>
-<span id="cb7-7"><a href=""></a><span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div></div>
-<aside class="notes">
-<p>To read in an excel file we will need to install the readxl package and then read in with the read_excel function. We can see that it is an excel file with the .xlsx extension.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="your-turn---answer-1" class="slide level2">
-<h2><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</h2>
-<div class="fragment">
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|2|5|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co">#Install and read in the readxl Package </span></span>
-<span id="cb8-2"><a href=""></a><span class="fu">library</span>(readxl)</span>
-<span id="cb8-3"><a href=""></a></span>
-<span id="cb8-4"><a href=""></a><span class="co">#use read_excel() function to read in data/csss_tweets.xlsx</span></span>
-<span id="cb8-5"><a href=""></a>csss_tweets <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/csss_tweets.xlsx"</span>)<span class="co">#&lt;&lt;</span></span>
-<span id="cb8-6"><a href=""></a></span>
-<span id="cb8-7"><a href=""></a><span class="co">#use head() function to read </span></span>
-<span id="cb8-8"><a href=""></a><span class="fu">head</span>(csss_tweets, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 91
-  user_id             status_id     created_at          screen_name text  source
-  &lt;chr&gt;               &lt;chr&gt;         &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
-1 1331246991762976769 136572200862… 2021-02-27 17:54:35 InnerSchol… "@We… Twitt…
-2 1331246991762976769 136572187371… 2021-02-27 17:54:03 InnerSchol… "@Bo… Twitt…
-3 1331246991762976769 136572178780… 2021-02-27 17:53:42 InnerSchol… "@Co… Twitt…
-4 1331246991762976769 136572174606… 2021-02-27 17:53:32 InnerSchol… "@Co… Twitt…
-5 1331246991762976769 136572164488… 2021-02-27 17:53:08 InnerSchol… "Ano… Twitt…
-# ℹ 85 more variables: display_text_width &lt;dbl&gt;, reply_to_status_id &lt;chr&gt;,
-#   reply_to_user_id &lt;chr&gt;, reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;,
-#   is_retweet &lt;lgl&gt;, favorite_count &lt;dbl&gt;, retweet_count &lt;dbl&gt;,
-#   quote_count &lt;lgl&gt;, reply_count &lt;lgl&gt;, hashtags &lt;lgl&gt;, symbols &lt;lgl&gt;,
-#   urls_url &lt;lgl&gt;, urls_t.co &lt;lgl&gt;, urls_expanded_url &lt;lgl&gt;, media_url &lt;lgl&gt;,
-#   media_t.co &lt;lgl&gt;, media_expanded_url &lt;lgl&gt;, media_type &lt;lgl&gt;,
-#   ext_media_url &lt;lgl&gt;, ext_media_t.co &lt;lgl&gt;, ext_media_expanded_url &lt;lgl&gt;, …</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div style="font-size: 70px">
-<p><strong>What did you notice in the printed output?</strong></p>
-</div>
-</div>
-</section>
-<section id="import-excel-sheet" class="slide level2">
-<h2>import Excel Sheet</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|1|4|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">excel_sheets</span>(<span class="st">"data/csss_tweets.xlsx"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Sheet1"</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="|1|4|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>csss_tweets <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/csss_tweets.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"Sheet1"</span>)</span>
-<span id="cb12-2"><a href=""></a></span>
-<span id="cb12-3"><a href=""></a><span class="co">#use head() function to read </span></span>
-<span id="cb12-4"><a href=""></a><span class="fu">head</span>(csss_tweets, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 91
-  user_id             status_id     created_at          screen_name text  source
-  &lt;chr&gt;               &lt;chr&gt;         &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
-1 1331246991762976769 136572200862… 2021-02-27 17:54:35 InnerSchol… "@We… Twitt…
-2 1331246991762976769 136572187371… 2021-02-27 17:54:03 InnerSchol… "@Bo… Twitt…
-3 1331246991762976769 136572178780… 2021-02-27 17:53:42 InnerSchol… "@Co… Twitt…
-4 1331246991762976769 136572174606… 2021-02-27 17:53:32 InnerSchol… "@Co… Twitt…
-5 1331246991762976769 136572164488… 2021-02-27 17:53:08 InnerSchol… "Ano… Twitt…
-# ℹ 85 more variables: display_text_width &lt;dbl&gt;, reply_to_status_id &lt;chr&gt;,
-#   reply_to_user_id &lt;chr&gt;, reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;,
-#   is_retweet &lt;lgl&gt;, favorite_count &lt;dbl&gt;, retweet_count &lt;dbl&gt;,
-#   quote_count &lt;lgl&gt;, reply_count &lt;lgl&gt;, hashtags &lt;lgl&gt;, symbols &lt;lgl&gt;,
-#   urls_url &lt;lgl&gt;, urls_t.co &lt;lgl&gt;, urls_expanded_url &lt;lgl&gt;, media_url &lt;lgl&gt;,
-#   media_t.co &lt;lgl&gt;, media_expanded_url &lt;lgl&gt;, media_type &lt;lgl&gt;,
-#   ext_media_url &lt;lgl&gt;, ext_media_t.co &lt;lgl&gt;, ext_media_expanded_url &lt;lgl&gt;, …</code></pre>
-</div>
-</div>
-<div style="font-size: 50px">
-<p>Hint: To learn more about functions for this package type:<br>
-<strong>?read_excel in the script.</strong></p>
-</div>
-<aside class="notes">
-<p>You can check what sheets are included in your excel file by calling it with the excel_sheets function. Then you can call only that sheet. Our data only includes one sheet so we do not really need to use this function, but it’s good to know.</p>
-<p>Don’t forget to use the ? in front of a function if you want to know more. Do you remember where this information shows up? {ANSWER: Help tab}</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="your-turn" class="slide level2">
-<h2><strong>👉 Your Turn</strong> <strong>⤵</strong></h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<ul>
-<li>Do the following:</li>
-<li>load in the <code>haven</code> package,</li>
-<li>load in “data/GPA3.dta” file save to a new object called gpa_dt</li>
-<li>inspect the data with function of your choice</li>
-<li>explain what you see</li>
-</ul>
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" data-code-line-numbers="|1|3|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="co"># 1. Install and read in the haven function </span></span>
-<span id="cb14-2"><a href=""></a></span>
-<span id="cb14-3"><a href=""></a><span class="co"># 2. use read_excel() function to read in data/GPA3.dta</span></span>
-<span id="cb14-4"><a href=""></a>gpa_dt <span class="ot">&lt;-</span> </span>
-<span id="cb14-5"><a href=""></a>  </span>
-<span id="cb14-6"><a href=""></a><span class="co"># 3. Inspect the data</span></span>
-<span id="cb14-7"><a href=""></a><span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div><div class="column" style="width:45%;">
-
-</div></div>
-</section>
-<section id="your-turn-1" class="slide level2">
-<h2><strong>👉 Your Turn</strong> <strong>⤵</strong></h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<ul>
-<li>Do the following:</li>
-<li>load in the <code>haven</code> package,</li>
-<li>load in “data/GPA3.dta” file save to a new object called gpa_dt</li>
-<li>inspect the data with function of your choice</li>
-<li>explain what you see</li>
-</ul>
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co"># 1. Install and read in the haven function </span></span>
-<span id="cb15-2"><a href=""></a></span>
-<span id="cb15-3"><a href=""></a><span class="co"># 2. use read_dta() function to read in data/GPA3.dta</span></span>
-<span id="cb15-4"><a href=""></a>gpa_dt <span class="ot">&lt;-</span> </span>
-<span id="cb15-5"><a href=""></a>  </span>
-<span id="cb15-6"><a href=""></a><span class="co"># 3. Inspect the data</span></span>
-<span id="cb15-7"><a href=""></a><span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div><div class="column" style="width:45%;">
-<p><strong>👉 Your Turn</strong> <strong>⤵</strong> -&gt; Answer</p>
-<div style="font-size: 50px">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" data-code-line-numbers="|2|5|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># 1. Install and read in the haven function </span></span>
-<span id="cb16-2"><a href=""></a><span class="fu">library</span>(haven)</span>
-<span id="cb16-3"><a href=""></a></span>
-<span id="cb16-4"><a href=""></a><span class="co"># 2. use read_dta() function to read in data/GPA3.dta</span></span>
-<span id="cb16-5"><a href=""></a>gpa_dt <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"data/GPA3.dta"</span>)</span>
-<span id="cb16-6"><a href=""></a>  </span>
-<span id="cb16-7"><a href=""></a><span class="co"># 3. Inspect the data</span></span>
-<span id="cb16-8"><a href=""></a><span class="fu">head</span>(gpa_dt, <span class="at">n=</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-4"><a href=""></a><span class="co"># Use read_dta() function to read in data/GPA3.dta</span></span>
+<span id="cb6-5"><a href=""></a>gpa_dt <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"data/GPA3.dta"</span>)</span>
+<span id="cb6-6"><a href=""></a>  </span>
+<span id="cb6-7"><a href=""></a><span class="co"># Inspect the data</span></span>
+<span id="cb6-8"><a href=""></a><span class="fu">head</span>(gpa_dt, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 23
    term   sat tothrs cumgpa season frstsem crsgpa verbmath trmgpa hssize hsrank
@@ -672,25 +521,39 @@
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
+<aside class="notes">
+<p>You can check what sheets are included in your excel file by calling it with the <code>excel_sheets</code> function. Then you can call only that sheet. Our data only includes one sheet so we do not really need to use this function, but it’s good to know.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="joins-overview" class="slide level2">
-<h2>Joins Overview</h2>
+<section id="joining-data" class="slide level2">
+<h2>Joining Data</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Mock Data</a></li><li><a href="#tabset-2-2">Inner join</a></li><li><a href="#tabset-2-3">Left join</a></li><li><a href="#tabset-2-4">Right join</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Mock Data</a></li><li><a href="#tabset-4-2">Inner Join</a></li><li><a href="#tabset-4-3">Left Join</a></li><li><a href="#tabset-4-4">Right Join</a></li><li><a href="#tabset-4-5">Full Join</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-4-1">
 <div class="columns">
 <div class="column" style="width:45%;">
-<p>Let’s create Mock Data Generation</p>
+<p>Let’s create some mock data: One data frame for students, and one for scores.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># Create mock data</span></span>
-<span id="cb18-2"><a href=""></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb18-3"><a href=""></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
-<span id="cb18-4"><a href=""></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
-<span id="cb18-5"><a href=""></a>  <span class="at">major =</span> <span class="fu">c</span>(<span class="st">"Math"</span>, <span class="st">"Physics"</span>, <span class="st">"Biology"</span>, <span class="st">"Computer Science"</span>)</span>
-<span id="cb18-6"><a href=""></a>)</span>
-<span id="cb18-7"><a href=""></a>students</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># Create mock data</span></span>
+<span id="cb8-2"><a href=""></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-3"><a href=""></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb8-4"><a href=""></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
+<span id="cb8-5"><a href=""></a>  <span class="at">major =</span> <span class="fu">c</span>(<span class="st">"Math"</span>, <span class="st">"Physics"</span>, <span class="st">"Biology"</span>, <span class="st">"Computer Science"</span>)</span>
+<span id="cb8-6"><a href=""></a>)</span>
+<span id="cb8-7"><a href=""></a>students</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name            major
 1          1   Alice             Math
@@ -702,11 +565,11 @@
 </div><div class="column" style="width:45%;">
 <p><br> <br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb20-2"><a href=""></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
-<span id="cb20-3"><a href=""></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">80</span>)</span>
-<span id="cb20-4"><a href=""></a>)</span>
-<span id="cb20-5"><a href=""></a>scores</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-2"><a href=""></a>  <span class="at">student_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>),</span>
+<span id="cb10-3"><a href=""></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">75</span>, <span class="dv">80</span>)</span>
+<span id="cb10-4"><a href=""></a>)</span>
+<span id="cb10-5"><a href=""></a>scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id score
 1          1    85
@@ -730,11 +593,12 @@
           display:block!important;
       }</style></aside>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-4-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a><span class="co"># Inner join: Returns rows that have matching values in both tables</span></span>
-<span id="cb22-2"><a href=""></a>inner_join_result <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
-<span id="cb22-3"><a href=""></a>inner_join_result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-2"><a href=""></a><span class="co"># Inner join: Returns rows that have matching values in both tables</span></span>
+<span id="cb12-3"><a href=""></a>inner_join_result <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb12-4"><a href=""></a>inner_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name   major score
 1          1   Alice    Math    85
@@ -756,11 +620,12 @@
           display:block!important;
       }</style></aside>
 </div>
-<div id="tabset-2-3">
+<div id="tabset-4-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="co"># Left join: Returns all rows from the left table, and the matched rows from the right table. If there is no match, the result is NA.</span></span>
-<span id="cb24-2"><a href=""></a>left_join_result <span class="ot">&lt;-</span> <span class="fu">left_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
-<span id="cb24-3"><a href=""></a>left_join_result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="co"># Left join: Returns all rows from the left table, and the matched rows from the right table</span></span>
+<span id="cb14-2"><a href=""></a><span class="co"># If there is no match, the result is NA</span></span>
+<span id="cb14-3"><a href=""></a>left_join_result <span class="ot">&lt;-</span> <span class="fu">left_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb14-4"><a href=""></a>left_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name            major score
 1          1   Alice             Math    85
@@ -783,11 +648,12 @@
           display:block!important;
       }</style></aside>
 </div>
-<div id="tabset-2-4">
+<div id="tabset-4-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="co"># Right join: Returns all rows from the right table, and the matched rows from the left table. If there is no match, the result is NA.</span></span>
-<span id="cb26-2"><a href=""></a>right_join_result <span class="ot">&lt;-</span> <span class="fu">right_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
-<span id="cb26-3"><a href=""></a>right_join_result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># Right join: Returns all rows from the right table, and the matched rows from the left table. </span></span>
+<span id="cb16-2"><a href=""></a><span class="co">#If there is no match, the result is NA.</span></span>
+<span id="cb16-3"><a href=""></a>right_join_result <span class="ot">&lt;-</span> <span class="fu">right_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb16-4"><a href=""></a>right_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student_id    name   major score
 1          1   Alice    Math    85
@@ -796,12 +662,37 @@
 4          5    &lt;NA&gt;    &lt;NA&gt;    80</code></pre>
 </div>
 </div>
-<p><br><br> ❓ Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?</p>
-</div>
-</div>
-</div>
 <aside class="notes">
 <p>A right join returns all rows from the right table (scores), and the matched rows from the left table (students). If there is no match, the result is NA for the missing values.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+<div id="tabset-4-5">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="co"># Full join: Returns all rows when there is a match in one of the tables. </span></span>
+<span id="cb18-2"><a href=""></a><span class="co"># If there is no match, the result is NA for the missing values.</span></span>
+<span id="cb18-3"><a href=""></a>full_join_result <span class="ot">&lt;-</span> <span class="fu">full_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
+<span id="cb18-4"><a href=""></a>full_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student_id    name            major score
+1          1   Alice             Math    85
+2          2     Bob          Physics    90
+3          3 Charlie          Biology    75
+4          4   David Computer Science    NA
+5          5    &lt;NA&gt;             &lt;NA&gt;    80</code></pre>
+</div>
+</div>
+<p>❓ Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?</p>
+<aside class="notes">
 <p>Question: Why might you choose to use an inner join instead of a left join when analyzing student data alongside their scores and grades?</p>
 <p>Answer: You might choose to use an inner join instead of a left join when you only want to analyze the data for students who have both student information and corresponding scores. An inner join ensures that you are only working with complete data where there is a match in both tables, which can help avoid issues related to missing values and ensure the integrity of your analysis. This is particularly important when you need to perform calculations or statistical analyses that require complete data sets. By using an inner join, you ensure that the dataset you are working with is fully populated with the necessary information from both sources.</p>
 <style type="text/css">
@@ -815,36 +706,10 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
+</div>
+</div>
 </section>
-<section id="full-join" class="slide level2">
-<h2>Full join</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a><span class="co"># Full join: Returns all rows when there is a match in one of the tables. If there is no match, the result is NA for the missing values.</span></span>
-<span id="cb28-2"><a href=""></a>full_join_result <span class="ot">&lt;-</span> <span class="fu">full_join</span>(students, scores, <span class="at">by =</span> <span class="st">"student_id"</span>)</span>
-<span id="cb28-3"><a href=""></a>full_join_result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  student_id    name            major score
-1          1   Alice             Math    85
-2          2     Bob          Physics    90
-3          3 Charlie          Biology    75
-4          4   David Computer Science    NA
-5          5    &lt;NA&gt;             &lt;NA&gt;    80</code></pre>
-</div>
-</div>
-<aside class="notes">
-<p>A full join returns all rows from both tables, whether there is a match or not. If there is no match, the result is NA for the missing values.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
 <section id="whats-next" class="title-slide slide level1 center" data-background="#143156">
 <h1>What’s Next?</h1>
 <div style="text-align: left; font-size: 50px">
@@ -1049,7 +914,7 @@
         margin: 5.0e-2,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1076,80 +941,42 @@
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1199,14 +1026,13 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
