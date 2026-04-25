@@ -104,19 +104,19 @@ Finally, a linear multiple regression analysis was conducted in order to
 develop a predictive model in which a student final grade was the
 continuous dependent variable.
 
-+---------------------------------------------------------------------+
-| **Introduction to the [Stakeholder]{.underline}**                   |
-+=====================================================================+
-| **Name:** Alex Johnson                                              |
-|                                                                     |
-| **Role:** University Science Professor                              |
-|                                                                     |
-| **Experience:** 5 years teaching, enthusiastic about integrating    |
-| technology in education                                             |
-|                                                                     |
-| **Goal:** Alex aims to improve student engagement and performance   |
-| in her online science classes.                                      |
-+---------------------------------------------------------------------+
++--------------------------------------------------------------------+
+| **Introduction to the [Stakeholder]{.underline}**                  |
++====================================================================+
+| **Name:** Alex Johnson                                             |
+|                                                                    |
+| **Role:** University Science Professor                             |
+|                                                                    |
+| **Experience:** 5 years teaching, enthusiastic about integrating   |
+| technology in education                                            |
+|                                                                    |
+| **Goal:** Alex aims to improve student engagement and performance  |
+| in her online science classes.                                     |
++--------------------------------------------------------------------+
 
 ```{=html}
 <style>
@@ -163,24 +163,22 @@ associated with when students started and stopped accessing the course).
 
 **Log Data Variables**
 
-+--------------------+-------------------------------------------------+
-| Variable           | Description                                     |
-+====================+=================================================+
-| `student_id`       | student's id at institution                     |
-+--------------------+-------------------------------------------------+
-| `course_id`        | abbreviation for course, course number,         |
-|                    | semester                                        |
-+--------------------+-------------------------------------------------+
-| `gender`           | male/female/NA                                  |
-+--------------------+-------------------------------------------------+
-| `                  | reason student decided to take the course       |
-| enrollment_reason` |                                                 |
-+--------------------+-------------------------------------------------+
-| `                  | approved/enrolled, dropped, withdrawn           |
-| enrollment_status` |                                                 |
-+--------------------+-------------------------------------------------+
-| `time_spent`       | Time spent in hours for entire course           |
-+--------------------+-------------------------------------------------+
++---------------------+------------------------------------------------+
+| Variable            | Description                                    |
++=====================+================================================+
+| `student_id`        | student's id at institution                    |
++---------------------+------------------------------------------------+
+| `course_id`         | abbreviation for course, course number,        |
+|                     | semester                                       |
++---------------------+------------------------------------------------+
+| `gender`            | male/female/NA                                 |
++---------------------+------------------------------------------------+
+| `enrollment_reason` | reason student decided to take the course      |
++---------------------+------------------------------------------------+
+| `enrollment_status` | approved/enrolled, dropped, withdrawn          |
++---------------------+------------------------------------------------+
+| `time_spent`        | Time spent in hours for entire course          |
++---------------------+------------------------------------------------+
 
 : **Course Acronym Descriptions**
 
@@ -321,25 +319,25 @@ survey <- read_csv("data/survey.csv",show_col_types = FALSE)
 
 There are several ways you can look at data objects in R:
 
--   Simply typing the name of your object and running the code
+- Simply typing the name of your object and running the code
 
 ```{r}
 time_spent
 ```
 
--   Using `glimpse()`
+- Using `glimpse()`
 
 ```{r}
 glimpse(gradebook)
 ```
 
--   Using the Global Environment Pane
+- Using the Global Environment Pane
 
 ![](img/global%20environment.png){width="34%"}
 
 ![](img/gradebook.png){width="50%"}
 
--   Using `head()` and `tail()` to look at the first and last few rows
+- Using `head()` and `tail()` to look at the first and last few rows
 
 ```{r}
 #first few rows
@@ -351,7 +349,7 @@ head(survey)
 tail(survey)
 ```
 
--   Using `sample()`
+- Using `sample()`
 
 ```{r}
 sample(survey)
@@ -363,19 +361,19 @@ Inspect the three datasets we loaded and answer the questions:
 
 ❓ What do you notice or wonder about?
 
--   \[YOUR RESPONSE HERE\]
+- \[YOUR RESPONSE HERE\]
 
 ❓ How many observations do you see?
 
--   \[YOUR RESPONSE HERE\]
+- \[YOUR RESPONSE HERE\]
 
 ❓ How many variables are there?
 
--   \[YOUR RESPONSE HERE\]
+- \[YOUR RESPONSE HERE\]
 
 ❓ What do you notice about the variable classes?
 
--   \[YOUR RESPONSE HERE\]
+- \[YOUR RESPONSE HERE\]
 
 ------------------------------------------------------------------------
 
@@ -508,9 +506,9 @@ survey
 💡 Look at the variable names. Add one or more of the things you notice
 or wonder about the data here:
 
--   \[YOUR RESPONSES HERE\]
+- \[YOUR RESPONSES HERE\]
 
--   \[YOUR RESPONSES HERE\]
+- \[YOUR RESPONSES HERE\]
 
 ------------------------------------------------------------------------
 
@@ -580,13 +578,13 @@ Similar to what we learned in the code-a-long, we will combine the
 variables (column names) to combine. In this case, we will use the
 following:
 
--   `student_id`
+- `student_id`
 
--   `subject`
+- `subject`
 
--   `semester`
+- `semester`
 
--   `section`
+- `section`
 
 ```{r}
 #use single join to join data sets by student_id, subject, semester and section.
@@ -607,13 +605,13 @@ variables came from the `gradebook` and `time_spent` datasets.
 1.  Use the `full_join()` function to join `joined_data` with `survey`,
     identifying the following variables:
 
-    -   `student_id`
+    - `student_id`
 
-    -   `subject`
+    - `subject`
 
-    -   `semester`
+    - `semester`
 
-    -   `section`
+    - `section`
 
 2.  Save to a new object called `data_to_explore`.
 
@@ -643,7 +641,7 @@ These datasets cannot be joined because the class (data type) of
 ❓ Check out what class `student_id` is in `joined_data` compared to
 `survey`. What do you notice? (Hint: think about the `class()`)
 
--   \[YOUR ANSWER HERE\]
+- \[YOUR ANSWER HERE\]
 
 ------------------------------------------------------------------------
 
@@ -681,13 +679,13 @@ Now, that the variables are the same class:
 
 1.  Use the `full_join()` function to join `joined_data` with `survey`,
     identifying the following variables:
-    -   `student_id`
+    - `student_id`
 
-    -   `subject`
+    - `subject`
 
-    -   `semester`
+    - `semester`
 
-    -   `section`
+    - `section`
 2.  Save to a new object called `data_to_explore`.
 3.  Inspect the data.
 4.  Run the code.
@@ -879,13 +877,13 @@ load it again.
 
 Here are three resources for `ggplot2`:
 
--   The book [*GGPLOT: Elegant Graphics for Data
-    Analysis*](https://ggplot2-book.org/introduction.html).
+- The book [*GGPLOT: Elegant Graphics for Data
+  Analysis*](https://ggplot2-book.org/introduction.html).
 
--   This [r-graph gallery](https://r-graph-gallery.com/) that includes
-    code.
+- This [r-graph gallery](https://r-graph-gallery.com/) that includes
+  code.
 
--   This cheat sheet!
+- This cheat sheet!
 
 ![](module_4/img/grammar.png){width="382" height="340"}
 
@@ -893,13 +891,13 @@ Here are three resources for `ggplot2`:
 
 > every `ggplot2` plot has three key components:
 >
-> -   data,
+> - data,
 >
-> -   a set of aesthetic mappings between variables in the data and
->     visual properties, and
+> - a set of aesthetic mappings between variables in the data and visual
+>   properties, and
 >
-> -   at least one layer which describes how to render each observation.
->     Layers are usually created with a `geom()` function."
+> - at least one layer which describes how to render each observation.
+>   Layers are usually created with a `geom()` function."
 
 We'll start off by creating some basic visualizations that examines a
 continuous variable of interest: Bar plots and histograms.
@@ -931,10 +929,10 @@ data_to_explore
 As a reminder, the most basic visualization that you can make with
 `ggplot2` includes three layers:
 
--   Layer 1: **data**: data_to_explore.csv
--   Layer 2: **`aes()` function** - one continuous variable:
-    -   `subject` mapped to x position
--   Layer 3: **Geom**:`geom_bar()` function - bar graph
+- Layer 1: **data**: data_to_explore.csv
+- Layer 2: **`aes()` function** - one continuous variable:
+  - `subject` mapped to x position
+- Layer 3: **Geom**:`geom_bar()` function - bar graph
 
 ```{r messages=FALSE, warning=FALSE}
 #layer 1: add data 
@@ -952,10 +950,10 @@ labs(title = "Number of Observations per Subject",
 To communicate context, we can add the following labels to our `ggplot2`
 visualization as Layer 4.
 
--   Title: "Number of Student Enrollments per Subject"
+- Title: "Number of Student Enrollments per Subject"
 
--   Caption: "Which online courses have had the largest enrollment
-    numbers?"
+- Caption: "Which online courses have had the largest enrollment
+  numbers?"
 
 ```{r messages=FALSE, warning=FALSE}
 #layer 1: add data 
@@ -1005,12 +1003,12 @@ question:
 
 Write a new visualization using `geom_histogram()`.
 
--   **Data**: `data_to_explore`
--   **`aes()` function:** `tv` variable mapped to the `x` position
--   **Geom**: `geom_histogram()` (already included in code block)
--   **Title:** "Number of Hours Students Watch TV per Day"
--   **Caption:** "Approximately how many students watch 4+ hours of TV
-    per day?", or something similar that captures the research question
+- **Data**: `data_to_explore`
+- **`aes()` function:** `tv` variable mapped to the `x` position
+- **Geom**: `geom_histogram()` (already included in code block)
+- **Title:** "Number of Hours Students Watch TV per Day"
+- **Caption:** "Approximately how many students watch 4+ hours of TV per
+  day?", or something similar that captures the research question
 
 **NEED HELP? Try** [Statistical Tools for High-throughput Data Analysis
 (STHDA)](#0)!
@@ -1043,17 +1041,17 @@ between the course subject and reasons for enrollment.
 
 #### **👉 Your Turn** **⤵**
 
--   **Data**: `data_to_explore`
--   First, use the `count()` function for the categorical variables
-    `subject` & `enrollment`, then
--   **`ggplot()`**
--   **`aes()`**:
-    -   `subject` mapped to `x` position
-    -   `enrollment_reason` mapped to `y` position
--   **Geom**: `geom_tile()`
--   **Title:** "Reasons for Enrollment by Subject"
--   **Caption**: "Which subjects were the least available at local
-    schools?"
+- **Data**: `data_to_explore`
+- First, use the `count()` function for the categorical variables
+  `subject` & `enrollment`, then
+- **`ggplot()`**
+- **`aes()`**:
+  - `subject` mapped to `x` position
+  - `enrollment_reason` mapped to `y` position
+- **Geom**: `geom_tile()`
+- **Title:** "Reasons for Enrollment by Subject"
+- **Caption**: "Which subjects were the least available at local
+  schools?"
 
 We've added extra code as `scale_fill_gradient()` and `labs()` to help
 show a heatmap's effectiveness. Play around with it if you'd like!
@@ -1097,7 +1095,7 @@ head(data_to_explore)
 
 ❓ Which variables should we be looking at?
 
--   \[YOUR RESPONSE HERE\]
+- \[YOUR RESPONSE HERE\]
 
 ------------------------------------------------------------------------
 
@@ -1105,14 +1103,14 @@ head(data_to_explore)
 
 #### **👉 Your Turn** **⤵**
 
--   **Data**: `data_to_explore`
+- **Data**: `data_to_explore`
 
--   **`aes()`**: Two continuous variables
+- **`aes()`**: Two continuous variables
 
-    -   Time spent in hours mapped to `x` position
-    -   Proportion earned mapped to `y` position
+  - Time spent in hours mapped to `x` position
+  - Proportion earned mapped to `y` position
 
--   **Geom**: `geom_point()`
+- **Geom**: `geom_point()`
 
 ```{r messages=FALSE, warning=FALSE}
 #(add code below)
@@ -1130,10 +1128,10 @@ ggplot(data_to_explore,
 
 #### **👉 Your Turn** **⤵**
 
--   **Title**: "How Time Spent on Course LMS is Related to Points Earned
-    in the course"
--   **x label**: "Time Spent (Hours)"
--   **y label**: "Proportion of Points Earned"
+- **Title**: "How Time Spent on Course LMS is Related to Points Earned
+  in the course"
+- **x label**: "Time Spent (Hours)"
+- **y label**: "Proportion of Points Earned"
 
 ```{r messages=FALSE, warning=FALSE}
 #(add code below)
@@ -1196,9 +1194,9 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 
 1.  Start with `data_to_explore`.
 2.  Pipe in an argument to `drop_na()` from:
-    -   `time_spent_hours`
-    -   `proportion_earned`
-    -   `enrollment_status`
+    - `time_spent_hours`
+    - `proportion_earned`
+    - `enrollment_status`
 3.  Use your previous `ggplot()` code from above. Remember that you
     already piped in `data_to_explore`, so you can remove it from the
     first argument after `ggplot()`.
@@ -1315,17 +1313,17 @@ data_to_explore %>%
 ❓ What could we write up for a manuscript in APA format or another
 format? Offer a short summary below:
 
--   *In the study, Pearson's correlation coefficient was calculated to
-    assess the relationship between the proportion of course materials
-    earned and the time spent in hours. The analysis revealed a moderate
-    positive correlation of .44 between these variables, suggesting that
-    as the time students spent on course materials increased, so did
-    their proportion of earned materials (pairwise complete observations
-    were used to handle missing data).*
+- *In the study, Pearson's correlation coefficient was calculated to
+  assess the relationship between the proportion of course materials
+  earned and the time spent in hours. The analysis revealed a moderate
+  positive correlation of .44 between these variables, suggesting that
+  as the time students spent on course materials increased, so did their
+  proportion of earned materials (pairwise complete observations were
+  used to handle missing data).*
 
 ❓ What other variables would you like to check out?
 
--   \[YOUR RESPONSE HERE\]
+- \[YOUR RESPONSE HERE\]
 
 Take some of those variables and explore them using `correlate():`
 
@@ -1400,9 +1398,7 @@ relationships between one or more *independent variables* with one
 dependent variable. Mathematically, it can be written like the
 following.
 
-$$
-\operatorname{dependentvar} = \beta_{0} + \beta_{1}(\operatorname{independentvar}) + \epsilon
-$$
+$$\operatorname{dependentvar} = \beta_{0} + \beta_{1}(\operatorname{independentvar}) + \epsilon$$
 
 ❓ Does time spent predict grade earned?
 
@@ -1518,13 +1514,13 @@ the various diagnostic plots and tests.
 
 We'll need to check:
 
--   Linearity and Interaction Effects
+- Linearity and Interaction Effects
 
--   Residuals Analysis
+- Residuals Analysis
 
--   Normality of Residuals
+- Normality of Residuals
 
--   Multicollinearity
+- Multicollinearity
 
 #### Linearity and Interaction Effect
 
@@ -1571,16 +1567,16 @@ The Shapiro-Wilk test is another way to test normality.
 shapiro.test(residuals(m1))
 ```
 
--   **W statistic:** The test statistic W is 0.88967. This value
-    indicates the extent to which the data are normally distributed. W
-    values close to 1 suggest that the data closely follow a normal
-    distribution. In this case, a W value of 0.88967 suggests some
-    deviation from normality.
+- **W statistic:** The test statistic W is 0.88967. This value indicates
+  the extent to which the data are normally distributed. W values close
+  to 1 suggest that the data closely follow a normal distribution. In
+  this case, a W value of 0.88967 suggests some deviation from
+  normality.
 
--   **p-value:** The p-value is less than 2.2e-16 (a very small number
-    close to zero). In statistical testing, a p-value less than the
-    chosen significance level (typically 0.05) leads to the rejection of
-    the null hypothesis.
+- **p-value:** The p-value is less than 2.2e-16 (a very small number
+  close to zero). In statistical testing, a p-value less than the chosen
+  significance level (typically 0.05) leads to the rejection of the null
+  hypothesis.
 
 #### Multicollinearity
 
@@ -1589,9 +1585,9 @@ You try it!
 
 #### **👉 Your Turn** **⤵**
 
--   Load the package `car`.
+- Load the package `car`.
 
--   Use the `vif()` function for your model `m1`.
+- Use the `vif()` function for your model `m1`.
 
 ```{r}
 #(add code below)
@@ -1603,25 +1599,26 @@ vif(m1)
 
 **Interpretation of VIF Scores**
 
-+----------------------------------+----------------------------------+
-| VIF Value                        | Interpretation                   |
-+==================================+==================================+
-| = 1                              | No correlation among the         |
-|                                  | predictor and all other          |
-|                                  | predictors                       |
-+----------------------------------+----------------------------------+
-| \< 5                             | Generally indicates a moderate   |
-|                                  | level of multicollinearity       |
-+----------------------------------+----------------------------------+
-| \>= 5 to 10                      | May indicate a problematic       |
-|                                  | amount of multicollinearity,     |
-|                                  | depending on the context and     |
-|                                  | sources                          |
-+----------------------------------+----------------------------------+
-| \>10                             | Signifies high multicollinearity |
-|                                  | that can severely distort the    |
-|                                  | least squares estimates          |
-+----------------------------------+----------------------------------+
++---------------------------------+---------------------------------+
+| VIF Value                       | Interpretation                  |
++=================================+=================================+
+| = 1                             | No correlation among the        |
+|                                 | predictor and all other         |
+|                                 | predictors                      |
++---------------------------------+---------------------------------+
+| \< 5                            | Generally indicates a moderate  |
+|                                 | level of multicollinearity      |
++---------------------------------+---------------------------------+
+| \>= 5 to 10                     | May indicate a problematic      |
+|                                 | amount of multicollinearity,    |
+|                                 | depending on the context and    |
+|                                 | sources                         |
++---------------------------------+---------------------------------+
+| \>10                            | Signifies high                  |
+|                                 | multicollinearity that can      |
+|                                 | severely distort the least      |
+|                                 | squares estimates               |
++---------------------------------+---------------------------------+
 
 Both of the VIF scores are slightly above 1, which suggests that there
 is **almost no multicollinearity** among these predictors. This is a
@@ -1673,17 +1670,16 @@ findings from an analysis:
 Create a data story with our current data set, or your own. Make sure to
 use the LA workflow as your guide to include:
 
--   Develop a research question
+- Develop a research question
 
--   Add `ggplot` visualizations
+- Add `ggplot` visualizations
 
--   Offer a model (with visualizations)
+- Offer a model (with visualizations)
 
--   Communicate by writing up a short write up for intended
-    stakeholders. Remember to write it in terms the stakeholders
-    understand.
+- Communicate by writing up a short write up for intended stakeholders.
+  Remember to write it in terms the stakeholders understand.
 
--   \[ENTER YOUR RESPONSE HERE\]
+- \[ENTER YOUR RESPONSE HERE\]
 
 ------------------------------------------------------------------------
 

@@ -27,18 +27,18 @@ editor:
 
 ## Welcome to the LAW Code-a-long for Module 4
 
--   In the *Communicate* section of the Learning Analytics workflow, the
-    focus is on effectively presenting and sharing the results of your
-    analysis with stakeholders. This involves creating clear and
-    compelling visualizations, writing comprehensive reports, and
-    delivering presentations that highlight key insights and actionable
-    recommendations.
+- In the *Communicate* section of the Learning Analytics workflow, the
+  focus is on effectively presenting and sharing the results of your
+  analysis with stakeholders. This involves creating clear and
+  compelling visualizations, writing comprehensive reports, and
+  delivering presentations that highlight key insights and actionable
+  recommendations.
 
--   The goal is to ensure that the findings are easily understood and
-    can inform decision-making processes, ultimately leading to improved
-    educational outcomes. Utilizing tools like ggplot2 for
-    visualizations and packages like RMarkdown for report generation can
-    enhance the clarity and impact of your communication.
+- The goal is to ensure that the findings are easily understood and can
+  inform decision-making processes, ultimately leading to improved
+  educational outcomes. Utilizing tools like ggplot2 for visualizations
+  and packages like RMarkdown for report generation can enhance the
+  clarity and impact of your communication.
 
 ## Communicate
 
@@ -53,32 +53,31 @@ editor:
 ::: panel-tabset
 ### Overview
 
--   Process can be automated using R and R Markdown, and knitted using
-    Quarto
+- Process can be automated using R and R Markdown, and knitted using
+  Quarto
 
--   Dashboards are valuable because they can include interactive
-    elements
+- Dashboards are valuable because they can include interactive elements
 
--   By using HTML, dashboards are :
+- By using HTML, dashboards are :
 
-    -   Essentially universal and readable by any computer
+  - Essentially universal and readable by any computer
 
-    -   Has no password protection for ease of distribution
+  - Has no password protection for ease of distribution
 
 ### Components
 
--   Navigation bar: Icon, title, and author along with links to
-    sub-pages if needed
+- Navigation bar: Icon, title, and author along with links to sub-pages
+  if needed
 
--   Pages, rows, & columns: Defined using markdown headings (with
-    optional attributes to control height, width, etc.)
+- Pages, rows, & columns: Defined using markdown headings (with optional
+  attributes to control height, width, etc.)
 
--   Tabsets: Used to further divide content within a row or column
+- Tabsets: Used to further divide content within a row or column
 
--   Cards: Containers for plots, data display, and free form content,
-    typically mapped to cells in your notebook or source document
+- Cards: Containers for plots, data display, and free form content,
+  typically mapped to cells in your notebook or source document
 
--   Sidebars and toolbars: Present inputs within interactive dashboards
+- Sidebars and toolbars: Present inputs within interactive dashboards
 
 ### YAML
 
@@ -335,29 +334,29 @@ gapminder |>
 
 ## Other features
 
--   Text content
+- Text content
 
--   Value boxes
+- Value boxes
 
--   Expanding cards
+- Expanding cards
 
 ## Interactive Dashboards
 
 <https://quarto.org/docs/dashboards/interactivity/shiny-r>
 
--   For interactive exploration, some dashboards can benefit from a live
-    R backend
+- For interactive exploration, some dashboards can benefit from a live R
+  backend
 
--   To do this with Quarto Dashboards, add interactive
-    [Shiny](https://shiny.posit.co) components
+- To do this with Quarto Dashboards, add interactive
+  [Shiny](https://shiny.posit.co) components
 
--   Deploy with or without a server!
+- Deploy with or without a server!
 
 ## Communicate in the LA workflow
 
 ::: {style="font-size: 40px"}
 The final(ish) step in our workflow/process is sharing the results of
-analysis with wider audience. Krumm et al. (2018) have outline the
+analysis with wider audience. Krumm et al. (2018) have outlined the
 following 3-step process for communicating with education stakeholders
 what you have learned through analysis:
 
@@ -381,32 +380,31 @@ what you have learned through analysis:
 
 ## Make a Dashboard!
 
-Create a Data Story with our current data set.
+Create a data story with our current data set.
 
 ::: incremental
--   Develop a research question
--   Add ggplot visualizations
--   Modeling visualizations
--   Add a short write up for the intended stakeholders
+- Develop a research question.
+- Add `ggplot` visualizations.
+- Model your visualizations.
+- Add a short write up for the intended stakeholders.
 :::
 
 ### Resources
 
 [Quarto Dashboard in R](https://quarto.org/docs/dashboards/)
 
-[Quarto Dashboard Gallery
-layouts](https://quarto.org/docs/gallery/#dashboards)
+[Quarto Dashboard gallery](https://quarto.org/docs/gallery/#dashboards)
 
-[Quarto dashboard: Easy interactive dashboards for
+[Quarto Dashboard: Easy interactive dashboards for
 R](https://posit.co/blog/flexdashboard-easy-interactive-dashboards-for-r/)
 
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
--   Complete the *Communicate* part of the [case
-    study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
--   Complete the [Data Products
-    badge](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
--   Optional: Complete the [LAW
-    Microcredential](https://laser-institute.github.io/la-workflow/microcredential/law-microcredential.html)
+- Complete the *Communicate* part of the [case
+  study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
+- Complete the [Data Products
+  badge](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
+- Optional: Complete the [LAW
+  Microcredential](https://laser-institute.github.io/la-workflow/microcredential/law-microcredential.html)
 :::
