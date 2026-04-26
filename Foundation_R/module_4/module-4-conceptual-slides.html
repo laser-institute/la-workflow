@@ -6,8 +6,8 @@
 <script src="module-4-conceptual-slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="module-4-conceptual-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="module-4-conceptual-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="module-4-conceptual-slides_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="module-4-conceptual-slides_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>Communication with Stakeholders</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="module-4-conceptual-slides_files/libs/revealjs/dist/theme/quarto-5b23a213788bec8eb86ba9de90e703ea.css">
+  <link rel="stylesheet" href="module-4-conceptual-slides_files/libs/revealjs/dist/theme/quarto-7527980f1498291a18883111fe9add0f.css">
   <link href="module-4-conceptual-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="module-4-conceptual-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="module-4-conceptual-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -304,8 +304,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="communicating-your-message-with-r-markdown" class="slide level2">
-<h2>Communicating Your Message with R Markdown</h2>
+<section id="communicating-with-r-markdown" class="slide level2">
+<h2>Communicating with R Markdown</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">R Markdown</a></li><li><a href="#tabset-1-2">Basics</a></li><li><a href="#tabset-1-3">YAML</a></li><li><a href="#tabset-1-4">Tables</a></li></ul>
 <div class="tab-content">
@@ -315,9 +315,10 @@
 <p><strong>Supports many output formats, including:</strong></p>
 <ul>
 <li><p>PDF</p></li>
-<li><p>Html</p></li>
-<li><p>Word</p></li>
-<li><p>Slideshows</p></li>
+<li><p>HTML</p></li>
+<li><p>Microsoft Word</p></li>
+<li><p>Slide decks</p></li>
+<li><p>Dashboards</p></li>
 </ul>
 </div><div class="column" style="width:10%;">
 
@@ -379,7 +380,7 @@
 <p>The R markdown file contains three basic types of content: your YAML header, your chunks of our code, and interspersed with these chunks of code you have your text with some simple formatting. When you are done composing your report you are then going to knit it, which will convert your report to the format you choose, using a package called Pandoc. When you knit the file, you’ll have the opportunity to choose the format of your output and we’ll talk more about that in a bit.</p>
 <p><strong>YAML</strong></p>
 <p>So let’s talk about the yaml header first. YAML stands for yet another markdown language. The YAML header allows you to create settings that affect your whole document. And there are a number of settings and parameters that you can set in the YAML header but for today we’re really just going to talk about two primary ones, output and bibliography, and then a brief mention for citation styles as well. So off to the right here I just have a quick example, and this is from the Wickham and Grolemund text, of a very brief YAML header. And you can see in this header there is a title for the file, the date of creation, and then it specifies how you would like this report to be knitted. So in this case, the final product of this report once we knit it is going to be an HTML document.</p>
-<p><strong>Table</strong></p>
+<p><strong>Tables</strong></p>
 <p>So when we are creating reports, or articles for journals, it’s common to have tables to convey data concisely and in one place. R markdown’s basic format for tables looks pretty much identical to what is going to appear in the console, and this may not be the most visually appealing output. Luckily there are lots of different packages that can help you to create tables that are much more visually appealing and easier to read. So the formatting option that Wickham and Grolemunc recommend is to use the kable function which is part of the knitR package. And you can always learn more about that package in the IDE help function and I’ve just given you the command for that here. They also recommend several other packages that can help with even further customization of tables and I’ve listed these here on the slide.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -468,8 +469,8 @@
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li><p><a href="https://shiny.rstudio.com/gallery"><code>shiny</code></a> for interactive applications</p></li>
-<li><p><a href="https://rstudio.github.io/flexdashboard/articles/examples.html">Flex dashboards in R</a></p></li>
+<li><p><code>shiny</code> interactive applications</p></li>
+<li><p><a href="https://rstudio.github.io/flexdashboard/articles/examples.html">Dashboards</a></p></li>
 <li><p><a href="http://bit.ly/RMarkdownWebsites">Websites</a></p></li>
 </ul>
 </div><div class="column" style="width:10%;">
@@ -786,7 +787,7 @@
         margin: 5.0e-2,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -860,14 +861,13 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

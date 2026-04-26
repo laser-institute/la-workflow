@@ -1,6 +1,6 @@
 ---
 title: "Communicate"
-subtitle: "LAW Module 4: A Code-a-long"
+subtitle: "LAW Module 4: A Code Along"
 format: 
   revealjs:
     # include-in-header: preview.html
@@ -25,63 +25,112 @@ editor:
     wrap: 72
 ---
 
-## Welcome to the LAW Code-a-long for Module 4
+## Welcome to the LAW Code Along for Module 4
 
-- In the *Communicate* section of the Learning Analytics workflow, the
+. . .
+
+![](img/communicate_wflow.png){width="1450"}
+
+. . .
+
+- The *Communicate* phase of the LAW is about selecting, polishing, and
+  presenting findings to an audience.
+
+::: notes
+- In the *Communicate* phase of the Learning Analytics workflow, the
   focus is on effectively presenting and sharing the results of your
   analysis with stakeholders. This involves creating clear and
   compelling visualizations, writing comprehensive reports, and
   delivering presentations that highlight key insights and actionable
   recommendations.
-
 - The goal is to ensure that the findings are easily understood and can
   inform decision-making processes, ultimately leading to improved
-  educational outcomes. Utilizing tools like ggplot2 for visualizations
-  and packages like RMarkdown for report generation can enhance the
-  clarity and impact of your communication.
+  educational outcomes. Utilizing tools like `ggplot2` for
+  visualizations and packages like RMarkdown for report generation can
+  enhance the clarity and impact of your communication.
+:::
 
-## Communicate
+## Module Objectives
 
-<img src="img/communicate_wflow.png" height="700px"/>
+By the end of this module, learners will:
+
+. . .
+
+- Develop an intuition for the *Communication* phase of the learning
+  analytics workflow.
+
+. . .
+
+- Understand the utility and power of dashboards for data communication.
+
+. . .
+
+- Build a dashboard of their own, experimenting with its modular
+  components (e.g., tabs, plots, sidebars, etc.).
 
 ## Preparing Findings for Communication
 
 <img src="img/communicate.png" height="800px"/>
 
-## Dashboards via Quarto
+::: notes
+Earlier in the LAW, such as in the *Explore* phase, you might have
+wondered how you could ever find a compelling or concrete finding from
+all of the data. In the *Communicate* phase, you might find yourself
+with the opposite problem: Which findings should I pick and share?
+
+Krumm et al. (2018) have outlined the following 3-step process for
+communicating with education stakeholders what you have learned through
+analysis:
+
+- Select: Communicating what one has learned involves selecting among
+  those analyses that are most important and most useful to an intended
+  audience, as well as selecting a form for displaying that information,
+  such as a graph or table in static or interactive form, i.e.a "data
+  product."
+
+- Polish: After creating initial versions of data products, research
+  teams often spend time refining or polishing them, by adding or
+  editing titles, labels, and notations and by working with colors and
+  shapes to highlight key points.
+
+- Communicate: Writing a narrative to accompany the data products
+  involves, at a minimum, pairing a data product with its related
+  research question, describing how best to interpret the data product,
+  and explaining the ways in which the data product helps answer the
+  research question.
+:::
+
+## Dashboards for Communication
 
 ::: panel-tabset
 ### Overview
 
-- Process can be automated using R and R Markdown, and knitted using
-  Quarto
+- Dashboards are one of the most flexible ways you can communicate
+  findings with R!
 
-- Dashboards are valuable because they can include interactive elements
-
-- By using HTML, dashboards are :
-
-  - Essentially universal and readable by any computer
-
-  - Has no password protection for ease of distribution
+- Like other data products, they can be coded using R and R Markdown,
+  and knitted using Quarto.
 
 ### Components
 
-- Navigation bar: Icon, title, and author along with links to sub-pages
-  if needed
+- **Navigation bar**: Icon, title, and author along with links to
+  sub-pages if needed
 
-- Pages, rows, & columns: Defined using markdown headings (with optional
-  attributes to control height, width, etc.)
+- **Pages, rows, & columns**: Defined using markdown headings (with
+  optional attributes to control height, width, etc.)
 
-- Tabsets: Used to further divide content within a row or column
+- **Tabsets**: Used to further divide content within a row or column
 
-- Cards: Containers for plots, data display, and free form content,
+- **Cards**: Containers for plots, data display, and free form content,
   typically mapped to cells in your notebook or source document
 
-- Sidebars and toolbars: Present inputs within interactive dashboards
+- **Sidebars and toolbars**: Present inputs within interactive
+  dashboards
 
 ### YAML
 
-Define output as flexdashboard in YAML header of R markdown document:
+To make your markdown file a dashboard, use the YAML header to specify
+"flexdashboard".
 
 ```{r echo=TRUE, eval=FALSE}
 ---
@@ -101,9 +150,33 @@ editor_options:
 ```
 :::
 
-## Basic Dashboard
+::: notes
+- Dashboards combine the strengths of the other data products we have
+  discussed.
+
+- They are essentially little websites that give viewers the ability to
+  explore your findings, view and download data, and even adjust and
+  interact with visualizations.
+
+- Since they are built with HTML, dashboards:
+
+  - Are essentially universal and readable by any device or browser.
+
+- Keep in mind that they have no password protection. This makes
+  distribution easy but requires extra care when sharing your data
+  (particularly "raw" data).
+:::
+
+## The Basic Dashboard
 
 <img src="img/flexdashboard.jpg" height="700px"/>
+
+::: notes
+The boilerplate dashboard format uses basic web design principles, with
+titles and overview subjects at the top and your findings below. Basic
+dashboards are not unlike poster presentations, but they can be built
+upon to be much more than that.
+:::
 
 ## Navigation Bar and Pages
 
@@ -126,6 +199,49 @@ format:
 
 # Data
 ```
+:::
+
+::: notes
+Using the markdown language for headers, dashboards give users the
+ability to navigate through different pages both vertically and
+horizontally.
+:::
+
+## Sidebars: Global
+
+::::: columns
+::: column
+```` {.markdown style="margin-top: 45px;"}
+---
+title: "Global Sidebar"
+format: dashboard
+---
+    
+# {.sidebar}
+
+Sidebar content (e.g. inputs)
+
+# Plot
+
+```{{r}}
+```
+
+# Data
+
+```{{r}}
+```
+````
+:::
+
+::: {.column .fragment}
+![](img/global-sidebar.png){width="80%"}
+:::
+:::::
+
+::: notes
+Global sidebars are shown at the top of the dashboard by default, and
+give users the ability to switch between pages. If you had three major
+findings, for example, this is where users would go between them.
 :::
 
 ## Sidebars: Page Level
@@ -160,36 +276,12 @@ format: dashboard
 :::
 :::::
 
-## Sidebars: Global
-
-::::: columns
-::: column
-```` {.markdown style="margin-top: 45px;"}
----
-title: "Global Sidebar"
-format: dashboard
----
-    
-# {.sidebar}
-
-Sidebar content (e.g. inputs)
-
-# Plot
-
-```{{r}}
-```
-
-# Data
-
-```{{r}}
-```
-````
+::: notes
+You can nest sidebars within individual pages. For example, you may have
+two distinct takeaways, visualizations, etc. to better convey a single
+finding, so you would make one page for your finding, then use the
+sidebar to show different aspects of that finding.
 :::
-
-::: {.column .fragment}
-![](img/global-sidebar.png){width="80%"}
-:::
-:::::
 
 ## Layout: Rows
 
@@ -220,6 +312,10 @@ format: dashboard
 ![](img/chart-focal-top.png){width="90%"}
 :::
 :::::
+
+::: notes
+You can arrange dashboard components in rows...
+:::
 
 ## Layout: Columns
 
@@ -253,7 +349,11 @@ format:
 :::
 :::::
 
-## Tabset
+::: notes
+...or columns!
+:::
+
+## Tabsets
 
 ::::: columns
 ::: {.column style="margin-top: 45px;"}
@@ -281,13 +381,18 @@ format: dashboard
 :::
 
 ::: {.column .fragment}
-![](img/chart-tabset-row.png){width="87%"}
+![](img/chart-tabset-row.png){width="700"}
 :::
 :::::
 
-## Plots
+::: notes
+Tabsets are tab structures nested within a single component on the page.
+You can see how you can end up giving viewers a lot of places to click,
+so use all of these methods judiciously! Less is more. And remember: You
+can always add more sidebars and tabsets later.
+:::
 
-Each code chunk makes a card, and can take a title
+## Plots
 
 ::::: columns
 ::: {.column .fragment .smaller}
@@ -307,9 +412,12 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) +
 :::
 :::::
 
-## Tables
+::: notes
+You can imbed visualizations via `ggplot` directly into your dashboards.
+Each code chunk makes a card, and can take a title.
+:::
 
-Each code chunk makes a card, doesn't have to have a title
+## Tables
 
 ::::: columns
 ::: {.column .fragment .smaller}
@@ -332,7 +440,12 @@ gapminder |>
 :::
 :::::
 
-## Other features
+::: notes
+The same goes for tables. Each code chunk makes a card, and **doesn't**
+have to have a title.
+:::
+
+## Other Features
 
 - Text content
 
@@ -340,45 +453,18 @@ gapminder |>
 
 - Expanding cards
 
-## Interactive Dashboards
+- [Interactive
+  elements](https://quarto.org/docs/dashboards/interactivity/shiny-r)
 
-<https://quarto.org/docs/dashboards/interactivity/shiny-r>
+  - For interactive exploration, some dashboards can benefit from a live
+    R backend.
 
-- For interactive exploration, some dashboards can benefit from a live R
-  backend
+  - To do this with Quarto, add interactive
+    [Shiny](https://shiny.posit.co) components.
 
-- To do this with Quarto Dashboards, add interactive
-  [Shiny](https://shiny.posit.co) components
+  - Deploy with or without a server!
 
-- Deploy with or without a server!
-
-## Communicate in the LA workflow
-
-::: {style="font-size: 40px"}
-The final(ish) step in our workflow/process is sharing the results of
-analysis with wider audience. Krumm et al. (2018) have outlined the
-following 3-step process for communicating with education stakeholders
-what you have learned through analysis:
-
-1.  **Select**: Communicating what one has learned involves selecting
-    among those analyses that are most important and most useful to an
-    intended audience, as well as selecting a form for displaying that
-    information, such as a graph or table in static or interactive form,
-    i.e.a "data product."
-
-2.  **Polish**: After creating initial versions of data products,
-    research teams often spend time refining or polishing them, by
-    adding or editing titles, labels, and notations and by working with
-    colors and shapes to highlight key points.
-
-3.  **Narrate**: Writing a narrative to accompany the data products
-    involves, at a minimum, pairing a data product with its related
-    research question, describing how best to interpret the data
-    product, and explaining the ways in which the data product helps
-    answer the research question.
-:::
-
-## Make a Dashboard!
+## 👉 Your Turn ⤵
 
 Create a data story with our current data set.
 
@@ -389,13 +475,15 @@ Create a data story with our current data set.
 - Add a short write up for the intended stakeholders.
 :::
 
+. . .
+
 ### Resources
 
-[Quarto Dashboard in R](https://quarto.org/docs/dashboards/)
+[Quarto Dashboards in R](https://quarto.org/docs/dashboards/)
 
 [Quarto Dashboard gallery](https://quarto.org/docs/gallery/#dashboards)
 
-[Quarto Dashboard: Easy interactive dashboards for
+[**Interactive** dashboards for
 R](https://posit.co/blog/flexdashboard-easy-interactive-dashboards-for-r/)
 
 # What's Next? {background="#143156"}

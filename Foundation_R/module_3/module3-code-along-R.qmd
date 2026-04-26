@@ -1,6 +1,6 @@
 ---
 title: "Model"
-subtitle: "LAW Module 3: A Code-a-long"
+subtitle: "LAW Module 3: A Code Along"
 format: 
   revealjs:
     # include-in-header: preview.html
@@ -25,17 +25,21 @@ editor:
     wrap: 72
 ---
 
-## Welcome to the LAW Code-a-long for Module 3
+## Welcome to the LAW Code Along for Module 3
 
--   Modeling for educational researchers builds on insights from
-    Exploratory Data Analysis (EDA) to develop predictive or explanatory
-    models that guide decision-making and enhance learning outcomes.
+. . .
 
--   This involves selecting appropriate models, preparing and
-    transforming data, training and validating the models, and
-    interpreting results. Effective modeling helps uncover key factors
-    influencing educational success, allowing for targeted interventions
-    and informed policy decisions.
+- Modeling for educational researchers builds on insights from
+  Exploratory Data Analysis (EDA) to develop predictive or explanatory
+  models that guide decision-making and enhance learning outcomes.
+
+. . .
+
+- This involves selecting appropriate models, preparing and transforming
+  data, training and validating the models, and interpreting results.
+  Effective modeling helps uncover key factors influencing educational
+  success, allowing for targeted interventions and informed policy
+  decisions.
 
 ::: notes
 Modeling for educational researchers is a crucial step following
@@ -52,19 +56,23 @@ factors influencing educational success.
 
 ## Module Objectives
 
-By the end of this module:
+By the end of this module, learners will:
 
--   Introduction to Modeling:
-    -   Learners will understand the importance of modeling in the
-        learning analytics workflow and how it helps quantify insights
-        from data.
--   Creating and Interpreting Correlations:
-    -   Learners will create and interpret correlation matrices using
-        the {corrr} package and create APA-formatted correlation tables
-        using the {apaTables} package.
--   Applying Various Modeling Techniques:
-    -   Learners will fit and understand linear regression models to
-        prepare for the case study.
+. . .
+
+- Understand the importance of modeling in the learning analytics
+  workflow and how it helps quantify insights from data.
+
+. . .
+
+- Create and interpret correlation matrices using the `corrr` package
+  and create APA-formatted correlation tables using the `apaTables`
+  package.
+
+. . .
+
+- Fit and understand linear regression models to prepare for the case
+  study.
 
 ::: notes
 In this module, we will focus on the practical aspects of modeling
@@ -153,8 +161,8 @@ achieve the best possible results.
 
 ## The `corrr` Package
 
--   `corrr` allows you to run a correlation analysis between two
-    variables
+- `corrr` allows you to run a correlation analysis between two
+  variables.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -173,7 +181,7 @@ data_to_explore %>%
   correlate() #<<
 ```
 
--   How can we interpret this?
+- How can we interpret this?
 
 ## Formatting `corrr` for APA
 
@@ -227,8 +235,8 @@ summary(model1)
 
 ### 👉 Your Turn ⤵
 
--   Create a ggplot viz for our model
--   Add `+ geom_smooth(method = "lm")` after your `geom_point`
+- Create a ggplot viz for our model
+- Add `+ geom_smooth(method = "lm")` after your `geom_point`
 
 ### Answer
 
@@ -313,11 +321,11 @@ interest in science.
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
--   Complete the *Model* part of the [case
-    study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
--   Complete the [Data Sources in Learning
-    Analytics](https://laser-institute.github.io/la-workflow/Foundation_R/module_3/Module3-badge-R-KEY.html)
-    badge
--   Do [essential readings for the next
-    module](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/module-4-conceptual-slides.html#/module-4-objectives)
+- Complete the *Model* part of the [case
+  study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
+- Complete the [Data Sources in Learning
+  Analytics](https://laser-institute.github.io/la-workflow/Foundation_R/module_3/Module3-badge-R-KEY.html)
+  badge
+- Do [essential readings for the next
+  module](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/module-4-conceptual-slides.html#/module-4-objectives)
 :::

@@ -27,13 +27,12 @@ editor:
 
 ## Welcome to Learning Analytics Workflow
 
--   Learning Analytics Workflow is designed for those seeking an
-    introductory understanding of learning analytics using basic R
-    programming skills, particularly in the context of STEM education
-    research.
+- Learning Analytics Workflow is designed for those seeking an
+  introductory understanding of learning analytics using basic R
+  programming skills, particularly in the context of STEM education
+  research.
 
--   It consists of consists of four modules. Each module of LAW
-    includes:
+- It consists of consists of four modules. Each module of LAW includes:
 
 . . .
 
@@ -41,15 +40,15 @@ editor:
 ::::::: {.column width="40%"}
 :::::: {style="font-size: 65%;"}
 ::: {.fragment .fade-in-then-semi-out}
--   Essential readings
+- Essential readings
 :::
 
 ::: {.fragment .fade-in-then-semi-out}
--   Conceptual overview slidedeck
+- Conceptual overview slidedeck
 :::
 
 ::: {.fragment .fade-in-then-semi-out}
--   Code a-long slidedeck
+- Code a-long slidedeck
 :::
 ::::::
 :::::::
@@ -60,12 +59,12 @@ editor:
 :::::: {.column width="50%"}
 ::::: {style="font-size: 65%;"}
 ::: {.fragment .fade-in-then-semi-out}
--   Case study activity that correlates with the Learning Analytics
-    workflow
+- Case study activity that correlates with the Learning Analytics
+  workflow
 :::
 
 ::: {.fragment .fade-in-then-semi-out}
--   Optional badge activity
+- Optional badge activity
 :::
 :::::
 ::::::
@@ -77,24 +76,24 @@ editor:
 
 :::::: {style="font-size: 75%;"}
 ::: fragment
--   **Fundamentals of Data Visualization:**
-    -   Learners will grasp the basic concepts and significance of data
-        visualization in distilling complex educational data into
-        comprehensible and actionable insights.
+- **Fundamentals of Data Visualization:**
+  - Learners will grasp the basic concepts and significance of data
+    visualization in distilling complex educational data into
+    comprehensible and actionable insights.
 :::
 
 ::: fragment
--   **Variety of Visualization Techniques:**
-    -   Participants will be able to identify and apply different types
-        of visualizations, such as charts, graphs, and heatmaps, to
-        represent educational data effectively.
+- **Variety of Visualization Techniques:**
+  - Participants will be able to identify and apply different types of
+    visualizations, such as charts, graphs, and heatmaps, to represent
+    educational data effectively.
 :::
 
 ::: fragment
--   **Practical Application and Best Practices:**
-    -   Learners will gain insights into real-world applications of data
-        visualization in education and learn best practices to enhance
-        the clarity and impact of their visual data presentations.
+- **Practical Application and Best Practices:**
+  - Learners will gain insights into real-world applications of data
+    visualization in education and learn best practices to enhance the
+    clarity and impact of their visual data presentations.
 :::
 ::::::
 
@@ -108,7 +107,7 @@ Essential readings:
 2.  [R for Data Science, (Ch. 28 & 29) by Hadley Wickham & Garrett
     Grolemund](https://r4ds.had.co.nz/graphics-for-communication.html)
 
--   Optional readings in folder
+- Optional readings in folder
 :::
 ::::
 
@@ -138,13 +137,13 @@ practice with data analytics in R.
 
 ## Discussion
 
--   Who are some of the stakeholders that you communicate your findings?
+- Who are some of the stakeholders that you communicate your findings?
 
--   What experiences have you had with communicating the results of data
-    analysis and how did you communicate these findings?
+- What experiences have you had with communicating the results of data
+  analysis and how did you communicate these findings?
 
--   What are some things you are normally asked to communicate? What
-    types of products must you produce?
+- What are some things you are normally asked to communicate? What types
+  of products must you produce?
 
 ::: notes
 Before we begin I want you to take a moment and discuss with the person
@@ -166,21 +165,21 @@ audience" (Anderson, 2020).
 
 **Education stakeholders:**
 
--   Administrators
--   Teachers
--   Other practitioners
--   Students & their families
+- Administrators
+- Teachers
+- Other practitioners
+- Students & their families
 :::
 
 ::: {.column width="50%"}
 ### More Points
 
--   Tell a story (characters, setting, conflict, resolution)
--   Use "signposts"
--   Explain the data and why it matters
--   Add graphs and visualizations (but not too much!) to enhance
-    understanding
--   Make it possible to dig deeper
+- Tell a story (characters, setting, conflict, resolution)
+- Use "signposts"
+- Explain the data and why it matters
+- Add graphs and visualizations (but not too much!) to enhance
+  understanding
+- Make it possible to dig deeper
 :::
 :::::
 
@@ -310,7 +309,7 @@ deeply into the data as they wish to, but you also want to avoid the
 digestible amount of information that clearly conveys your data story.
 :::
 
-## Communicating Your Message with R Markdown
+## Communicating with R Markdown
 
 ::::::::::: panel-tabset
 ## R Markdown
@@ -319,13 +318,15 @@ digestible amount of information that clearly conveys your data story.
 ::: {.column width="30%"}
 **Supports many output formats, including:**
 
--   PDF
+- PDF
 
--   Html
+- HTML
 
--   Word
+- Microsoft Word
 
--   Slideshows
+- Slide decks
+
+- Dashboards
 :::
 
 ::: {.column width="10%"}
@@ -334,33 +335,32 @@ digestible amount of information that clearly conveys your data story.
 ::: {.column width="60%"}
 **Designed for communicating with**:
 
--   Decision makers
+- Decision makers
 
--   Other data scientists
+- Other data scientists
 
--   Future you
+- Future you
 :::
 ::::::
 
 ## Basics
 
--   Plain text file with extension .rmd
--   Code and its output appear together in the file/report
--   Contains 3 types of content:
-    -   YAML (optional)
-    -   Chunks of R code
-    -   Text with simple formatting text
--   Use `knit` to produce a complete report
+- Plain text file with extension .rmd
+- Code and its output appear together in the file/report
+- Contains 3 types of content:
+  - YAML (optional)
+  - Chunks of R code
+  - Text with simple formatting text
+- Use `knit` to produce a complete report
 
 ## YAML
 
 :::::: columns
 ::: {.column width="30%"}
--   An optional header that gives instructions for "whole document"
-    settings
+- An optional header that gives instructions for "whole document"
+  settings
 
--   This example demonstrates controls for title, date, and output
-    format
+- This example demonstrates controls for title, date, and output format
 :::
 
 ::: {.column width="10%"}
@@ -379,15 +379,15 @@ customization, see help within the IDE with `?knitr::kable`.
 
 Additional packages allow for further customization:
 
--   `xtable`
+- `xtable`
 
--   `stargazer`
+- `stargazer`
 
--   `pander`
+- `pander`
 
--   `tables`
+- `tables`
 
--   `asci`
+- `asci`
 :::::::::::
 
 ::: notes
@@ -448,7 +448,7 @@ then it specifies how you would like this report to be knitted. So in
 this case, the final product of this report once we knit it is going to
 be an HTML document.
 
-**Table**
+**Tables**
 
 So when we are creating reports, or articles for journals, it's common
 to have tables to convey data concisely and in one place. R markdown's
@@ -469,17 +469,17 @@ tables and I've listed these here on the slide.
 ::::::::::::::::::: panel-tabset
 ### Format
 
--   There are two ways to set the output of a document:
+- There are two ways to set the output of a document:
 
-    -   Permanently, by modifying the YAML header
+  - Permanently, by modifying the YAML header
 
-    -   Transiently, by calling `rmarkdown::render()`
+  - Transiently, by calling `rmarkdown::render()`
 
--   Useful if you want to produce multiple types of output
+- Useful if you want to produce multiple types of output
 
--   When you knit, R will automatically put output indicated in the YAML
-    header, but you can choose something different from the dropdown
-    menu beside the knit button
+- When you knit, R will automatically put output indicated in the YAML
+  header, but you can choose something different from the dropdown menu
+  beside the knit button
 
 ### Document
 
@@ -494,12 +494,12 @@ tables and I've listed these here on the slide.
 ::: {.column width="40%"}
 **Output options include:**
 
--   Word: `word_document`
--   OpenDocument text: `odt_document`
--   Rich Text Format: `rtf_document`
--   Markdown: `md_document`
--   GitHub: `github_document`
--   PDF: `pdf_document`
+- Word: `word_document`
+- OpenDocument text: `odt_document`
+- Rich Text Format: `rtf_document`
+- Markdown: `md_document`
+- GitHub: `github_document`
+- PDF: `pdf_document`
 :::
 ::::::
 
@@ -507,21 +507,21 @@ tables and I've listed these here on the slide.
 
 :::::: columns
 ::: {.column width="50%"}
--   Built in formats
-    -   HTML with ioslides: `ioslides_presentation`
-    -   HTML with W3C Slidy: `slidy_presentation`
-    -   HTML:
-        [`xarnigan_presentation`](https://laser-institute.github.io/foundational-skills/foundation_lab_1/index.html#1)
-    -   PDF with LaTeX Beamer:
-        [`beamer_presentation`](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_4/final_pdf.pdf)
+- Built in formats
+  - HTML with ioslides: `ioslides_presentation`
+  - HTML with W3C Slidy: `slidy_presentation`
+  - HTML:
+    [`xarnigan_presentation`](https://laser-institute.github.io/foundational-skills/foundation_lab_1/index.html#1)
+  - PDF with LaTeX Beamer:
+    [`beamer_presentation`](https://github.com/laser-institute/foundational-skills/blob/master/foundation_lab_4/final_pdf.pdf)
 :::
 
 ::: {.column width="10%"}
 :::
 
 ::: {.column width="40%"}
--   New slides begin at each first (#) or second (##)
-    -   A horizontal rule (\*\*\*) used to create slide without a header
+- New slides begin at each first (#) or second (##)
+  - A horizontal rule (\*\*\*) used to create slide without a header
 :::
 ::::::
 
@@ -529,13 +529,12 @@ tables and I've listed these here on the slide.
 
 :::::: columns
 ::: {.column width="30%"}
--   Specify a [bibliography
-    file](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html)
-    (i.e., `bibliography:rmarkdown.bib`)
--   use \@ and citation identifiers from articles (e.g., [@smith04;
-    @doe99])
--   Change style with citation style language (CSL) (e.g.,
-    `csl:apa.csl`)
+- Specify a [bibliography
+  file](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html)
+  (i.e., `bibliography:rmarkdown.bib`)
+- use \@ and citation identifiers from articles (e.g., [@smith04;
+  @doe99])
+- Change style with citation style language (CSL) (e.g., `csl:apa.csl`)
 :::
 
 ::: {.column width="10%"}
@@ -550,26 +549,24 @@ tables and I've listed these here on the slide.
 
 :::::: columns
 ::: {.column width="40%"}
--   [`shiny`](https://shiny.rstudio.com/gallery) for interactive
-    applications
+- `shiny` interactive applications
 
--   [Flex dashboards in
-    R](https://rstudio.github.io/flexdashboard/articles/examples.html)
+- [Dashboards](https://rstudio.github.io/flexdashboard/articles/examples.html)
 
--   [Websites](http://bit.ly/RMarkdownWebsites)
+- [Websites](http://bit.ly/RMarkdownWebsites)
 :::
 
 ::: {.column width="10%"}
 :::
 
 ::: {.column width="40%"}
--   Books via [`bookdown`](https://bookdown.org/)
+- Books via [`bookdown`](https://bookdown.org/)
 
--   Themed documents via
-    [`prettydoc`](https://prettydoc.statr.me/themes.html)
+- Themed documents via
+  [`prettydoc`](https://prettydoc.statr.me/themes.html)
 
--   Articles formatted for specific journals via
-    [`rticles`](https://bookdown.org/yihui/rmarkdown/rticles-templates.html)
+- Articles formatted for specific journals via
+  [`rticles`](https://bookdown.org/yihui/rmarkdown/rticles-templates.html)
 :::
 ::::::
 :::::::::::::::::::
@@ -665,19 +662,19 @@ more.
 ## Ethical Considerations in Learning Analytics
 
 ::: incremental
--   Data privacy
+- Data privacy
 
--   Bias in data analysis
+- Bias in data analysis
 
--   Student consent
+- Student consent
 
--   Responsible data usage
+- Responsible data usage
 
--   Inclusive practices
+- Inclusive practices
 
--   Transparent communication
+- Transparent communication
 
--   Continuous evaluation
+- Continuous evaluation
 :::
 
 ::: notes
@@ -713,70 +710,68 @@ adaptation of ethical guidelines.
 
 ## Discussion
 
--   What do you think are currently import ethical considerations for
-    LA?
+- What do you think are currently import ethical considerations for LA?
 
--   How can educational institutions balance the need for data-driven
-    decision-making with the ethical considerations of data privacy?
+- How can educational institutions balance the need for data-driven
+  decision-making with the ethical considerations of data privacy?
 
--   How can educators ensure that student data is collected, stored, and
-    used responsibly while still enabling personalized learning
-    experiences?
+- How can educators ensure that student data is collected, stored, and
+  used responsibly while still enabling personalized learning
+  experiences?
 
 ::: notes
 1.  Important Ethical Considerations for Learning Analytics
 
--   Privacy and Consent: Ensuring that data collection processes are
-    transparent and that students (or their guardians) understand what
-    data is being collected, how it will be used, and have given their
-    informed consent.
--   Bias and Fairness: Identifying and mitigating biases in data
-    collection, analysis, and the algorithms used in LA. This is
-    essential to prevent discrimination and ensure fair treatment of all
-    students.
--   Data Security: Protecting sensitive student information from
-    unauthorized access and data breaches.
--   Use of Data: Establishing clear boundaries on who can access student
-    data and for what purposes. Ensuring that the data is used to
-    benefit students' learning experiences and not for punitive measures
-    or profiling.
+- Privacy and Consent: Ensuring that data collection processes are
+  transparent and that students (or their guardians) understand what
+  data is being collected, how it will be used, and have given their
+  informed consent.
+- Bias and Fairness: Identifying and mitigating biases in data
+  collection, analysis, and the algorithms used in LA. This is essential
+  to prevent discrimination and ensure fair treatment of all students.
+- Data Security: Protecting sensitive student information from
+  unauthorized access and data breaches.
+- Use of Data: Establishing clear boundaries on who can access student
+  data and for what purposes. Ensuring that the data is used to benefit
+  students' learning experiences and not for punitive measures or
+  profiling.
 
 2.  Balancing Data-Driven Decision-Making with Data Privacy
 
--   Data Minimization: Collect only the data that is necessary for the
-    defined educational purposes. Avoid excessive data collection that
-    can lead to privacy concerns.
--   Robust Data Governance: Develop and enforce strict data governance
-    policies that detail how data is to be handled, who has access, how
-    it is protected, and how long it is retained.
--   Transparency and Communication: Maintain open communication with all
-    stakeholders about the data being collected and its uses. -
-    Transparency can build trust and ensure that the community
-    understands and supports data-driven initiatives.
+- Data Minimization: Collect only the data that is necessary for the
+  defined educational purposes. Avoid excessive data collection that can
+  lead to privacy concerns.
+- Robust Data Governance: Develop and enforce strict data governance
+  policies that detail how data is to be handled, who has access, how it
+  is protected, and how long it is retained.
+- Transparency and Communication: Maintain open communication with all
+  stakeholders about the data being collected and its uses. -
+  Transparency can build trust and ensure that the community understands
+  and supports data-driven initiatives.
 
 3.  Ensuring Responsible Data Use while Enabling Personalized Learning
 
--   Data Handling Policies: Implement policies that specify how data is
-    to be collected, stored, analyzed, and deleted. These policies
-    should comply with legal standards such as GDPR in the EU or FERPA
-    in the USA.
--   Secure and Selective Technology: Utilize technology solutions that
-    offer strong security measures to protect data and ensure that these
-    technologies allow for the controlled use of data to prevent misuse.
--   Personalized Learning Frameworks: Design personalized learning
-    experiences that use data responsibly. This could include systems
-    that allow students to view their own data and understand how it is
-    being used to tailor their learning experiences, thereby enhancing
-    transparency and control.
+- Data Handling Policies: Implement policies that specify how data is to
+  be collected, stored, analyzed, and deleted. These policies should
+  comply with legal standards such as GDPR in the EU or FERPA in the
+  USA.
+- Secure and Selective Technology: Utilize technology solutions that
+  offer strong security measures to protect data and ensure that these
+  technologies allow for the controlled use of data to prevent misuse.
+- Personalized Learning Frameworks: Design personalized learning
+  experiences that use data responsibly. This could include systems that
+  allow students to view their own data and understand how it is being
+  used to tailor their learning experiences, thereby enhancing
+  transparency and control.
 :::
 
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
--   Complete the *Communicate* part of the [case
-    study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
--   Complete the [Data Products
-    badge](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
--   Optional: Complete the [LAW
-    Microcredential](https://laser-institute.github.io/la-workflow/microcredential/law-microcredential.html)
+- Complete the *Communicate* part of the [case
+  study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
+- Complete the [Data Products
+  badge](https://laser-institute.github.io/la-workflow/Foundation_R/module_4/Module4-badge-R-KEY.html)
+- Optional: Complete the [LAW
+  Microcredential](https://laser-institute.github.io/la-workflow/microcredential/law-microcredential.html)
 :::

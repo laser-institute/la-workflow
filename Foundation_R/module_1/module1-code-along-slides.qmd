@@ -1,6 +1,6 @@
 ---
 title: "Prepare and Wrangle"
-subtitle: "LAW Module 1: A Code-A-long"
+subtitle: "LAW Module 1: A Code Along"
 format: 
   revealjs:
     # include-in-header: preview.html
@@ -25,15 +25,15 @@ editor:
     wrap: 72
 ---
 
-## Welcome to the LAW Code-a-long for Module 1
+## Welcome to the LAW Code Along for Module 1
 
--   Learning Analytics Workflow (LAW) is designed for those seeking an
-    introductory understanding of learning analytics using basic R
-    programming skills, particularly in the context of STEM education
-    research.
+- Learning Analytics Workflow (LAW) is designed for those seeking an
+  introductory understanding of learning analytics using basic R
+  programming skills, particularly in the context of STEM education
+  research.
 
--   The following code-a-long is aimed at preparing you for the first
-    section of the case study.
+- The following Code Along is aimed at preparing you for the first
+  section of the case study.
 
 ![](img/prepare_wflow.png) <br/>
 
@@ -56,7 +56,7 @@ redeveloped after you have started the data intensive analysis.
 The Learning Analysis Cycle is not a linear process but rather a process
 of phases that can be moved around.
 
-In this code-a-long session, we will concentrate on the "Prepare" phase
+In this code along session, we will concentrate on the "Prepare" phase
 of the Learning Analytics (LA) cycle. Before we delve into that, it's
 essential to gain some context regarding the study that will inform our
 discussions today and over next three modules.
@@ -66,21 +66,16 @@ discussions today and over next three modules.
 
 . . .
 
-By the end of this module:
-
--   Know how to read in the data:
-    -   Learners will be able to identify and describe different types
-        of learning environments, explaining their unique features and
-        applications in educational research.
+By the end of this module, learners will know how to:
 
 . . .
 
--   Characteristics of `Data`:
-    -   Learners will gain proficiency in recognizing and categorizing
-        various data formats commonly used in educational research by
-        the end of this section.
-
-. . .
+- Read in data from external sources.
+- Identify and describe different types of learning environments,
+  explaining their unique features and applications in educational
+  research.
+- Gain proficiency in recognizing and categorizing various data formats
+  commonly used in educational research by the end of this section.
 
 ::: notes
 :::
@@ -95,53 +90,52 @@ concept.](https://www.sciencedirect.com/science/article/pii/S0360131509002486?vi
 :::
 
 ::: {.fragment .fade-in-then-semi-out style="font-size: 30px"}
--   Explores specific online activities of students indicating their
-    academic success.
--   Focused on "early warning systems" in higher education.
--   Research was extracted from course-based instructor tracking logs
-    and the BB Vista production server.
--   Data Sources
--   A **self-report survey** assessing three aspects of students’
-    motivation
--   **Log-trace data,** such as data output from the learning management
-    system (LMS)
--   **Academic achievement data**
--   Discussion board data
+- Explores specific online activities of students indicating their
+  academic success.
+- Focused on "early warning systems" in higher education.
+- Research was extracted from course-based instructor tracking logs and
+  the BB Vista production server.
+- Data Sources
+- A **self-report survey** assessing three aspects of students’
+  motivation
+- **Log-trace data,** such as data output from the learning management
+  system (LMS)
+- **Academic achievement data**
+- Discussion board data
 :::
 
 ::: {.fragment .fade-in-then-semi-out style="font-size: 30px"}
 Research Questions:
 
--   Which LMS tracking data variables correlate significantly with
-    student achievement?
+- Which LMS tracking data variables correlate significantly with student
+  achievement?
 
--   How accurately can measures of student online activity in an online
-    course site predict student achievement in the course under study?
+- How accurately can measures of student online activity in an online
+  course site predict student achievement in the course under study?
 :::
 
 ::: notes
 :::
 
-## Installing and Loading Packages {background="#143156"}
+## Installing and Loading Packages
 
 ::: panel-tabset
 ## Install
 
--   When you start a new session, you have to first install *most*
-    packages to your development environment (RStudio)
--   `install.packages()` downloads a package from a repository,
-    typically the Comprehensive R Archive Network (CRAN) unless you say
-    otherwise
--   You only have to do this once per session
--   When installing, [red]{style="color:red;"} output text usually
-    doesn't necessarily mean there is a problem!
+- When you start a new session, you have to first install *most*
+  packages to your development environment (RStudio)
+- `install.packages()` downloads a package from a repository, typically
+  the Comprehensive R Archive Network (CRAN) unless you say otherwise
+- You only have to do this once per session
+- When installing, [red]{style="color:red;"} output text usually doesn't
+  necessarily mean there is a problem!
 
 ## 👉 Your Turn ⤵
 
--   Use `install.packages()` to install the tidyverse package
+- Use `install.packages()` to install the tidyverse package
 
--   Use quotations around the package name since it is identified as a
-    string variable
+- Use quotations around the package name since it is identified as a
+  string variable
 
 ## Answer
 
@@ -152,15 +146,15 @@ install.packages("tidyverse")
 
 ## Load
 
--   Once you have a package installed, you load it into your session
-    with `library()`
+- Once you have a package installed, you load it into your session with
+  `library()`
 
 ## 👉 Your Turn ⤵
 
--   Use `library()` to load the tidyverse package
+- Use `library()` to load the tidyverse package
 
--   Since the package has been installed as an object in RStudio, don't
-    use quotations around the package name when loading it
+- Since the package has been installed as an object in RStudio, don't
+  use quotations around the package name when loading it
 
 ## Answer
 
@@ -194,25 +188,25 @@ designed to work together. Think Google products or Microsoft products.
 data importing, data wrangling and plotting.
 :::
 
-## Reading in Data with `readr` {background="#143156"}
+## Reading in Data with `readr`
 
 ::: panel-tabset
 ### Common Arguments
 
--   `file` File to path
+- `file` File to path
 
--   `col_names` Uses the first row of raw data available as the column
-    names if TRUE, creates placeholder column names if FALSE
+- `col_names` Uses the first row of raw data available as the column
+  names if TRUE, creates placeholder column names if FALSE
 
--   `na` Looks for text in the data to treat as non-applicable. Can be a
-    list like `c("", "na")`
+- `na` Looks for text in the data to treat as non-applicable. Can be a
+  list like `c("", "na")`
 
--   `skip` Tells the function to "skip" ahead by reading at a given row
-    of data.
+- `skip` Tells the function to "skip" ahead by reading at a given row of
+  data.
 
--   `col_types` Coerces columns to specific types of data. If NULL, the
-    function guesses the type of each column, which is useful but not
-    robust
+- `col_types` Coerces columns to specific types of data. If NULL, the
+  function guesses the type of each column, which is useful but not
+  robust
 
 ### Delimiters
 
@@ -220,9 +214,9 @@ data importing, data wrangling and plotting.
 
 ### 👉 Your Turn ⤵
 
--   Use `read_csv()` to read in `sci-online.classes.csv`
+- Use `read_csv()` to read in `sci-online.classes.csv`
 
--   This file is located in your data folder
+- This file is located in your data folder
 
 ### Answer
 
@@ -263,37 +257,37 @@ Common arguments that are included when you read in data are:
 `readr` is a quick way to read in comma-separated values (CSV) and
 tab-separated values (TSV)
 
--   We read in from the path. My data is stored in a folder called data.
-    I then use the assignment operator to save it as a new object called
-    online-classes.
--   (instructor is showing how to import from file) a quick way to see
-    where your data file is stored is by clicking on the file under
-    files and then import.
--   Please note that we do NOT need to set working directory because we
-    opened the projects folder. If we just click on the dataframe to
-    open it it will not be connectd to the project.
+- We read in from the path. My data is stored in a folder called data. I
+  then use the assignment operator to save it as a new object called
+  online-classes.
+- (instructor is showing how to import from file) a quick way to see
+  where your data file is stored is by clicking on the file under files
+  and then import.
+- Please note that we do NOT need to set working directory because we
+  opened the projects folder. If we just click on the dataframe to open
+  it it will not be connectd to the project.
 
 Having a best practices way to set up your directory will help eleviate
 any confusion on data organization and location.
 :::
 
-## Other Data Types {background="#143156"}
+## Other Data Types
 
 ::: panel-tabset
 ## .xlsx
 
--   Excel files are proprietary to Microsoft but also very ubiquitous
+- Excel files are proprietary to Microsoft but also very ubiquitous
 
--   R solves this with `readxl`
+- R solves this with `readxl`
 
 ## 👉 Your Turn ⤵
 
--   Load in the `readxl` package
+- Load in the `readxl` package
 
--   Read in `csss_tweets.xlsx` with the `read_excel()` function to a new
-    object `csss_tweets`
+- Read in `csss_tweets.xlsx` with the `read_excel()` function to a new
+  object `csss_tweets`
 
--   Inspect the object with `head()`
+- Inspect the object with `head()`
 
 ## Answer
 
@@ -310,19 +304,19 @@ head(csss_tweets, n = 5)
 
 ## .dta
 
--   .dta files are used by statistical software like R, Python, Stata,
-    and SAS
+- .dta files are used by statistical software like R, Python, Stata, and
+  SAS
 
--   They are accessed via `haven`
+- They are accessed via `haven`
 
 ## 👉 Your Turn ⤵
 
--   Install and load in `haven`
+- Install and load in `haven`
 
--   Read in `GPA3.dta` with the `read_dta()` function to a new object
-    `gpa_dt`
+- Read in `GPA3.dta` with the `read_dta()` function to a new object
+  `gpa_dt`
 
--   Inspect the object with `head()`
+- Inspect the object with `head()`
 
 ## Answer
 
@@ -460,12 +454,12 @@ from both sources.
 # What's Next? {background="#143156"}
 
 ::: {style="text-align: left; font-size: 50px"}
--   Explore the *R Basics* column of [Posit Cloud's
-    Recipes](https://posit.cloud/learn/recipes)
--   Complete the *Prepare and Wrangle* part of the [case
-    study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
--   Complete the [Foundations of Learning Analytics
-    badge](https://laser-institute.github.io/la-workflow/Foundation_R/module_1/module-1-badge-key.html)
--   Do [essential readings for the next
-    module](https://laser-institute.github.io/la-workflow/Foundation_R/module_2/module-2-conceptual-slides-R.html#/module-2-objectives)
+- Explore the *R Basics* column of [Posit Cloud's
+  Recipes](https://posit.cloud/learn/recipes)
+- Complete the *Prepare and Wrangle* part of the [case
+  study](https://posit.cloud/spaces/493094/join?access_code=qjsumVzA0HZYgrxOSizVbVPmDs7iHYS32yUQaqDe)
+- Complete the [Foundations of Learning Analytics
+  badge](https://laser-institute.github.io/la-workflow/Foundation_R/module_1/module-1-badge-key.html)
+- Do [essential readings for the next
+  module](https://laser-institute.github.io/la-workflow/Foundation_R/module_2/module-2-conceptual-slides-R.html#/module-2-objectives)
 :::

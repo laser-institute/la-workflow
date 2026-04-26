@@ -195,54 +195,103 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Communicate</h1>
-  <p class="subtitle">LAW Module 4: A Code-a-long</p>
+  <p class="subtitle">LAW Module 4: A Code Along</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="welcome-to-the-law-code-a-long-for-module-4" class="slide level2">
-<h2>Welcome to the LAW Code-a-long for Module 4</h2>
+<section id="welcome-to-the-law-code-along-for-module-4" class="slide level2">
+<h2>Welcome to the LAW Code Along for Module 4</h2>
+<div class="fragment">
+<p><img data-src="img/communicate_wflow.png" width="1450"></p>
+</div>
+<div class="fragment">
 <ul>
-<li><p>In the <em>Communicate</em> section of the Learning Analytics workflow, the focus is on effectively presenting and sharing the results of your analysis with stakeholders. This involves creating clear and compelling visualizations, writing comprehensive reports, and delivering presentations that highlight key insights and actionable recommendations.</p></li>
-<li><p>The goal is to ensure that the findings are easily understood and can inform decision-making processes, ultimately leading to improved educational outcomes. Utilizing tools like ggplot2 for visualizations and packages like RMarkdown for report generation can enhance the clarity and impact of your communication.</p></li>
+<li>The <em>Communicate</em> phase of the LAW is about selecting, polishing, and presenting findings to an audience.</li>
 </ul>
+<aside class="notes">
+<ul>
+<li>In the <em>Communicate</em> phase of the Learning Analytics workflow, the focus is on effectively presenting and sharing the results of your analysis with stakeholders. This involves creating clear and compelling visualizations, writing comprehensive reports, and delivering presentations that highlight key insights and actionable recommendations.</li>
+<li>The goal is to ensure that the findings are easily understood and can inform decision-making processes, ultimately leading to improved educational outcomes. Utilizing tools like <code>ggplot2</code> for visualizations and packages like RMarkdown for report generation can enhance the clarity and impact of your communication.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
-<section id="communicate" class="slide level2">
-<h2>Communicate</h2>
-<p><img src="img/communicate_wflow.png" height="700px"></p>
+<section id="module-objectives" class="slide level2">
+<h2>Module Objectives</h2>
+<p>By the end of this module, learners will:</p>
+<div class="fragment">
+<ul>
+<li>Develop an intuition for the <em>Communication</em> phase of the learning analytics workflow.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Understand the utility and power of dashboards for data communication.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Build a dashboard of their own, experimenting with its modular components (e.g., tabs, plots, sidebars, etc.).</li>
+</ul>
+</div>
 </section>
 <section id="preparing-findings-for-communication" class="slide level2">
 <h2>Preparing Findings for Communication</h2>
 <p><img src="img/communicate.png" height="800px"></p>
+<aside class="notes">
+<p>Earlier in the LAW, such as in the <em>Explore</em> phase, you might have wondered how you could ever find a compelling or concrete finding from all of the data. In the <em>Communicate</em> phase, you might find yourself with the opposite problem: Which findings should I pick and share?</p>
+<p>Krumm et al.&nbsp;(2018) have outlined the following 3-step process for communicating with education stakeholders what you have learned through analysis:</p>
+<ul>
+<li><p>Select: Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e.a “data product.”</p></li>
+<li><p>Polish: After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.</p></li>
+<li><p>Communicate: Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="dashboards-via-quarto" class="slide level2">
-<h2>Dashboards via Quarto</h2>
+<section id="dashboards-for-communication" class="slide level2">
+<h2>Dashboards for Communication</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Overview</a></li><li><a href="#tabset-1-2">Components</a></li><li><a href="#tabset-1-3">YAML</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <ul>
-<li><p>Process can be automated using R and R Markdown, and knitted using Quarto</p></li>
-<li><p>Dashboards are valuable because they can include interactive elements</p></li>
-<li><p>By using HTML, dashboards are :</p>
-<ul>
-<li><p>Essentially universal and readable by any computer</p></li>
-<li><p>Has no password protection for ease of distribution</p></li>
-</ul></li>
+<li><p>Dashboards are one of the most flexible ways you can communicate findings with R!</p></li>
+<li><p>Like other data products, they can be coded using R and R Markdown, and knitted using Quarto.</p></li>
 </ul>
 </div>
 <div id="tabset-1-2">
 <ul>
-<li><p>Navigation bar: Icon, title, and author along with links to sub-pages if needed</p></li>
-<li><p>Pages, rows, &amp; columns: Defined using markdown headings (with optional attributes to control height, width, etc.)</p></li>
-<li><p>Tabsets: Used to further divide content within a row or column</p></li>
-<li><p>Cards: Containers for plots, data display, and free form content, typically mapped to cells in your notebook or source document</p></li>
-<li><p>Sidebars and toolbars: Present inputs within interactive dashboards</p></li>
+<li><p><strong>Navigation bar</strong>: Icon, title, and author along with links to sub-pages if needed</p></li>
+<li><p><strong>Pages, rows, &amp; columns</strong>: Defined using markdown headings (with optional attributes to control height, width, etc.)</p></li>
+<li><p><strong>Tabsets</strong>: Used to further divide content within a row or column</p></li>
+<li><p><strong>Cards</strong>: Containers for plots, data display, and free form content, typically mapped to cells in your notebook or source document</p></li>
+<li><p><strong>Sidebars and toolbars</strong>: Present inputs within interactive dashboards</p></li>
 </ul>
 </div>
 <div id="tabset-1-3">
-<p>Define output as flexdashboard in YAML header of R markdown document:</p>
+<p>To make your markdown file a dashboard, use the YAML header to specify “flexdashboard”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="sc">---</span></span>
 <span id="cb1-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"ADD A TITLE"</span></span>
@@ -261,10 +310,44 @@
 </div>
 </div>
 </div>
+<aside class="notes">
+<ul>
+<li><p>Dashboards combine the strengths of the other data products we have discussed.</p></li>
+<li><p>They are essentially little websites that give viewers the ability to explore your findings, view and download data, and even adjust and interact with visualizations.</p></li>
+<li><p>Since they are built with HTML, dashboards:</p>
+<ul>
+<li>Are essentially universal and readable by any device or browser.</li>
+</ul></li>
+<li><p>Keep in mind that they have no password protection. This makes distribution easy but requires extra care when sharing your data (particularly “raw” data).</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="basic-dashboard" class="slide level2">
-<h2>Basic Dashboard</h2>
+<section id="the-basic-dashboard" class="slide level2">
+<h2>The Basic Dashboard</h2>
 <p><img src="img/flexdashboard.jpg" height="700px"></p>
+<aside class="notes">
+<p>The boilerplate dashboard format uses basic web design principles, with titles and overview subjects at the top and your findings below. Basic dashboards are not unlike poster presentations, but they can be built upon to be much more than that.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="navigation-bar-and-pages" class="slide level2">
 <h2>Navigation Bar and Pages</h2>
@@ -285,59 +368,98 @@
 <span id="cb2-13"><a href=""></a></span>
 <span id="cb2-14"><a href=""></a><span class="fu"># Data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="sidebars-page-level" class="slide level2">
-<h2>Sidebars: Page Level</h2>
-<div class="columns">
-<div class="column">
-<div class="sourceCode" id="cb3" style="margin-top: 45px;"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a><span class="co">---</span></span>
-<span id="cb3-2"><a href=""></a><span class="an">title:</span><span class="co"> "Sidebar"</span></span>
-<span id="cb3-3"><a href=""></a><span class="an">format:</span><span class="co"> dashboard</span></span>
-<span id="cb3-4"><a href=""></a><span class="co">---</span></span>
-<span id="cb3-5"><a href=""></a>    </span>
-<span id="cb3-6"><a href=""></a><span class="fu"># Page 1</span></span>
-<span id="cb3-7"><a href=""></a></span>
-<span id="cb3-8"><a href=""></a><span class="fu">## {.sidebar}</span></span>
-<span id="cb3-9"><a href=""></a></span>
-<span id="cb3-10"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb3-11"><a href=""></a><span class="in">```</span></span>
-<span id="cb3-12"><a href=""></a></span>
-<span id="cb3-13"><a href=""></a><span class="fu">## Column </span></span>
-<span id="cb3-14"><a href=""></a></span>
-<span id="cb3-15"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb3-16"><a href=""></a><span class="in">```</span></span>
-<span id="cb3-17"><a href=""></a></span>
-<span id="cb3-18"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb3-19"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column fragment">
-<p><img data-src="img/chart-input-sidebar.png"></p>
-</div></div>
+<aside class="notes">
+<p>Using the markdown language for headers, dashboards give users the ability to navigate through different pages both vertically and horizontally.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="sidebars-global" class="slide level2">
 <h2>Sidebars: Global</h2>
 <div class="columns">
 <div class="column">
-<div class="sourceCode" id="cb4" style="margin-top: 45px;"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a><span class="co">---</span></span>
-<span id="cb4-2"><a href=""></a><span class="an">title:</span><span class="co"> "Global Sidebar"</span></span>
-<span id="cb4-3"><a href=""></a><span class="an">format:</span><span class="co"> dashboard</span></span>
-<span id="cb4-4"><a href=""></a><span class="co">---</span></span>
-<span id="cb4-5"><a href=""></a>    </span>
-<span id="cb4-6"><a href=""></a><span class="fu"># {.sidebar}</span></span>
-<span id="cb4-7"><a href=""></a></span>
-<span id="cb4-8"><a href=""></a>Sidebar content (e.g. inputs)</span>
-<span id="cb4-9"><a href=""></a></span>
-<span id="cb4-10"><a href=""></a><span class="fu"># Plot</span></span>
-<span id="cb4-11"><a href=""></a></span>
-<span id="cb4-12"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb4-13"><a href=""></a><span class="in">```</span></span>
-<span id="cb4-14"><a href=""></a></span>
-<span id="cb4-15"><a href=""></a><span class="fu"># Data</span></span>
-<span id="cb4-16"><a href=""></a></span>
-<span id="cb4-17"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb4-18"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" style="margin-top: 45px;"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a><span class="co">---</span></span>
+<span id="cb3-2"><a href=""></a><span class="an">title:</span><span class="co"> "Global Sidebar"</span></span>
+<span id="cb3-3"><a href=""></a><span class="an">format:</span><span class="co"> dashboard</span></span>
+<span id="cb3-4"><a href=""></a><span class="co">---</span></span>
+<span id="cb3-5"><a href=""></a>    </span>
+<span id="cb3-6"><a href=""></a><span class="fu"># {.sidebar}</span></span>
+<span id="cb3-7"><a href=""></a></span>
+<span id="cb3-8"><a href=""></a>Sidebar content (e.g. inputs)</span>
+<span id="cb3-9"><a href=""></a></span>
+<span id="cb3-10"><a href=""></a><span class="fu"># Plot</span></span>
+<span id="cb3-11"><a href=""></a></span>
+<span id="cb3-12"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb3-13"><a href=""></a><span class="in">```</span></span>
+<span id="cb3-14"><a href=""></a></span>
+<span id="cb3-15"><a href=""></a><span class="fu"># Data</span></span>
+<span id="cb3-16"><a href=""></a></span>
+<span id="cb3-17"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb3-18"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <p><img data-src="img/global-sidebar.png" style="width:80.0%"></p>
 </div></div>
+<aside class="notes">
+<p>Global sidebars are shown at the top of the dashboard by default, and give users the ability to switch between pages. If you had three major findings, for example, this is where users would go between them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="sidebars-page-level" class="slide level2">
+<h2>Sidebars: Page Level</h2>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb4" style="margin-top: 45px;"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a><span class="co">---</span></span>
+<span id="cb4-2"><a href=""></a><span class="an">title:</span><span class="co"> "Sidebar"</span></span>
+<span id="cb4-3"><a href=""></a><span class="an">format:</span><span class="co"> dashboard</span></span>
+<span id="cb4-4"><a href=""></a><span class="co">---</span></span>
+<span id="cb4-5"><a href=""></a>    </span>
+<span id="cb4-6"><a href=""></a><span class="fu"># Page 1</span></span>
+<span id="cb4-7"><a href=""></a></span>
+<span id="cb4-8"><a href=""></a><span class="fu">## {.sidebar}</span></span>
+<span id="cb4-9"><a href=""></a></span>
+<span id="cb4-10"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb4-11"><a href=""></a><span class="in">```</span></span>
+<span id="cb4-12"><a href=""></a></span>
+<span id="cb4-13"><a href=""></a><span class="fu">## Column </span></span>
+<span id="cb4-14"><a href=""></a></span>
+<span id="cb4-15"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb4-16"><a href=""></a><span class="in">```</span></span>
+<span id="cb4-17"><a href=""></a></span>
+<span id="cb4-18"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb4-19"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<p><img data-src="img/chart-input-sidebar.png"></p>
+</div></div>
+<aside class="notes">
+<p>You can nest sidebars within individual pages. For example, you may have two distinct takeaways, visualizations, etc. to better convey a single finding, so you would make one page for your finding, then use the sidebar to show different aspects of that finding.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="layout-rows" class="slide level2">
 <h2>Layout: Rows</h2>
@@ -363,6 +485,19 @@
 </div><div class="column fragment">
 <p><img data-src="img/chart-focal-top.png" style="width:90.0%"></p>
 </div></div>
+<aside class="notes">
+<p>You can arrange dashboard components in rows…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="layout-columns" class="slide level2">
 <h2>Layout: Columns</h2>
@@ -390,9 +525,22 @@
 </div><div class="column fragment">
 <p><img data-src="img/chart-focal-left.png"></p>
 </div></div>
+<aside class="notes">
+<p>…or columns!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="tabset" class="slide level2">
-<h2>Tabset</h2>
+<section id="tabsets" class="slide level2">
+<h2>Tabsets</h2>
 <div class="columns">
 <div class="column" style="margin-top: 45px;">
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href=""></a><span class="co">---</span></span>
@@ -415,12 +563,24 @@
 <span id="cb7-18"><a href=""></a><span class="co">#| title: Chart 3</span></span>
 <span id="cb7-19"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
-<p><img data-src="img/chart-tabset-row.png" style="width:87.0%"></p>
+<p><img data-src="img/chart-tabset-row.png" width="700"></p>
 </div></div>
+<aside class="notes">
+<p>Tabsets are tab structures nested within a single component on the page. You can see how you can end up giving viewers a lot of places to click, so use all of these methods judiciously! Less is more. And remember: You can always add more sidebars and tabsets later.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="plots" class="slide level2">
 <h2>Plots</h2>
-<p>Each code chunk makes a card, and can take a title</p>
 <div class="columns">
 <div class="column fragment smaller">
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="st">```</span><span class="at">{r}</span></span>
@@ -433,10 +593,22 @@
 </div><div class="column fragment">
 <p><img data-src="img/ggplot-gapminder.png" style="width:85.0%"></p>
 </div></div>
+<aside class="notes">
+<p>You can imbed visualizations via <code>ggplot</code> directly into your dashboards. Each code chunk makes a card, and can take a title.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="tables" class="slide level2">
 <h2>Tables</h2>
-<p>Each code chunk makes a card, doesn’t have to have a title</p>
 <div class="columns">
 <div class="column fragment smaller">
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="st">```</span><span class="at">{r}</span></span>
@@ -452,37 +624,36 @@
 </div><div class="column fragment">
 <p><img data-src="img/kable-gapminder.png" style="width:85.0%"></p>
 </div></div>
+<aside class="notes">
+<p>The same goes for tables. Each code chunk makes a card, and <strong>doesn’t</strong> have to have a title.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="other-features" class="slide level2">
-<h2>Other features</h2>
+<h2>Other Features</h2>
 <ul>
 <li><p>Text content</p></li>
 <li><p>Value boxes</p></li>
 <li><p>Expanding cards</p></li>
-</ul>
-</section>
-<section id="interactive-dashboards" class="slide level2">
-<h2>Interactive Dashboards</h2>
-<p><a href="https://quarto.org/docs/dashboards/interactivity/shiny-r" class="uri">https://quarto.org/docs/dashboards/interactivity/shiny-r</a></p>
+<li><p><a href="https://quarto.org/docs/dashboards/interactivity/shiny-r">Interactive elements</a></p>
 <ul>
-<li><p>For interactive exploration, some dashboards can benefit from a live R backend</p></li>
-<li><p>To do this with Quarto Dashboards, add interactive <a href="https://shiny.posit.co">Shiny</a> components</p></li>
+<li><p>For interactive exploration, some dashboards can benefit from a live R backend.</p></li>
+<li><p>To do this with Quarto, add interactive <a href="https://shiny.posit.co">Shiny</a> components.</p></li>
 <li><p>Deploy with or without a server!</p></li>
+</ul></li>
 </ul>
 </section>
-<section id="communicate-in-the-la-workflow" class="slide level2">
-<h2>Communicate in the LA workflow</h2>
-<div style="font-size: 40px">
-<p>The final(ish) step in our workflow/process is sharing the results of analysis with wider audience. Krumm et al.&nbsp;(2018) have outlined the following 3-step process for communicating with education stakeholders what you have learned through analysis:</p>
-<ol type="1">
-<li><p><strong>Select</strong>: Communicating what one has learned involves selecting among those analyses that are most important and most useful to an intended audience, as well as selecting a form for displaying that information, such as a graph or table in static or interactive form, i.e.a “data product.”</p></li>
-<li><p><strong>Polish</strong>: After creating initial versions of data products, research teams often spend time refining or polishing them, by adding or editing titles, labels, and notations and by working with colors and shapes to highlight key points.</p></li>
-<li><p><strong>Narrate</strong>: Writing a narrative to accompany the data products involves, at a minimum, pairing a data product with its related research question, describing how best to interpret the data product, and explaining the ways in which the data product helps answer the research question.</p></li>
-</ol>
-</div>
-</section>
-<section id="make-a-dashboard" class="slide level2">
-<h2>Make a Dashboard!</h2>
+<section id="your-turn" class="slide level2">
+<h2>👉 Your Turn ⤵</h2>
 <p>Create a data story with our current data set.</p>
 <ul>
 <li class="fragment">Develop a research question.</li>
@@ -490,10 +661,12 @@
 <li class="fragment">Model your visualizations.</li>
 <li class="fragment">Add a short write up for the intended stakeholders.</li>
 </ul>
+<div class="fragment">
 <h3 id="resources">Resources</h3>
-<p><a href="https://quarto.org/docs/dashboards/">Quarto Dashboard in R</a></p>
+<p><a href="https://quarto.org/docs/dashboards/">Quarto Dashboards in R</a></p>
 <p><a href="https://quarto.org/docs/gallery/#dashboards">Quarto Dashboard gallery</a></p>
-<p><a href="https://posit.co/blog/flexdashboard-easy-interactive-dashboards-for-r/">Quarto Dashboard: Easy interactive dashboards for R</a></p>
+<p><a href="https://posit.co/blog/flexdashboard-easy-interactive-dashboards-for-r/"><strong>Interactive</strong> dashboards for R</a></p>
+</div>
 </section>
 <section id="whats-next" class="title-slide slide level1 center" data-background="#143156">
 <h1>What’s Next?</h1>
